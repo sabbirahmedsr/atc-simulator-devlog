@@ -1,0 +1,28 @@
+{
+  "requestStartup": {
+    "caption": "Request Startup",
+    "parameters": [
+      "Startup and Pushback"
+    ]
+  },
+  "confirmStartup": {
+    "caption": "Confirm Approved",
+    "parameters": [
+      "Startup and Pushback Approved",
+      "Temp 32",
+      "Time 1200"
+    ]
+  },
+  "requestTaxi": {
+    "caption": "Request Taxi",
+    "parameters": [
+      "Request Taxi"
+    ]
+  },
+  "requestLineup": {
+    "caption": "Request Lineup",
+    "parameters": [
+      "Request Lineup"
+    ]
+  }
+}   

@@ -1,0 +1,31 @@
+/*
+ * global-styles.css
+ * This file contains the primary color palette and CSS variables for the entire application.
+ * By defining colors here, we can ensure a consistent theme and make it easy to modify in one place.
+ */
+
+:root {
+  /* ======================== */
+  /* Primary Color Palette    */
+  /* ======================== */
+
+  /* Surface and Background Colors */
+  --color-background-darkest: #121212;  /* Main body background */
+  --color-background-dark: #1e1e1e;     /* Component and card backgrounds */
+  --color-background-light: #222222;    /* Slightly lighter shades, for footers or sidebars */
+  --color-background-medium: #2a2a2a;   /* For elements that need to stand out from cards */
+  
+  /* Text and Foreground Colors */
+  --color-text-primary: #e0e0e0;       /* Main text color */
+  --color-text-secondary: #909090;     /* A less focused, but still readable color */
+  --color-text-on-accent: #1e1e1e;      /* Dark text on a light accent color */
+  
+  /* Accent and Interactive Colors */
+  --color-accent-green: #4CAF50;        /* The bright green used for icons */
+  --color-accent-blue: #90d0ff;         /* For links or secondary highlights */
+  --color-accent-light-blue: #d1b5b5;   /* ATC call color */
+  
+  /* Border and Divider Colors */
+  --color-border-subtle: #333333;       /* Subtle borders, for cards and containers */
+  --color-border-strong: #444444;       /* More pronounced borders or separators */
+}

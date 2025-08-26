@@ -1,0 +1,37 @@
+[
+  {
+    "name": "BG367",
+    "fullName": "Biman Bangladesh 367",
+    "details": {
+      "icao": "VGHS",
+      "model": "Boeing 737-800",
+      "type": "Passenger Airliner",
+      "weightCategory": "Medium",
+      "route": "SYLHET",
+      "sid": "ADMIL",
+      "length": "39.5 m",
+      "wingspan": "35.8 m"
+    },
+    "phases": [
+      { "label": "Arrival", "file": "bg367-rt-call-arr.json" },
+      { "label": "Departure", "file": "bg367-rt-call-dep.json" }
+    ]
+  },
+  {
+    "name": "SQ427",
+    "fullName": "Singapore Airlines 427",
+    "details": {
+      "icao": "VGHS",
+      "model": "Airbus A350-900",
+      "type": "Passenger Airliner",
+      "weightCategory": "Heavy",
+      "route": "SINGAPORE",
+      "sid": "KANDI",
+      "length": "66.8 m",
+      "wingspan": "64.8 m"
+    },
+    "phases": [
+      { "label": "Arrival", "file": "sq427-rt-call-arr.json" }
+    ]
+  }
+]

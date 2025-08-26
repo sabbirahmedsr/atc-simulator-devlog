@@ -3,10 +3,10 @@
 /* ======================== */
 body {
     font-family: Arial, sans-serif;
-    background-color: #121212;
-    color: #e0e0e0;
+    background-color: var(--color-background-darkest);
+    color: var(--color-text-primary);
     padding: 20px;
-    margin: 0; /* Ensures no default margin on the body */
+    margin: 0;
     padding-bottom: 60px;
 }
 
@@ -15,7 +15,7 @@ body {
 /* ======================== */
 .main-heading {
     text-align: center;
-    color: #e0e0e0;
+    color: var(--color-text-primary);
     margin-bottom: 40px;
     font-size: 2.5em;
     font-weight: bold;
@@ -36,8 +36,8 @@ body {
 /* Individual Card Styling */
 /* ======================== */
 .card {
-    background-color: #1e1e1e;
-    border: 1px solid #333;
+    background-color: var(--color-background-dark);
+    border: 1px solid var(--color-border-subtle);
     border-radius: 8px;
     padding: 40px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -52,14 +52,14 @@ body {
 
 .icon-box {
     font-size: 3.5em;
-    color: #4CAF50;
+    color: var(--color-accent-green);
     margin-bottom: 10px;
 }
 
 .title-box h3 {
     margin: 0;
     font-size: 1.2em;
-    color: #e0e0e0;
+    color: var(--color-text-primary);
 }
 
 .card-link {
@@ -73,12 +73,12 @@ body {
 footer {
     position: fixed;
     bottom: 0;
-    left: 0; /* Aligns the footer to the left edge of the viewport */
+    left: 0;
     width: 100%;
-    background-color: #222;
-    padding: 15px 0; /* Reduced padding to make it thinner */
+    background-color: var(--color-background-light);
+    padding: 15px 0;
     text-align: center;
-    color: #e0e0e0;
+    color: var(--color-text-primary);
 }
 
 /* ======================== */

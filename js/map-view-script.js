@@ -1,9 +1,14 @@
 const canvas = document.getElementById('mapCanvas');
 const ctx = canvas.getContext('2d');
 
+// Get the airport code from the URL
+const urlParams = new URLSearchParams(window.location.search);
+const airportCode = urlParams.get('airport') || 'vghs'; // Default to 'vghs' if not found
+
 // --- DYNAMIC DATA AND IMAGE PATHS ---
-const jsonPath = document.body.getAttribute('data-json-path');
-const imagePath = document.body.getAttribute('data-image-path');
+// Construct paths based on the airport code from the URL
+const jsonPath = `../data/map-view/${airportCode}_node_data.json`;
+const imagePath = `../image/${airportCode}_runway.png`;
 
 // Zoom/pan variables FIRST!
 let scale = 1;
@@ -49,16 +54,16 @@ let visibleNodeTypes = Object.fromEntries(nodeTypeNames.map(type => [type, true]
 
 // Color mapping for node types
 const nodeTypeColors = {
-    PreArrival:      "#00ffb3",
-    Arrival:         "#00ffc8",
-    Arr_Taxiway:     "#00e673",
-    Gate_Inbound:    "#00b386",
-    Gate_Outbound:   "#ffb347",
-    Dep_Taxiway:     "#ff9933",
-    Departure:       "#ff8000",
-    PostDeparture:   "#ff6600",
-    More_OnSky:      "#00e6e6",
-    More_OnGround:   "#b3b3b3"
+    PreArrival:       "#00ffb3",
+    Arrival:          "#00ffc8",
+    Arr_Taxiway:      "#00e673",
+    Gate_Inbound:     "#00b386",
+    Gate_Outbound:    "#ffb347",
+    Dep_Taxiway:      "#ff9933",
+    Departure:        "#ff8000",
+    PostDeparture:    "#ff6600",
+    More_OnSky:       "#00e6e6",
+    More_OnGround:    "#b3b3b3"
 };
 
 // Resize canvas to fill window
@@ -313,24 +318,20 @@ function drawScene() {
 }
 
 // Fetch the node data using the dynamic path
-if (jsonPath) {
-    fetch(jsonPath)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            nodeData = data.nodes;
-            drawScene();
-        })
-        .catch(error => {
-            console.error('Error loading node data:', error);
-        });
-} else {
-    console.error("No data-json-path attribute found on the body tag.");
-}
+fetch(jsonPath)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        nodeData = data.nodes;
+        drawScene();
+    })
+    .catch(error => {
+        console.error('Error loading node data:', error);
+    });
 
 // Create checkboxes
 function createNodeTypeFilters() {

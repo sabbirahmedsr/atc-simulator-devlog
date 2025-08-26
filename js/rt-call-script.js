@@ -1,7 +1,7 @@
 /* ====================================
-   Module 1: Core Utilities
-   Description: Contains fundamental functions used throughout the application, like data fetching from JSON files and the main application initializer.
-   ==================================== */
+    Module 1: Core Utilities
+    Description: Contains fundamental functions used throughout the application, like data fetching from JSON files and the main application initializer.
+    ==================================== */
 
 const fetchData = async (url, errorMessage) => {
     try {
@@ -17,18 +17,26 @@ const fetchData = async (url, errorMessage) => {
 };
 
 const initializeApp = async () => {
-    const body = document.body;
-    const airportCode = body.dataset.airport;
-    const dataPath = body.dataset.dataPath;
+    // --- Start of change ---
+    const urlParams = new URLSearchParams(window.location.search);
+    const airportCode = urlParams.get('airport');
 
-    if (!airportCode || !dataPath) {
-        console.error('Data attributes missing from body tag. Cannot load data.');
-        return;
+    if (!airportCode) {
+        // Redirect to the default airport URL
+        window.location.href = 'rt-call.html?airport=vghs';
+        return; // Stop the function from running further
     }
+
+    const dataPath = `../data/rt-call/${airportCode}-rt-call/`;
+    const pageTitle = `${airportCode.toUpperCase()} RT Call Log`;
+
+    document.title = pageTitle;
+    document.querySelector('.main-content h1').textContent = pageTitle;
+    // --- End of change ---
 
     const [aircraftList, tooltips] = await Promise.all([
         fetchData(`${dataPath}aircraftList.json`, 'aircraftList.json'),
-        fetchData('../data/variableTooltip.json', 'variableTooltip.json')
+        fetchData('../data/rt-call/variable-tooltip.json', 'variable-tooltip.json')
     ]);
 
     if (!aircraftList || !tooltips) {
@@ -48,9 +56,9 @@ const initializeApp = async () => {
 };
 
 /* ====================================
-   Module 2: DOM Rendering & UI Updates
-   Description: Handles all dynamic rendering of HTML elements, including tables, titles, and individual call rows.
-   ==================================== */
+    Module 2: DOM Rendering & UI Updates
+    Description: Handles all dynamic rendering of HTML elements, including tables, titles, and individual call rows.
+    ==================================== */
 const updateMainTitle = (fullName, phaseLabel) => {
     const mainTitle = document.querySelector('.main-content h1');
     if (mainTitle) {
@@ -229,8 +237,8 @@ const createButtonOrIcon = (call) => {
 };
 
 /* ====================================
-   Module 3: Event Listeners
-   ==================================== */
+    Module 3: Event Listeners
+    ==================================== */
 
 const setupEventListeners = (aircraftList, tooltips, dataPath) => {
     const navPanel = document.getElementById('nav-panel');
@@ -252,6 +260,6 @@ const setupEventListeners = (aircraftList, tooltips, dataPath) => {
 };
 
 /* ====================================
-   Module 4: Initial Call
-   ==================================== */
+    Module 4: Initial Call
+    ==================================== */
 document.addEventListener('DOMContentLoaded', initializeApp);

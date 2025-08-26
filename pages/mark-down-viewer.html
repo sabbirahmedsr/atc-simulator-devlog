@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamic Project Updates</title>
+    <link rel="stylesheet" href="../css/global-styles.css">
     <link rel="stylesheet" href="../css/mark-down-style.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
@@ -18,7 +19,7 @@
                 // Get the URL search parameters
                 const urlParams = new URLSearchParams(window.location.search);
                 // Check for a 'file' parameter, or use 'updates.md' as the default
-                const markdownFile = urlParams.get('file') || '../md/phase-2-plan.md';
+                const markdownFile = urlParams.get('file') || '../data/mark-down/phase-2-plan.md';
                 
                 // Fetch the markdown file
                 const response = await fetch(markdownFile);

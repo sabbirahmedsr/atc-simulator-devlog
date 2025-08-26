@@ -1,12 +1,12 @@
 body {
-    background: #181A20;
+    background: var(--color-background-darkest);
     margin: 0;
     overflow: hidden;
 }
 
 canvas {
     display: block;
-    background: #181A20;
+    background: var(--color-background-darkest);
 }
 
 #nodeTypeFilters {
@@ -14,10 +14,12 @@ canvas {
     top: 10px;
     left: 10px;
     z-index: 10;
-    color: #0ff;
-    background: #222;
+    color: var(--color-text-primary);
+    background: var(--color-background-medium);
     padding: 8px;
     border-radius: 8px;
+    border: 1px solid var(--color-border-subtle);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 #nodeTypeFilters label {
