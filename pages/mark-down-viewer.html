@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Project Updates</title>
+    <link rel="stylesheet" href="../css/mark-down-style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="content-container"></div>
+    </div>
+
+    <script>
+        async function loadContent() {
+            try {
+                // Get the URL search parameters
+                const urlParams = new URLSearchParams(window.location.search);
+                // Check for a 'file' parameter, or use 'updates.md' as the default
+                const markdownFile = urlParams.get('file') || '../md/phase-2-plan.md';
+                
+                // Fetch the markdown file
+                const response = await fetch(markdownFile);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok, or the file does not exist.');
+                }
+                const markdownText = await response.text();
+
+                // Convert markdown to HTML
+                const rawHtml = marked.parse(markdownText);
+                
+                // Process the HTML to create collapsible sections
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = rawHtml;
+                const sections = tempDiv.querySelectorAll('h3');
+                
+                let finalHtml = '';
+                sections.forEach(header => {
+                    const title = header.textContent;
+                    let contentHtml = '';
+                    let sibling = header.nextElementSibling;
+                    while (sibling && sibling.tagName !== 'H3') {
+                        contentHtml += sibling.outerHTML;
+                        sibling = sibling.nextElementSibling;
+                    }
+                    
+                    const collapsibleBlock = `
+                        <div class="collapsible-container">
+                            <div class="collapsible-header">${title}</div>
+                            <div class="collapsible-content">${contentHtml}</div>
+                        </div>
+                    `;
+                    finalHtml += collapsibleBlock;
+                });
+                
+                document.getElementById('content-container').innerHTML = finalHtml;
+                
+                // Re-apply the collapsible behavior to the new content
+                document.querySelectorAll('.collapsible-header').forEach((header, index) => {
+                    header.addEventListener('click', () => {
+                        const content = header.nextElementSibling;
+                        const isActive = header.classList.contains('active');
+                        
+                        document.querySelectorAll('.collapsible-header.active').forEach(openHeader => {
+                            if (openHeader !== header) {
+                                openHeader.classList.remove('active');
+                                openHeader.nextElementSibling.style.maxHeight = '0';
+                                openHeader.nextElementSibling.style.padding = '0 15px';
+                            }
+                        });
+                        
+                        if (!isActive) {
+                            header.classList.add('active');
+                            content.style.maxHeight = content.scrollHeight + 'px';
+                            content.style.padding = '10px 15px';
+                        } else {
+                            header.classList.remove('active');
+                            content.style.maxHeight = '0';
+                            content.style.padding = '0 15px';
+                        }
+                    });
+
+                    // Automatically open the first section on page load
+                    if (index === 0) {
+                        header.classList.add('active');
+                        header.nextElementSibling.style.maxHeight = header.nextElementSibling.scrollHeight + 'px';
+                        header.nextElementSibling.style.padding = '10px 15px';
+                    }
+                });
+            } catch (error) {
+                console.error('Error fetching or processing markdown:', error);
+                document.getElementById('content-container').innerHTML = '<p>Error loading content.</p>';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadContent);
+    </script>
+</body>
+</html>
