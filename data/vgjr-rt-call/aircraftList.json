@@ -1,0 +1,17 @@
+[
+  {
+    "name": "BG367",
+    "fullName": "Biman Bangladesh 367",
+    "phases": [
+      { "label": "Arrival", "file": "bg367-rt-call-arr.json" },
+      { "label": "Departure", "file": "bg367-rt-call-dep.json" }
+    ]
+  },
+  {
+    "name": "SQ427",
+    "fullName": "Singapore Airlines 427",
+    "phases": [
+      { "label": "Arrival", "file": "bg367-rt-call-arr.json" }
+    ]
+  }
+]

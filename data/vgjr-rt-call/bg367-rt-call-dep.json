@@ -1,0 +1,142 @@
+[
+  {
+    "phase": "Startup & Pushback",
+    "transition": "Gate to Taxiway",
+    "calls": [
+      {
+        "type": "Initial Call",
+        "content": "Dhaka Ground, {BG 367}, request startup and pushback",
+        "buttonCaption": "Request Startup"
+      },
+      {
+        "type": "ATC Call",
+        "content": "{BG 367}, startup and pushback approved, {Temp 32}, {Time 1200}, {push to face north}"
+      },
+      {
+        "type": "Feedback",
+        "content": "Copied, startup and pushback approved, {Temp 32}, {Time 1200}, {push to face north}, {BG 367}",
+        "buttonCaption": "Confirm Approved"
+      }
+    ]
+  },
+  {
+    "phase": "Taxi",
+    "transition": "Taxiway to Holding Point",
+    "calls": [
+      {
+        "type": "Initial Call",
+        "content": "Dhaka Ground, {BG 367}, request taxi",
+        "buttonCaption": "Request Taxi"
+      },
+      {
+        "type": "ATC Call",
+        "content": "{BG 367}, taxi via {C-N-N2} to holding point runway-{Runway 14}, {QNH 1013}, {Squawk Code 4771}"
+      },
+      {
+        "type": "Feedback",
+        "content": "{QNH 1013}, {Squawk Code 4771}, taxi via {C-N-N2} to holding point runway-{Runway 14}, {BG 367}",
+        "buttonCaption": "Confirm Taxi"
+      }
+    ]
+  },
+  {
+    "phase": "ATC Clearance",
+    "transition": "Holding Point to Takeoff",
+    "calls": [
+      {
+        "type": "Initial Call",
+        "content": "Dhaka Ground, {BG 367}, approaching holding point rwy {Runway 14}, like to change to tower",
+        "buttonCaption": "Request Clearance"
+      },
+      {
+        "type": "ATC Call",
+        "content": "{BG 367}, cleared to {Chittagong} {SID ADMIL ONE}, climb and cruise {FL 290}"
+      },
+      {
+        "type": "Feedback",
+        "content": "Over to tower, {BG 367}",
+        "buttonCaption": "Confirm Clearance"
+      }
+    ]
+  },
+  {
+    "phase": "Line Up",
+    "transition": "Holding Point to Runway",
+    "calls": [
+      {
+        "type": "Initial Call",
+        "content": "Dhaka Tower, {BG 367}, request line up",
+        "buttonCaption": "Request Lineup"
+      },
+      {
+        "type": "ATC Call",
+        "content": "{BG 367}, line up runway {Runway 14}, report ready for departure"
+      },
+      {
+        "type": "Feedback",
+        "content": "Line up runway {Runway 14}, call you ready for departure, {BG 367}",
+        "buttonCaption": "Confirm Lineup"
+      }
+    ]
+  },
+  {
+    "phase": "Departure",
+    "transition": "Takeoff",
+    "calls": [
+      {
+        "type": "Initial Call",
+        "content": "Dhaka Tower, {BG 367}, ready for Departure",
+        "buttonCaption": "Request Departure"
+      },
+      {
+        "type": "ATC Call",
+        "content": "{BG 367}, {SID ADMIL ONE}, initially {FL-130}, surface wind {260/60kts}, cleared for takeoff runway {Runway 14}"
+      },
+      {
+        "type": "Feedback",
+        "content": "s/w copied, runway {Runway 14}, cleared for takeoff approved Departure, {BG 367}",
+        "buttonCaption": "Confirm Takeoff"
+      }
+    ]
+  },
+  {
+    "phase": "Airborne",
+    "transition": "Airborne Climb to Cruise",
+    "calls": [
+      {
+        "type": "Initial Call",
+        "content": "Dhaka Tower, {BG 367}, airborne at {Airborne Time 1300}",
+        "buttonCaption": "Report Airborne"
+      },
+      {
+        "type": "ATC Call",
+        "content": "{BG 367}, airborne {Airborne Time 1300}, report passing {4000ft}"
+      },
+      {
+        "type": "Feedback",
+        "content": "Airborne copied, call you passing {4000ft}, {BG 367}",
+        "buttonCaption": "Confirm Passing"
+      }
+    ]
+  },
+  {
+    "phase": "Transfer",
+    "transition": "Climb to Enroute",
+    "calls": [
+      {
+        "type": "Initial Call",
+        "content": "{BG 367}, passing {4000ft}",
+        "buttonCaption": "Report Passing"
+      },
+      {
+        "type": "ATC Call",
+        "content": "{BG 367}, contact {Dhaka Control} on {126.7}"
+      },
+      {
+        "type": "Feedback",
+        "content": "Over to {Dhaka Control}, good day, {BG 367}",
+        "buttonCaption": "Transfer Control"
+      }
+    ]
+  }
+]
