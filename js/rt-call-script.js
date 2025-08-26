@@ -28,7 +28,7 @@ const initializeApp = async () => {
 
     const [aircraftList, tooltips] = await Promise.all([
         fetchData(`${dataPath}aircraftList.json`, 'aircraftList.json'),
-        fetchData('/data/variableTooltip.json', 'variableTooltip.json')
+        fetchData('../data/variableTooltip.json', 'variableTooltip.json')
     ]);
 
     if (!aircraftList || !tooltips) {

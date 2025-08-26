@@ -212,7 +212,7 @@ th, td {
     text-transform: none;
     letter-spacing: normal;
     color: #909090;
-    width: 12%;
+    width: 80px;
 }
 
 .calls-table td:last-child {
