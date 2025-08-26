@@ -21,12 +21,6 @@ const initializeApp = async () => {
     const urlParams = new URLSearchParams(window.location.search);
     const airportCode = urlParams.get('airport');
 
-    if (!airportCode) {
-        // Redirect to the default airport URL
-        window.location.href = 'rt-call.html?airport=vghs';
-        return; // Stop the function from running further
-    }
-
     const dataPath = `../data/rt-call/${airportCode}-rt-call/`;
     const pageTitle = `${airportCode.toUpperCase()} RT Call Log`;
 
