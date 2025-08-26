@@ -134,8 +134,44 @@ h1 {
     color: #bb86fc;
     font-weight: 700;
     margin-bottom: 30px;
-    border-bottom: 2px solid #bb86fc;
+    border-bottom: 2px solid #bb86fc; /* REMOVE THIS LINE */
     padding-bottom: 15px;
+}
+
+.section-divider {
+    border: 0;
+    height: 1px;
+    background-color: #bb86fc;
+    margin: 30px 0;
+}
+
+/* ====================================
+   Aircraft Details Table
+   ==================================== */
+.aircraft-details-table {
+    width: 100%;
+    max-width: 900px; /* Adjust this value as needed */
+    margin: 0 auto; /* This centers the table horizontally */
+    border-collapse: collapse;
+    margin-bottom: 30px; /* Adds space between this table and the call log */
+}
+
+.aircraft-details-table th, 
+.aircraft-details-table td {
+    border: 1px solid #444;
+    padding: 10px 15px;
+    text-align: left;
+}
+
+.aircraft-details-table th {
+    background-color: #2a2a2a;
+    color: #bb86fc;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.aircraft-details-table td {
+    background-color: #1e1e1e;
 }
 
 /* ====================================
