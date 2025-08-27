@@ -1,0 +1,391 @@
+/*
+ * Module: Page Layout and Theming
+ * Description: This file contains the visual styling for the aircraft list page, using global variables
+ * defined in global-styles.css. It defines the overall page structure and the appearance of individual
+ * components, including the fixed navigation panel and the responsive card grid.
+ */
+
+/* ====================================
+    General Page Layout
+    ==================================== */
+body {
+    background-color: var(--color-background-darkest);
+    color: var(--color-text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    /* We'll use a single container for the main content to simplify layout */
+}
+
+/* ====================================
+    Navigation Panel
+    ==================================== */
+#navigation-panel {
+    position: fixed; /* Keep the navigation panel in place */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 200px; /* Adjusted width */
+    background-color: var(--color-background-dark);
+    padding: 20px;
+    border-right: 1px solid var(--color-border-subtle);
+    overflow-y: auto;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+#navigation-panel h3 {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--color-border-subtle);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+#navigation-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    margin-bottom: 8px;
+}
+
+.nav-link-button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--color-text-primary);
+    background-color: transparent;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-link-button:hover {
+    background-color: var(--color-background-medium);
+    transform: translateX(5px);
+}
+
+.selected-nav-button {
+    background-color: transparent !important;
+    color: var(--color-accent-blue) !important;
+    font-weight: bold;
+    border: 1px solid var(--color-accent-blue);
+    box-shadow: none;
+}
+
+.nav-link-button .nav-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-border-subtle);
+}
+
+/* ====================================
+    Main Content & Card Styles
+    ==================================== */
+.main-content {
+    margin-left: 240px; /* Adjusted margin-left to match the new nav panel width + 20px gap */
+    padding: 2rem 1rem;
+}
+
+/* Sub-Module: Highlight Effect */
+/* This class will be added via JavaScript to the selected card */
+.highlighted-card {
+    border: 2px solid var(--color-accent-blue) !important;
+    box-shadow: 0 0 20px var(--color-accent-blue);
+    transform: scale(1.02);
+    transition: all 0.5s ease;
+}
+
+/* ====================================
+    Page Header
+   ==================================== */
+.page-header {
+    background: var(--color-background-dark);
+    color: var(--color-text-primary);
+    padding: 0.4rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem; /* Adds a gap below the heading */
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-text-primary);
+}
+
+.page-header h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--color-text-secondary);
+    margin-top: 0.5rem;
+}
+
+/* ====================================
+    Filter Dropdown
+    ==================================== */
+.filter-container {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    flex-wrap: wrap; /* Allows filters to wrap on smaller screens */
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.filter-group label {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.filter-container select {
+    padding: 0.75rem 2.5rem 0.75rem 1rem; /* Increased padding for more width */
+    background-color: var(--color-background-dark);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23FFFFFF" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1.25rem;
+    min-width: 150px; /* Ensures the dropdowns are wide enough */
+}
+
+#clear-filters-btn {
+    background-color: var(--color-background-dark);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border-subtle);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    white-space: nowrap;
+}
+
+#clear-filters-btn:hover {
+    background-color: var(--color-background-medium);
+    border-color: var(--color-accent-blue);
+}
+
+/* ====================================
+    Card Grid
+    ==================================== */
+.card-container {
+    display: grid;
+    /* We'll use a larger minmax value to get the two-column layout */
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+/* ====================================
+    Individual Aircraft Card
+    ==================================== */
+.aircraft-card {
+    background-color: var(--color-background-dark);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.aircraft-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Card Image Section --- */
+.card-image-container {
+    width: 100%;
+    padding-bottom: 56.25%; /* 9 / 16 = 0.5625 */
+    position: relative;
+    overflow: hidden;
+}
+
+.aircraft-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.aircraft-card:hover .aircraft-image {
+    transform: scale(1.05);
+}
+
+/* --- Image Attribution --- */
+.image-attribution {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--color-text-primary);
+    font-size: 0.7rem;
+    padding: 2px 5px;
+    border-radius: 4px;
+    z-index: 10;
+}
+
+.image-attribution a {
+    color: var(--color-text-primary);
+    text-decoration: underline;
+}
+
+/* --- Card Text Content Section --- */
+.card-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header {
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--color-border-subtle);
+    padding-bottom: 10px;
+    position: relative; /* Added to act as a positioning context for the button */
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--color-text-primary);
+}
+
+.card-header p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+/* --- External Link Buttons --- */
+.external-link-btn {
+    position: absolute;
+    top: 10px;
+    right: 40px; /* Adjusted position to make space for the new button */
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 1.2rem; /* Smaller font size */
+}
+
+.google-search-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 1.2rem; /* Smaller font size */
+}
+
+.highlighted-card .external-link-btn,
+.highlighted-card .google-search-btn {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ====================================
+    Card Details Grid
+    ==================================== */
+.card-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+.detail-item {
+    background-color: var(--color-background-light);
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid var(--color-border-subtle);
+    position: relative; /* Allows positioning for the new buttons */
+}
+
+.detail-item .label {
+    font-weight: bold;
+    font-size: 0.75rem;
+    color: var(--color-accent-blue);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.detail-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-primary);
+}
+
+/* New: Style for detail-item buttons */
+.detail-item-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.highlighted-card .detail-item-btn {
+    opacity: 1;
+    visibility: visible;
+}
+
+.detail-item-btn:hover {
+    color: var(--color-accent-blue);
+}
+
+/* ====================================
+    Icons & Other Elements
+    ==================================== */
+.icon {
+    margin-right: 8px;
+    color: var(--color-accent-green);
+}
+
+/* Additional utility classes based on the new palette */
+.error-message {
+    color: var(--color-accent-light-blue);
+    text-align: center;
+    padding: 20px;
+}

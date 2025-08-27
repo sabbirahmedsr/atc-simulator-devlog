@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aircraft Catalog</title>
+    <link rel="stylesheet" href="../css/global-styles.css">
+    <link rel="stylesheet" href="../css/aircraft-catalog-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <aside id="navigation-panel"></aside>
+
+    <main class="main-content">
+        <header class="page-header">
+            <h1>Aircraft Catalog</h1>
+            <h3>List of aircraft for BAF ATC simulator Project</h3>
+        </header>
+
+        <div class="filter-container">
+            <div class="filter-group">
+                <label for="icao-filter">ICAO:</label>
+                <select id="icao-filter">
+                    <option value="all">All</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="iata-filter">IATA:</label>
+                <select id="iata-filter">
+                    <option value="all">All</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="type-filter">Type:</label>
+                <select id="type-filter">
+                    <option value="all">All</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="weight-filter">Weight:</label>
+                <select id="weight-filter">
+                    <option value="all">All</option>
+                </select>
+            </div>
+            <button id="clear-filters-btn">Clear Filters</button>
+        </div>
+
+        <section id="card-container" class="card-container"></section>
+    </main>
+
+    <script src="../js/aircraft-catalog-script.js"></script>
+
+</body>
+</html>
