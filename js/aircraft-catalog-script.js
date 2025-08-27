@@ -75,6 +75,11 @@ const getSourceDomainFromUrl = (url) => {
  */
 const createAircraftCardHtml = (aircraft) => {
     const sourceDomain = getSourceDomainFromUrl(aircraft.imageUrl);
+
+    // Provide default values if 'origin' or 'destination' are missing to prevent the error.
+    const origin = aircraft.origin || 'N/A, N/A';
+    const destination = aircraft.destination || 'N/A, N/A';
+
     return `
         <div class="aircraft-card" id="aircraft-${aircraft.callSign}">
             <div class="card-image-container">
@@ -99,15 +104,15 @@ const createAircraftCardHtml = (aircraft) => {
                 <div class="card-details">
                     <div class="detail-item">
                         <span class="label"><i class="fa-solid fa-plane-departure icon"></i>Origin</span>
-                        <p>${aircraft.origin}</p>
-                        <a href="#" class="detail-item-btn" data-type="origin" data-icao-code="${aircraft.origin.split(',')[0].trim()}">
+                        <p>${origin}</p>
+                        <a href="#" class="detail-item-btn" data-type="origin" data-icao-code="${origin.split(',')[0].trim()}">
                             <i class="fa-solid fa-square-arrow-up-right"></i>
                         </a>
                     </div>
                     <div class="detail-item">
                         <span class="label"><i class="fa-solid fa-plane-arrival icon"></i>Destination</span>
-                        <p>${aircraft.destination}</p>
-                        <a href="#" class="detail-item-btn" data-type="destination" data-icao-code="${aircraft.destination.split(',')[0].trim()}">
+                        <p>${destination}</p>
+                        <a href="#" class="detail-item-btn" data-type="destination" data-icao-code="${destination.split(',')[0].trim()}">
                             <i class="fa-solid fa-square-arrow-up-right"></i>
                         </a>
                     </div>
