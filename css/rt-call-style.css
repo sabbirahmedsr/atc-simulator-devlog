@@ -15,33 +15,36 @@ body {
 .page-container {
     background-color: var(--color-background-dark);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    /* Removed max-width and margin: 0 auto to eliminate the left-side gap */
 }
 
 /* ====================================
     Module 2: Navigation Panel
-    Description: Styles the fixed sidebar navigation, including its layout, scrollbar, and the segments that organize the links.
+    Description: Styles the fixed sidebar navigation, including its layout and scrollbar.
     ==================================== */
 
 #nav-panel {
-    width: 150px;
+    width: 180px;
     padding: 20px;
-    background-color: var(--color-background-darkest); /* Changed to match the overall background */
+    background-color: var(--color-background-darkest);
     border-right: 1px solid var(--color-border-subtle);
     flex-shrink: 0;
     position: fixed;
     top: 0;
     bottom: 0;
-    left: 0; /* Ensures no gap on the left */
+    left: 0;
     overflow-y: auto;
     z-index: 1000;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5); /* Added shadow for a better visual separation */
+    gap: 10px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Sub-module 2.1: Navigation Scrollbar */
+/* ====================================
+    Module 2.1: Navigation Scrollbar
+    Description: Styles the scrollbar for the navigation panel.
+    ==================================== */
+
 #nav-panel::-webkit-scrollbar {
     width: 8px;
 }
@@ -55,51 +58,104 @@ body {
     border-radius: 4px;
 }
 
-/* Sub-module 2.2: Navigation Links and Segments */
+/* ====================================
+    Module 2.2: Navigation Links and Segments
+    Description: Styles the navigation links within the panel. The top-level links are unified with category buttons, while dynamic links have a distinct style.
+    ==================================== */
+
+/* This is the unified style for sub-category buttons */
 .nav-link-button {
     display: block;
-    color: var(--color-text-primary);
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 8px 15px;
     margin-bottom: 5px;
-    border-radius: 4px;
-    transition: background-color 0.2s, color 0.2s;
-    font-weight: 500;
+    border-radius: 8px;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    background-color: var(--color-background-medium); 
+    color: var(--color-text-primary);
+    border: 2px solid var(--color-background-medium);
+    transition: transform 0.1s, background-color 0.1s, border-color 0.1s;
 }
 
 .nav-link-button:hover {
-    background-color: var(--color-border-subtle);
+    border-color: var(--color-accent-green);
+    transform: translateX(4px);
 }
 
 .nav-link-button.active {
     background-color: var(--color-accent-green);
     color: var(--color-text-on-accent);
+    border-color: var(--color-accent-green);
+    box-shadow: none;
+    animation: none;
+}
+
+/* This overrides the above style for the dynamic title links */
+.nav-link-button.dynamic-nav-link {
+    background-color: transparent;
+    border: 2px solid var(--color-border-strong);
+    color: var(--color-text-primary);
+    font-weight: 500;
+    padding: 8px 15px;
+    text-align: left;
+    transform: none; /* remove hover translation */
+}
+
+.nav-link-button.dynamic-nav-link:hover {
+    background-color: var(--color-background-medium); 
+    border-color: var(--color-accent-green);
+    transform: translateX(6px); /* add hover translation */
+}
+
+.nav-link-button.dynamic-nav-link.active {
+    background-color: var(--color-accent-green);
+    color: var(--color-text-on-accent);
     font-weight: bold;
 }
 
-.nav-link-button:not(:last-of-type) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 5px;
-    padding-bottom: 5px;
-}
 
-.nav-segment {
-    margin-bottom: 15px;
+/* ====================================
+    Module 2.3: Category Filter Buttons
+    Description: Styles the interactive buttons that filter the call sessions.
+    ==================================== */
+
+.category-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-bottom: 10px;
     border-bottom: 2px solid var(--color-accent-green);
-    padding-bottom: 15px;
 }
 
-.nav-segment:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-}
-
-.nav-segment h3 {
+.category-filter-button {
+    background-color: var(--color-background-medium);    
+    color: var(--color-text-primary);    
+    border: 2px solid var(--color-background-medium);
+    padding: 10px;
+    border-radius: 8px;
     text-align: center;
-    color: var(--color-accent-green);
-    font-size: 1.2em;
-    font-weight: 700;
-    margin: 0 0 10px 0;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.1s, border-color 0.1s;
+}
+
+.category-filter-button:hover {
+    border-color: var(--color-accent-green);
+    transform: translateX(4px);
+}
+
+.category-filter-button.active {
+    background-color: var(--color-accent-green);
+    color: var(--color-text-on-accent);
+    border-color: var(--color-accent-green);
+    box-shadow: none;
+    animation: none;
 }
 
 /* ====================================
@@ -110,29 +166,33 @@ body {
 .main-content {
     flex-grow: 1;
     padding: 40px;
-    margin-left: 191px; /* Adjusted margin for the nav panel's width (150px) + padding (20px) + a small gap (21px) */
+    margin-left: 191px;
 }
 
-/* Sub-module 3.1: Main Heading and Dividers */
+/* ====================================
+    Module 3.1: Main Heading and Dividers
+    Description: Styles the main title of the content area.
+    ==================================== */
+
 h1 {
     text-align: center;
     color: var(--color-accent-green);
     font-weight: 700;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     border-bottom: 2px solid var(--color-accent-green);
-    padding-bottom: 15px;
+    padding-bottom: 10px;
 }
 
 .section-divider {
     border: 0;
     height: 1px;
     background-color: var(--color-accent-green);
-    margin: 30px 0;
+    margin: 20px 0;
 }
 
 /* ====================================
     Module 4: Call Session Component
-    Description: Defines the layout and styles for a single communication session, which is composed of the MetaData and CallData sub-components.
+    Description: Defines the layout and styles for a single communication session.
     ==================================== */
 
 .call-session-wrapper {
@@ -141,9 +201,11 @@ h1 {
     margin-bottom: 30px;
 }
 
-/* Sub-module 4.1: MetaData Sub-component
+/* ====================================
+    Module 4.1: MetaData Sub-component
     Description: Styles the left-hand table that displays the session's title, number, and route information.
     ==================================== */
+
 .meta-data-table {
     flex-shrink: 0;
     width: 135px;
@@ -191,17 +253,21 @@ h1 {
     border-bottom-left-radius: 8px;
 }
 
-/* Sub-module 4.2: CallData Sub-component
+/* ====================================
+    Module 4.2: CallData Sub-component
     Description: Styles the right-hand table that displays the call transcriptions (Initial, ATC, Feedback).
     ==================================== */
+
 .call-data-table {
     flex-grow: 1;
     border-collapse: collapse;
 }
 
-/* Sub-module 4.3: Common Table and Row Styles
+/* ====================================
+    Module 4.3: Common Table and Row Styles
     Description: Applies shared styling to cells and rows across both the MetaData and CallData tables for a consistent look.
     ==================================== */
+
 th, td {
     padding: 10px 18px;
     text-align: left;
@@ -229,17 +295,42 @@ th, td {
     border-bottom-right-radius: 8px;
 }
 
+/* This is the new highlighting style */
+.call-session-wrapper.highlighted {
+    animation: pulse-fade 1s forwards;
+}
+
+@keyframes pulse-fade {
+    0% {
+        box-shadow: 0 0 0px var(--color-accent-green);
+    }
+    50% {
+        box-shadow: 0 0 5px 5px var(--color-accent-green);
+    }
+    100% {
+        box-shadow: 0 0 0px var(--color-accent-green);
+    }
+}
+
 /* ====================================
     Module 5: Call Transcription and Variables
     Description: Styles the text content of the calls, including distinct colors for different call types and interactive tooltips for variables.
     ==================================== */
 
-/* Sub-module 5.1: Call Type Colors */
+/* ====================================
+    Module 5.1: Call Type Colors
+    Description: Assigns specific colors to different types of call transcriptions.
+    ==================================== */
+
 .call-initial-call { color: #90d0ff; }
 .call-atc-call { color: #d1b5b5; }
 .call-feedback { color: #90c4ff; }
 
-/* Sub-module 5.2: Variable Text and Tooltips */
+/* ====================================
+    Module 5.2: Variable Text and Tooltips
+    Description: Styles the text and popups for dynamic variables within the call content.
+    ==================================== */
+
 .variable-text {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
@@ -296,7 +387,11 @@ th, td {
     Description: Styles the command buttons for pilot calls and the ATC headset icon.
     ==================================== */
 
-/* Sub-module 6.1: Button Container */
+/* ====================================
+    Module 6.1: Button Container
+    Description: Sets the layout for the container holding command buttons or icons.
+    ==================================== */
+
 .button-cell {
     width: 150px;
     text-align: right;
@@ -312,7 +407,11 @@ th, td {
     width: 100%;
 }
 
-/* Sub-module 6.2: Command Buttons and Icons */
+/* ====================================
+    Module 6.2: Command Buttons and Icons
+    Description: Styles the interactive command buttons and the ATC icon.
+    ==================================== */
+
 .command-button {
     background-color: var(--color-border-subtle);
     color: var(--color-text-primary);
@@ -347,7 +446,11 @@ th, td {
     Description: Styles the popup that displays a session's description, including the overlay, content box, and button.
     ==================================== */
 
-/* Sub-module 7.1: Popup Overlay and Content */
+/* ====================================
+    Module 7.1: Popup Overlay and Content
+    Description: Styles the background overlay and the main content box of the popup.
+    ==================================== */
+
 .popup-overlay {
     position: fixed;
     top: 0;
@@ -385,7 +488,11 @@ th, td {
     line-height: 1.5;
 }
 
-/* Sub-module 7.2: Popup Button */
+/* ====================================
+    Module 7.2: Popup Button
+    Description: Styles the 'OK' button within the popup window.
+    ==================================== */
+
 .popup-ok-button {
     background-color: var(--color-accent-green);
     color: var(--color-text-on-accent);
@@ -401,7 +508,11 @@ th, td {
     color: var(--color-text-primary);
 }
 
-/* Sub-module 7.3: Popup Animation */
+/* ====================================
+    Module 7.3: Popup Animation
+    Description: Defines the animation for the popup's appearance.
+    ==================================== */
+
 @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.95); }
     to { opacity: 1; transform: scale(1); }

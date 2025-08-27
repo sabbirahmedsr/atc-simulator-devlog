@@ -1,5 +1,6 @@
 /* ====================================
     Module 1: Core Utilities & Data Fetching
+    Description: Provides foundational functions for fetching data and normalizing strings.
     ==================================== */
 
 /**
@@ -49,6 +50,7 @@ const initializeApp = async () => {
 
 /* ====================================
     Module 2: UI Rendering & DOM Manipulation
+    Description: Contains functions for rendering and updating the main content area based on data.
     ==================================== */
 
 /**
@@ -58,7 +60,7 @@ const initializeApp = async () => {
 const updateMainTitle = (category) => {
     const mainTitle = document.querySelector('.main-content h1');
     if (mainTitle) {
-        mainTitle.textContent = `${category} RT Call Log`;
+        mainTitle.textContent = `${category} Call Log`;
     }
 };
 
@@ -76,9 +78,16 @@ const renderCallSessions = (sessionsData, categoryName, tooltipData) => {
 
     const totalSessions = sessionsData.length;
 
+    if (totalSessions === 0) {
+        contentContainer.innerHTML = '<p class="no-data-message">No call logs found for this category.</p>';
+        return;
+    }
+
     sessionsData.forEach((sessionData, index) => {
         const sessionWrapper = document.createElement('div');
         sessionWrapper.classList.add('call-session-wrapper');
+        // Add a unique ID to each session for navigation
+        sessionWrapper.id = `session-${sessionData.title.replace(/\s+/g, '-')}`;
 
         const { metaDataElement, callDataElement } = createCallSessionElements(sessionData, index, totalSessions, tooltipData);
         
@@ -93,6 +102,7 @@ const renderCallSessions = (sessionsData, categoryName, tooltipData) => {
 
 /* ====================================
     Module 2.1: CallSession Component Creation
+    Description: Functions to build the individual DOM elements for each call session.
     ==================================== */
 
 /**
@@ -130,6 +140,11 @@ const createCallSessionElements = (sessionData, index, totalSessions, tooltipDat
     return { metaDataElement, callDataElement };
 };
 
+/* ====================================
+    Module 2.2: CallData Sub-component Creation
+    Description: Creates the right-hand table for call transcriptions.
+    ==================================== */
+
 /**
  * Creates the CallData DOM element (the table with call transcriptions).
  * @param {Object} sessionData - The data for a single call session.
@@ -144,7 +159,7 @@ const createCallDataElement = (sessionData, tooltipData) => {
     const rows = [
         { type: 'Initial Call', content: sessionData.initialCall, buttonId: sessionData.initialCommandId, cssClass: 'call-initial-call' , isPilot: true },
         { type: 'ATC Call', content: sessionData.atcCall, buttonId: null, cssClass: 'call-atc-call' , isPilot: false },
-        { type: 'Feedback Call', content: sessionData.feedbackCall, buttonId: sessionData.feedbackCommandId, cssClass: 'call-feedback' , isPilot: true }
+        { type: 'Feedback', content: sessionData.feedbackCall, buttonId: sessionData.feedbackCommandId, cssClass: 'call-feedback' , isPilot: true }
     ];
 
     rows.forEach(rowInfo => {
@@ -169,6 +184,11 @@ const createCallDataElement = (sessionData, tooltipData) => {
     callDataElement.appendChild(tbody);
     return callDataElement;
 };
+
+/* ====================================
+    Module 2.3: Call Content Formatting
+    Description: Replaces variable placeholders with styled spans for tooltips.
+    ==================================== */
 
 /**
  * Replaces variable placeholders in call content with styled spans and tooltip data.
@@ -196,6 +216,11 @@ const formatCallContent = (content, tooltipData) => {
     });
 };
 
+/* ====================================
+    Module 2.4: Button and Icon Creation
+    Description: Creates a command button or ATC icon based on row information.
+    ==================================== */
+
 /**
  * Creates a command button or ATC icon based on the row information.
  * @param {Object} rowInfo - The data for the current table row.
@@ -217,6 +242,11 @@ const createButtonOrIcon = (rowInfo) => {
     }
     return wrapper;
 };
+
+/* ====================================
+    Module 2.5: Popup System
+    Description: Manages the display and functionality of a descriptive popup.
+    ==================================== */
 
 /**
  * Displays a popup with a description.
@@ -252,10 +282,15 @@ const showDescriptionPopup = (title, description) => {
 };
 
 /* ====================================
-    Module 3: Event Listeners
+    Module 3: Event Listeners & Navigation
+    Description: Manages the interactive components of the UI, including tooltips and the navigation panel.
     ==================================== */
 
-// Sub-module for Tooltip Event Logic
+/* ====================================
+    Module 3.1: Tooltip Logic
+    Description: Sets up and manages the hover-based tooltips for variables.
+    ==================================== */
+
 let tooltipTimeout;
 
 /**
@@ -302,69 +337,193 @@ const hideTooltip = (element) => {
     element.classList.remove('visible');
 };
 
-// Sub-module for Navigation Logic
+/* ====================================
+    Module 3.2: Navigation Logic
+    Description: Sets up the two-tier navigation panel with filtering functionality.
+    ==================================== */
+
 /**
  * Sets up the two-tier navigation panel.
  * @param {Object} data - The main call data object.
  * @param {Object} tooltipData - The data for variable tooltips.
  */
 const setupNavigation = (data, tooltipData) => {
-    const navPanel = document.getElementById('nav-panel');
-    navPanel.innerHTML = '';
+    const filterContainer = document.getElementById('category-filter-container');
+    
+    // Clear existing content
+    filterContainer.innerHTML = '';
+    
     const mainCategories = Object.keys(data);
+    const captions = {
+        'allArrivalCall': 'ARRIVAL',
+        'allDepartureCall': 'DEPARTURE',
+        'allCircuitCall': 'CIRCUIT',
+        'allSpecialCall': 'SPECIAL'
+    };
 
-    mainCategories.forEach((mainCategoryKey) => {
-        const segment = document.createElement('div');
-        segment.classList.add('nav-segment');
-        
-        const heading = document.createElement('h3');
-        heading.textContent = mainCategoryKey.replace('all', '').replace('Call', '').toUpperCase();
-        segment.appendChild(heading);
+    // Create and append category filter buttons
+    const filterGroup = document.createElement('div');
+    filterGroup.classList.add('category-filter-group');
+    
+    mainCategories.forEach(categoryKey => {
+        const button = document.createElement('button');
+        button.textContent = captions[categoryKey] || categoryKey.replace('all', '').replace('Call', '').toUpperCase();
+        button.classList.add('category-filter-button');
+        button.dataset.categoryKey = categoryKey;
+        filterGroup.appendChild(button);
 
-        const allCallsLink = document.createElement('a');
-        allCallsLink.href = '#';
-        allCallsLink.textContent = `ALL CALLS`;
-        allCallsLink.classList.add('nav-link-button');
-        segment.appendChild(allCallsLink);
-
-        allCallsLink.addEventListener('click', (event) => {
-            event.preventDefault();
-            document.querySelectorAll('.nav-link-button').forEach(link => link.classList.remove('active'));
-            allCallsLink.classList.add('active');
-            renderCallSessions(data[mainCategoryKey], allCallsLink.textContent, tooltipData);
+        button.addEventListener('click', () => {
+            document.querySelectorAll('.category-filter-button').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            renderNavigationAndContent(categoryKey, data, tooltipData);
         });
+    });
+    filterContainer.appendChild(filterGroup);
 
-        const uniqueCategories = [...new Set(data[mainCategoryKey].map(item => item.category))];
+    const firstButton = document.querySelector('.category-filter-button');
+    if (firstButton) {
+        firstButton.classList.add('active');
+        renderNavigationAndContent(firstButton.dataset.categoryKey, data, tooltipData);
+    }
+};
 
-        uniqueCategories.forEach((category) => {
-            const navLink = document.createElement('a');
-            navLink.href = '#';
-            navLink.textContent = category.toUpperCase();
-            navLink.classList.add('nav-link-button');
-            segment.appendChild(navLink);
+/**
+ * Renders the sub-navigation links and the main content based on the selected category.
+ * @param {string} categoryKey - The key for the main category (e.g., 'allArrivalCall').
+ * @param {Object} data - The main call data object.
+ * @param {Object} tooltipData - The data for variable tooltips.
+ */
+const renderNavigationAndContent = (categoryKey, data, tooltipData) => {
+    const phaseListContainer = document.getElementById('phase-list-container');
+    
+    // Always clear the existing navigation links before rendering new ones
+    phaseListContainer.innerHTML = '';
 
-            navLink.addEventListener('click', (event) => {
-                event.preventDefault();
-                document.querySelectorAll('.nav-link-button').forEach(link => link.classList.remove('active'));
-                navLink.classList.add('active');
+    const shortCaptions = {
+        'allArrivalCall': 'Arr',
+        'allDepartureCall': 'Dep',
+        'allCircuitCall': 'Cct',
+        'allSpecialCall': 'Spl'
+    };
+    
+    const fullNames = {
+        'allArrivalCall': 'Arrival',
+        'allDepartureCall': 'Departure',
+        'allCircuitCall': 'Circuit',
+        'allSpecialCall': 'Special'
+    };
 
-                const filteredData = data[mainCategoryKey].filter(item => item.category === category);
-                renderCallSessions(filteredData, category, tooltipData);
-            });
-        });
+    const shortName = shortCaptions[categoryKey] || categoryKey.replace('all', '').replace('Call', '').substring(0, 3);
+    const fullName = fullNames[categoryKey] || categoryKey.replace('all', '').replace('Call', '');
 
-        navPanel.appendChild(segment);
+    const allCallsLink = document.createElement('a');
+    allCallsLink.href = '#';
+    allCallsLink.textContent = `ALL ${shortName.toUpperCase()} CALL`;
+    allCallsLink.classList.add('nav-link-button', 'active');
+    phaseListContainer.appendChild(allCallsLink);
+
+    allCallsLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        document.querySelectorAll('.nav-link-button').forEach(link => link.classList.remove('active'));
+        allCallsLink.classList.add('active');
+        renderCallSessions(data[categoryKey], `All ${fullName} Calls`, tooltipData);
+        renderSubNavigationLinks(data[categoryKey]);
     });
 
-    const firstAllCallsLink = document.querySelector('.nav-link-button');
-    if (firstAllCallsLink) {
-        firstAllCallsLink.classList.add('active');
-        const firstMainCategoryKey = mainCategories[0];
-        renderCallSessions(data[firstMainCategoryKey], firstAllCallsLink.textContent, tooltipData);
+    const uniqueCategories = [...new Set(data[categoryKey].map(item => item.category))];
+    uniqueCategories.forEach((category) => {
+        const navLink = document.createElement('a');
+        navLink.href = '#';
+        navLink.textContent = category.toUpperCase();
+        navLink.classList.add('nav-link-button');
+        phaseListContainer.appendChild(navLink);
+
+        navLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            document.querySelectorAll('.nav-link-button').forEach(link => link.classList.remove('active'));
+            navLink.classList.add('active');
+
+            const filteredData = data[categoryKey].filter(item => item.category === category);
+            
+            renderCallSessions(filteredData, category, tooltipData);
+            renderSubNavigationLinks(filteredData);
+        });
+    });
+
+    renderCallSessions(data[categoryKey], `All ${fullName} Calls`, tooltipData);
+    renderSubNavigationLinks(data[categoryKey]);
+};
+
+
+/**
+ * Renders the new set of sub-navigation links based on call titles.
+ * @param {Array<Object>} sessionsData - The array of call session data.
+ */
+const renderSubNavigationLinks = (sessionsData) => {
+    const phaseListContainer = document.getElementById('phase-list-container');
+    
+    // Remove existing dynamic navigation links and section divider
+    const existingDynamicElements = phaseListContainer.querySelectorAll('.dynamic-nav-link, .section-divider');
+    existingDynamicElements.forEach(element => element.remove());
+
+    // Add a new section divider
+    const divider = document.createElement('div');
+    divider.classList.add('section-divider');
+    phaseListContainer.appendChild(divider);
+
+    // Create a nav link for each call title
+    sessionsData.forEach((sessionData) => {
+        const navLink = document.createElement('a');
+        navLink.href = `#session-${sessionData.title.replace(/\s+/g, '-')}`;
+        navLink.textContent = sessionData.title;
+        navLink.classList.add('nav-link-button', 'dynamic-nav-link');
+        
+        navLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            const targetId = navLink.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                // Scroll the element into the vertical center of the screen
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Then, highlight the element for a few seconds
+                highlightSelectedCall(targetId);
+            }
+        });
+        
+        phaseListContainer.appendChild(navLink);
+    });
+};
+
+/**
+ * Highlights a selected call session and then removes the highlight after a delay.
+ * @param {string} sessionId - The ID of the session to highlight.
+ */
+const highlightSelectedCall = (sessionId) => {
+    // Remove highlight from all highlighted sessions to ensure a fresh start
+    document.querySelectorAll('.call-session-wrapper.highlighted').forEach(el => {
+        el.classList.remove('highlighted');
+    });
+
+    // Add highlight to the new selected session
+    const selectedSession = document.getElementById(sessionId);
+    if (selectedSession) {
+        // Force a DOM reflow to restart the animation
+        void selectedSession.offsetWidth; 
+
+        selectedSession.classList.add('highlighted');
+
+        // Remove the highlight class after the animation duration (0.5s)
+        setTimeout(() => {
+            selectedSession.classList.remove('highlighted');
+        }, 1000); // Matches the new animation duration
     }
 };
 
 /* ====================================
     Module 4: Initial Call
+    Description: The entry point of the application, which triggers the data fetching process.
     ==================================== */
+
 document.addEventListener('DOMContentLoaded', initializeApp);
