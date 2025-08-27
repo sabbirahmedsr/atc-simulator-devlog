@@ -1,5 +1,6 @@
 /* ====================================
-    General Layout and Base Styles
+    Module 1: Core Utilities and Variables
+    Description: Defines foundational styles for the body and main page container.
     ==================================== */
 
 body {
@@ -21,7 +22,8 @@ body {
 }
 
 /* ====================================
-    Navigation Panel & Links
+    Module 2: Navigation Panel
+    Description: Styles the fixed sidebar navigation, including its layout, scrollbar, and the segments that organize the links.
     ==================================== */
 
 #nav-panel {
@@ -39,6 +41,7 @@ body {
     gap: 15px;
 }
 
+/* Sub-module 2.1: Navigation Scrollbar */
 #nav-panel::-webkit-scrollbar {
     width: 8px;
 }
@@ -52,6 +55,7 @@ body {
     border-radius: 4px;
 }
 
+/* Sub-module 2.2: Navigation Links and Segments */
 .nav-link-button {
     display: block;
     color: var(--color-text-primary);
@@ -99,7 +103,8 @@ body {
 }
 
 /* ====================================
-    Main Content and Heading
+    Module 3: Main Content Area
+    Description: Styles the primary content section of the page, including the main heading and section dividers.
     ==================================== */
 
 .main-content {
@@ -107,6 +112,7 @@ body {
     padding: 40px;
 }
 
+/* Sub-module 3.1: Main Heading and Dividers */
 h1 {
     text-align: center;
     color: var(--color-accent-green);
@@ -124,18 +130,19 @@ h1 {
 }
 
 /* ====================================
-    CallSession Component Styles
+    Module 4: Call Session Component
+    Description: Defines the layout and styles for a single communication session, which is composed of the MetaData and CallData sub-components.
     ==================================== */
 
-/* Main container for a single communication session (MetaData + CallData) */
 .call-session-wrapper {
     display: flex;
     gap: 5px;
     margin-bottom: 30px;
 }
 
-/* --- MetaData Sub-component Styles --- */
-/* Styles for the MetaData table (title/route) */
+/* Sub-module 4.1: MetaData Sub-component
+    Description: Styles the left-hand table that displays the session's title, number, and route information.
+    ==================================== */
 .meta-data-table {
     flex-shrink: 0;
     width: 135px;
@@ -143,7 +150,6 @@ h1 {
     border-collapse: collapse;
 }
 
-/* The title cell with the session title and number */
 .meta-data-title-cell {
     font-weight: 900;
     color: var(--color-accent-green);
@@ -158,14 +164,12 @@ h1 {
     transition: filter 0.2s ease-in-out, border 0.2s ease-in-out;
 }
 
-/* Hover effect for the title cell, adding a button-like border */
 .meta-data-title-cell:hover {
     filter: brightness(1.2);
     border: 1px solid var(--color-accent-green);
     box-sizing: border-box;
 }
 
-/* The small session number within the title cell */
 .meta-data-title-cell .meta-data-number {
     display: inline;
     font-size: 1em;
@@ -174,7 +178,6 @@ h1 {
     margin: 0;
 }
 
-/* The route or transition text cell */
 .meta-data-route {
     font-size: 0.9em;
     font-weight: 500;
@@ -187,15 +190,17 @@ h1 {
     border-bottom-left-radius: 8px;
 }
 
-/* --- CallData Sub-component Styles --- */
-/* Styles for the CallData table (transcriptions) */
+/* Sub-module 4.2: CallData Sub-component
+    Description: Styles the right-hand table that displays the call transcriptions (Initial, ATC, Feedback).
+    ==================================== */
 .call-data-table {
     flex-grow: 1;
     border-collapse: collapse;
 }
 
-/* --- Common Table Styles --- */
-/* Common cell padding and background for both MetaData and CallData tables */
+/* Sub-module 4.3: Common Table and Row Styles
+    Description: Applies shared styling to cells and rows across both the MetaData and CallData tables for a consistent look.
+    ==================================== */
 th, td {
     padding: 10px 18px;
     text-align: left;
@@ -205,13 +210,11 @@ th, td {
     border-radius: 0;
 }
 
-/* Hover effect on entire row for both tables */
 .meta-data-table tr:hover td,
 .call-data-table tr:hover td {
     background-color: var(--color-border-subtle);
 }
 
-/* Special styling for the first column of the CallData table */
 .call-data-table td:first-child {
     font-weight: 400;
     text-transform: none;
@@ -220,17 +223,22 @@ th, td {
     width: 80px;
 }
 
-/* Border radius on the last cell of the CallData table */
 .call-data-table td:last-child {
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
 }
 
 /* ====================================
-    Variable Tooltip Styles
+    Module 5: Call Transcription and Variables
+    Description: Styles the text content of the calls, including distinct colors for different call types and interactive tooltips for variables.
     ==================================== */
 
-/* Styling for the variable text inside the calls */
+/* Sub-module 5.1: Call Type Colors */
+.call-initial-call { color: #90d0ff; }
+.call-atc-call { color: #d1b5b5; }
+.call-feedback { color: #90c4ff; }
+
+/* Sub-module 5.2: Variable Text and Tooltips */
 .variable-text {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
@@ -241,7 +249,6 @@ th, td {
     cursor: help;
 }
 
-/* Tooltip and arrow pseudo-elements */
 .variable-text::after,
 .variable-text::before {
     position: absolute;
@@ -254,7 +261,6 @@ th, td {
     transition: opacity 0.3s, visibility 0.3s;
 }
 
-/* Tooltip box content and style */
 .variable-text::after {
     content: attr(data-tooltip-text);
     min-width: 200px;
@@ -270,7 +276,6 @@ th, td {
     border: 1px solid var(--color-accent-green);
 }
 
-/* Tooltip arrow */
 .variable-text::before {
     content: "";
     border-width: 5px;
@@ -279,7 +284,6 @@ th, td {
     bottom: 100%;
 }
 
-/* Show tooltip when the 'visible' class is active */
 .variable-text.visible::after,
 .variable-text.visible::before {
     opacity: 1;
@@ -287,10 +291,11 @@ th, td {
 }
 
 /* ====================================
-    Button and Icon Styles
+    Module 6: Buttons and Icons
+    Description: Styles the command buttons for pilot calls and the ATC headset icon.
     ==================================== */
 
-/* Cell containing the command button or icon */
+/* Sub-module 6.1: Button Container */
 .button-cell {
     width: 150px;
     text-align: right;
@@ -298,7 +303,6 @@ th, td {
     vertical-align: middle;
 }
 
-/* Wrapper to center the button/icon vertically */
 .centered-content-wrapper {
     display: flex;
     justify-content: center;
@@ -307,7 +311,7 @@ th, td {
     width: 100%;
 }
 
-/* Styling for the pilot command buttons */
+/* Sub-module 6.2: Command Buttons and Icons */
 .command-button {
     background-color: var(--color-border-subtle);
     color: var(--color-text-primary);
@@ -332,17 +336,17 @@ th, td {
     background-color: var(--color-background-medium);
 }
 
-/* Styling for the ATC icon */
 .command-icon {
     font-size: 1.2em;
     color: var(--color-accent-green);
 }
 
 /* ====================================
-    Popup Styles
+    Module 7: Popup System
+    Description: Styles the popup that displays a session's description, including the overlay, content box, and button.
     ==================================== */
 
-/* Popup overlay that darkens the background */
+/* Sub-module 7.1: Popup Overlay and Content */
 .popup-overlay {
     position: fixed;
     top: 0;
@@ -356,7 +360,6 @@ th, td {
     z-index: 1000;
 }
 
-/* Popup content box */
 .popup-content {
     background-color: var(--color-background-dark);
     padding: 25px;
@@ -381,6 +384,7 @@ th, td {
     line-height: 1.5;
 }
 
+/* Sub-module 7.2: Popup Button */
 .popup-ok-button {
     background-color: var(--color-accent-green);
     color: var(--color-text-on-accent);
@@ -396,7 +400,7 @@ th, td {
     color: var(--color-text-primary);
 }
 
-/* Animation for the popup */
+/* Sub-module 7.3: Popup Animation */
 @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.95); }
     to { opacity: 1; transform: scale(1); }
