@@ -1,0 +1,183 @@
+/*
+ * aircraft-list-style.css
+ * This file contains the visual styling for the aircraft list page.
+ * It uses a modern, dark-themed design with a compact card layout.
+ */
+
+/* ====================================
+   General Page Layout
+   ==================================== */
+body {
+    background-color: var(--color-background-darkest);
+    color: var(--color-text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.page-header {
+    background: var(--color-background-dark);
+    color: var(--color-text-primary);
+    padding: 3rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    color: var(--color-text-secondary);
+}
+
+.main-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+
+/* ====================================
+   Card Container & Grid Layout
+   ==================================== */
+.card-container {
+    display: grid;
+    /* This creates a two-column layout on wide screens, as requested */
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+
+/* ====================================
+   Individual Aircraft Card
+   ==================================== */
+.aircraft-card {
+    background-color: var(--color-background-dark);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.aircraft-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Card Image Section --- */
+.card-image-container {
+    width: 100%;
+    /* This creates a wider than tall aspect ratio (16:9) */
+    padding-bottom: 56.25%; /* 9 / 16 = 0.5625 */
+    position: relative;
+    overflow: hidden;
+}
+
+.aircraft-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.aircraft-card:hover .aircraft-image {
+    transform: scale(1.05);
+}
+
+/* --- Image Attribution --- */
+.image-attribution {
+    position: absolute;
+    bottom: 5px;
+    right: 5px; /* This moves the element to the bottom-right */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 5px;
+    border-radius: 4px;
+    z-index: 10;
+}
+
+.image-attribution a {
+    color: white;
+    text-decoration: underline;
+}
+
+/* --- Card Text Content Section --- */
+.card-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header {
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--color-border-subtle);
+    padding-bottom: 10px;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--color-text-primary);
+}
+
+.card-header p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+
+/* ====================================
+   Card Details Grid
+   ==================================== */
+.card-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+.detail-item {
+    background-color: var(--color-background-light);
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid var(--color-border-subtle);
+}
+
+.detail-item .label {
+    font-weight: bold;
+    font-size: 0.75rem;
+    color: var(--color-accent-blue);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.detail-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-primary);
+}
+
+
+/* ====================================
+   Icons & Other Elements
+   ==================================== */
+.icon {
+    margin-right: 8px;
+    color: var(--color-accent-green);
+}

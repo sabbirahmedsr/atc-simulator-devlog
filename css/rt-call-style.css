@@ -21,7 +21,7 @@ body {
 }
 
 /* ====================================
-    Navigation Panel & Phase Links
+    Navigation Panel & Links
     ==================================== */
 
 #nav-panel {
@@ -52,14 +52,7 @@ body {
     border-radius: 4px;
 }
 
-#nav-panel h2 {
-    color: var(--color-accent-green);
-    font-size: 1.2em;
-    margin-top: 0;
-    margin-bottom: 5px;
-}
-
-.nav-link {
+.nav-link-button {
     display: block;
     color: var(--color-text-primary);
     text-decoration: none;
@@ -70,54 +63,39 @@ body {
     font-weight: 500;
 }
 
-.nav-link:hover {
+.nav-link-button:hover {
     background-color: var(--color-border-subtle);
 }
 
-.nav-link.active {
+.nav-link-button.active {
     background-color: var(--color-accent-green);
     color: var(--color-text-on-accent);
     font-weight: bold;
 }
 
-.phase-separator {
-    border: 0;
-    height: 1px;
-    background-color: var(--color-border-strong);
-    margin: 10px 0;
-}
-
-#phase-list-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.nav-link-button:not(:last-of-type) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 5px;
     padding-bottom: 5px;
 }
 
-.phase-link {
-    font-size: 1.1em;
-    padding: 8px 15px;
-    border-radius: 6px;
-    text-decoration: none;
+.nav-segment {
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--color-accent-green);
+    padding-bottom: 15px;
+}
+
+.nav-segment:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.nav-segment h3 {
     text-align: center;
-    color: var(--color-text-primary);
-    background-color: var(--color-border-subtle);
-    border: 1px solid var(--color-border-strong);
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.1s;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.phase-link:hover {
-    background-color: var(--color-border-strong);
-}
-
-.phase-link.active-phase {
-    background-color: var(--color-accent-green);
-    color: var(--color-text-on-accent);
-    font-weight: bold;
-    border-color: var(--color-accent-green);
+    color: var(--color-accent-green);
+    font-size: 1.2em;
+    font-weight: 700;
+    margin: 0 0 10px 0;
 }
 
 /* ====================================
@@ -133,7 +111,7 @@ h1 {
     text-align: center;
     color: var(--color-accent-green);
     font-weight: 700;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     border-bottom: 2px solid var(--color-accent-green);
     padding-bottom: 15px;
 }
@@ -146,94 +124,27 @@ h1 {
 }
 
 /* ====================================
-    Aircraft Details Table
-    ==================================== */
-.aircraft-details-table {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    border-collapse: collapse;
-    margin-bottom: 30px;
-}
-
-.aircraft-details-table th, 
-.aircraft-details-table td {
-    border: 1px solid var(--color-border-strong);
-    padding: 10px 15px;
-    text-align: left;
-}
-
-.aircraft-details-table th {
-    background-color: var(--color-background-medium);
-    color: var(--color-accent-green);
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.aircraft-details-table td {
-    background-color: var(--color-background-dark);
-}
-
-/* ====================================
-    Table Structure and Styling
+    CallSession Component Styles
     ==================================== */
 
-.phase-wrapper {
+/* Main container for a single communication session (MetaData + CallData) */
+.call-session-wrapper {
     display: flex;
     gap: 5px;
     margin-bottom: 30px;
 }
 
-table {
-    border-collapse: collapse;
-}
-
-.phase-table {
+/* --- MetaData Sub-component Styles --- */
+/* Styles for the MetaData table (title/route) */
+.meta-data-table {
     flex-shrink: 0;
     width: 135px;
     text-align: center;
+    border-collapse: collapse;
 }
 
-.calls-table {
-    flex-grow: 1;
-}
-
-th, td {
-    padding: 10px 18px;
-    text-align: left;
-    vertical-align: middle;
-    border: 1px solid var(--color-background-dark);
-    background-color: var(--color-background-medium);
-    border-radius: 0;
-}
-
-.calls-table td:first-child {
-    font-weight: 400;
-    text-transform: none;
-    letter-spacing: normal;
-    color: var(--color-text-secondary);
-    width: 80px;
-}
-
-.calls-table td:last-child {
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-}
-
-.phase-table tr:hover td,
-.calls-table tr:hover td {
-    background-color: var(--color-border-subtle);
-}
-
-/* ====================================
-    Specific Call & Variable Styles
-    ==================================== */
-
-.call-initial-call { color: #90d0ff; }
-.call-atc-call { color: #d1b5b5; }
-.call-feedback { color: #90c4ff; }
-
-.phase-header-cell {
+/* The title cell with the session title and number */
+.meta-data-title-cell {
     font-weight: 900;
     color: var(--color-accent-green);
     background-color: var(--color-background-medium);
@@ -243,9 +154,19 @@ th, td {
     border-top-left-radius: 8px;
     padding: 10px 18px;
     font-size: 1.2em;
+    cursor: pointer;
+    transition: filter 0.2s ease-in-out, border 0.2s ease-in-out;
 }
 
-.phase-header-cell .phase-index {
+/* Hover effect for the title cell, adding a button-like border */
+.meta-data-title-cell:hover {
+    filter: brightness(1.2);
+    border: 1px solid var(--color-accent-green);
+    box-sizing: border-box;
+}
+
+/* The small session number within the title cell */
+.meta-data-title-cell .meta-data-number {
     display: inline;
     font-size: 1em;
     font-weight: 900;
@@ -253,7 +174,8 @@ th, td {
     margin: 0;
 }
 
-.phase-transition {
+/* The route or transition text cell */
+.meta-data-route {
     font-size: 0.9em;
     font-weight: 500;
     color: var(--color-text-secondary);
@@ -265,6 +187,50 @@ th, td {
     border-bottom-left-radius: 8px;
 }
 
+/* --- CallData Sub-component Styles --- */
+/* Styles for the CallData table (transcriptions) */
+.call-data-table {
+    flex-grow: 1;
+    border-collapse: collapse;
+}
+
+/* --- Common Table Styles --- */
+/* Common cell padding and background for both MetaData and CallData tables */
+th, td {
+    padding: 10px 18px;
+    text-align: left;
+    vertical-align: middle;
+    border: 1px solid var(--color-background-dark);
+    background-color: var(--color-background-medium);
+    border-radius: 0;
+}
+
+/* Hover effect on entire row for both tables */
+.meta-data-table tr:hover td,
+.call-data-table tr:hover td {
+    background-color: var(--color-border-subtle);
+}
+
+/* Special styling for the first column of the CallData table */
+.call-data-table td:first-child {
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: normal;
+    color: var(--color-text-secondary);
+    width: 80px;
+}
+
+/* Border radius on the last cell of the CallData table */
+.call-data-table td:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* ====================================
+    Variable Tooltip Styles
+    ==================================== */
+
+/* Styling for the variable text inside the calls */
 .variable-text {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
@@ -275,52 +241,56 @@ th, td {
     cursor: help;
 }
 
-.variable-text::after {
-    content: attr(data-tooltip-text);
+/* Tooltip and arrow pseudo-elements */
+.variable-text::after,
+.variable-text::before {
     position: absolute;
+    z-index: 10;
     bottom: 125%;
     left: 50%;
     transform: translateX(-50%);
-    width: 200px;
-    background-color: var(--color-border-subtle);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* Tooltip box content and style */
+.variable-text::after {
+    content: attr(data-tooltip-text);
+    min-width: 200px;
+    background-color: var(--color-background-darkest);
     color: var(--color-text-primary);
     text-align: center;
     border-radius: 6px;
     padding: 8px;
-    z-index: 1;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s, visibility 0.3s;
     font-size: 14px;
     line-height: 1.4;
     font-family: Arial, sans-serif;
     white-space: normal;
+    border: 1px solid var(--color-accent-green);
 }
 
+/* Tooltip arrow */
 .variable-text::before {
     content: "";
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
     border-width: 5px;
     border-style: solid;
-    border-color: var(--color-border-subtle) transparent transparent transparent;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s, visibility 0.3s;
+    border-color: var(--color-accent-green) transparent transparent transparent;
+    bottom: 100%;
 }
 
-.variable-text:hover::after,
-.variable-text:hover::before {
-    visibility: visible;
+/* Show tooltip when the 'visible' class is active */
+.variable-text.visible::after,
+.variable-text.visible::before {
     opacity: 1;
+    visibility: visible;
 }
 
 /* ====================================
     Button and Icon Styles
     ==================================== */
 
+/* Cell containing the command button or icon */
 .button-cell {
     width: 150px;
     text-align: right;
@@ -328,6 +298,7 @@ th, td {
     vertical-align: middle;
 }
 
+/* Wrapper to center the button/icon vertically */
 .centered-content-wrapper {
     display: flex;
     justify-content: center;
@@ -336,6 +307,7 @@ th, td {
     width: 100%;
 }
 
+/* Styling for the pilot command buttons */
 .command-button {
     background-color: var(--color-border-subtle);
     color: var(--color-text-primary);
@@ -347,6 +319,7 @@ th, td {
     width: 100%;
     min-height: 40px;
     box-sizing: border-box;
+    transition: background-color 0.2s, transform 0.1s;
 }
 
 .command-button:hover {
@@ -359,7 +332,72 @@ th, td {
     background-color: var(--color-background-medium);
 }
 
+/* Styling for the ATC icon */
 .command-icon {
     font-size: 1.2em;
     color: var(--color-accent-green);
+}
+
+/* ====================================
+    Popup Styles
+    ==================================== */
+
+/* Popup overlay that darkens the background */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Popup content box */
+.popup-content {
+    background-color: var(--color-background-dark);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    border: 2px solid var(--color-accent-green);
+    animation: fadeIn 0.2s ease-out;
+}
+
+.popup-content h2 {
+    color: var(--color-accent-green);
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.popup-content p {
+    color: var(--color-text-primary);
+    margin: 15px 0;
+    line-height: 1.5;
+}
+
+.popup-ok-button {
+    background-color: var(--color-accent-green);
+    color: var(--color-text-on-accent);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.popup-ok-button:hover {
+    background-color: var(--color-border-strong);
+    color: var(--color-text-primary);
+}
+
+/* Animation for the popup */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
 }
