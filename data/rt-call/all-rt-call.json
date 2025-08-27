@@ -203,6 +203,138 @@
       "feedbackCall": "Proceeding direct {Alternate Airport}, {Call_Sign}",
       "initialCommandId": "Request Diversion",
       "feedbackCommandId": "Confirm Diversion"
-    }
+    },
+    {
+      "title": "Final Approach",
+      "category": "VOR",
+      "description": "Dummy data for the final approach segment.",
+      "Route": "Final Approach Course",
+      "initialCall": "Tower, {Call_Sign}, established on final",
+      "atcCall": "{Call_Sign}, cleared to land runway {Runway 22}, wind {270/10kts}",
+      "feedbackCall": "Cleared to land, runway {Runway 22}, {Call_Sign}",
+      "initialCommandId": "Report Final",
+      "feedbackCommandId": "Confirm Landing"
+    },
+    {
+      "title": "Landing",
+      "category": "LANDING",
+      "description": "Dummy data for the landing and runway exit phase.",
+      "Route": "Runway to Taxiway",
+      "initialCall": "{Call_Sign}, on the ground at {15:30}",
+      "atcCall": "{Call_Sign}, taxi to gate {Gate 7} via {Taxiway B}",
+      "feedbackCall": "Taxiing to gate {Gate 7} via {Taxiway B}, {Call_Sign}",
+      "initialCommandId": "Report Landing",
+      "feedbackCommandId": "Confirm Taxi"
+    },
+    {
+      "title": "Holding",
+      "category": "VOR",
+      "description": "Dummy data for holding instructions due to traffic.",
+      "Route": "Airborne Holding Pattern",
+      "initialCall": "Tower, {Call_Sign}, requesting holding instructions",
+      "atcCall": "{Call_Sign}, hold south of the field, expect further clearance at {15:45}",
+      "feedbackCall": "Holding south of the field, {Call_Sign}",
+      "initialCommandId": "Request Holding",
+      "feedbackCommandId": "Confirm Holding"
+    },
+    {
+      "title": "Final Approach",
+      "category": "VOR",
+      "description": "Dummy data for the final approach segment.",
+      "Route": "Final Approach Course",
+      "initialCall": "Tower, {Call_Sign}, established on final",
+      "atcCall": "{Call_Sign}, cleared to land runway {Runway 22}, wind {270/10kts}",
+      "feedbackCall": "Cleared to land, runway {Runway 22}, {Call_Sign}",
+      "initialCommandId": "Report Final",
+      "feedbackCommandId": "Confirm Landing"
+    },
+    {
+      "title": "Landing",
+      "category": "LANDING",
+      "description": "Dummy data for the landing and runway exit phase.",
+      "Route": "Runway to Taxiway",
+      "initialCall": "{Call_Sign}, on the ground at {15:30}",
+      "atcCall": "{Call_Sign}, taxi to gate {Gate 7} via {Taxiway B}",
+      "feedbackCall": "Taxiing to gate {Gate 7} via {Taxiway B}, {Call_Sign}",
+      "initialCommandId": "Report Landing",
+      "feedbackCommandId": "Confirm Taxi"
+    },
+    {
+      "title": "Holding",
+      "category": "VOR",
+      "description": "Dummy data for holding instructions due to traffic.",
+      "Route": "Airborne Holding Pattern",
+      "initialCall": "Tower, {Call_Sign}, requesting holding instructions",
+      "atcCall": "{Call_Sign}, hold south of the field, expect further clearance at {15:45}",
+      "feedbackCall": "Holding south of the field, {Call_Sign}",
+      "initialCommandId": "Request Holding",
+      "feedbackCommandId": "Confirm Holding"
+    },
+    {
+      "title": "Final Approach",
+      "category": "VOR",
+      "description": "Dummy data for the final approach segment.",
+      "Route": "Final Approach Course",
+      "initialCall": "Tower, {Call_Sign}, established on final",
+      "atcCall": "{Call_Sign}, cleared to land runway {Runway 22}, wind {270/10kts}",
+      "feedbackCall": "Cleared to land, runway {Runway 22}, {Call_Sign}",
+      "initialCommandId": "Report Final",
+      "feedbackCommandId": "Confirm Landing"
+    },
+    {
+      "title": "Landing",
+      "category": "LANDING",
+      "description": "Dummy data for the landing and runway exit phase.",
+      "Route": "Runway to Taxiway",
+      "initialCall": "{Call_Sign}, on the ground at {15:30}",
+      "atcCall": "{Call_Sign}, taxi to gate {Gate 7} via {Taxiway B}",
+      "feedbackCall": "Taxiing to gate {Gate 7} via {Taxiway B}, {Call_Sign}",
+      "initialCommandId": "Report Landing",
+      "feedbackCommandId": "Confirm Taxi"
+    },
+    {
+      "title": "Holding",
+      "category": "VOR",
+      "description": "Dummy data for holding instructions due to traffic.",
+      "Route": "Airborne Holding Pattern",
+      "initialCall": "Tower, {Call_Sign}, requesting holding instructions",
+      "atcCall": "{Call_Sign}, hold south of the field, expect further clearance at {15:45}",
+      "feedbackCall": "Holding south of the field, {Call_Sign}",
+      "initialCommandId": "Request Holding",
+      "feedbackCommandId": "Confirm Holding"
+    },
+    {
+      "title": "Final Approach",
+      "category": "VOR",
+      "description": "Dummy data for the final approach segment.",
+      "Route": "Final Approach Course",
+      "initialCall": "Tower, {Call_Sign}, established on final",
+      "atcCall": "{Call_Sign}, cleared to land runway {Runway 22}, wind {270/10kts}",
+      "feedbackCall": "Cleared to land, runway {Runway 22}, {Call_Sign}",
+      "initialCommandId": "Report Final",
+      "feedbackCommandId": "Confirm Landing"
+    },
+    {
+      "title": "Landing",
+      "category": "LANDING",
+      "description": "Dummy data for the landing and runway exit phase.",
+      "Route": "Runway to Taxiway",
+      "initialCall": "{Call_Sign}, on the ground at {15:30}",
+      "atcCall": "{Call_Sign}, taxi to gate {Gate 7} via {Taxiway B}",
+      "feedbackCall": "Taxiing to gate {Gate 7} via {Taxiway B}, {Call_Sign}",
+      "initialCommandId": "Report Landing",
+      "feedbackCommandId": "Confirm Taxi"
+    },
+    {
+      "title": "Holding",
+      "category": "VOR",
+      "description": "Dummy data for holding instructions due to traffic.",
+      "Route": "Airborne Holding Pattern",
+      "initialCall": "Tower, {Call_Sign}, requesting holding instructions",
+      "atcCall": "{Call_Sign}, hold south of the field, expect further clearance at {15:45}",
+      "feedbackCall": "Holding south of the field, {Call_Sign}",
+      "initialCommandId": "Request Holding",
+      "feedbackCommandId": "Confirm Holding"
+    }    
   ]
 }

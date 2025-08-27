@@ -60,7 +60,12 @@ const initializeApp = async () => {
 const updateMainTitle = (category) => {
     const mainTitle = document.querySelector('.main-content h1');
     if (mainTitle) {
-        mainTitle.textContent = `${category} Call Log`;
+        // Check if the category already ends with " Call"
+        if (category.endsWith(' Call')) {
+            mainTitle.textContent = category;
+        } else {
+            mainTitle.textContent = `${category} Call`;
+        }
     }
 };
 
@@ -426,7 +431,7 @@ const renderNavigationAndContent = (categoryKey, data, tooltipData) => {
         event.preventDefault();
         document.querySelectorAll('.nav-link-button').forEach(link => link.classList.remove('active'));
         allCallsLink.classList.add('active');
-        renderCallSessions(data[categoryKey], `All ${fullName} Calls`, tooltipData);
+        renderCallSessions(data[categoryKey], `All ${fullName} Call`, tooltipData);
         renderSubNavigationLinks(data[categoryKey]);
     });
 
@@ -450,7 +455,7 @@ const renderNavigationAndContent = (categoryKey, data, tooltipData) => {
         });
     });
 
-    renderCallSessions(data[categoryKey], `All ${fullName} Calls`, tooltipData);
+    renderCallSessions(data[categoryKey], `All ${fullName} Call`, tooltipData);
     renderSubNavigationLinks(data[categoryKey]);
 };
 
