@@ -13,12 +13,9 @@ body {
 }
 
 .page-container {
-    display: flex;
-    max-width: 95%;
-    margin: 0 auto;
     background-color: var(--color-background-dark);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    min-height: 100vh;
+    /* Removed max-width and margin: 0 auto to eliminate the left-side gap */
 }
 
 /* ====================================
@@ -29,16 +26,19 @@ body {
 #nav-panel {
     width: 150px;
     padding: 20px;
-    background-color: var(--color-background-medium);
+    background-color: var(--color-background-darkest); /* Changed to match the overall background */
     border-right: 1px solid var(--color-border-subtle);
     flex-shrink: 0;
-    height: 100vh;
-    overflow-y: auto;
-    position: sticky;
+    position: fixed;
     top: 0;
+    bottom: 0;
+    left: 0; /* Ensures no gap on the left */
+    overflow-y: auto;
+    z-index: 1000;
     display: flex;
     flex-direction: column;
     gap: 15px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5); /* Added shadow for a better visual separation */
 }
 
 /* Sub-module 2.1: Navigation Scrollbar */
@@ -47,7 +47,7 @@ body {
 }
 
 #nav-panel::-webkit-scrollbar-track {
-    background: var(--color-background-medium);
+    background: var(--color-background-darkest);
 }
 
 #nav-panel::-webkit-scrollbar-thumb {
@@ -110,6 +110,7 @@ body {
 .main-content {
     flex-grow: 1;
     padding: 40px;
+    margin-left: 191px; /* Adjusted margin for the nav panel's width (150px) + padding (20px) + a small gap (21px) */
 }
 
 /* Sub-module 3.1: Main Heading and Dividers */
