@@ -424,8 +424,8 @@ th, td {
 }
 
 /* ====================================
-    Module 6.2: Command Buttons and Icons
-    Description: Styles the interactive command buttons and the ATC icon.
+    Module 6.2.1: Default Command Button Styles
+    Description: Core styles for all interactive command buttons.
     ==================================== */
 
 .command-button {
@@ -451,6 +451,51 @@ th, td {
     transform: translateY(1px);
     background-color: var(--color-background-medium);
 }
+
+/* ====================================
+    Module 6.2.2: "Play On Awake" Inactive State
+    Description: Styles for a button that is less interactive but not fully disabled.
+    ==================================== */
+
+.command-button.inactive {
+    background-color: var(--color-background-medium); /* Add a background color to make it visually distinct */
+    color: var(--color-text-secondary); /* Lighter text color */
+    cursor: default; /* Change cursor to default to signal it's not clickable */
+}
+
+.command-button.inactive:hover {
+    background-color: var(--color-background-medium); /* No change on hover */
+    transform: none; /* Disable transform effects */
+    box-shadow: none;
+}
+
+.command-button.inactive:active {
+    transform: none; /* Disable transform effects */
+    background-color: var(--color-background-medium); /* No change on click */
+}
+
+/* ====================================
+    Module 6.2.3: Null State
+    Description: Styles for a button when no command is available. Fully disabled and unclickable.
+    ==================================== */
+
+.command-button.null-state {
+    background-color: var(--color-background-medium); /* A soft background */
+    border: 1px solid var(--color-background-dark); /* Subtle border to blend in */
+    color: transparent; /* Make the text transparent */
+    pointer-events: none; /* Crucial for making it completely unclickable */
+    cursor: default;
+}
+.command-button.null-state:hover,
+.command-button.null-state:active {
+    background-color: var(--color-background-medium);
+    transform: none;
+}
+
+/* ====================================
+    Module 6.2.4: ATC Icon
+    Description: Styles for the ATC icon.
+    ==================================== */
 
 .command-icon {
     font-size: 1.2em;

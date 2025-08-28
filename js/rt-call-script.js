@@ -150,49 +150,71 @@ const createCallSessionElements = (sessionData, index, totalSessions, tooltipDat
     return { metaDataElement, callDataElement };
 };
 
-
 /* ====================================
-    Module 2.2: CallData Sub-component Creation
-    Description: Creates the right-hand table for call transcriptions.
+    Module 2.2: CallData Component Creation
+    Description: Functions to build the individual DOM elements for the call data (ATC, Feedback) component.
     ==================================== */
 
 /**
- * Creates the CallData DOM element (the table with call transcriptions).
- * @param {Object} sessionData - The data for a single call session.
+ * Replaces variables within a string with styled `<span>` elements for tooltips.
+ * @param {string} text - The original string containing variables.
+ * @param {Object} tooltipData - An object mapping variable names to their descriptions.
+ * @returns {string} The updated string with variables wrapped in `<span>` tags.
+ */
+const replaceVariablesWithSpans = (text, tooltipData) => {
+    // Escape the dollar sign if it's not a special character in regex
+    const variablePattern = /{(\w[\w\s-]*)}/g; 
+
+    // Return the text with variables replaced by styled spans
+    return text.replace(variablePattern, (match, variableName) => {
+        const tooltipText = tooltipData[variableName.trim()] || `No description for "${variableName.trim()}"`;
+        return `<span class="variable-text" data-tooltip-text="${tooltipText}">${match}</span>`;
+    });
+};
+
+/**
+ * Creates the right-hand table element containing the call data (Initial, ATC, Feedback).
+ * @param {Object} sessionData - The data for the current call session.
  * @param {Object} tooltipData - The data for variable tooltips.
  * @returns {HTMLElement} The created table element.
  */
 const createCallDataElement = (sessionData, tooltipData) => {
     const callDataElement = document.createElement('table');
     callDataElement.classList.add('call-data-table');
-    const tbody = document.createElement('tbody');
 
-    const rows = [
-        { type: 'Initial Call', content: sessionData.initialCall, buttonId: sessionData.initialCommandId, cssClass: 'call-initial-call' , isPilot: true },
-        { type: 'ATC Call', content: sessionData.atcCall, buttonId: null, cssClass: 'call-atc-call' , isPilot: false },
-        { type: 'Feedback', content: sessionData.feedbackCall, buttonId: sessionData.feedbackCommandId, cssClass: 'call-feedback' , isPilot: true }
-    ];
-
-    rows.forEach(rowInfo => {
+    const createRow = (label, text, type, commandData) => {
         const row = document.createElement('tr');
-        const typeCell = document.createElement('td');
-        typeCell.textContent = rowInfo.type;
-        row.appendChild(typeCell);
-
-        const contentCell = document.createElement('td');
-        contentCell.classList.add(rowInfo.cssClass);
-        contentCell.innerHTML = formatCallContent(rowInfo.content, tooltipData);
-        row.appendChild(contentCell);
-
+        const labelCell = document.createElement('td');
+        const textCell = document.createElement('td');
         const buttonCell = document.createElement('td');
+
+        labelCell.textContent = label;
+        textCell.innerHTML = replaceVariablesWithSpans(text, tooltipData);
+        textCell.classList.add(`call-${type}`);
+
         buttonCell.classList.add('button-cell');
-        buttonCell.appendChild(createButtonOrIcon(rowInfo));
+
+        // Logic to determine if a button or an icon should be created
+        const isPilot = commandData.caption !== 'ATC';
+        
+        const buttonOrIcon = createButtonOrIcon({ isPilot, buttonId: type }, commandData);
+        buttonCell.appendChild(buttonOrIcon);
+
+        row.appendChild(labelCell);
+        row.appendChild(textCell);
         row.appendChild(buttonCell);
 
-        tbody.appendChild(row);
-    });
+        return row;
+    };
 
-    callDataElement.appendChild(tbody);
+    const initialRow = createRow('Initial Call', sessionData.initialCall, 'initial-call', sessionData.initialCommand);
+    const atcRow = createRow('ATC Call', sessionData.atcCall, 'atc-call', { caption: 'ATC' });
+    const feedbackRow = createRow('Feedback', sessionData.feedbackCall, 'feedback', sessionData.feedbackCommand);
+
+    callDataElement.appendChild(initialRow);
+    callDataElement.appendChild(atcRow);
+    callDataElement.appendChild(feedbackRow);
+
     return callDataElement;
 };
 
@@ -229,22 +251,59 @@ const formatCallContent = (content, tooltipData) => {
 
 /* ====================================
     Module 2.4: Button and Icon Creation
-    Description: Creates a command button or ATC icon based on row information.
+    Description: Creates a command button or ATC icon with enhanced click handling for 'Play On Awake' and a fully disabled state for missing captions.
     ==================================== */
 
 /**
  * Creates a command button or ATC icon based on the row information.
  * @param {Object} rowInfo - The data for the current table row.
+ * @param {Object} [commandData] - Optional: The command data for the button.
  * @returns {HTMLElement} The created button or icon element.
  */
-const createButtonOrIcon = (rowInfo) => {
+const createButtonOrIcon = (rowInfo, commandData) => {
     const wrapper = document.createElement('div');
     wrapper.classList.add('centered-content-wrapper');
 
     if (rowInfo.isPilot) {
         const button = document.createElement('button');
-        button.textContent = rowInfo.buttonId;
+        
+        // Handle no caption case first
+        if (!commandData || !commandData.caption) {
+            button.textContent = ''; // No caption
+            button.classList.add('command-button', 'null-state');
+            
+            // Explicitly prevent any click action
+            button.addEventListener('click', (event) => {
+                event.preventDefault();
+            });
+
+            wrapper.appendChild(button);
+            return wrapper;
+        }
+
+        button.textContent = commandData.caption;
         button.classList.add('command-button');
+
+        // Check the dedicated 'playOnAwake' boolean field
+        if (commandData.playOnAwake === true) {
+            button.classList.add('inactive');
+            // Show the popup on click
+            button.addEventListener('click', (event) => {
+                event.preventDefault();
+                showAutoPlayMessagePopup();
+            });
+        } else {
+            // Original click event for all other interactive buttons
+            button.addEventListener('click', () => {
+                showButtonDetailsPopup(commandData);
+            });
+        }
+
+        // Store the command data for later use
+        button.dataset.mainCommand = commandData.mainCommand;
+        button.dataset.altCommand = JSON.stringify(commandData.altCommand);
+        button.dataset.allParameter = JSON.stringify(commandData.allParameter);
+
         wrapper.appendChild(button);
     } else {
         const icon = document.createElement('i');
@@ -280,6 +339,88 @@ const showDescriptionPopup = (title, description, route) => {
         </div>
         <div class="popup-description-box">
             <p class="popup-description">${description}</p>
+        </div>
+        <button class="popup-ok-button">OK</button>
+    `;
+
+    popupOverlay.appendChild(popupContent);
+    document.body.appendChild(popupOverlay);
+
+    const closePopup = () => {
+        document.body.removeChild(popupOverlay);
+    };
+
+    popupContent.querySelector('.popup-ok-button').addEventListener('click', closePopup);
+    popupOverlay.addEventListener('click', (event) => {
+        if (event.target === popupOverlay) {
+            closePopup();
+        }
+    });
+};
+
+/* ====================================
+    Module 2.6: Button Details Popup
+    Description: Displays a popup with detailed information about a command button, now including requiredToInitiate and requiredToComplete status.
+    ==================================== */
+
+/**
+ * Displays a popup with detailed information from a command object.
+ * @param {Object} commandData - The command data for the button.
+ */
+const showButtonDetailsPopup = (commandData) => {
+    const popupOverlay = document.createElement('div');
+    popupOverlay.classList.add('popup-overlay');
+
+    const popupContent = document.createElement('div');
+    popupContent.classList.add('popup-content');
+
+    const formatArray = (arr) => arr.length > 0 ? arr.join(', ') : 'None';
+
+    const getStatus = (status) => status ? 'Yes' : 'No';
+
+    popupContent.innerHTML = `
+        <h2 class="popup-title">${commandData.caption}</h2>
+        <div class="popup-info">
+            <p><strong>Main Command:</strong> ${commandData.mainCommand || 'None'}</p>
+            <p><strong>Alternate Commands:</strong> ${formatArray(commandData.altCommand)}</p>
+            <p><strong>Parameters:</strong> ${formatArray(commandData.allParameter)}</p>
+            <hr>
+            <p><strong>Required to Initiate:</strong> ${getStatus(commandData.requiredToInitiate)}</p>
+            <p><strong>Required to Complete:</strong> ${getStatus(commandData.requiredToComplete)}</p>
+        </div>
+        <button class="popup-ok-button">OK</button>
+    `;
+
+    popupOverlay.appendChild(popupContent);
+    document.body.appendChild(popupOverlay);
+
+    const closePopup = () => {
+        document.body.removeChild(popupOverlay);
+    };
+
+    popupContent.querySelector('.popup-ok-button').addEventListener('click', closePopup);
+    popupOverlay.addEventListener('click', (event) => {
+        if (event.target === popupOverlay) {
+            closePopup();
+        }
+    });
+};
+
+/**
+ * Displays a popup message for "Play On Awake" buttons.
+ */
+const showAutoPlayMessagePopup = () => {
+    const popupOverlay = document.createElement('div');
+    popupOverlay.classList.add('popup-overlay');
+
+    const popupContent = document.createElement('div');
+    popupContent.classList.add('popup-content');
+    
+    // Updated content with a clear message
+    popupContent.innerHTML = `
+        <h2 class="popup-title">Automated Action</h2>
+        <div class="popup-description-box" style="margin-bottom: 30px;">
+            <p class="popup-description">This command is designed to play automatically and does not require a manual button click.</p>
         </div>
         <button class="popup-ok-button">OK</button>
     `;
@@ -471,7 +612,6 @@ const renderNavigationAndContent = (categoryKey, data, tooltipData) => {
     renderCallSessions(data[categoryKey], `All ${fullName} Call`, tooltipData);
     renderSubNavigationLinks(data[categoryKey]);
 };
-
 
 /**
  * Renders the new set of sub-navigation links based on call titles.

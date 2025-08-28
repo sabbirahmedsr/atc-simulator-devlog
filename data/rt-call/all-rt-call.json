@@ -8,8 +8,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, descending 4000 feet, 20DME inboud DAC",
       "atcCall": "{Call Sign}, {descend 3000ft}, {QNH 1013} report established 12DME arc for DIA-14",
       "feedbackCall": "{QNH 1013}, {descend 3000ft}, call you established 12dme arc {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "approveInbound"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Inbound",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "Entry Call 2",
@@ -19,8 +37,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, descending 4000ft, 15DME inboud DAC",
       "atcCall": "{Call Sign}, {descend 3000ft}, {QNH 1013} report over VOR proceeding outbound of letdown for VDI-14",
       "feedbackCall": "{QNH 1013}, {descend 3000ft}, call you established outbound of letdown for VDI 14 {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "approveInbound"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Inbound",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "Entry Call (Training Area)",
@@ -30,8 +66,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, descending 4000 feet, like to leave training area east, request rejoin instruction",
       "atcCall": "{Call Sign}, {descend 3000ft}, {QNH 1013} report over VOR proceeding outbound of letdown for VDI-14",
       "feedbackCall": "{QNH 1013}, {descend 3000ft}, call you established outbound of letdown for VDI 14 {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "approveInbound"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Inbound",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "VOR Outbound",
@@ -41,8 +95,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, over VOR proceeding outbound of letdown",
       "atcCall": "{Call Sign}, clear for the approach, {descend 3000ft}, report turning inbound",
       "feedbackCall": "Roger, cleared for the approach, {descend 3000ft}, call you turning inbound {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "approveVorOutbound"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Vor Outbound",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "Outbound to Localizer",
@@ -52,8 +124,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, turning inbound",
       "atcCall": "{Call Sign}, report established localizer runway 14",
       "feedbackCall": "call you established localizer, rwy 14 {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "approveLocalizer"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Localizer",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "Localizer to 6DME 1",
@@ -63,8 +153,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, on localizer runway 14",
       "atcCall": "{Call Sign}, report 6 ILS DME",
       "feedbackCall": "call you 6 ILS DME {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "approve6ILSDME"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve 6 ILS DME",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "12 DME Arc to R300",
@@ -74,8 +182,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, established 12DME arc runway-14",
       "atcCall": "{Call Sign}, report crossing R300",
       "feedbackCall": "call you crossing R300 {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "approveR300"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve R300",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "12 DME Arc to R355",
@@ -85,8 +211,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, established 12DME arc runway-14",
       "atcCall": "{Call Sign}, report crossing R355",
       "feedbackCall": "call you crossing R355 {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "approveR355"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve R355",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "R300 to Localizer",
@@ -96,8 +240,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, crossing R300",
       "atcCall": "{Call Sign}, clear for the approach, {descend 3000ft} report established localizer runway 14",
       "feedbackCall": "call you established localizer, rwy 14 {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "approveLocalizer"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Localizer",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "R355 to Localizer",
@@ -107,8 +269,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, crossing R355",
       "atcCall": "{Call Sign}, clear for the approach, {descend 3000ft} report established localizer runway 14",
       "feedbackCall": "call you established localizer, rwy 14 {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "approveLocalizer"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Localizer",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "Localizer to 6DME 2",
@@ -118,8 +298,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, on localizer runway 14",
       "atcCall": "{Call Sign}, report 6 ILS DME",
       "feedbackCall": "call you 6 ILS DME {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "approve6ILSDME"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve 6 ILS DME",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "Final Approach",
@@ -129,8 +327,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, 6 ILS DME",
       "atcCall": "{Call Sign}, check gears down and locked, surface wind 230/05 knots, cleared to land runway-14",
       "feedbackCall": "gears green, s/w copied, Cleared to land {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "approveLanding"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Landing",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "Landed & Taxi",
@@ -140,8 +356,26 @@
       "initialCall": "{DHK TWR} {Call Sign}",
       "atcCall": "{Call Sign}, landed 1200, taxi via S1, after vacating contact ground 121.8",
       "feedbackCall": "taxi via S1, after vacating change to ground 121.8, call you vacated the runway {Call Sign}",
-      "initialCommandId": "",
-      "feedbackCommandId": "giveRunwayVacate"
+      "initialCommand": {
+        "caption": "",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Give Runway Vacate",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "Vacated to Parking",
@@ -151,8 +385,26 @@
       "initialCall": "{DHK GND} {Call Sign}, runway vacated via S1",
       "atcCall": "{Call Sign}, Taxi via S1-S-C to Stand no 5",
       "feedbackCall": "roger, taxi via S1-S-C to Stand no 5 {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "giveTaxiToPark"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Give Taxi To Park",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Ground",
+      "icao": ["VGHS"]
     },
     {
       "title": "Vacated to Termarc",
@@ -162,8 +414,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, runway vacated via SA",
       "atcCall": "{Call Sign}, Taxi via SA to termarc, change to ground 121.8",
       "feedbackCall": "taxi via SA, changing to ground 121.8 {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "giveTaxiToTermarc"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Give Taxi To Termarc",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "Fly Away (3 Miles)",
@@ -173,8 +443,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, 6 ILS DME",
       "atcCall": "{Call Sign}, continue appraoch, expect to bearing to the right at 3 miles",
       "feedbackCall": "roger, continue approach, {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "approve3Miles"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve 3 Miles",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "Fly Away",
@@ -184,8 +472,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, we are at 3 miles turning right, changing to tejgaon",
       "atcCall": "{Call Sign}, change to tejgaon",
       "feedbackCall": "changing to tejgaon {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "approveTransfer"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Transfer",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     }
   ],
   "allDepartureCall": [
@@ -197,8 +503,26 @@
       "initialCall": "{DHK GND} {Call Sign}, request startup",
       "atcCall": "{Call Sign}, startup approved, temp 32, time 40, push to face north",
       "feedbackCall": "startup approved, temp 32, time 1200 {Call Sign}",
-      "initialCommandId": "requestStartup",
-      "feedbackCommandId": "approveStartup"
+      "initialCommand": {
+        "caption": "Request Startup",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Startup",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Ground",
+      "icao": ["VGHS"]
     },
     {
       "title": "Pushback",
@@ -208,8 +532,26 @@
       "initialCall": "{DHK GND} {Call Sign}, request pushback",
       "atcCall": "{Call Sign}, pushback approved, push to face north",
       "feedbackCall": "copied, push to face north, {Call Sign}",
-      "initialCommandId": "requestPushback",
-      "feedbackCommandId": "approvePushback"
+      "initialCommand": {
+        "caption": "Request Pushback",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Pushback",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Ground",
+      "icao": ["VGHS"]
     },
     {
       "title": "Startup & Pushback",
@@ -219,8 +561,26 @@
       "initialCall": "{DHK GND} {Call Sign}, request startup and pushback",
       "atcCall": "{Call Sign}, startup and pushback approved, temp 32, time 40, push to face north",
       "feedbackCall": "copied, startup and pushback approved, temp 32, time 40, push to face north {Call Sign}",
-      "initialCommandId": "requestStartAndPush",
-      "feedbackCommandId": "approveStartPush"
+      "initialCommand": {
+        "caption": "Request Start And Push",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Start Push",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Ground",
+      "icao": ["VGHS"]
     },
     {
       "title": "Taxi",
@@ -230,8 +590,26 @@
       "initialCall": "{DHK GND} {Call Sign}, request taxi",
       "atcCall": "{Call Sign}, taxi via C-N-N2 to holding point runway-14, {QNH 1013}, Squawk 4771",
       "feedbackCall": "{QNH 1013}, Squawk 4771, taxi via C-N-N2 to holding point runway-14 {Call Sign}",
-      "initialCommandId": "requestTaxi",
-      "feedbackCommandId": "approveTaxi"
+      "initialCommand": {
+        "caption": "Request Taxi",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Taxi",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Ground",
+      "icao": ["VGHS"]
     },
     {
       "title": "Military Taxi",
@@ -241,8 +619,26 @@
       "initialCall": "{DHK GND} {Call Sign}, request taxi",
       "atcCall": "{Call Sign}, taxi via NA-P to holding point runway-14, QNH 760, SQUAWK 4771",
       "feedbackCall": "QNH 760, SQUAWK 4141, taxi via NA-P to holding point runway-14 {Call Sign}",
-      "initialCommandId": "requestTaxi",
-      "feedbackCommandId": "approveMilitaryTaxi"
+      "initialCommand": {
+        "caption": "Request Taxi",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Military Taxi",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Ground",
+      "icao": ["VGHS"]
     },
     {
       "title": "ATC Clearance 1 (Run)",
@@ -252,8 +648,26 @@
       "initialCall": "{DHK GND} {Call Sign}, aproaching holding point rwy 14, like to change to tower",
       "atcCall": "{Call Sign}, cleared to [Destination] SID ADMIL ONE, climb and cruse FL 290",
       "feedbackCall": "over to tower {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "giveAtcClearance"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Give Atc Clearance",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Ground",
+      "icao": ["VGHS"]
     },
     {
       "title": "ATC Clearance 2 (End)",
@@ -263,8 +677,26 @@
       "initialCall": "{DHK GND} {Call Sign}, holding point runway 14, like to change to tower",
       "atcCall": "{Call Sign}, contact tower",
       "feedbackCall": "over to tower {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "giveAtcClearance"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Give Atc Clearance",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Ground",
+      "icao": ["VGHS"]
     },
     {
       "title": "Line Up 1",
@@ -274,8 +706,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, request line up",
       "atcCall": "{Call Sign}, line up runway 14, report ready for departure",
       "feedbackCall": "line up runway 14, call you ready for departure {Call Sign}",
-      "initialCommandId": "requestLineUp",
-      "feedbackCommandId": "approveLineUp"
+      "initialCommand": {
+        "caption": "Request Line Up",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Line Up",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "Line Up 2 (Circuit)",
@@ -285,8 +735,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, holding point runway 14, Request line up for cct",
       "atcCall": "{Call Sign}, circuite approved line up runway 14, report ready for departure",
       "feedbackCall": "lining up runway 14 for circuite, call you ready for departure {Call Sign}",
-      "initialCommandId": "requestLineUp",
-      "feedbackCommandId": "approveLineUp"
+      "initialCommand": {
+        "caption": "Request Line Up",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Line Up",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "Line Up 3 (Trg Area)",
@@ -296,8 +764,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, holding point runway 14, Request line up for training area east",
       "atcCall": "",
       "feedbackCall": "lining up runway 14 for trg area east, call you ready for departure {Call Sign}",
-      "initialCommandId": "requestLineUp",
-      "feedbackCommandId": ""
+      "initialCommand": {
+        "caption": "Request Line Up",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "Departure",
@@ -307,8 +793,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, ready for Departure",
       "atcCall": "{Call Sign}, SID ADMIL ONE, initially FL-130, surface wind 260/60kts, cleared for takeoff runway 14",
       "feedbackCall": "s/w copied, runway 14, cleared for takeoff {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "approveDeparture"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Departure",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "Airborne to 4DME",
@@ -318,8 +822,26 @@
       "initialCall": "",
       "atcCall": "{Call Sign}, airborne 1300, report passing 4000ft",
       "feedbackCall": "airborne 1300, call you passing 4000ft {Call Sign}",
-      "initialCommandId": "",
-      "feedbackCommandId": "approveAirborne"
+      "initialCommand": {
+        "caption": "",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Airborne",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "Military Airborne",
@@ -329,8 +851,26 @@
       "initialCall": "",
       "atcCall": "",
       "feedbackCall": "airborne 1300, call you abeam victor one {Call Sign}",
-      "initialCommandId": "",
-      "feedbackCommandId": "approveAirborne"
+      "initialCommand": {
+        "caption": "",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Airborne",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "Transfer to Control",
@@ -340,8 +880,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, passing 4000ft",
       "atcCall": "{Call Sign}, contact dhaka control 126.7",
       "feedbackCall": "over to control, good day {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "approveTransfer"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Transfer",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "Transfer to Training",
@@ -351,8 +909,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, Abeam victor one, 3000ft",
       "atcCall": "{Call Sign}, ????",
       "feedbackCall": "Over to training {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "approveTransfer"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Transfer",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     }
   ],
   "allCircuitCall": [
@@ -364,8 +940,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, victor 1",
       "atcCall": "{Call Sign}, ????",
       "feedbackCall": "call you field inside rwy 14 {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "approveCctState"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Cct State",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "Field to Downwind",
@@ -375,8 +969,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, field inside",
       "atcCall": "{Call Sign}, ????",
       "feedbackCall": "call you downwind {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "approveCctState"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Cct State",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "Downwind to Base 1 (Initial)",
@@ -386,8 +998,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, downwind for initial",
       "atcCall": "{Call Sign}, copied, report initial rwy 14",
       "feedbackCall": "call you initial rwy 14 {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "approveCctState"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Cct State",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "Downwind to Base 2 (Low Go)",
@@ -397,8 +1027,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, downwind for low go",
       "atcCall": "{Call Sign}, copied, report base",
       "feedbackCall": "call you base {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "approveCctState"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Cct State",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "Downwind to Base 3 (Land)",
@@ -408,8 +1056,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, downwind for full stop",
       "atcCall": "{Call Sign}, copied, report base",
       "feedbackCall": "call you base {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "approveCctState"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Cct State",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "Base to Final 1 (Low Go)",
@@ -419,19 +1085,55 @@
       "initialCall": "{DHK TWR} {Call Sign}, base, for low go",
       "atcCall": "{Call Sign}, check gears down and locked S/W calm, report final runway 14",
       "feedbackCall": "Gears are green, s/w copied, runway 14, call you final {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "approveCctState"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Cct State",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "Base to Final 2 (Land)",
       "category": "Circuit Call",
       "description": "A pilot makes this call when turning from the 'base' leg onto the final straight path toward the runway, confirming they will be doing a full stop landing.",
-      "Route": "Base [for Land] - Final [For Land]",
+      "Route": "Down Wind - Base [for Land] - Final [For Land]",
       "initialCall": "{DHK TWR} {Call Sign}, base, for full stop",
-      "atcCall": "{Call Sign}, check gears down and locked S/W calm, report final runway 14",
-      "feedbackCall": "Gears are green, s/w copied, runway 14, call you final {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "approveCctState"
+      "atcCall": "{Call Sign}, check gears down and locked S/W calm, cleared to land",
+      "feedbackCall": "Gears are green, s/w copied, runway 14, cleared to land {Call Sign}",
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Cct State",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "Initial to Crosswind",
@@ -441,8 +1143,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, initial",
       "atcCall": "{Call Sign}, report downwind",
       "feedbackCall": "call you downwind {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "approveCctState"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Cct State",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "Final for Low Go",
@@ -452,8 +1172,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, final",
       "atcCall": "{Call Sign}, recheck gears down and locked S/W calm, runway 14, cleared for low go",
       "feedbackCall": "Gears are green, s/w copied, runway 14, cleared for low go {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "approveCctState"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Cct State",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "Final for Landing",
@@ -463,8 +1201,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, final",
       "atcCall": "{Call Sign}, recheck gears down and locked S/W calm, cleared to land",
       "feedbackCall": "Gears are green, s/w copied, runway 14, cleared to land {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "approveCctState"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Cct State",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     },
     {
       "title": "Crosswind to Downwind",
@@ -474,8 +1230,26 @@
       "initialCall": "{DHK TWR} {Call Sign}, turning cross",
       "atcCall": "{Call Sign}, report downwind",
       "feedbackCall": "call you downwind {Call Sign}",
-      "initialCommandId": "playOnAwake",
-      "feedbackCommandId": "approveCctState"
+      "initialCommand": {
+        "caption": "Play On Awake",
+        "playOnAwake": true,
+        "requiredToInitiate": true,
+        "requiredToComplete": false,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "feedbackCommand": {
+        "caption": "Approve Cct State",
+        "playOnAwake": false,
+        "requiredToInitiate": true,
+        "requiredToComplete": true,
+        "mainCommand": "",
+        "altCommand": [],
+        "allParameter": []
+      },
+      "atcType": "Tower",
+      "icao": ["VGHS"]
     }
   ],
   "allSpecialCall": []
