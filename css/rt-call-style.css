@@ -208,12 +208,27 @@ h1 {
 .call-session-wrapper {
     display: flex;
     gap: 5px;
-    margin-bottom: 20px;
+}
+
+.call-session-wrapper.highlighted {
+    animation: pulse-fade 1s forwards;
+}
+
+@keyframes pulse-fade {
+    0% {
+        box-shadow: 0 0 0px var(--color-accent-green);
+    }
+    50% {
+        box-shadow: 0 0 5px 5px var(--color-accent-green);
+    }
+    100% {
+        box-shadow: 0 0 0px var(--color-accent-green);
+    }
 }
 
 /* ====================================
     Module 4.1: MetaData Sub-component
-    Description: Styles the left-hand table that displays the session's title, number, and route information.
+    Description: Styles the single-cell left-hand table that displays the session's title and number with a lighter font weight, while preventing any size shift on hover.
     ==================================== */
 
 .meta-data-table {
@@ -224,44 +239,35 @@ h1 {
 }
 
 .meta-data-title-cell {
-    font-weight: 900;
+    /* Reduced font weight for a lighter appearance */
+    font-weight: 400; 
     color: var(--color-text-primary);
     background-color: var(--color-background-medium);
     text-align: center;
     vertical-align: middle;
-    border-bottom: none;
-    border-top-left-radius: 8px;
-    padding: 10px 18px;
+    padding: 18px;
     font-size: 1.1em;
     cursor: pointer;
     transition: filter 0.1s ease-in-out, border 0.1s ease-in-out;
+    border-radius: 8px;
+    /* This line prevents the size shift on hover. The border is always there but is transparent by default. */
+    border: 2px solid transparent; 
 }
 
 .meta-data-title-cell:hover {
     filter: brightness(1.2);
-    border: 2px solid var(--color-text-primary);
-    border-top-left-radius: 8px;
+    /* Now the hover only changes the border color, not its size. */
+    border-color: var(--color-text-primary);
     box-sizing: border-box;
 }
 
 .meta-data-title-cell .meta-data-number {
     display: inline;
     font-size: 1em;
-    font-weight: 900;
+    /* Reduced font weight for a lighter appearance */
+    font-weight: 500; 
     color: var(--color-text-primary);
     margin: 0;
-}
-
-.meta-data-route {
-    font-size: 0.9em;
-    font-weight: 500;
-    color: var(--color-text-secondary);
-    background-color: var(--color-background-medium);
-    text-align: center;
-    padding-top: 5px;
-    padding-bottom: 18px;
-    border-top: none;
-    border-bottom-left-radius: 8px;
 }
 
 /* ====================================
@@ -276,7 +282,7 @@ h1 {
 
 /* ====================================
     Module 4.3: Common Table and Row Styles
-    Description: Applies shared styling to cells and rows across both the MetaData and CallData tables for a consistent look.
+    Description: Applies shared styling to cells and rows across the CallData table for a consistent look.
     ==================================== */
 
 th, td {
@@ -306,21 +312,18 @@ th, td {
     border-bottom-right-radius: 8px;
 }
 
-/* This is the new highlighting style */
-.call-session-wrapper.highlighted {
-    animation: pulse-fade 1s forwards;
-}
 
-@keyframes pulse-fade {
-    0% {
-        box-shadow: 0 0 0px var(--color-accent-green);
-    }
-    50% {
-        box-shadow: 0 0 5px 5px var(--color-accent-green);
-    }
-    100% {
-        box-shadow: 0 0 0px var(--color-accent-green);
-    }
+
+/* ====================================
+    Module 4.4: Call Session Divider
+    Description: Styles the subtle line between call sessions for better visual separation.
+    ==================================== */
+
+.call-session-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--color-border-strong);
+    margin: 10px 0;
 }
 
 /* ====================================
@@ -333,6 +336,7 @@ th, td {
     Description: Assigns specific colors to different types of call transcriptions.
     ==================================== */
 
+/*Note for AI: Dont change this color ever, neight remove this note*/
 .call-initial-call { color: #90d0ff; }
 .call-atc-call { color: #d1b5b5; }
 .call-feedback { color: #90c4ff; }
@@ -400,7 +404,7 @@ th, td {
 
 /* ====================================
     Module 6.1: Button Container
-    Description: Sets the layout for the container holding command buttons or icons.
+    Description: Sets the layout for the container holding command buttons or icons, with reduced horizontal padding.
     ==================================== */
 
 .button-cell {
@@ -408,6 +412,7 @@ th, td {
     text-align: right;
     background-color: var(--color-background-medium);
     vertical-align: middle;
+    padding: 8px 8px; 
 }
 
 .centered-content-wrapper {
@@ -454,7 +459,7 @@ th, td {
 
 /* ====================================
     Module 7: Popup System
-    Description: Styles the popup that displays a session's description, including the overlay, content box, and button.
+    Description: Styles the popup that displays a session's description, including the overlay, content box, and button, with enhanced visual separation and a more prominent OK button.
     ==================================== */
 
 /* ====================================
@@ -485,38 +490,77 @@ th, td {
     text-align: center;
     border: 2px solid var(--color-accent-green);
     animation: fadeIn 0.2s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .popup-content h2 {
     color: var(--color-accent-green);
     margin-top: 0;
     font-size: 1.5em;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--color-accent-green);
+    width: fit-content;
+    align-self: center;
 }
 
-.popup-content p {
+.popup-info {
+    margin-bottom: 20px;
+}
+
+.popup-route {
+    color: var(--color-text-secondary);
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+.popup-description-box {
+    background-color: var(--color-background-medium);
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 30px; 
+    text-align: left;
+    font-style: medium;
     color: var(--color-text-primary);
-    margin: 15px 0;
-    line-height: 1.5;
+    width: calc(100% - 40px);
+}
+
+.popup-description {
+    margin: 0;
+    line-height: 1.6;
 }
 
 /* ====================================
     Module 7.2: Popup Button
-    Description: Styles the 'OK' button within the popup window.
+    Description: Styles the 'OK' button within the popup window with a simpler design and increased width.
     ==================================== */
 
 .popup-ok-button {
     background-color: var(--color-accent-green);
     color: var(--color-text-on-accent);
     border: none;
-    padding: 10px 25px;
-    border-radius: 5px;
+    padding: 10px 25px; 
+    border-radius: 5px; 
     cursor: pointer;
+    font-size: 1em; 
+    font-weight: bold; 
     transition: background-color 0.2s, transform 0.1s;
+    width: 120px; 
 }
 
 .popup-ok-button:hover {
     background-color: var(--color-border-strong);
     color: var(--color-text-primary);
+    transform: none; 
+    box-shadow: none;
+}
+
+.popup-ok-button:active {
+    transform: none; 
+    box-shadow: none;
 }
 
 /* ====================================

@@ -100,6 +100,13 @@ const renderCallSessions = (sessionsData, categoryName, tooltipData) => {
         sessionWrapper.appendChild(callDataElement);
 
         contentContainer.appendChild(sessionWrapper);
+        
+        // Add a divider after each session, but not after the last one
+        if (index < totalSessions - 1) {
+            const divider = document.createElement('div');
+            divider.classList.add('call-session-divider');
+            contentContainer.appendChild(divider);
+        }
     });
     
     setupTooltips(tooltipData);
@@ -129,21 +136,20 @@ const createCallSessionElements = (sessionData, index, totalSessions, tooltipDat
                     <span class="meta-data-number">${index + 1} of ${totalSessions}</span><br>${sessionData.title}
                 </td>
             </tr>
-            <tr>
-                <td class="meta-data-route">${sessionData.Route}</td>
-            </tr>
         </tbody>
     `;
 
     const metaDataTitleCell = metaDataElement.querySelector('.meta-data-title-cell');
     metaDataTitleCell.addEventListener('click', () => {
-        showDescriptionPopup(sessionData.title, sessionData.description);
+        // Now passing the route information to the popup function
+        showDescriptionPopup(sessionData.title, sessionData.description, sessionData.Route);
     });
 
     const callDataElement = createCallDataElement(sessionData, tooltipData);
 
     return { metaDataElement, callDataElement };
 };
+
 
 /* ====================================
     Module 2.2: CallData Sub-component Creation
@@ -250,24 +256,31 @@ const createButtonOrIcon = (rowInfo) => {
 
 /* ====================================
     Module 2.5: Popup System
-    Description: Manages the display and functionality of a descriptive popup.
+    Description: Manages the display and functionality of a descriptive popup, now with a cleaner layout and a distinct description box.
     ==================================== */
 
 /**
- * Displays a popup with a description.
+ * Displays a popup with a description and route.
  * @param {string} title - The title for the popup.
  * @param {string} description - The description text for the popup.
+ * @param {string} route - The route text for the popup.
  */
-const showDescriptionPopup = (title, description) => {
+const showDescriptionPopup = (title, description, route) => {
     const popupOverlay = document.createElement('div');
     popupOverlay.classList.add('popup-overlay');
 
     const popupContent = document.createElement('div');
     popupContent.classList.add('popup-content');
 
+    // Updated HTML structure to include the new description box and quotation marks
     popupContent.innerHTML = `
-        <h2>${title}</h2>
-        <p>${description}</p>
+        <h2 class="popup-title">${title}</h2>
+        <div class="popup-info">
+            <p class="popup-route">${route}</p>
+        </div>
+        <div class="popup-description-box">
+            <p class="popup-description">${description}</p>
+        </div>
         <button class="popup-ok-button">OK</button>
     `;
 
