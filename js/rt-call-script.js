@@ -1,7 +1,12 @@
 /* ====================================
-    Module 1: Core Utilities & Data Fetching
-    Description: Provides foundational functions for fetching data and normalizing strings.
-    ==================================== */
+    Module 1: Core Utilities
+    Description: Provides foundational functions for data fetching, string normalization, and the app's entry point.
+    ==================================== */
+
+/* ====================================
+    Module 1.1: Data Fetching
+    Description: A reusable function to fetch and parse JSON data from a given URL.
+    ==================================== */
 
 /**
  * Fetches JSON data from a given URL.
@@ -21,6 +26,11 @@ const fetchData = async (url) => {
     }
 };
 
+/* ====================================
+    Module 1.2: String Normalization
+    Description: Normalizes a string for case-insensitive and flexible variable matching by removing non-alphanumeric characters and converting to lowercase.
+    ==================================== */
+
 /**
  * Normalizes a string by removing non-alphanumeric characters and converting to lowercase.
  * This is used for case-insensitive and flexible variable matching.
@@ -31,27 +41,37 @@ const normalizeString = (str) => {
     return str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
 };
 
+/* ====================================
+    Module 1.3: Application Initialization
+    Description: The entry point that fetches data and starts the UI setup.
+    ==================================== */
+
 /**
  * Initializes the application by fetching all necessary data files.
  */
 const initializeApp = async () => {
-    const [callData, tooltipData] = await Promise.all([
-        fetchData('../data/rt-call/all-rt-call.json'),
-        fetchData('../data/rt-call/variable-tooltip.json')
+    const [callData, commandParameterData] = await Promise.all([
+        fetchData('../data/rt-call/all-rt-call-data.json'),
+        fetchData('../data/rt-call/all-parameter-data.json')
     ]);
 
-    if (!callData || !tooltipData) {
+    if (!callData || !commandParameterData) {
         document.querySelector('.communication-table-container').innerHTML = '<p class="error-message">Could not load all necessary data. Please check the file paths.</p>';
         return;
     }
 
-    setupNavigation(callData, tooltipData);
+    setupNavigation(callData, commandParameterData);
 };
 
 /* ====================================
-    Module 2: UI Rendering & DOM Manipulation
-    Description: Contains functions for rendering and updating the main content area based on data.
-    ==================================== */
+    Module 2: UI Rendering & DOM Manipulation
+    Description: Contains functions for rendering and updating the main content area based on data.
+    ==================================== */
+
+/* ====================================
+    Module 2.1: Main Content Renderer
+    Description: Renders all `CallSession` elements on the page and updates the main title.
+    ==================================== */
 
 /**
  * Updates the main title of the content area.
@@ -109,13 +129,14 @@ const renderCallSessions = (sessionsData, categoryName, tooltipData) => {
         }
     });
     
-    setupTooltips(tooltipData);
+    // Call the original setupTooltips function
+    setupTooltips();
 };
 
 /* ====================================
-    Module 2.1: CallSession Component Creation
-    Description: Functions to build the individual DOM elements for each call session.
-    ==================================== */
+    Module 2.2: Call Session Component Creation
+    Description: Functions to build the individual DOM elements for each call session.
+    ==================================== */
 
 /**
  * Creates and returns the MetaData and CallData DOM elements for a single CallSession.
@@ -151,34 +172,17 @@ const createCallSessionElements = (sessionData, index, totalSessions, tooltipDat
 };
 
 /* ====================================
-    Module 2.2: CallData Component Creation
-    Description: Functions to build the individual DOM elements for the call data (ATC, Feedback) component.
-    ==================================== */
-
-/**
- * Replaces variables within a string with styled `<span>` elements for tooltips.
- * @param {string} text - The original string containing variables.
- * @param {Object} tooltipData - An object mapping variable names to their descriptions.
- * @returns {string} The updated string with variables wrapped in `<span>` tags.
- */
-const replaceVariablesWithSpans = (text, tooltipData) => {
-    // Escape the dollar sign if it's not a special character in regex
-    const variablePattern = /{(\w[\w\s-]*)}/g; 
-
-    // Return the text with variables replaced by styled spans
-    return text.replace(variablePattern, (match, variableName) => {
-        const tooltipText = tooltipData[variableName.trim()] || `No description for "${variableName.trim()}"`;
-        return `<span class="variable-text" data-tooltip-text="${tooltipText}">${match}</span>`;
-    });
-};
+    Module 2.3: Call Data Component Creation
+    Description: Functions to build the individual DOM elements for the call data (ATC, Feedback) component.
+    ==================================== */
 
 /**
  * Creates the right-hand table element containing the call data (Initial, ATC, Feedback).
  * @param {Object} sessionData - The data for the current call session.
- * @param {Object} tooltipData - The data for variable tooltips.
+ * @param {Object} commandParameterData - The data for command parameters.
  * @returns {HTMLElement} The created table element.
  */
-const createCallDataElement = (sessionData, tooltipData) => {
+const createCallDataElement = (sessionData, commandParameterData) => {
     const callDataElement = document.createElement('table');
     callDataElement.classList.add('call-data-table');
 
@@ -189,15 +193,14 @@ const createCallDataElement = (sessionData, tooltipData) => {
         const buttonCell = document.createElement('td');
 
         labelCell.textContent = label;
-        textCell.innerHTML = replaceVariablesWithSpans(text, tooltipData);
+        textCell.innerHTML = formatCallContent(text, commandParameterData);
         textCell.classList.add(`call-${type}`);
 
         buttonCell.classList.add('button-cell');
 
-        // Logic to determine if a button or an icon should be created
         const isPilot = commandData.caption !== 'ATC';
         
-        const buttonOrIcon = createButtonOrIcon({ isPilot, buttonId: type }, commandData);
+        const buttonOrIcon = createButtonOrIcon({ isPilot, buttonId: type }, commandData, commandParameterData);
         buttonCell.appendChild(buttonOrIcon);
 
         row.appendChild(labelCell);
@@ -219,48 +222,75 @@ const createCallDataElement = (sessionData, tooltipData) => {
 };
 
 /* ====================================
-    Module 2.3: Call Content Formatting
-    Description: Replaces variable placeholders with styled spans for tooltips.
+    Module 2.4: Call Content Formatting
+    Description: Replaces variable placeholders with styled spans for tooltips, matching them against values from the command-parameter.json file.
     ==================================== */
+
 
 /**
  * Replaces variable placeholders in call content with styled spans and tooltip data.
  * @param {string} content - The raw call content string.
- * @param {Object} tooltipData - The data for variable tooltips.
+ * @param {Object} commandParameterData - The data for command parameters.
  * @returns {string} The HTML string with formatted variables.
  */
-const formatCallContent = (content, tooltipData) => {
-    const normalizedTooltips = Object.keys(tooltipData).reduce((acc, key) => {
-        acc[normalizeString(key)] = key;
-        return acc;
-    }, {});
+const formatCallContent = (content, commandParameterData) => {
+    let formattedContent = content;
 
-    const regex = /{(.*?)}/g;
-    return content.replace(regex, (match, variableKeyWithSpace) => {
-        const variableKey = variableKeyWithSpace.trim();
-        const normalizedKey = normalizeString(variableKey);
-        const originalKey = normalizedTooltips[normalizedKey];
+    // This regular expression is a bit complex, but it's designed to handle both curly-braced variables and standalone words in a single pass.
+    // It captures either a variable like `{...}` or a standalone word that is a parameter name.
+    const regex = new RegExp(`({[^{}]*?})|(${Object.keys(commandParameterData).join('|')})`, 'gi');
 
-        if (originalKey) {
-            const tooltipText = tooltipData[originalKey];
-            return `{<span class="variable-text" data-tooltip-text="${tooltipText}">${variableKey}</span>}`;
+    formattedContent = formattedContent.replace(regex, (match, variableMatch, nameMatch) => {
+        // Handle a curly-braced variable match
+        if (variableMatch) {
+            const variableValue = variableMatch.slice(1, -1); // Remove the curly braces
+            const normalizedVariable = normalizeString(variableValue);
+
+            for (const paramName in commandParameterData) {
+                const param = commandParameterData[paramName];
+                
+                // Check if the variable matches the parameter's name OR its values
+                const matchFound = (normalizeString(paramName) === normalizedVariable) || 
+                                 param.values.some(paramValue => normalizeString(paramValue) === normalizedVariable);
+
+                if (matchFound) {
+                    const tooltipText = `${paramName}: ${param.description.trim()}`;
+                    return `<span class="variable-text" data-tooltip-text="${tooltipText}">{${variableValue}}</span>`;
+                }
+            }
+            
+            // No match was found for the variable, so give it a default tooltip
+            const noMatchTooltip = `No data found for: ${variableValue}`;
+            return `<span class="no-tooltip-text" data-tooltip-text="${noMatchTooltip}">{${variableValue}}</span>`;
         }
+
+        // Handle a standalone parameter name match
+        if (nameMatch) {
+            const paramName = nameMatch;
+            const param = commandParameterData[paramName];
+            const tooltipText = `${paramName}: ${param.description.trim()}`;
+            return `<span class="variable-text" data-tooltip-text="${tooltipText}">${match}</span>`;
+        }
+
         return match;
     });
+
+    return formattedContent;
 };
 
 /* ====================================
-    Module 2.4: Button and Icon Creation
-    Description: Creates a command button or ATC icon with enhanced click handling for 'Play On Awake' and a fully disabled state for missing captions.
-    ==================================== */
+    Module 2.5: Button and Icon Creation
+    Description: Creates a command button or ATC icon with enhanced click handling for 'Play On Awake' and a fully disabled state for missing captions.
+    ==================================== */
 
 /**
  * Creates a command button or ATC icon based on the row information.
  * @param {Object} rowInfo - The data for the current table row.
  * @param {Object} [commandData] - Optional: The command data for the button.
+ * @param {Object} commandParameterData - The data for command parameters.
  * @returns {HTMLElement} The created button or icon element.
  */
-const createButtonOrIcon = (rowInfo, commandData) => {
+const createButtonOrIcon = (rowInfo, commandData, commandParameterData) => {
     const wrapper = document.createElement('div');
     wrapper.classList.add('centered-content-wrapper');
 
@@ -295,7 +325,7 @@ const createButtonOrIcon = (rowInfo, commandData) => {
         } else {
             // Original click event for all other interactive buttons
             button.addEventListener('click', () => {
-                showButtonDetailsPopup(commandData);
+                showButtonDetailsPopup(commandData, commandParameterData);
             });
         }
 
@@ -314,9 +344,14 @@ const createButtonOrIcon = (rowInfo, commandData) => {
 };
 
 /* ====================================
-    Module 2.5: Popup System
-    Description: Manages the display and functionality of a descriptive popup, now with a cleaner layout and a distinct description box.
-    ==================================== */
+    Module 2.6: Popup System
+    Description: Manages the display and functionality of various popups.
+    ==================================== */
+
+/* ====================================
+    Module 2.6.1: Description Popup
+    Description: Displays a popup with a session's description and route information.
+    ==================================== */
 
 /**
  * Displays a popup with a description and route.
@@ -359,15 +394,16 @@ const showDescriptionPopup = (title, description, route) => {
 };
 
 /* ====================================
-    Module 2.6: Button Details Popup
-    Description: Displays a popup with detailed information about a command button, now including requiredToInitiate and requiredToComplete status.
-    ==================================== */
+    Module 2.6.2: Button Details Popup
+    Description: Displays a popup with detailed information about a command button, including required status and parameter details.
+    ==================================== */
 
 /**
  * Displays a popup with detailed information from a command object.
  * @param {Object} commandData - The command data for the button.
+ * @param {Object} commandParameterData - The data for command parameters.
  */
-const showButtonDetailsPopup = (commandData) => {
+const showButtonDetailsPopup = (commandData, commandParameterData) => {
     const popupOverlay = document.createElement('div');
     popupOverlay.classList.add('popup-overlay');
 
@@ -375,18 +411,64 @@ const showButtonDetailsPopup = (commandData) => {
     popupContent.classList.add('popup-content');
 
     const formatArray = (arr) => arr.length > 0 ? arr.join(', ') : 'None';
-
     const getStatus = (status) => status ? 'Yes' : 'No';
+
+    let parametersHtml = '';
+    const hasParameters = commandData.allParameter && commandData.allParameter.length > 0;
+
+    if (hasParameters) {
+        const parameterListHtml = commandData.allParameter.map(paramName => {
+            const normalizedParamName = paramName.trim().toLowerCase();
+            let matchedParam = null;
+
+            // Find the matching parameter data, ignoring case and whitespace
+            for (const key in commandParameterData) {
+                if (key.trim().toLowerCase() === normalizedParamName) {
+                    matchedParam = commandParameterData[key];
+                    break;
+                }
+            }
+
+            if (matchedParam) {
+                const values = matchedParam.values || [];
+                let valuesDropdownHtml = '';
+                if (values.length > 0) {
+                    const options = values.map(val => `<option>${val}</option>`).join('');
+                    valuesDropdownHtml = `<select class="param-dropdown">${options}</select>`;
+                }
+
+                return `
+                    <div class="param-detail">
+                        <div class="param-row-container">
+                            <p class="param-name"><strong>${paramName}</strong></p>
+                            ${valuesDropdownHtml}
+                        </div>
+                    </div>
+                `;
+            } else {
+                return `<p><strong>${paramName}</strong>: No detailed data found.</p>`;
+            }
+        }).join('');
+        
+        parametersHtml = `<div class="parameters-section">${parameterListHtml}</div>`;
+    }
+
+    // Combine main and alternate commands into a single string
+    let commandString = `<strong>Command String:</strong>&nbsp;&nbsp;&nbsp;${commandData.mainCommand || 'None'}`;
+    if (commandData.altCommand.length > 0) {
+        commandString += `, ${formatArray(commandData.altCommand)}`;
+    }
 
     popupContent.innerHTML = `
         <h2 class="popup-title">${commandData.caption}</h2>
         <div class="popup-info">
-            <p><strong>Main Command:</strong> ${commandData.mainCommand || 'None'}</p>
-            <p><strong>Alternate Commands:</strong> ${formatArray(commandData.altCommand)}</p>
-            <p><strong>Parameters:</strong> ${formatArray(commandData.allParameter)}</p>
+            <p>${commandString}</p>
+            ${parametersHtml}
             <hr>
-            <p><strong>Required to Initiate:</strong> ${getStatus(commandData.requiredToInitiate)}</p>
-            <p><strong>Required to Complete:</strong> ${getStatus(commandData.requiredToComplete)}</p>
+            <div class="required-status-container">
+                <p><strong>Required to Initiate:</strong> ${getStatus(commandData.requiredToInitiate)}</p>
+                <p><strong>Required to Complete:</strong> ${getStatus(commandData.requiredToComplete)}</p>
+            </div>
         </div>
         <button class="popup-ok-button">OK</button>
     `;
@@ -405,6 +487,11 @@ const showButtonDetailsPopup = (commandData) => {
         }
     });
 };
+
+/* ====================================
+    Module 2.6.3: Auto Play Message Popup
+    Description: Displays a popup message for "Play On Awake" buttons.
+    ==================================== */
 
 /**
  * Displays a popup message for "Play On Awake" buttons.
@@ -441,14 +528,14 @@ const showAutoPlayMessagePopup = () => {
 };
 
 /* ====================================
-    Module 3: Event Listeners & Navigation
-    Description: Manages the interactive components of the UI, including tooltips and the navigation panel.
-    ==================================== */
+    Module 3: Event Listeners & Navigation
+    Description: Manages the interactive components of the UI, including tooltips and the two-tier navigation panel.
+    ==================================== */
 
 /* ====================================
-    Module 3.1: Tooltip Logic
-    Description: Sets up and manages the hover-based tooltips for variables.
-    ==================================== */
+    Module 3.1: Tooltip Logic
+    Description: Sets up and manages the hover-based tooltips for variables.
+    ==================================== */
 
 let tooltipTimeout;
 
@@ -497,9 +584,9 @@ const hideTooltip = (element) => {
 };
 
 /* ====================================
-    Module 3.2: Navigation Logic
-    Description: Sets up the two-tier navigation panel with filtering functionality.
-    ==================================== */
+    Module 3.2: Navigation Logic
+    Description: Sets up the two-tier navigation panel with filtering and scrolling functionality.
+    ==================================== */
 
 /**
  * Sets up the two-tier navigation panel.
@@ -680,8 +767,8 @@ const highlightSelectedCall = (sessionId) => {
 };
 
 /* ====================================
-    Module 4: Initial Call
-    Description: The entry point of the application, which triggers the data fetching process.
-    ==================================== */
+    Module 4: Initial Call
+    Description: The entry point of the application, which triggers the data fetching process.
+    ==================================== */
 
 document.addEventListener('DOMContentLoaded', initializeApp);

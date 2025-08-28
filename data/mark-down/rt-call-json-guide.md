@@ -1,4 +1,4 @@
-# ATC Call `JSON File` Structure Guide
+# ATC RT Call `JSON File` Structure Guide
 
 This document explains the structure and purpose of each field in our `rt-call-json-file` . The file is a database of aviation conversations, organized by the phase of flight.
 
@@ -40,3 +40,29 @@ Both the **`initialCommand`** and **`feedbackCommand`** objects have the same in
 * **`mainCommand`**: The primary text or phrase that can be used as `cmd` in command line or in `voice command`.
 * **`altCommand`**: An array of alternative, valid phrases for the `mainCommand`.
 * **`allParameter`**: An array for any variables (e.g. taxiway route, time, qnh) needed for the command.
+
+
+***
+
+### Parameters and Their Descriptions
+
+Here is a list of all the variables, or "parameters," included in the `command-parameter` JSON file, along with a simple description and an example for each.
+
+* **`QNH`**: This is the air pressure setting used to calibrate an aircraft's altimeter, which shows its height above sea level. It helps pilots fly at the correct altitude.
+    * **Example**: `QNH 1013`
+* **`Altitude`**: This is a command for the height an aircraft should fly at or descend to, helping it reach the correct level.
+    * **Example**: `Descending 3000 feet`
+* **`Departure Taxiway`**: This is the specific route an aircraft must follow on the ground to get to the runway for takeoff.
+    * **Example**: `taxi via C-N-N2`
+* **`Arrival Taxiway`**: This is the route an aircraft follows on the ground after landing to get to its gate or parking area.
+    * **Example**: `taxi via S1`
+* **`Runway Vacate Taxiway`**: This is a command instructing a pilot on which taxiway to use to exit the runway after landing.
+    * **Example**: `runway vacated via S1`
+* **`Parking Taxiway`**: This is the final ground route an aircraft follows to its designated parking spot or gate.
+    * **Example**: `taxi via S1-S-C`
+* **`Pushback Face`**: This is a ground command that tells a pilot which direction to face the aircraft after pushing back from the gate.
+    * **Example**: `push to face north`
+* **`TIME`**: This is the time, typically provided in UTC (Coordinated Universal Time) format.
+    * **Example**: `TIME 1335`
+* **`Arrival Approach Feedback`**: This is a report from a pilot confirming their current location and status during the final approach to the airport.
+    * **Example**: `call you established 12 dme arc`

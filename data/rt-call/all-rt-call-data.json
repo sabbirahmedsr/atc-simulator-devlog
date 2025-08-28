@@ -7,7 +7,7 @@
       "Route": "Enter 4000ft, 20_DME - 14 DME",
       "initialCall": "{DHK TWR} {Call Sign}, descending 4000 feet, 20DME inboud DAC",
       "atcCall": "{Call Sign}, {descend 3000ft}, {QNH 1013} report established 12DME arc for DIA-14",
-      "feedbackCall": "{QNH 1013}, {descend 3000ft}, call you established 12dme arc {Call Sign}",
+      "feedbackCall": "{QNH 1013}, {descending 3000ft}, call you established 12dme arc {Call Sign}",
       "initialCommand": {
         "caption": "Play On Awake",
         "playOnAwake": true,
@@ -22,9 +22,9 @@
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
+        "mainCommand": "approveInbound",
         "altCommand": [],
-        "allParameter": []
+        "allParameter": ["QNH", "Altitude", "Arrival Approach"]
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -51,9 +51,9 @@
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
+        "mainCommand": "approveInbound",
         "altCommand": [],
-        "allParameter": []
+        "allParameter": ["QNH", "Altitude"]
       },
       "atcType": "Tower",
       "icao": ["VGHS"]

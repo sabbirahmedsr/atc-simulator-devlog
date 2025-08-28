@@ -1,13 +1,23 @@
+/*
+ * rt-call-style.css
+ * This file contains all specific styles for the RT-Call application UI.
+ * It is organized into a modular structure for clarity and easy maintenance.
+ */
+
 /* ====================================
-    Module 1: Core Utilities and Variables
-    Description: Defines foundational styles for the body and main page container.
+    Module 1: Core Utilities and Layout
+    Description: Defines the foundational styles for the entire page structure.
     ==================================== */
 
+/* ====================================
+    Module 1.1: Global Body and Container
+    Description: Sets the base typography, colors, and the main layout container.
+    ==================================== */
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* This is the key change to prevent the body from scrolling */
+    overflow: hidden;
 }
 
 body {
@@ -15,15 +25,15 @@ body {
     background-color: var(--color-background-darkest);
     color: var(--color-text-primary);
     line-height: 1.6;
-    display: flex; /* We'll use this to manage the overall layout */
+    display: flex;
 }
 
 .page-container {
     background-color: var(--color-background-dark);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    flex: 1; /* This will make it take up the remaining space */
-    display: flex; /* Setting this to flex lets us align its children */
-    height: 100%; /* Ensure it fills the viewport height */
+    flex: 1;
+    display: flex;
+    height: 100%;
 }
 
 /* ====================================
@@ -31,6 +41,10 @@ body {
     Description: Styles the fixed sidebar navigation, including its layout and scrollbar.
     ==================================== */
 
+/* ====================================
+    Module 2.1: Navigation Panel Structure
+    Description: Defines the fixed positioning and layout of the navigation sidebar.
+    ==================================== */
 #nav-panel {
     width: 180px;
     padding: 20px;
@@ -50,10 +64,9 @@ body {
 }
 
 /* ====================================
-    Module 2.1: Navigation Scrollbar
+    Module 2.2: Navigation Scrollbar
     Description: Styles the scrollbar for the navigation panel.
     ==================================== */
-
 #nav-panel::-webkit-scrollbar {
     width: 8px;
 }
@@ -68,11 +81,14 @@ body {
 }
 
 /* ====================================
-    Module 2.2: Navigation Links and Segments
-    Description: Styles the navigation links within the panel. The top-level links are unified with category buttons, while dynamic links have a distinct style.
+    Module 2.3: Navigation Links and Segments
+    Description: Styles the navigation links and buttons within the panel.
     ==================================== */
 
-/* This is the unified style for sub-category buttons */
+/* ====================================
+    Module 2.3.1: Standard Navigation Links
+    Description: Defines the unified style for sub-category buttons.
+    ==================================== */
 .nav-link-button {
     display: block;
     text-decoration: none;
@@ -83,7 +99,7 @@ body {
     font-weight: bold;
     text-align: center;
     cursor: pointer;
-    background-color: var(--color-background-medium); 
+    background-color: var(--color-background-medium);
     color: var(--color-text-primary);
     border: 2px solid var(--color-background-medium);
     transition: transform 0.1s, background-color 0.1s, border-color 0.1s;
@@ -102,7 +118,10 @@ body {
     animation: none;
 }
 
-/* This overrides the above style for the dynamic title links */
+/* ====================================
+    Module 2.3.2: Dynamic Navigation Links
+    Description: Styles the dynamic title links that override the standard navigation style.
+    ==================================== */
 .nav-link-button.dynamic-nav-link {
     background-color: transparent;
     border: 2px solid var(--color-border-strong);
@@ -110,13 +129,13 @@ body {
     font-weight: 500;
     padding: 8px 15px;
     text-align: left;
-    transform: none; /* remove hover translation */
+    transform: none;
 }
 
 .nav-link-button.dynamic-nav-link:hover {
-    background-color: var(--color-background-medium); 
+    background-color: var(--color-background-medium);
     border-color: var(--color-accent-green);
-    transform: translateX(6px); /* add hover translation */
+    transform: translateX(6px);
 }
 
 .nav-link-button.dynamic-nav-link.active {
@@ -125,12 +144,10 @@ body {
     font-weight: bold;
 }
 
-
 /* ====================================
-    Module 2.3: Category Filter Buttons
+    Module 2.4: Category Filter Buttons
     Description: Styles the interactive buttons that filter the call sessions.
     ==================================== */
-
 .category-filter-group {
     display: flex;
     flex-direction: column;
@@ -140,8 +157,8 @@ body {
 }
 
 .category-filter-button {
-    background-color: var(--color-background-medium);    
-    color: var(--color-text-primary);    
+    background-color: var(--color-background-medium);
+    color: var(--color-text-primary);
     border: 2px solid var(--color-background-medium);
     padding: 10px;
     border-radius: 8px;
@@ -172,18 +189,21 @@ body {
     Description: Styles the primary content section of the page, including the main heading and section dividers.
     ==================================== */
 
+/* ====================================
+    Module 3.1: Main Content Container
+    Description: Defines the layout for the primary content area.
+    ==================================== */
 .main-content {
     flex-grow: 1;
     padding: 20px 40px;
     margin-left: 191px;
-    overflow-y: auto; /* This is the key change to enable vertical scrolling */
+    overflow-y: auto;
 }
 
 /* ====================================
-    Module 3.1: Main Heading and Dividers
-    Description: Styles the main title of the content area.
+    Module 3.2: Main Heading and Dividers
+    Description: Styles the main title of the content area and its divider.
     ==================================== */
-
 h1 {
     text-align: center;
     color: var(--color-accent-green);
@@ -205,6 +225,10 @@ h1 {
     Description: Defines the layout and styles for a single communication session.
     ==================================== */
 
+/* ====================================
+    Module 4.1: Session Wrapper and Animation
+    Description: Styles the main container for a call session and its highlight animation.
+    ==================================== */
 .call-session-wrapper {
     display: flex;
     gap: 5px;
@@ -227,10 +251,9 @@ h1 {
 }
 
 /* ====================================
-    Module 4.1: MetaData Sub-component
-    Description: Styles the single-cell left-hand table that displays the session's title and number with a lighter font weight, while preventing any size shift on hover.
+    Module 4.2: MetaData Sub-component
+    Description: Styles the left-hand table that displays session metadata.
     ==================================== */
-
 .meta-data-table {
     flex-shrink: 0;
     width: 135px;
@@ -239,8 +262,7 @@ h1 {
 }
 
 .meta-data-title-cell {
-    /* Reduced font weight for a lighter appearance */
-    font-weight: 400; 
+    font-weight: 400;
     color: var(--color-text-primary);
     background-color: var(--color-background-medium);
     text-align: center;
@@ -250,13 +272,11 @@ h1 {
     cursor: pointer;
     transition: filter 0.1s ease-in-out, border 0.1s ease-in-out;
     border-radius: 8px;
-    /* This line prevents the size shift on hover. The border is always there but is transparent by default. */
-    border: 2px solid transparent; 
+    border: 2px solid transparent;
 }
 
 .meta-data-title-cell:hover {
     filter: brightness(1.2);
-    /* Now the hover only changes the border color, not its size. */
     border-color: var(--color-text-primary);
     box-sizing: border-box;
 }
@@ -264,27 +284,24 @@ h1 {
 .meta-data-title-cell .meta-data-number {
     display: inline;
     font-size: 1em;
-    /* Reduced font weight for a lighter appearance */
-    font-weight: 500; 
+    font-weight: 500;
     color: var(--color-text-primary);
     margin: 0;
 }
 
 /* ====================================
-    Module 4.2: CallData Sub-component
-    Description: Styles the right-hand table that displays the call transcriptions (Initial, ATC, Feedback).
+    Module 4.3: CallData Sub-component
+    Description: Styles the right-hand table that displays the call transcriptions.
     ==================================== */
-
 .call-data-table {
     flex-grow: 1;
     border-collapse: collapse;
 }
 
 /* ====================================
-    Module 4.3: Common Table and Row Styles
-    Description: Applies shared styling to cells and rows across the CallData table for a consistent look.
+    Module 4.4: Common Table and Row Styles
+    Description: Applies shared styling to cells across the tables.
     ==================================== */
-
 th, td {
     padding: 5px 18px;
     text-align: left;
@@ -312,13 +329,10 @@ th, td {
     border-bottom-right-radius: 8px;
 }
 
-
-
 /* ====================================
-    Module 4.4: Call Session Divider
-    Description: Styles the subtle line between call sessions for better visual separation.
+    Module 4.5: Call Session Divider
+    Description: Styles the subtle line between call sessions.
     ==================================== */
-
 .call-session-divider {
     border: 0;
     height: 1px;
@@ -328,14 +342,13 @@ th, td {
 
 /* ====================================
     Module 5: Call Transcription and Variables
-    Description: Styles the text content of the calls, including distinct colors for different call types and interactive tooltips for variables.
+    Description: Styles the text content of calls and interactive variable tooltips.
     ==================================== */
 
 /* ====================================
     Module 5.1: Call Type Colors
     Description: Assigns specific colors to different types of call transcriptions.
     ==================================== */
-
 /*Note for AI: Dont change this color ever, neight remove this note*/
 .call-initial-call { color: #90d0ff; }
 .call-atc-call { color: #d1b5b5; }
@@ -343,21 +356,48 @@ th, td {
 
 /* ====================================
     Module 5.2: Variable Text and Tooltips
-    Description: Styles the text and popups for dynamic variables within the call content.
+    Description: Styles the text and popups for dynamic variables.
     ==================================== */
 
+/* ====================================
+    Module 5.2.1: Matched Variables
+    Description: Styles variables that have a matching parameter entry.
+    ==================================== */
 .variable-text {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: var(--color-background-darkest);
     padding: 2px 4px;
     border-radius: 4px;
     position: relative;
     cursor: help;
+    color: inherit;
 }
 
+/* ====================================
+    Module 5.2.2: Unmatched Variables
+    Description: Styles variables that do not have a matching parameter entry.
+    ==================================== */
+.no-tooltip-text {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+    background-color: rgba(46, 0, 0, 0.623);
+    padding: 2px 4px;
+    border-radius: 4px;
+    position: relative;
+    cursor: default;
+    font-style: italic;
+    color: inherit;
+}
+
+/* ====================================
+    Module 5.2.3: Tooltip Box and Arrow
+    Description: Defines the shared styles for the tooltip popup and its arrow.
+    ==================================== */
 .variable-text::after,
-.variable-text::before {
+.no-tooltip-text::after,
+.variable-text::before,
+.no-tooltip-text::before {
     position: absolute;
     z-index: 10;
     bottom: 125%;
@@ -368,7 +408,8 @@ th, td {
     transition: opacity 0.3s, visibility 0.3s;
 }
 
-.variable-text::after {
+.variable-text::after,
+.no-tooltip-text::after {
     content: attr(data-tooltip-text);
     min-width: 200px;
     background-color: var(--color-background-darkest);
@@ -383,7 +424,14 @@ th, td {
     border: 1px solid var(--color-accent-green);
 }
 
-.variable-text::before {
+.variable-text::after strong,
+.no-tooltip-text::after strong {
+    font-weight: bolder;
+    color: var(--color-accent-green);
+}
+
+.variable-text::before,
+.no-tooltip-text::before {
     content: "";
     border-width: 5px;
     border-style: solid;
@@ -391,28 +439,29 @@ th, td {
     bottom: 100%;
 }
 
-.variable-text.visible::after,
-.variable-text.visible::before {
+.variable-text:hover::after,
+.variable-text:hover::before,
+.no-tooltip-text:hover::after,
+.no-tooltip-text:hover::before {
     opacity: 1;
     visibility: visible;
 }
 
 /* ====================================
     Module 6: Buttons and Icons
-    Description: Styles the command buttons for pilot calls and the ATC headset icon.
+    Description: Styles the command buttons and the ATC headset icon.
     ==================================== */
 
 /* ====================================
-    Module 6.1: Button Container
-    Description: Sets the layout for the container holding command buttons or icons, with reduced horizontal padding.
+    Module 6.1: Button Containers
+    Description: Sets the layout for the containers holding buttons or icons.
     ==================================== */
-
 .button-cell {
     width: 180px;
     text-align: right;
     background-color: var(--color-background-medium);
     vertical-align: middle;
-    padding: 8px 8px; 
+    padding: 8px 8px;
 }
 
 .centered-content-wrapper {
@@ -424,10 +473,14 @@ th, td {
 }
 
 /* ====================================
-    Module 6.2.1: Default Command Button Styles
-    Description: Core styles for all interactive command buttons.
+    Module 6.2: Command Buttons
+    Description: Defines the styles for all interactive command buttons and their states.
     ==================================== */
 
+/* ====================================
+    Module 6.2.1: Default Button Styles
+    Description: Core styles for all interactive command buttons.
+    ==================================== */
 .command-button {
     background-color: var(--color-border-subtle);
     color: var(--color-text-primary);
@@ -453,39 +506,38 @@ th, td {
 }
 
 /* ====================================
-    Module 6.2.2: "Play On Awake" Inactive State
+    Module 6.2.2: Inactive State
     Description: Styles for a button that is less interactive but not fully disabled.
     ==================================== */
-
 .command-button.inactive {
-    background-color: var(--color-background-medium); /* Add a background color to make it visually distinct */
-    color: var(--color-text-secondary); /* Lighter text color */
-    cursor: default; /* Change cursor to default to signal it's not clickable */
+    background-color: var(--color-background-medium);
+    color: var(--color-text-secondary);
+    cursor: default;
 }
 
 .command-button.inactive:hover {
-    background-color: var(--color-background-medium); /* No change on hover */
-    transform: none; /* Disable transform effects */
+    background-color: var(--color-background-medium);
+    transform: none;
     box-shadow: none;
 }
 
 .command-button.inactive:active {
-    transform: none; /* Disable transform effects */
-    background-color: var(--color-background-medium); /* No change on click */
+    transform: none;
+    background-color: var(--color-background-medium);
 }
 
 /* ====================================
     Module 6.2.3: Null State
-    Description: Styles for a button when no command is available. Fully disabled and unclickable.
+    Description: Styles for a button when no command is available.
     ==================================== */
-
 .command-button.null-state {
-    background-color: var(--color-background-medium); /* A soft background */
-    border: 1px solid var(--color-background-dark); /* Subtle border to blend in */
-    color: transparent; /* Make the text transparent */
-    pointer-events: none; /* Crucial for making it completely unclickable */
+    background-color: var(--color-background-medium);
+    border: 1px solid var(--color-background-dark);
+    color: transparent;
+    pointer-events: none;
     cursor: default;
 }
+
 .command-button.null-state:hover,
 .command-button.null-state:active {
     background-color: var(--color-background-medium);
@@ -493,10 +545,9 @@ th, td {
 }
 
 /* ====================================
-    Module 6.2.4: ATC Icon
+    Module 6.3: Icons
     Description: Styles for the ATC icon.
     ==================================== */
-
 .command-icon {
     font-size: 1.2em;
     color: var(--color-accent-green);
@@ -504,14 +555,13 @@ th, td {
 
 /* ====================================
     Module 7: Popup System
-    Description: Styles the popup that displays a session's description, including the overlay, content box, and button, with enhanced visual separation and a more prominent OK button.
+    Description: Styles the popup that displays a session's description.
     ==================================== */
 
 /* ====================================
     Module 7.1: Popup Overlay and Content
     Description: Styles the background overlay and the main content box of the popup.
     ==================================== */
-
 .popup-overlay {
     position: fixed;
     top: 0;
@@ -566,7 +616,7 @@ th, td {
     background-color: var(--color-background-medium);
     border-radius: 8px;
     padding: 15px 20px;
-    margin-bottom: 30px; 
+    margin-bottom: 30px;
     text-align: left;
     font-style: medium;
     color: var(--color-text-primary);
@@ -580,40 +630,122 @@ th, td {
 
 /* ====================================
     Module 7.2: Popup Button
-    Description: Styles the 'OK' button within the popup window with a simpler design and increased width.
+    Description: Styles the 'OK' button within the popup window.
     ==================================== */
-
 .popup-ok-button {
     background-color: var(--color-accent-green);
     color: var(--color-text-on-accent);
     border: none;
-    padding: 10px 25px; 
-    border-radius: 5px; 
+    padding: 10px 25px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 1em; 
-    font-weight: bold; 
+    font-size: 1em;
+    font-weight: bold;
     transition: background-color 0.2s, transform 0.1s;
-    width: 120px; 
+    width: 120px;
 }
 
 .popup-ok-button:hover {
     background-color: var(--color-border-strong);
     color: var(--color-text-primary);
-    transform: none; 
+    transform: none;
     box-shadow: none;
 }
 
 .popup-ok-button:active {
-    transform: none; 
+    transform: none;
     box-shadow: none;
 }
 
+
 /* ====================================
-    Module 7.3: Popup Animation
-    Description: Defines the animation for the popup's appearance.
+    Module 7.3: Popup Dropdown
+    Description: Styles the interactive elements within the popup for parameter selection.
     ==================================== */
 
+/* Updated: Removed old heading style and added a top margin to param-detail to create the gap */
+.param-detail {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Flexbox container for each parameter row */
+.param-row-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Style for the parameter name text */
+.param-name {
+    flex-shrink: 0;
+    margin: 0;
+}
+
+/* Styling for the dropdown within the popup */
+.param-dropdown {
+    min-width: 100px;
+    max-width: 200px;
+    width: auto;
+    
+    padding: 6px 35px 6px 10px; 
+    border: 1px solid #444;
+    border-radius: 4px;
+    
+    font-family: inherit;
+    font-size: 1em;
+    color: #f0f0f0;
+    
+    background-color: #222;
+    cursor: pointer;
+    
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23f0f0f0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
+    
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.param-dropdown:hover {
+    border-color: #777;
+    background-color: #333;
+}
+
+.param-dropdown option {
+    background-color: #222;
+    color: #f0f0f0;
+}
+
+
+/* ====================================
+    Module 7.4: Popup Animation
+    Description: Defines the animation for the popup's appearance.
+    ==================================== */
 @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ====================================
+    Module 7.5: Status Styles
+    Description: Styles the required status lines within the popup.
+    ==================================== */
+
+.required-status-container {
+    display: flex;
+    align-items: center; /* This centers them vertically */
+    gap: 20px; /* This adds a 20px space between the two items */
+    margin-top: 10px;
 }
