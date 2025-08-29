@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium JSON Editor for RT Calls</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        @import url('https://fonts.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #121212, #1a1a1a);
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #f5f5f5;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .container {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        /* ====================================
+        Module 2.0.0: Navigation Styles
+        Description: Styling for the side navigation menu.
+        ==================================== */
+        nav {
+            width: 250px;
+            background: rgba(26, 26, 26, 0.9);
+            padding: 1rem;
+            overflow-y: auto;
+            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            margin-bottom: 0.5rem;
+        }
+
+        nav a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #b0b0b0;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            background: linear-gradient(90deg, #333, #444);
+            color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ====================================
+        Module 3.0.0: Main Content Styles
+        Description: Base styling for the main editing area.
+        ==================================== */
+        main {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            background: rgba(20, 20, 20, 0.8);
+        }
+
+        .section-header {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5rem;
+        }
+
+        /* ------------------------------------
+        Sub-module 3.1.0: Collapsible Card Styles
+        Description: Styles for the details/summary elements.
+        ------------------------------------ */
+        details {
+            background: #1e1e1e;
+            border-radius: 12px;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        /* **NEW** Smooth transition for element reordering */
+        .card-container {
+            display: block; /* Ensures details are block-level elements */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        details summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: #ffffff;
+            border-radius: 12px;
+            transition: background 0.3s ease;
+        }
+
+        details summary:hover {
+            background: #2a2a2a;
+        }
+
+        details[open] summary {
+            border-bottom: 1px solid #333;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .summary-content {
+            flex-grow: 1;
+            margin-right: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .actions-summary {
+            display: flex;
+            gap: 0.5rem;
+            margin-left: auto;
+        }
+        
+        /* New style for secondary text */
+        .secondary-text {
+            color: #888;
+            font-size: 0.8em;
+            font-weight: 400;
+        }
+
+        .card-content {
+            padding: 1rem;
+        }
+
+        /* ------------------------------------
+        Sub-module 3.2.0: JSON View Styles
+        Description: Styles for the raw JSON display and paste area.
+        ------------------------------------ */
+        .json-view, .json-paste {
+            background: #1e1e1e;
+            padding: 1rem;
+            border-radius: 8px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            color: #e0e0e0;
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 1rem;
+        }
+
+        .json-paste {
+            min-height: 200px;
+        }
+
+        /* ====================================
+        Module 4.0.0: Form & Input Styles
+        Description: Styling for all form elements, including inputs, textareas, and labels.
+        ==================================== */
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem; /* Adds space between form groups */
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 0.5rem;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        /* New class for the five fixed-width inputs */
+        .form-row.fixed-width-inputs .form-group {
+            flex: 0 0 calc(20% - 0.8rem); /* Sets a fixed width for five items in a row with a gap */
+        }
+        
+        /* ------------------------------------
+        Sub-module 4.1.0: Inline Dropdown & Checkbox Styles
+        Description: Styles for labels and select/checkbox elements to appear on the same line.
+        ------------------------------------ */
+        .form-group-inline {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .form-group-inline label {
+            white-space: nowrap; /* Prevents the label from wrapping */
+        }
+
+        /* Hides the default checkbox and styles our custom one */
+        .form-group-inline input[type="checkbox"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            background-color: #3a3a3a;
+            border: 1px solid #555;
+            border-radius: 4px;
+            cursor: pointer;
+            position: relative;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+        
+        .form-group-inline input[type="checkbox"]:checked {
+            background-color: #2e7d32;
+            border-color: #2e7d32;
+        }
+        
+        .form-group-inline input[type="checkbox"]::after {
+            font-family: 'Font Awesome 6 Free';
+            content: '\f00c'; /* Unicode for the checkmark icon */
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            color: #fff;
+            font-size: 14px;
+            transition: transform 0.2s ease;
+        }
+        
+        .form-group-inline input[type="checkbox"]:checked::after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .form-group-inline select {
+            flex: 1;
+            min-width: 60px;
+        }
+        
+        .form-group-inline input[type="text"],
+        .form-group-inline textarea {
+            flex: 1;
+        }
+        
+        .form-group-inline textarea {
+            align-self: flex-start;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.25rem;
+            color: #cccccc;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* ------------------------------------
+        Sub-module 4.2.0: Input Field Styles
+        Description: Specific styles for input, textarea, and select elements.
+        ------------------------------------ */
+        input, textarea, select {
+            width: 100%;
+            padding: 0.75rem; /* Increased from 0.5rem for more height */
+            border: 1px solid #3a3a3a;
+            border-radius: 6px;
+            background: #151515;
+            color: #e0e0e0;
+            font-size: 0.9rem;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: #555555;
+            outline: none;
+            box-shadow: 0 0 5px rgba(85, 85, 85, 0.5);
+        }
+
+        textarea {
+            min-height: 60px;
+            resize: vertical;
+        }
+
+        .commands-row {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .command-group {
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 0.75rem;
+            background: #2a2a2a;
+            flex: 1;
+        }
+
+        .command-group h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+            color: #ffffff;
+        }
+
+        /* ====================================
+        Module 5.0.0: Button Styles
+        Description: Comprehensive styles for all buttons.
+        ==================================== */
+        /* ------------------------------------
+        Sub-module 5.1.0: General Button Styles
+        Description: Base styles for all text-based buttons.
+        ------------------------------------ */
+        .btn {
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(90deg, #0056b3, #007bff);
+            box-shadow: 0 2px 5px rgba(0, 123, 255, 0.4);
+        }
+        
+        .btn-copy-card {
+            background: linear-gradient(90deg, #3498db, #2980b9);
+            color: #ffffff;
+        }
+        
+        .btn-copy-card:hover {
+            background: linear-gradient(90deg, #2980b9, #3498db);
+        }
+
+        .btn-add {
+            background: linear-gradient(90deg, #28a745, #218838);
+            color: #ffffff;
+            margin-top: 0.5rem;
+        }
+
+        .btn-add:hover {
+            background: linear-gradient(90deg, #218838, #28a745);
+        }
+
+        .btn-delete {
+            background: linear-gradient(90deg, #dc3545, #c82333);
+            color: #ffffff;
+        }
+
+        .btn-delete:hover {
+            background: linear-gradient(90deg, #c82333, #dc3545);
+        }
+
+        /* ------------------------------------
+        Sub-module 5.2.0: Action Button Styles
+        Description: Specific styles for the small icon buttons in the collapsible header.
+        ------------------------------------ */
+        .btn-icon {
+            width: 44px;
+            height: 44px;
+            padding: 0;
+            font-size: 1.5rem;
+            line-height: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            box-shadow: none;
+            transition: all 0.2s ease;
+            border: none;
+        }
+
+        .actions-summary {
+            display: flex;
+            gap: 0.5rem;
+            margin-left: auto;
+        }
+
+        .btn-move-up, .btn-move-down {
+            background: #4a4a4a;
+            color: #e0e0e0;
+        }
+
+        .btn-move-up:hover, .btn-move-down:hover {
+            background: #5a5a5a;
+        }
+
+        .btn-add-after {
+            background: #2e7d32;
+            color: #ffffff;
+        }
+
+        .btn-add-after:hover {
+            background: #235d25;
+        }
+
+        .btn-delete {
+            background: #b71c1c;
+            color: #ffffff;
+        }
+
+        .btn-delete:hover {
+            background: #8e1818;
+        }
+
+        .btn-icon:disabled {
+            background: #1e1e1e;
+            color: #666;
+            cursor: not-allowed;
+            box-shadow: none;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>RT Calls JSON Editor</h1>
+    </header>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="#allArrivalCall" class="active">Arrival Calls</a></li>
+                <li><a href="#allDepartureCall">Departure Calls</a></li>
+                <li><a href="#allCircuitCall">Circuit Calls</a></li>
+                <li><a href="#allSpecialCall">Special Calls</a></li>
+                <li><a href="#json-view">View/Load JSON</a></li>
+            </ul>
+        </nav>
+        <main>
+            <section id="allArrivalCall">
+                <h2 class="section-header">Arrival Calls</h2>
+                </section>
+            <section id="allDepartureCall" style="display: none;">
+                <h2 class="section-header">Departure Calls</h2>
+                </section>
+            <section id="allCircuitCall" style="display: none;">
+                <h2 class="section-header">Circuit Calls</h2>
+                </section>
+            <section id="allSpecialCall" style="display: none;">
+                <h2 class="section-header">Special Calls</h2>
+                </section>
+            <section id="json-view" style="display: none;">
+                <h2 class="section-header">JSON Data View</h2>
+                <div class="json-controls">
+                    <button class="btn btn-primary" onclick="AppController.downloadJson()">Download JSON</button>
+                    <button class="btn btn-copy" onclick="AppController.copyJson()">Copy to Clipboard</button>
+                </div>
+                <pre class="json-view"></pre>
+                <h3>Load JSON Data</h3>
+                <textarea class="json-paste" placeholder="Paste your JSON data here..."></textarea>
+                <button class="btn btn-add" onclick="AppController.loadJson()">Load from Text</button>
+            </section>
+        </main>
+    </div>
+    
+    <script>
+        /* ====================================
+        Module 3.1.0: DataService
+        Description: This module manages all the raw radio call data. It handles loading data from a file or a string, and preparing it for saving, copying, or downloading.
+        ==================================== */
+        const DataService = (() => {
+            let data = {
+                "allArrivalCall": [],
+                "allDepartureCall": [],
+                "allCircuitCall": [],
+                "allSpecialCall": []
+            };
+
+            const createNewCall = () => {
+                return {
+                    title: 'New Call',
+                    category: '',
+                    description: '',
+                    Route: '',
+                    initialCall: '',
+                    atcCall: '',
+                    feedbackCall: '',
+                    initialCommand: {
+                        caption: '',
+                        playOnAwake: false,
+                        requiredToInitiate: false,
+                        requiredToComplete: false,
+                        mainCommand: '',
+                        altCommand: [],
+                        allParameter: []
+                    },
+                    feedbackCommand: {
+                        caption: '',
+                        playOnAwake: false,
+                        requiredToInitiate: false,
+                        requiredToComplete: false,
+                        mainCommand: '',
+                        altCommand: [],
+                        allParameter: []
+                    },
+                    atcType: '',
+                    icao: []
+                };
+            };
+
+            return {
+                /* ====================================
+                Module 3.1.1: DataService.getData
+                Description: Gets the current data object. Other modules use this to read the current state of the editor.
+                ==================================== */
+                getData: () => data,
+
+                /* ====================================
+                Module 3.1.2: DataService.setData
+                Description: Replaces all the current data with a new data object. This is used when a user loads data from a JSON file or text.
+                ==================================== */
+                setData: (newData) => {
+                    data = newData;
+                },
+
+                /* ====================================
+                Module 3.1.3: DataService.addCall
+                Description: Adds a new radio call object to the specified category.
+                ==================================== */
+                addCall: (sectionKey, index) => {
+                    const newCall = createNewCall();
+                    if (typeof index === 'number') {
+                        data[sectionKey].splice(index, 0, newCall);
+                    } else {
+                        data[sectionKey].push(newCall);
+                    }
+                },
+
+                /* ====================================
+                Module 3.1.4: DataService.deleteCall
+                Description: Removes a radio call from a specific category at a given position.
+                ==================================== */
+                deleteCall: (sectionKey, index) => {
+                    if (confirm('Are you sure you want to delete this call?')) {
+                        data[sectionKey].splice(index, 1);
+                        return true;
+                    }
+                    return false;
+                },
+
+                /* ====================================
+                Module 3.1.5: DataService.moveCall
+                Description: Swaps the position of a radio call with an adjacent one (either up or down).
+                ==================================== */
+                moveCall: (sectionKey, index, direction) => {
+                    const newIndex = index + direction;
+                    if (newIndex >= 0 && newIndex < data[sectionKey].length) {
+                        const temp = data[sectionKey][newIndex];
+                        data[sectionKey][newIndex] = data[sectionKey][index];
+                        data[sectionKey][index] = temp;
+                        return true;
+                    }
+                    return false;
+                },
+
+                /* ====================================
+                Module 3.1.6: DataService.saveCall
+                Description: Updates the data for a specific radio call based on the values from a form.
+                ==================================== */
+                saveCall: (formData, sectionKey, index) => {
+                    const call = data[sectionKey][index];
+                    
+                    // Helper to get form value with a fallback
+                    const getVal = (name, fallback = '') => formData.get(name) || fallback;
+                    const getBool = (name) => formData.get(name) === 'on'; 
+                    const getArray = (name) => getVal(name).split(',').map(s => s.trim()).filter(Boolean);
+
+                    // Update simple fields
+                    call.title = getVal('title');
+                    call.category = getVal('category');
+                    call.description = getVal('description');
+                    call.Route = getVal('Route');
+                    call.initialCall = getVal('initialCall');
+                    call.atcCall = getVal('atcCall');
+                    call.feedbackCall = getVal('feedbackCall');
+                    call.atcType = getVal('atcType');
+                    call.icao = getArray('icao');
+                    
+                    // Update command objects, ensuring they exist
+                    if (!call.initialCommand) call.initialCommand = {};
+                    call.initialCommand.caption = getVal('initialCommand.caption');
+                    call.initialCommand.playOnAwake = getBool('initialCommand.playOnAwake');
+                    call.initialCommand.requiredToInitiate = getBool('initialCommand.requiredToInitiate');
+                    call.initialCommand.requiredToComplete = getBool('initialCommand.requiredToComplete');
+                    call.initialCommand.mainCommand = getVal('initialCommand.mainCommand');
+                    call.initialCommand.altCommand = getArray('initialCommand.altCommand');
+                    call.initialCommand.allParameter = getArray('initialCommand.allParameter');
+                    
+                    if (!call.feedbackCommand) call.feedbackCommand = {};
+                    call.feedbackCommand.caption = getVal('feedbackCommand.caption');
+                    call.feedbackCommand.playOnAwake = getBool('feedbackCommand.playOnAwake');
+                    call.feedbackCommand.requiredToInitiate = getBool('feedbackCommand.requiredToInitiate');
+                    call.feedbackCommand.requiredToComplete = getBool('feedbackCommand.requiredToComplete');
+                    call.feedbackCommand.mainCommand = getVal('feedbackCommand.mainCommand');
+                    call.feedbackCommand.altCommand = getArray('feedbackCommand.altCommand');
+                    call.feedbackCommand.allParameter = getArray('feedbackCommand.allParameter');
+                }
+            };
+        })();
+
+        /* ====================================
+        Module 3.2.0: EditorUI
+        Description: This module is responsible for all user interface interactions and rendering. It builds the HTML forms and manages which sections are visible.
+        ==================================== */
+        const EditorUI = (() => {
+            const sections = document.querySelectorAll('main section');
+            
+            const createElement = (tag, className, textContent = '', innerHTML = '') => {
+                const el = document.createElement(tag);
+                if (className) el.className = className;
+                if (textContent) el.textContent = textContent;
+                if (innerHTML) el.innerHTML = innerHTML;
+                return el;
+            };
+
+            const getExpandedState = (sectionKey) => {
+                const expandedCards = [];
+                const detailsElements = document.querySelectorAll(`#${sectionKey} details`);
+                detailsElements.forEach((details, index) => {
+                    if (details.open) {
+                        expandedCards.push(index);
+                    }
+                });
+                return expandedCards;
+            };
+
+            const restoreExpandedState = (sectionKey, expandedCards) => {
+                const detailsElements = document.querySelectorAll(`#${sectionKey} details`);
+                expandedCards.forEach(index => {
+                    if (detailsElements[index]) {
+                        detailsElements[index].open = true;
+                    }
+                });
+            };
+
+            /* ====================================
+            Module 3.2.1: EditorUI.renderCalls
+            Description: Generates and displays the HTML forms for all radio calls in a specific category.
+            ==================================== */
+            const renderCalls = (sectionKey, calls) => {
+                const expandedState = getExpandedState(sectionKey);
+                const section = document.getElementById(sectionKey);
+                section.innerHTML = '';
+                section.appendChild(createElement('h2', 'section-header', sectionKey.replace('all', '').replace('Call', ' Calls')));
+
+                calls.forEach((call, index) => {
+                    const cardContainer = createElement('div', 'card-container');
+                    const details = createElement('details');
+                    
+                    const summary = createElement('summary');
+                    
+                    // Add title and Font Awesome icon buttons to the summary (collapsible heading)
+                    const icaoText = (call.icao && call.icao.length > 0) ? `(${call.icao.join(', ')})` : '';
+
+                    summary.innerHTML = `
+                        <div class="summary-content">
+                            <span>${(index + 1)} of ${calls.length}: ${call.title || 'Untitled Call'}</span>
+                            <span class="secondary-text">${call.category || ''} ${icaoText}</span>
+                        </div>
+                        <div class="actions-summary">
+                            <button type="button" class="btn-icon btn-move-up" onclick="event.stopPropagation(); AppController.moveCallUp('${sectionKey}', ${index})" ${index === 0 ? 'disabled' : ''} title="Move Up"><i class="fa-solid fa-caret-up"></i></button>
+                            <button type="button" class="btn-icon btn-move-down" onclick="event.stopPropagation(); AppController.moveCallDown('${sectionKey}', ${index})" ${index === calls.length - 1 ? 'disabled' : ''} title="Move Down"><i class="fa-solid fa-caret-down"></i></button>
+                            <button type="button" class="btn-icon btn-add-after" onclick="event.stopPropagation(); AppController.addNewAfter('${sectionKey}', ${index})" title="Add After"><i class="fa-solid fa-plus"></i></button>
+                            <button type="button" class="btn-icon btn-delete" onclick="event.stopPropagation(); AppController.deleteCall('${sectionKey}', ${index})" title="Delete"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                    `;
+                    details.appendChild(summary);
+
+                    const content = createElement('div', 'card-content');
+                    content.innerHTML = `
+                        <form id="form-${sectionKey}-${index}" onsubmit="AppController.saveCall(event, '${sectionKey}', ${index}); return false;">
+                            <div class="form-row fixed-width-inputs">
+                                <div class="form-group"><label>Title</label><input type="text" value="${call.title || ''}" name="title"></div>
+                                <div class="form-group"><label>Category</label><input type="text" value="${call.category || ''}" name="category"></div>
+                                <div class="form-group"><label>Route</label><input type="text" value="${call.Route || ''}" name="Route"></div>
+                                <div class="form-group"><label>ATC Type</label><input type="text" value="${call.atcType || ''}" name="atcType"></div>
+                                <div class="form-group"><label>ICAO (comma-separated)</label><input type="text" value="${call.icao ? call.icao.join(',') : ''}" name="icao"></div>
+                            </div>
+                            <div class="form-group form-group-inline">
+                                <label>Description</label>
+                                <textarea name="description">${call.description || ''}</textarea>
+                            </div>
+                            <div class="form-group form-group-inline">
+                                <label>Initial Call</label>
+                                <input type="text" value="${call.initialCall || ''}" name="initialCall">
+                            </div>
+                            <div class="form-group form-group-inline">
+                                <label>ATC Call</label>
+                                <input type="text" value="${call.atcCall || ''}" name="atcCall">
+                            </div>
+                            <div class="form-group form-group-inline">
+                                <label>Feedback Call</label>
+                                <input type="text" value="${call.feedbackCall || ''}" name="feedbackCall">
+                            </div>
+                            <div class="commands-row">
+                                <div class="command-group">
+                                    <h4>Initial Command</h4>
+                                    <div class="form-row">
+                                        <div class="form-group form-group-inline">
+                                            <label>Caption</label>
+                                            <input type="text" value="${call.initialCommand ? call.initialCommand.caption || '' : ''}" name="initialCommand.caption">
+                                        </div>
+                                        <div class="form-group form-group-inline">
+                                            <label>Main Command</label>
+                                            <input type="text" value="${call.initialCommand ? call.initialCommand.mainCommand || '' : ''}" name="initialCommand.mainCommand">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group"><label>Alt Command (comma-separated)</label><input type="text" value="${call.initialCommand && call.initialCommand.altCommand ? call.initialCommand.altCommand.join(',') || '' : ''}" name="initialCommand.altCommand"></div>
+                                        <div class="form-group"><label>All Parameter (comma-separated)</label><input type="text" value="${call.initialCommand && call.initialCommand.allParameter ? call.initialCommand.allParameter.join(',') || '' : ''}" name="initialCommand.allParameter"></div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group form-group-inline">
+                                            <label>Play On Awake</label>
+                                            <input type="checkbox" name="initialCommand.playOnAwake" ${call.initialCommand?.playOnAwake ? 'checked' : ''}>
+                                        </div>
+                                        <div class="form-group form-group-inline">
+                                            <label>Required To Initiate</label>
+                                            <input type="checkbox" name="initialCommand.requiredToInitiate" ${call.initialCommand?.requiredToInitiate ? 'checked' : ''}>
+                                        </div>
+                                        <div class="form-group form-group-inline">
+                                            <label>Required To Complete</label>
+                                            <input type="checkbox" name="initialCommand.requiredToComplete" ${call.feedbackCommand?.requiredToComplete ? 'checked' : ''}>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="command-group">
+                                    <h4>Feedback Command</h4>
+                                    <div class="form-row">
+                                        <div class="form-group form-group-inline">
+                                            <label>Caption</label>
+                                            <input type="text" value="${call.feedbackCommand ? call.feedbackCommand.caption || '' : ''}" name="feedbackCommand.caption">
+                                        </div>
+                                        <div class="form-group form-group-inline">
+                                            <label>Main Command</label>
+                                            <input type="text" value="${call.feedbackCommand ? call.feedbackCommand.mainCommand || '' : ''}" name="feedbackCommand.mainCommand">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group"><label>Alt Command (comma-separated)</label><input type="text" value="${call.feedbackCommand && call.feedbackCommand.altCommand ? call.feedbackCommand.altCommand.join(',') || '' : ''}" name="feedbackCommand.altCommand"></div>
+                                        <div class="form-group"><label>All Parameter (comma-separated)</label><input type="text" value="${call.feedbackCommand && call.feedbackCommand.allParameter ? call.feedbackCommand.allParameter.join(',') || '' : ''}" name="feedbackCommand.allParameter"></div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group form-group-inline">
+                                            <label>Play On Awake</label>
+                                            <input type="checkbox" name="feedbackCommand.playOnAwake" ${call.feedbackCommand?.playOnAwake ? 'checked' : ''}>
+                                        </div>
+                                        <div class="form-group form-group-inline">
+                                            <label>Required To Initiate</label>
+                                            <input type="checkbox" name="feedbackCommand.requiredToInitiate" ${call.feedbackCommand?.requiredToInitiate ? 'checked' : ''}>
+                                        </div>
+                                        <div class="form-group form-group-inline">
+                                            <label>Required To Complete</label>
+                                            <input type="checkbox" name="feedbackCommand.requiredToComplete" ${call.feedbackCommand?.requiredToComplete ? 'checked' : ''}>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="action-buttons">
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                                <button type="button" class="btn btn-copy-card" onclick="AppController.copyCardJson('${sectionKey}', ${index})">Copy JSON</button>
+                            </div>
+                        </form>
+                    `;
+                    details.appendChild(content);
+                    cardContainer.appendChild(details);
+                    section.appendChild(cardContainer);
+                });
+                
+                // Add new call button at the bottom
+                const addBtn = createElement('button', 'btn btn-add', 'Add New Call');
+                addBtn.onclick = () => AppController.addNewCall(sectionKey);
+                section.appendChild(addBtn);
+                
+                restoreExpandedState(sectionKey, expandedState);
+            };
+
+            /* ====================================
+            Module 3.2.2: EditorUI.renderJsonView
+            Description: Displays the raw JSON data in a formatted, readable way.
+            ==================================== */
+            const renderJsonView = (data) => {
+                const jsonView = document.querySelector('.json-view');
+                jsonView.textContent = JSON.stringify(data, null, 2);
+            };
+
+            /* ====================================
+            Module 3.2.3: EditorUI.switchSection
+            Description: Hides all content sections and displays only the specified one.
+            ==================================== */
+            const switchSection = (targetId) => {
+                sections.forEach(sec => sec.style.display = 'none');
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.style.display = 'block';
+                }
+            };
+
+            return {
+                renderCalls,
+                renderJsonView,
+                switchSection
+            };
+        })();
+
+        /* ====================================
+        Module 3.3.0: AppController
+        Description: This is the main "conductor" module. It connects the user's actions (from the UI) to the data management logic. All user-initiated functions are routed through this module.
+        ==================================== */
+        const AppController = (() => {
+            let currentSection = 'allArrivalCall';
+
+            /* ====================================
+            Module 3.3.1: AppController.init
+            Description: Sets up the initial state of the application. It now loads data from the JSON file on startup.
+            ==================================== */
+            const init = () => {
+                setupNavigation();
+                
+                // Load the initial data from the JSON file
+                fetch('../data/rt-call/all-rt-call-data.json')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        DataService.setData(data);
+                        EditorUI.switchSection(currentSection);
+                        EditorUI.renderCalls(currentSection, DataService.getData()[currentSection]);
+                    })
+                    .catch(error => {
+                        console.error('Error loading the JSON data:', error);
+                        alert('Failed to load JSON data. Starting with a blank slate.');
+                        // Fallback to initial empty data if file load fails
+                        EditorUI.switchSection(currentSection);
+                        EditorUI.renderCalls(currentSection, DataService.getData()[currentSection]);
+                    });
+            };
+
+            /* ====================================
+            Module 3.3.2: AppController.setupNavigation
+            Description: Attaches a click listener to each navigation link to handle switching between different sections.
+            ==================================== */
+            const setupNavigation = () => {
+                const navLinks = document.querySelectorAll('nav a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const targetId = link.getAttribute('href').substring(1);
+                        
+                        // Update active class
+                        navLinks.forEach(l => l.classList.remove('active'));
+                        link.classList.add('active');
+
+                        currentSection = targetId;
+                        EditorUI.switchSection(currentSection);
+
+                        if (targetId === 'json-view') {
+                            EditorUI.renderJsonView(DataService.getData());
+                        } else {
+                            EditorUI.renderCalls(currentSection, DataService.getData()[currentSection]);
+                        }
+                    });
+                });
+            };
+
+            /* ====================================
+            Module 3.3.3: AppController.saveCall
+            Description: Handles the saving of form data. It's called when a form is submitted.
+            ==================================== */
+            const saveCall = (event, sectionKey, index) => {
+                event.preventDefault(); // Stop the page from reloading
+                const form = event.target;
+                const formData = new FormData(form);
+                DataService.saveCall(formData, sectionKey, index);
+                
+                // Re-render the section to update numbering and titles
+                EditorUI.renderCalls(sectionKey, DataService.getData()[sectionKey]);
+                
+                alert('Changes saved!');
+            };
+
+            /* ====================================
+            Module 3.3.4: AppController.addNewCall
+            Description: Adds a new call to the current section and re-renders the UI.
+            ==================================== */
+            const addNewCall = (sectionKey) => {
+                DataService.addCall(sectionKey);
+                EditorUI.renderCalls(sectionKey, DataService.getData()[sectionKey]);
+            };
+            
+            /* ====================================
+            Module 3.3.5: AppController.addNewBefore
+            Description: Adds a new call at a specific index and re-renders the UI.
+            ==================================== */
+            const addNewBefore = (sectionKey, index) => {
+                DataService.addCall(sectionKey, index);
+                EditorUI.renderCalls(sectionKey, DataService.getData()[sectionKey]);
+            };
+
+            /* ====================================
+            Module 3.3.6: AppController.addNewAfter
+            Description: Adds a new call after a specific index and re-renders the UI.
+            ==================================== */
+            const addNewAfter = (sectionKey, index) => {
+                DataService.addCall(sectionKey, index + 1);
+                EditorUI.renderCalls(sectionKey, DataService.getData()[sectionKey]);
+            };
+
+            /* ====================================
+            Module 3.3.7: AppController.deleteCall
+            Description: Deletes a call and updates both the UI and JSON view.
+            ==================================== */
+            const deleteCall = (sectionKey, index) => {
+                const wasDeleted = DataService.deleteCall(sectionKey, index);
+                if (wasDeleted) {
+                    EditorUI.renderCalls(sectionKey, DataService.getData()[sectionKey]);
+                    EditorUI.renderJsonView(DataService.getData());
+                }
+            };
+
+            /* ====================================
+            Module 3.3.8: AppController.moveCallUp
+            Description: Moves a call one position up and re-renders the UI.
+            ==================================== */
+            const moveCallUp = (sectionKey, index) => {
+                const cards = document.querySelectorAll(`#${sectionKey} .card-container`);
+                if (index > 0) {
+                    const cardToMove = cards[index];
+                    const targetCard = cards[index - 1];
+                    
+                    const cardHeight = cardToMove.offsetHeight + parseFloat(getComputedStyle(cardToMove).marginBottom);
+
+                    // Apply the transform to animate the move
+                    cardToMove.style.transform = `translateY(-${cardHeight}px)`;
+                    targetCard.style.transform = `translateY(${cardHeight}px)`;
+
+                    // After the animation, perform the DOM swap and re-render
+                    setTimeout(() => {
+                        if (DataService.moveCall(sectionKey, index, -1)) {
+                            EditorUI.renderCalls(sectionKey, DataService.getData()[sectionKey]);
+                        }
+                    }, 300); // This delay should match the CSS transition duration
+                }
+            };
+
+            /* ====================================
+            Module 3.3.9: AppController.moveCallDown
+            Description: Moves a call one position down and re-renders the UI.
+            ==================================== */
+            const moveCallDown = (sectionKey, index) => {
+                const cards = document.querySelectorAll(`#${sectionKey} .card-container`);
+                if (index < cards.length - 1) {
+                    const cardToMove = cards[index];
+                    const targetCard = cards[index + 1];
+
+                    const cardHeight = targetCard.offsetHeight + parseFloat(getComputedStyle(targetCard).marginBottom);
+
+                    cardToMove.style.transform = `translateY(${cardHeight}px)`;
+                    targetCard.style.transform = `translateY(-${cardHeight}px)`;
+
+                    setTimeout(() => {
+                        if (DataService.moveCall(sectionKey, index, 1)) {
+                            EditorUI.renderCalls(sectionKey, DataService.getData()[sectionKey]);
+                        }
+                    }, 300); // This delay should match the CSS transition duration
+                }
+            };
+            
+            /* ====================================
+            Module 3.3.10: AppController.loadJson
+            Description: Parses JSON text, updates the data, and re-renders the UI.
+            ==================================== */
+            const loadJson = () => {
+                const paste = document.querySelector('.json-paste').value;
+                try {
+                    const newData = JSON.parse(paste);
+                    DataService.setData(newData);
+                    alert('JSON loaded!');
+                    if (currentSection !== 'json-view') {
+                        EditorUI.renderCalls(currentSection, DataService.getData()[currentSection]);
+                    }
+                    EditorUI.renderJsonView(DataService.getData());
+                } catch (e) {
+                    alert('Invalid JSON: ' + e.message);
+                }
+            };
+            
+            /* ====================================
+            Module 3.3.11: AppController.copyCardJson
+            Description: Copies the JSON data of a specific card to the clipboard.
+            ==================================== */
+            const copyCardJson = (sectionKey, index) => {
+                const cardData = DataService.getData()[sectionKey][index];
+                const jsonText = JSON.stringify(cardData, null, 2);
+                navigator.clipboard.writeText(jsonText).then(() => {
+                    alert('Card JSON copied to clipboard!');
+                }).catch(err => {
+                    alert('Failed to copy JSON: ' + err.message);
+                });
+            };
+
+            /* ====================================
+            Module 3.3.12: AppController.downloadJson
+            Description: Creates a file from the current data and prompts the user to download it.
+            ==================================== */
+            const downloadJson = () => {
+                const blob = new Blob([JSON.stringify(DataService.getData(), null, 2)], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'all-rt-call.json';
+                a.click();
+                URL.revokeObjectURL(url);
+            };
+            
+            /* ====================================
+            Module 3.3.13: AppController.copyJson
+            Description: Copies the current JSON data to the user's clipboard.
+            ==================================== */
+            const copyJson = () => {
+                const jsonText = JSON.stringify(DataService.getData(), null, 2);
+                navigator.clipboard.writeText(jsonText).then(() => {
+                    alert('JSON copied to clipboard!');
+                }).catch(err => {
+                    alert('Failed to copy JSON: ' + err.message);
+                });
+            };
+
+            return {
+                init,
+                saveCall,
+                addNewCall,
+                addNewBefore,
+                addNewAfter,
+                deleteCall,
+                moveCallUp,
+                moveCallDown,
+                loadJson,
+                downloadJson,
+                copyJson,
+                copyCardJson
+            };
+        })();
+
+        // Run the application
+        document.addEventListener('DOMContentLoaded', AppController.init);
+    </script>
+</body>
+</html>
