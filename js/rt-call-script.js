@@ -226,7 +226,6 @@ const createCallDataElement = (sessionData, commandParameterData) => {
     Description: Replaces variable placeholders with styled spans for tooltips, matching them against values from the command-parameter.json file.
     ==================================== */
 
-
 /**
  * Replaces variable placeholders in call content with styled spans and tooltip data.
  * @param {string} content - The raw call content string.
@@ -234,42 +233,54 @@ const createCallDataElement = (sessionData, commandParameterData) => {
  * @returns {string} The HTML string with formatted variables.
  */
 const formatCallContent = (content, commandParameterData) => {
+    if (content === null) {
+        return "Not available";
+    }
+
     let formattedContent = content;
 
-    // This regular expression is a bit complex, but it's designed to handle both curly-braced variables and standalone words in a single pass.
-    // It captures either a variable like `{...}` or a standalone word that is a parameter name.
     const regex = new RegExp(`({[^{}]*?})|(${Object.keys(commandParameterData).join('|')})`, 'gi');
 
     formattedContent = formattedContent.replace(regex, (match, variableMatch, nameMatch) => {
         // Handle a curly-braced variable match
         if (variableMatch) {
-            const variableValue = variableMatch.slice(1, -1); // Remove the curly braces
+            const variableValue = variableMatch.slice(1, -1);
             const normalizedVariable = normalizeString(variableValue);
+            
+            let param = null;
+            let paramName = '';
 
-            for (const paramName in commandParameterData) {
-                const param = commandParameterData[paramName];
+            for (const name in commandParameterData) {
+                const currentParam = commandParameterData[name];
                 
-                // Check if the variable matches the parameter's name OR its values
-                const matchFound = (normalizeString(paramName) === normalizedVariable) || 
-                                 param.values.some(paramValue => normalizeString(paramValue) === normalizedVariable);
+                const matchFound = (normalizeString(name) === normalizedVariable) || 
+                                   currentParam.values.some(paramValue => normalizeString(paramValue) === normalizedVariable);
 
                 if (matchFound) {
-                    const tooltipText = `${paramName}: ${param.description.trim()}`;
-                    return `<span class="variable-text" data-tooltip-text="${tooltipText}">{${variableValue}}</span>`;
+                    param = currentParam;
+                    paramName = name;
+                    break;
                 }
             }
             
-            // No match was found for the variable, so give it a default tooltip
-            const noMatchTooltip = `No data found for: ${variableValue}`;
-            return `<span class="no-tooltip-text" data-tooltip-text="${noMatchTooltip}">{${variableValue}}</span>`;
+            if (param) {
+                const tooltipText = `${paramName}: ${param.description.trim()}`;
+                return `<span class="variable-text" data-tooltip-text="${tooltipText}">{${variableValue}}</span>`;
+            } else {
+                const noMatchTooltip = `No data found for: ${variableValue}`;
+                return `<span class="no-tooltip-text" data-tooltip-text="${noMatchTooltip}">{${variableValue}}</span>`;
+            }
         }
 
         // Handle a standalone parameter name match
         if (nameMatch) {
             const paramName = nameMatch;
             const param = commandParameterData[paramName];
-            const tooltipText = `${paramName}: ${param.description.trim()}`;
-            return `<span class="variable-text" data-tooltip-text="${tooltipText}">${match}</span>`;
+            
+            if (param) {
+                const tooltipText = `${paramName}: ${param.description.trim()}`;
+                return `<span class="variable-text" data-tooltip-text="${tooltipText}">${match}</span>`;
+            }
         }
 
         return match;
@@ -298,7 +309,7 @@ const createButtonOrIcon = (rowInfo, commandData, commandParameterData) => {
         const button = document.createElement('button');
         
         // Handle no caption case first
-        if (!commandData || !commandData.caption) {
+        if (!commandData || !commandData.buttonCaption) {
             button.textContent = ''; // No caption
             button.classList.add('command-button', 'null-state');
             
@@ -311,7 +322,7 @@ const createButtonOrIcon = (rowInfo, commandData, commandParameterData) => {
             return wrapper;
         }
 
-        button.textContent = commandData.caption;
+        button.textContent = commandData.buttonCaption;
         button.classList.add('command-button');
 
         // Check the dedicated 'playOnAwake' boolean field
@@ -330,10 +341,8 @@ const createButtonOrIcon = (rowInfo, commandData, commandParameterData) => {
         }
 
         // Store the command data for later use
-        button.dataset.mainCommand = commandData.mainCommand;
-        button.dataset.altCommand = JSON.stringify(commandData.altCommand);
-        button.dataset.allParameter = JSON.stringify(commandData.allParameter);
-
+        button.textContent = commandData.buttonCaption;
+        button.dataset.allCmdInitial = JSON.stringify(commandData.allCmdInitial);
         wrapper.appendChild(button);
     } else {
         const icon = document.createElement('i');
@@ -414,10 +423,10 @@ const showButtonDetailsPopup = (commandData, commandParameterData) => {
     const getStatus = (status) => status ? 'Yes' : 'No';
 
     let parametersHtml = '';
-    const hasParameters = commandData.allParameter && commandData.allParameter.length > 0;
+    const hasParameters = commandData.allParameterId && commandData.allParameterId.length > 0;
 
     if (hasParameters) {
-        const parameterListHtml = commandData.allParameter.map(paramName => {
+        const parameterListHtml = commandData.allParameterId.map(paramName => {
             const normalizedParamName = paramName.trim().toLowerCase();
             let matchedParam = null;
 
@@ -454,15 +463,11 @@ const showButtonDetailsPopup = (commandData, commandParameterData) => {
     }
 
     // Combine main and alternate commands into a single string
-    let commandString = `<strong>Command String:</strong>&nbsp;&nbsp;&nbsp;${commandData.mainCommand || 'None'}`;
-    if (commandData.altCommand.length > 0) {
-        commandString += `, ${formatArray(commandData.altCommand)}`;
-    }
-
+    let commandInitial = `<strong>All Command Line Initial:</strong>&nbsp;&nbsp;&nbsp;${commandData.allCmdInitial.join(', ') || 'None'}`;
     popupContent.innerHTML = `
-        <h2 class="popup-title">${commandData.caption}</h2>
+        <h2 class="popup-title">${commandData.buttonCaption}</h2>
         <div class="popup-info">
-            <p>${commandString}</p>
+            <p>${commandInitial}</p>
             ${parametersHtml}
             <hr>
             <div class="required-status-container">
@@ -604,7 +609,8 @@ const setupNavigation = (data, tooltipData) => {
         'allArrivalCall': 'ARRIVAL',
         'allDepartureCall': 'DEPARTURE',
         'allCircuitCall': 'CIRCUIT',
-        'allSpecialCall': 'SPECIAL'
+        'allSpecialCall': 'SPECIAL',
+        'allNewCall': 'NEW'
     };
 
     // Create and append category filter buttons
@@ -649,14 +655,16 @@ const renderNavigationAndContent = (categoryKey, data, tooltipData) => {
         'allArrivalCall': 'Arr',
         'allDepartureCall': 'Dep',
         'allCircuitCall': 'Cct',
-        'allSpecialCall': 'Spl'
+        'allSpecialCall': 'Spl',
+        'allNewCall': 'New'
     };
-    
+
     const fullNames = {
         'allArrivalCall': 'Arrival',
         'allDepartureCall': 'Departure',
         'allCircuitCall': 'Circuit',
-        'allSpecialCall': 'Special'
+        'allSpecialCall': 'Special',
+        'allNewCall': 'New'
     };
 
     const shortName = shortCaptions[categoryKey] || categoryKey.replace('all', '').replace('Call', '').substring(0, 3);

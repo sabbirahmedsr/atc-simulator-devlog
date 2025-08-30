@@ -9,22 +9,20 @@
       "atcCall": "{Call Sign}, {descend 3000ft}, {QNH 1013} report established 12DME arc for DIA-14",
       "feedbackCall": "{QNH 1013}, {descending 3000ft}, call you established 12dme arc {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Inbound",
+        "buttonCaption": "Approve Inbound",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "approveInbound",
-        "altCommand": [],
-        "allParameter": ["QNH", "Altitude", "Arrival Approach"]
+        "allCmdInitial": ["approveInbound"],
+        "allParameterId": ["QNH", "Altitude", "Arrival Approach"]
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -38,22 +36,20 @@
       "atcCall": "{Call Sign}, {descend 3000ft}, {QNH 1013} report over VOR proceeding outbound of letdown for VDI-14",
       "feedbackCall": "{QNH 1013}, {descend 3000ft}, call you established outbound of letdown for VDI 14 {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Inbound",
+        "buttonCaption": "Approve Inbound",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "approveInbound",
-        "altCommand": [],
-        "allParameter": ["QNH", "Altitude"]
+        "allCmdInitial": ["approveInbound"],
+        "allParameterId": ["QNH", "Altitude"]
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -67,22 +63,20 @@
       "atcCall": "{Call Sign}, {descend 3000ft}, {QNH 1013} report over VOR proceeding outbound of letdown for VDI-14",
       "feedbackCall": "{QNH 1013}, {descend 3000ft}, call you established outbound of letdown for VDI 14 {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Inbound",
+        "buttonCaption": "Approve Inbound",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -96,22 +90,20 @@
       "atcCall": "{Call Sign}, clear for the approach, {descend 3000ft}, report turning inbound",
       "feedbackCall": "Roger, cleared for the approach, {descend 3000ft}, call you turning inbound {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Vor Outbound",
+        "buttonCaption": "Approve Vor Outbound",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -125,22 +117,20 @@
       "atcCall": "{Call Sign}, report established localizer runway 14",
       "feedbackCall": "call you established localizer, rwy 14 {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Localizer",
+        "buttonCaption": "Approve Localizer",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -154,22 +144,20 @@
       "atcCall": "{Call Sign}, report 6 ILS DME",
       "feedbackCall": "call you 6 ILS DME {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve 6 ILS DME",
+        "buttonCaption": "Approve 6 ILS DME",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -183,22 +171,20 @@
       "atcCall": "{Call Sign}, report crossing R300",
       "feedbackCall": "call you crossing R300 {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve R300",
+        "buttonCaption": "Approve R300",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -212,22 +198,20 @@
       "atcCall": "{Call Sign}, report crossing R355",
       "feedbackCall": "call you crossing R355 {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve R355",
+        "buttonCaption": "Approve R355",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -241,22 +225,20 @@
       "atcCall": "{Call Sign}, clear for the approach, {descend 3000ft} report established localizer runway 14",
       "feedbackCall": "call you established localizer, rwy 14 {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Localizer",
+        "buttonCaption": "Approve Localizer",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -270,22 +252,20 @@
       "atcCall": "{Call Sign}, clear for the approach, {descend 3000ft} report established localizer runway 14",
       "feedbackCall": "call you established localizer, rwy 14 {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Localizer",
+        "buttonCaption": "Approve Localizer",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -299,22 +279,20 @@
       "atcCall": "{Call Sign}, report 6 ILS DME",
       "feedbackCall": "call you 6 ILS DME {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve 6 ILS DME",
+        "buttonCaption": "Approve 6 ILS DME",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -328,22 +306,20 @@
       "atcCall": "{Call Sign}, check gears down and locked, surface wind 230/05 knots, cleared to land runway-14",
       "feedbackCall": "gears green, s/w copied, Cleared to land {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Landing",
+        "buttonCaption": "Approve Landing",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -357,22 +333,20 @@
       "atcCall": "{Call Sign}, landed 1200, taxi via S1, after vacating contact ground 121.8",
       "feedbackCall": "taxi via S1, after vacating change to ground 121.8, call you vacated the runway {Call Sign}",
       "initialCommand": {
-        "caption": "",
+        "buttonCaption": "",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Give Runway Vacate",
+        "buttonCaption": "Give Runway Vacate",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -386,22 +360,20 @@
       "atcCall": "{Call Sign}, Taxi via S1-S-C to Stand no 5",
       "feedbackCall": "roger, taxi via S1-S-C to Stand no 5 {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Give Taxi To Park",
+        "buttonCaption": "Give Taxi To Park",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Ground",
       "icao": ["VGHS"]
@@ -415,22 +387,20 @@
       "atcCall": "{Call Sign}, Taxi via SA to termarc, change to ground 121.8",
       "feedbackCall": "taxi via SA, changing to ground 121.8 {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Give Taxi To Termarc",
+        "buttonCaption": "Give Taxi To Termarc",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -444,22 +414,20 @@
       "atcCall": "{Call Sign}, continue appraoch, expect to bearing to the right at 3 miles",
       "feedbackCall": "roger, continue approach, {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve 3 Miles",
+        "buttonCaption": "Approve 3 Miles",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -473,22 +441,20 @@
       "atcCall": "{Call Sign}, change to tejgaon",
       "feedbackCall": "changing to tejgaon {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Transfer",
+        "buttonCaption": "Approve Transfer",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -504,22 +470,20 @@
       "atcCall": "{Call Sign}, startup approved, temp 32, time 40, push to face north",
       "feedbackCall": "startup approved, temp 32, time 1200 {Call Sign}",
       "initialCommand": {
-        "caption": "Request Startup",
+        "buttonCaption": "Request Startup",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Startup",
+        "buttonCaption": "Approve Startup",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Ground",
       "icao": ["VGHS"]
@@ -533,22 +497,20 @@
       "atcCall": "{Call Sign}, pushback approved, push to face north",
       "feedbackCall": "copied, push to face north, {Call Sign}",
       "initialCommand": {
-        "caption": "Request Pushback",
+        "buttonCaption": "Request Pushback",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Pushback",
+        "buttonCaption": "Approve Pushback",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Ground",
       "icao": ["VGHS"]
@@ -562,22 +524,20 @@
       "atcCall": "{Call Sign}, startup and pushback approved, temp 32, time 40, push to face north",
       "feedbackCall": "copied, startup and pushback approved, temp 32, time 40, push to face north {Call Sign}",
       "initialCommand": {
-        "caption": "Request Start And Push",
+        "buttonCaption": "Request Start And Push",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Start Push",
+        "buttonCaption": "Approve Start Push",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Ground",
       "icao": ["VGHS"]
@@ -591,22 +551,20 @@
       "atcCall": "{Call Sign}, taxi via C-N-N2 to holding point runway-14, {QNH 1013}, Squawk 4771",
       "feedbackCall": "{QNH 1013}, Squawk 4771, taxi via C-N-N2 to holding point runway-14 {Call Sign}",
       "initialCommand": {
-        "caption": "Request Taxi",
+        "buttonCaption": "Request Taxi",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Taxi",
+        "buttonCaption": "Approve Taxi",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Ground",
       "icao": ["VGHS"]
@@ -620,22 +578,20 @@
       "atcCall": "{Call Sign}, taxi via NA-P to holding point runway-14, QNH 760, SQUAWK 4771",
       "feedbackCall": "QNH 760, SQUAWK 4141, taxi via NA-P to holding point runway-14 {Call Sign}",
       "initialCommand": {
-        "caption": "Request Taxi",
+        "buttonCaption": "Request Taxi",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Military Taxi",
+        "buttonCaption": "Approve Military Taxi",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Ground",
       "icao": ["VGHS"]
@@ -649,22 +605,20 @@
       "atcCall": "{Call Sign}, cleared to [Destination] SID ADMIL ONE, climb and cruse FL 290",
       "feedbackCall": "over to tower {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Give Atc Clearance",
+        "buttonCaption": "Give Atc Clearance",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Ground",
       "icao": ["VGHS"]
@@ -678,22 +632,20 @@
       "atcCall": "{Call Sign}, contact tower",
       "feedbackCall": "over to tower {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Give Atc Clearance",
+        "buttonCaption": "Give Atc Clearance",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Ground",
       "icao": ["VGHS"]
@@ -707,22 +659,20 @@
       "atcCall": "{Call Sign}, line up runway 14, report ready for departure",
       "feedbackCall": "line up runway 14, call you ready for departure {Call Sign}",
       "initialCommand": {
-        "caption": "Request Line Up",
+        "buttonCaption": "Request Line Up",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Line Up",
+        "buttonCaption": "Approve Line Up",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -736,22 +686,20 @@
       "atcCall": "{Call Sign}, circuite approved line up runway 14, report ready for departure",
       "feedbackCall": "lining up runway 14 for circuite, call you ready for departure {Call Sign}",
       "initialCommand": {
-        "caption": "Request Line Up",
+        "buttonCaption": "Request Line Up",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Line Up",
+        "buttonCaption": "Approve Line Up",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -762,25 +710,23 @@
       "description": "This is a call to the tower controller to get permission to move onto the runway for takeoff, with the intention of flying to a designated training area.",
       "Route": "M.Line Up Tgt Area",
       "initialCall": "{DHK TWR} {Call Sign}, holding point runway 14, Request line up for training area east",
-      "atcCall": "",
+      "atcCall": null,
       "feedbackCall": "lining up runway 14 for trg area east, call you ready for departure {Call Sign}",
       "initialCommand": {
-        "caption": "Request Line Up",
+        "buttonCaption": "Request Line Up",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "",
+        "buttonCaption": "",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -794,22 +740,20 @@
       "atcCall": "{Call Sign}, SID ADMIL ONE, initially FL-130, surface wind 260/60kts, cleared for takeoff runway 14",
       "feedbackCall": "s/w copied, runway 14, cleared for takeoff {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Departure",
+        "buttonCaption": "Approve Departure",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -819,26 +763,24 @@
       "category": "Departure Call",
       "description": "This is a call made by a pilot immediately after takeoff, reporting their new altitude and position to the tower controller to ensure they are on the correct departure path.",
       "Route": "Airborne - 4DME",
-      "initialCall": "",
+      "initialCall": null,
       "atcCall": "{Call Sign}, airborne 1300, report passing 4000ft",
       "feedbackCall": "airborne 1300, call you passing 4000ft {Call Sign}",
       "initialCommand": {
-        "caption": "",
+        "buttonCaption": "",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Airborne",
+        "buttonCaption": "Approve Airborne",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -848,26 +790,24 @@
       "category": "Departure Call",
       "description": "This is a specific call made by a military pilot after takeoff, reporting their position to the tower controller as they enter the crosswind leg of the circuit (a turn in the traffic pattern).",
       "Route": "Militery Airborne - Circuite Cross Wind",
-      "initialCall": "",
-      "atcCall": "",
+      "initialCall": null,
+      "atcCall": null,
       "feedbackCall": "airborne 1300, call you abeam victor one {Call Sign}",
       "initialCommand": {
-        "caption": "",
+        "buttonCaption": "",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Airborne",
+        "buttonCaption": "Approve Airborne",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -881,22 +821,20 @@
       "atcCall": "{Call Sign}, contact dhaka control 126.7",
       "feedbackCall": "over to control, good day {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Transfer",
+        "buttonCaption": "Approve Transfer",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -910,22 +848,20 @@
       "atcCall": "{Call Sign}, ????",
       "feedbackCall": "Over to training {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Transfer",
+        "buttonCaption": "Approve Transfer",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -941,22 +877,20 @@
       "atcCall": "{Call Sign}, ????",
       "feedbackCall": "call you field inside rwy 14 {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Cct State",
+        "buttonCaption": "Approve Cct State",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -970,22 +904,20 @@
       "atcCall": "{Call Sign}, ????",
       "feedbackCall": "call you downwind {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Cct State",
+        "buttonCaption": "Approve Cct State",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -999,22 +931,20 @@
       "atcCall": "{Call Sign}, copied, report initial rwy 14",
       "feedbackCall": "call you initial rwy 14 {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Cct State",
+        "buttonCaption": "Approve Cct State",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -1028,22 +958,20 @@
       "atcCall": "{Call Sign}, copied, report base",
       "feedbackCall": "call you base {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Cct State",
+        "buttonCaption": "Approve Cct State",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -1057,22 +985,20 @@
       "atcCall": "{Call Sign}, copied, report base",
       "feedbackCall": "call you base {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Cct State",
+        "buttonCaption": "Approve Cct State",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -1086,22 +1012,20 @@
       "atcCall": "{Call Sign}, check gears down and locked S/W calm, report final runway 14",
       "feedbackCall": "Gears are green, s/w copied, runway 14, call you final {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Cct State",
+        "buttonCaption": "Approve Cct State",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -1115,22 +1039,20 @@
       "atcCall": "{Call Sign}, check gears down and locked S/W calm, cleared to land",
       "feedbackCall": "Gears are green, s/w copied, runway 14, cleared to land {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Cct State",
+        "buttonCaption": "Approve Cct State",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -1144,22 +1066,20 @@
       "atcCall": "{Call Sign}, report downwind",
       "feedbackCall": "call you downwind {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Cct State",
+        "buttonCaption": "Approve Cct State",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -1173,22 +1093,20 @@
       "atcCall": "{Call Sign}, recheck gears down and locked S/W calm, runway 14, cleared for low go",
       "feedbackCall": "Gears are green, s/w copied, runway 14, cleared for low go {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Cct State",
+        "buttonCaption": "Approve Cct State",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -1202,22 +1120,20 @@
       "atcCall": "{Call Sign}, recheck gears down and locked S/W calm, cleared to land",
       "feedbackCall": "Gears are green, s/w copied, runway 14, cleared to land {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Cct State",
+        "buttonCaption": "Approve Cct State",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
@@ -1231,26 +1147,53 @@
       "atcCall": "{Call Sign}, report downwind",
       "feedbackCall": "call you downwind {Call Sign}",
       "initialCommand": {
-        "caption": "Play On Awake",
+        "buttonCaption": "Play On Awake",
         "playOnAwake": true,
         "requiredToInitiate": true,
         "requiredToComplete": false,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "feedbackCommand": {
-        "caption": "Approve Cct State",
+        "buttonCaption": "Approve Cct State",
         "playOnAwake": false,
         "requiredToInitiate": true,
         "requiredToComplete": true,
-        "mainCommand": "",
-        "altCommand": [],
-        "allParameter": []
+        "allCmdInitial": [],
+        "allParameterId": []
       },
       "atcType": "Tower",
       "icao": ["VGHS"]
     }
   ],
-  "allSpecialCall": []
+  "allSpecialCall": [],
+  "allNewCall": [
+    {
+      "title": "Mobile Radio Check",
+      "category": "Departure Call",
+      "description": "A radio check call made by the pilot to a mobile ground unit before contacting the tower.",
+      "Route": "Approaching holding point",
+      "initialCall": "{Mobile}, {Call Sign}, RT check.",
+      "atcCall": "{Call Sign}, Mobile, loud and clear. How do you read?",
+      "feedbackCall": "You are also loud and clear, {Call Sign}.",
+      "initialCommand": {
+        "buttonCaption": "Radio Check",
+        "playOnAwake": false,
+        "requiredToInitiate": false,
+        "requiredToComplete": false,
+        "allCmdInitial": [],
+        "allParameterId": []
+      },
+      "feedbackCommand": {
+        "buttonCaption": "Radio Check Complete",
+        "playOnAwake": false,
+        "requiredToInitiate": false,
+        "requiredToComplete": false,
+        "allCmdInitial": [],
+        "allParameterId": []
+      },
+      "atcType": "Mobile",
+      "icao": ["VGJR"]
+    }
+  ]
 }

@@ -33,13 +33,12 @@ Each object inside the arrays represents a single, complete ATC conversation:
 
 Both the **`initialCommand`** and **`feedbackCommand`** objects have the same internal structure. They provide instructions for how a command should be handled by a flight application.
 
-* **`caption`**: A short, human-readable label for the command.
+* **`buttonCaption`**: A short, human-readable label for the command that would be used in `operator console` for the simulator.
 * **`playOnAwake`**: A boolean (`true` or `false`) that indicates if the command's audio should play automatically.
 * **`requiredToInitiate`**: A boolean that shows if this call is required to initiate to complete or pass the movement phase in `simulator`.
 * **`requiredToComplete`**: A boolean that shows if this call is required to be finished to complete or pass the movement phase in `simulator`.
-* **`mainCommand`**: The primary text or phrase that can be used as `cmd` in command line or in `voice command`.
-* **`altCommand`**: An array of alternative, valid phrases for the `mainCommand`.
-* **`allParameter`**: An array for any variables (e.g. taxiway route, time, qnh) needed for the command.
+* **`allCmdInitial`**: An array of string that can be used as a `command / cmd` in a `command-line` input system or `voice command`.
+* **`allParameterId`**: An array of parameter id that represent the required parameter for the command (e.g., taxiway route, time, qnh).
 
 
 ***
