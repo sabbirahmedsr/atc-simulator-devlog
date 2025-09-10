@@ -250,5 +250,33 @@
     "wingspan": "10.97 m",
     "height": "4.04 m",
     "imageUrl": "https://www.stanstednews.com/gallery_2022/21360.jpg"
+  },
+  {
+    "callSign": "PT6",
+    "fullName": "UNKNOWN",
+    "origin": "VGJR, JSR",
+    "destination": "VGJR, JSR", 
+    "SID": "",
+    "model": "PT6",
+    "type": "Military Training",
+    "weightCategory": "Light",
+    "length": "???",
+    "wingspan": "???",
+    "height": "???",
+    "imageUrl": "https://imgproc.airliners.net/photos/airliners/7/6/2/4286267.jpg?v=v4500e61f89d"
+  },
+  {
+    "callSign": "GROB 120tp",
+    "fullName": "UNKNOWN",
+    "origin": "VGJR, JSR",
+    "destination": "VGJR, JSR", 
+    "SID": "",
+    "model": "GROB 120tp",
+    "type": "Military Training",
+    "weightCategory": "Light",
+    "length": "???",
+    "wingspan": "???",
+    "height": "???",
+    "imageUrl": "https://live.staticflickr.com/65535/52177415528_929c82eae9_h.jpg"
   }
 ]
