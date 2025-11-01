@@ -278,5 +278,47 @@
     "wingspan": "???",
     "height": "???",
     "imageUrl": "https://live.staticflickr.com/65535/52177415528_929c82eae9_h.jpg"
+  },
+  {
+    "callSign": "AW 119",
+    "fullName": "AgustaWestland AW119 Koala || Bangladesh Air Force",
+    "origin": "VGJR, JSR",
+    "destination": "VGJR, JSR",
+    "SID": "",
+    "model": "AgustaWestland AW119",
+    "type": "Military Training Helicopter",
+    "weightCategory": "Light",
+    "length": "12.9 m",
+    "wingspan": "10.83 m",
+    "height": "3.6 m",
+    "imageUrl": "https://pbs.twimg.com/media/GXF-ivkbEAEvhh4?format=jpg&name=medium"
+  },
+  {
+    "callSign": "K-8",
+    "fullName": "Hongdu K-8W Karakorum || Bangladesh Air Force",
+    "origin": "VGJR, JSR",
+    "destination": "VGJR, JSR",
+    "SID": "",
+    "model": "Hongdu K-8W",
+    "type": "Military Jet Trainer",
+    "weightCategory": "Medium",
+    "length": "11.6 m",
+    "wingspan": "9.63 m",
+    "height": "4.21 m",
+    "imageUrl": "https://d1a2ot8agkqe8w.cloudfront.net/web/2014/12/k-8-bangladesh-airteamimages_58922.jpg"
+  },
+  {
+    "callSign": "BELL 206",
+    "fullName": "Bell 206L LongRanger || Bangladesh Air Force",
+    "origin": "VGJR, JSR",
+    "destination": "VGJR, JSR",
+    "SID": "",
+    "model": "Bell 206L LongRanger",
+    "type": "Military Training Helicopter",
+    "weightCategory": "Light",
+    "length": "13.03 m",
+    "wingspan": "11.28 m",
+    "height": "3.51 m",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Bangladesh_Air_Force_Bell-206_%283%29.jpg/960px-Bangladesh_Air_Force_Bell-206_%283%29.jpg?20180825102224"
   }
 ]
