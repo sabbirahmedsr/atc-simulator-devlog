@@ -1,0 +1,98 @@
+[
+  {
+    "phase": "startup",
+    "category": "Ground",
+    "description": "A pilot makes this call to the ground controller to request permission to start the plane's engines. This is the first step before a flight.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Request startup",
+        "message": "{JSR GRD} {Call Sign}, request startup."
+      },
+      {
+        "speaker": "GRD",
+        "caption": "Startup approved",
+        "message": "{Call Sign}, startup approved, temp 32 and {time 23}"
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Startup approved",
+        "message": "Startup approved, temp 32, {time 23}, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "PT6" ],
+    "icao": [ "VGJR" ]
+  },
+  {
+    "phase": "taxi",
+    "category": "Ground",
+    "description": "A pilot makes this call to the ground controller to request permission to move the plane on the ground from the gate to the runway.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Request taxi",
+        "message": "{JSR GRD}, {Call Sign}, request taxi."
+      },
+      {
+        "speaker": "GRD",
+        "caption": "Taxi to holding point",
+        "message": "{Call Sign}, {JSR GRD}, {taxi via O-P-M} to holding point RWY-16, {QNH 746}."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Wilco, taxi to holding point",
+        "message": "{Taxi via O-P-M} to holding point RWY-16, {QNH 746}, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "PT6" ],
+    "icao": [ "VGJR" ]
+  },
+  {
+    "phase": "change_to_tower",
+    "category": "Ground",
+    "description": "A pilot requests clearance for a specific area and is instructed to contact the tower.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Request area",
+        "message": "{Call Sign}, request area."
+      },
+      {
+        "speaker": "GRD",
+        "caption": "Area NL1, contact tower",
+        "message": "{Call Sign}, {JSR GRD}, area NL1, contact tower 123.2."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "contact tower",
+        "message": "Area NL1, contact tower 123.2, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "PT6" ],
+    "icao": [ "VGJR" ]
+  },
+  {
+    "phase": "line_up",
+    "category": "Tower",
+    "description": "A pilot makes this call to the tower controller to request permission to move onto the runway and prepare for takeoff.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Request lineup",
+        "message": "{JSR TWR}, {Call Sign}, request lineup."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Lineup and wait",
+        "message": "{Call Sign}, {JSR TWR}, lineup runway 16, report ready for departure."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "lineup and wait",
+        "message": "Lineup runway 16, report ready for departure, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "PT6" ],
+    "icao": [ "VGJR" ]
+  }
+]

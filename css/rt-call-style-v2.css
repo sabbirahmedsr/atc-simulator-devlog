@@ -1,0 +1,439 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 20px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: center; /* Center the h1 */
+    align-items: center;
+    margin: 0 auto 20px auto;
+    width: 80%;
+    max-width: 1200px;
+    position: relative; /* New positioning context */
+}
+h1 {
+    color: #bb86fc;
+    /* text-align is already center, which is good */
+    margin: 0; /* Remove default margins to help with centering */
+}
+
+.category-header {
+    /* Restore font size and reduce vertical margins for a compact layout */
+    margin-top: 0.8em;  /* Further reduced for a more compact view */
+    margin-bottom: 0.5em; /* Reduced from 0.8em */
+    font-size: 1.4em; /* Increase font size for better visibility */
+}
+
+/* Set a fixed width for the phase column and prevent it from shrinking */
+.phase-column {
+    width: 220px; /* Adjust this value as needed */
+    flex-shrink: 0;
+}
+/* --- Filter Styles --- */
+.filter-container {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 0 auto 25px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+    border: 1px solid #333;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-group label {
+    font-weight: bold;
+    color: #03dac6;
+}
+
+.filter-btn {
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #444;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+    background-color: #444;
+}
+
+.filter-btn.active {
+    background-color: #bb86fc;
+    color: #121212;
+    border-color: #bb86fc;
+}
+
+/* Style for the aircraft dropdown to make it wider and match the theme */
+#aircraft-filter {
+    min-width: 150px; /* Give the dropdown a minimum width */
+    padding: 8px 10px;
+    border-radius: 5px;
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #444;
+    cursor: pointer;
+}
+
+/* Style for the callsign input to match the theme */
+#callsign-filter {
+    min-width: 150px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+
+/* Custom styling for the aircraft dropdown arrow */
+.aircraft-select-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+#aircraft-filter {
+    -webkit-appearance: none; /* Remove default arrow for Chrome/Safari */
+    -moz-appearance: none;    /* Remove default arrow for Firefox */
+    appearance: none;         /* Remove default arrow for other browsers */
+    padding-right: 30px;      /* Add space for the custom arrow */
+}
+#rt-call-container {
+    display: flex;    
+    flex-direction: column; /* Stack cards vertically */
+    gap: 20px;
+    align-items: center; /* Center cards horizontally */
+}
+.rt-card {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 15px;
+    width: 80%; /* Use more width */
+    max-width: 1200px; /* Set a max-width for very large screens */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    display: flex; /* Enable flexbox for two-column layout */
+    gap: 20px;
+}
+
+.phase-column h2 {
+    margin-top: 0;
+    color: #03dac6;
+    text-transform: capitalize;
+}
+
+.phase-column .meta-info {
+    font-size: 0.9em;
+    color: #aaa;
+    margin: 5px 0;
+}
+
+.dialogue-column {
+    flex-grow: 1; /* The right column takes the remaining space */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.call-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.call-row .speaker {
+    font-weight: bold;
+    color: #cf6679;
+    min-width: 50px; /* Align the call text */
+}
+
+.call-row .call-text {
+    margin: 0;
+    font-family: "Courier New", Courier, monospace;
+    background-color: #252525;
+    padding: 8px;
+    border-radius: 4px;
+    flex-grow: 1;
+}
+
+/* --- Action Button Group in Phase Column --- */
+.action-btn-group {
+    display: flex;
+    gap: 20px;
+}
+
+/* --- Popup Styles --- */
+.aircraft-btn {
+    background: none;
+    border: 1px solid transparent; /* Add border for hover effect */
+    color: #909090; /* Use a less prominent color */
+    cursor: pointer;
+    font-size: 1.1em;
+    padding: 5px;
+    transition: all 0.2s ease-in-out;
+    border-radius: 4px;
+}
+
+.aircraft-btn:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.description-btn {
+    background: none;
+    border: 1px solid transparent; /* Add border for hover effect */
+    color: #909090; /* Use a less prominent color */
+    cursor: pointer;
+    font-size: 1.1em;
+    padding: 5px;
+    transition: all 0.2s ease-in-out;
+    border-radius: 4px;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.popup-overlay.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup-content {
+    background-color: #1e1e1e;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.popup-overlay.visible .popup-content {
+    transform: scale(1);
+}
+
+.popup-content h3, #help-popup .popup-content h3 {
+    margin-top: 0;
+    color: #03dac6;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+/* Specific styles for the help popup to make it larger */
+#help-popup .popup-content {
+    max-width: 700px; /* Increased width */
+}
+
+/* Styles for the instruction list in the help popup */
+.popup-content .instruction-list {
+    text-align: left;
+    padding-left: 0;
+    display: block;
+    list-style-type: disc; /* Use standard disc bullets */
+    padding-left: 20px; /* Add space for the bullets */
+}
+
+.popup-content .instruction-list li {
+    margin-bottom: 15px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.popup-content .instruction-list code {
+    background-color: #333;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: "Courier New", Courier, monospace;
+    color: #bb86fc;
+}
+
+.popup-content p {
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* This style should ONLY apply to the aircraft list popups, not the instruction list */
+.popup-content ul:not(.instruction-list) {
+    list-style-type: none;
+    padding: 0;
+    max-height: none; /* Remove max-height to prevent scrolling */
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 8px;
+}
+
+.popup-content li {
+    background-color: #252525;
+    padding: 8px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.phase-column {
+    border-right: 2px solid #333;
+    padding-right: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes phase name up and buttons down */
+    align-items: center;
+    padding-top: 15px; /* Add padding to give content space */
+    padding-bottom: 15px;
+}
+
+.phase-column h2 {
+    word-wrap: break-word; /* For older browsers */
+    overflow-wrap: break-word; /* Standard property */
+    white-space: normal; /* Ensure text can wrap */
+    line-height: 1.2; /* Adjust line height for wrapped text */
+    hyphens: auto; /* Optional: helps break long words */
+}
+
+#callsign-filter {
+    background-color: #1a1a1a; /* Darker background */
+    border: 1px solid #00aaff; /* Bright blue border */
+    color: #e0e0e0;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.aircraft-select-wrapper::after {
+    content: '\f078'; /* Font Awesome down-chevron icon */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* Allows clicks to pass through to the select */
+    color: #aaa;
+}
+
+/* --- Print Styles --- */
+#print-btn {
+    background-color: #444;
+    color: #03dac6;
+    border: none;
+    /* Adjust padding for an icon-only button */
+    padding: 8px 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Group for header buttons */
+.header-btn-group {
+    position: absolute;
+    right: 0;
+    display: flex;
+    gap: 10px;
+}
+
+/* Style for the new help button */
+#help-btn {
+    background-color: #444;
+    color: #03dac6;
+    border: none;
+    padding: 8px 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#print-btn:hover {
+    background-color: #555;
+}
+
+#help-btn:hover {
+    background-color: #555;
+}
+
+@media print {
+    body {
+        font-size: 10pt;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: #fff;
+        color: #000;
+    }
+    .filter-container, .header-btn-group, .action-btn-group, .popup-overlay { display: none !important; }
+    h1 { font-size: 14pt; margin-bottom: 10px; color: #000 !important; }
+    .category-header { 
+        font-size: 12pt; 
+        color: #000 !important; 
+        margin-top: 10px; 
+        margin-bottom: 2px; 
+        border-bottom: 2px solid #000; 
+    }
+    .rt-card { 
+        display: table; 
+        width: 100%; 
+        box-shadow: none; 
+        border: none; 
+        page-break-inside: avoid; padding: 0; 
+    }
+    .phase-column, .dialogue-column { vertical-align: top; border: none; padding: 1px 5px; }
+    .phase-column { display: none; }
+    .dialogue-column { display: block; padding-left: 0; }
+    .call-row { gap: 5px; padding: 1px 0; }
+    .call-row .speaker,
+    .call-row .call-text {
+        font-size: 10pt;
+        color: #000 !important;
+        background: none;
+        margin: 0;
+        padding: 0;
+        font-family: inherit; /* Ensure call text uses the body's print font */
+    }
+    /* Pilot call styles: darker and heavier */
+    .call-row[data-speaker="Pilot"] .speaker,
+    .call-row[data-speaker="Pilot"] .call-text {
+        color: #000 !important;
+        font-weight: 600;
+    }
+    /* ATC call styles: lighter color and thinner font */
+    .call-row[data-speaker="TWR"] .speaker,
+    .call-row[data-speaker="TWR"] .call-text,
+    .call-row[data-speaker="GRD"] .speaker,
+    .call-row[data-speaker="GRD"] .call-text {
+        color: #333 !important;
+        font-weight: 400;
+    }
+}

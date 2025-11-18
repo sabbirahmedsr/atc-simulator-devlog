@@ -1,0 +1,290 @@
+[
+  {
+    "phase": "entry_call_1",
+    "category": "Entry Call",
+    "description": "This is the very first call a pilot makes to an airport's air traffic controller when entering their airspace to request an approach for landing.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "20DME inbound DAC",
+        "message": "{DHK TWR} {Call Sign}, descending 4000 feet, 20DME inboud DAC"
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Descend 3000ft, report 12DME arc",
+        "message": "{Call Sign}, {descend 3000ft}, {QNH 1013} report established 12DME arc for DIA-14"
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Wilco, report 12DME arc",
+        "message": "{QNH 1013}, {descending 3000ft}, call you established 12dme arc {Call Sign}"
+      }
+    ],
+    "aircraft": [ "B737", "A320", "ATR72", "Generic" ],
+    "icao": [ "VGHS" ]
+  },
+  {
+    "phase": "entry_call_2",
+    "category": "Entry Call",
+    "description": "A pilot makes this call to the airport controller when they are nearing the airport, to request permission to begin a descent and prepare for landing.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "15DME inboud DAC",
+        "message": "{DHK TWR} {Call Sign}, descending 4000ft, 15DME inboud DAC"
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Descend 3000ft, report VOR outbound",
+        "message": "{Call Sign}, {descend 3000ft}, {QNH 1013} report over VOR proceeding outbound of letdown for VDI-14"
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Wilco, report VOR outbound",
+        "message": "{QNH 1013}, {descend 3000ft}, call you established outbound of letdown for VDI 14 {Call Sign}"
+      }
+    ],
+    "aircraft": [ "B737", "A320", "ATR72", "Generic" ],
+    "icao": [ "VGHS" ]
+  },
+  {
+    "phase": "entry_call_(training_area)",
+    "category": "Entry Call",
+    "description": "This call is made by a pilot who has just finished training in a designated area and is requesting to re-enter the airport's main traffic pattern for a landing.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Request rejoin instruction",
+        "message": "{DHK TWR} {Call Sign}, descending 4000 feet, like to leave training area east, request rejoin instruction"
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Descend 3000ft, report VOR outbound",
+        "message": "{Call Sign}, {descend 3000ft}, {QNH 1013} report over VOR proceeding outbound of letdown for VDI-14"
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Wilco, report VOR outbound",
+        "message": "{QNH 1013}, {descend 3000ft}, call you established outbound of letdown for VDI 14 {Call Sign}"
+      }
+    ],
+    "aircraft": [ "B737", "A320", "ATR72", "Generic" ],
+    "icao": [ "VGHS" ]
+  },
+  {
+    "phase": "vor_outbound",
+    "category": "VOR Call",
+    "description": "This call is made when a plane has flown directly over a VOR (a radio beacon used for navigation) and is now flying away from it to set up for the final landing approach.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Over VOR proceeding outbound",
+        "message": "{DHK TWR} {Call Sign}, over VOR proceeding outbound of letdown"
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Clear for approach, report turning inbound",
+        "message": "{Call Sign}, clear for the approach, {descend 3000ft}, report turning inbound"
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Wilco, report turning inbound",
+        "message": "Roger, cleared for the approach, {descend 3000ft}, call you turning inbound {Call Sign}"
+      }
+    ],
+    "aircraft": [ "B737", "A320", "ATR72", "Generic" ],
+    "icao": [ "VGHS" ]
+  },
+  {
+    "phase": "outbound_to_localizer",
+    "category": "VOR Call",
+    "description": "This call is made when a plane begins a turn to line up with the runway after flying away from the VOR, starting the final straight part of the approach.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Turning inbound",
+        "message": "{DHK TWR} {Call Sign}, turning inbound"
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Report established localizer",
+        "message": "{Call Sign}, report established localizer runway 14"
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Wilco, report established localizer",
+        "message": "call you established localizer, rwy 14 {Call Sign}"
+      }
+    ],
+    "aircraft": [ "B737", "A320", "ATR72", "Generic" ],
+    "icao": [ "VGHS" ]
+  },
+  {
+    "phase": "localizer_to_6dme_1",
+    "category": "VOR Call",
+    "description": "This is a call that happens when a plane is already perfectly lined up with the runway and has reached a distance of 6 miles, confirming it is on the correct path for landing.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "On localizer runway 14",
+        "message": "{DHK TWR} {Call Sign}, on localizer runway 14"
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Report 6 ILS DME",
+        "message": "{Call Sign}, report 6 ILS DME"
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Wilco, report 6 ILS DME",
+        "message": "call you 6 ILS DME {Call Sign}"
+      }
+    ],
+    "aircraft": [ "B737", "A320", "ATR72", "Generic" ],
+    "icao": [ "VGHS" ]
+  },
+  {
+    "phase": "12_dme_arc_to_r300",
+    "category": "Arc Call",
+    "description": "This call is made by a pilot when they are flying a curved path, called an 'arc,' around the airport and have reached a specific radial (a navigational line) that marks their next turn.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Established 12DME arc",
+        "message": "{DHK TWR} {Call Sign}, established 12DME arc runway-14"
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Report crossing R300",
+        "message": "{Call Sign}, report crossing R300"
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Wilco, report crossing R300",
+        "message": "call you crossing R300 {Call Sign}"
+      }
+    ],
+    "aircraft": [ "B737", "A320", "ATR72", "Generic" ],
+    "icao": [ "VGHS" ]
+  },
+  {
+    "phase": "r300_to_localizer",
+    "category": "Arc Call",
+    "description": "This is the call a pilot makes after completing a turn from a curved approach path to line up on the final, straight path to the runway.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Crossing R300",
+        "message": "{DHK TWR} {Call Sign}, crossing R300"
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Clear for approach, report localizer",
+        "message": "{Call Sign}, clear for the approach, {descend 3000ft} report established localizer runway 14"
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Wilco, report established localizer",
+        "message": "call you established localizer, rwy 14 {Call Sign}"
+      }
+    ],
+    "aircraft": [ "B737", "A320", "ATR72", "Generic" ],
+    "icao": [ "VGHS" ]
+  },
+  {
+    "phase": "final_approach",
+    "category": "Landing Call",
+    "description": "This is the final call before landing, made by a pilot who is 6 miles away from the runway, to receive landing clearance and information about the wind.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "6 ILS DME",
+        "message": "{DHK TWR} {Call Sign}, 6 ILS DME"
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Cleared to land",
+        "message": "{Call Sign}, check gears down and locked, surface wind 230/05 knots, cleared to land runway-14"
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Wilco, cleared to land",
+        "message": "gears green, s/w copied, Cleared to land {Call Sign}"
+      }
+    ],
+    "aircraft": [ "B737", "A320", "ATR72", "Generic" ],
+    "icao": [ "VGHS" ]
+  },
+  {
+    "phase": "landed_and_taxi",
+    "category": "Landing Call",
+    "description": "A pilot makes this call immediately after the plane has touched down on the runway, to let the controller know they have landed and to get instructions on where to taxi next.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Landed",
+        "message": "{DHK TWR} {Call Sign}"
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Taxi via S1, contact ground",
+        "message": "{Call Sign}, landed 1200, taxi via S1, after vacating contact ground 121.8"
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Wilco, taxi via S1, contact ground",
+        "message": "taxi via S1, after vacating change to ground 121.8, call you vacated the runway {Call Sign}"
+      }
+    ],
+    "aircraft": [ "B737", "A320", "ATR72", "Generic" ],
+    "icao": [ "VGHS" ]
+  },
+  {
+    "phase": "vacated_to_parking",
+    "category": "Landing Call",
+    "description": "This is a call made after a plane has completely left the main runway and is on a taxiway, to get directions to its final parking spot.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Runway vacated via S1",
+        "message": "{DHK GND} {Call Sign}, runway vacated via S1"
+      },
+      {
+        "speaker": "GRD",
+        "caption": "Taxi to stand 5",
+        "message": "{Call Sign}, Taxi via S1-S-C to Stand no 5"
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Wilco, taxi to stand 5",
+        "message": "roger, taxi via S1-S-C to Stand no 5 {Call Sign}"
+      }
+    ],
+    "aircraft": [ "B737", "A320", "ATR72", "Generic" ],
+    "icao": [ "VGHS" ]
+  },
+  {
+    "phase": "fly_away",
+    "category": "Landing Call",
+    "description": "This is the final call made to an airport's tower before leaving their airspace after a low pass, informing them of the pilot's intention to change to another controller.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "3 miles turning right",
+        "message": "{DHK TWR} {Call Sign}, we are at 3 miles turning right, changing to tejgaon"
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Change to Tejgaon",
+        "message": "{Call Sign}, change to tejgaon"
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Wilco, changing to Tejgaon",
+        "message": "changing to tejgaon {Call Sign}"
+      }
+    ],
+    "aircraft": [ "B737", "A320", "ATR72", "Generic" ],
+    "icao": [ "VGHS" ]
+  }
+]

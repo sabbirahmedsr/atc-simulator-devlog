@@ -1,0 +1,122 @@
+{
+  "QNH": {
+    "description": "This is the air pressure setting used to calibrate an aircraft's altimeter, which shows its height above sea level. For example, if a pilot hears 'QNH 1013', they will set this value on their altimeter to get an accurate reading.",
+    "values": [
+      "QNH 1013",
+      "QNH 1012",
+      "QNH 1011",
+      "QNH 1010",
+      "QNH 999",
+      "QNH 760",
+      "QNH 758",
+      "QNH 756",
+      "QNH 755",
+      "QNH 30.08",
+      "QNH 30.02",
+      "QNH 29.87",
+      "QNH 29.85"
+    ]
+  },
+  "Altitude": {
+    "description": "This is a command for the height an aircraft should fly at or descend to. For example, 'descending 4000ft' tells a pilot to lower their aircraft to that specific height.",
+    "values": [
+      "Descending 4000ft",
+      "Descending 3000ft",
+      "Descending 2000ft",
+      "Descending 1500ft"
+    ]
+  },
+  "Departure Taxiway": {
+    "description": "This is the specific route an aircraft must follow on the ground to get to the runway for takeoff. For example, 'taxi via C-N-N2' instructs the pilot on the path to take.",
+    "values": [
+      "taxi via C-N-N2",
+      "taxi via F-N-N2",
+      "taxi via V-N-N2",
+      "taxi via NA-P",
+      "taxi via NA"
+    ]
+  },
+  "Arrival Taxiway": {
+    "description": "This is the route an aircraft follows on the ground after landing to get to its gate or parking area. For example, 'taxi via S1' tells the pilot which path to take after leaving the runway.",
+    "values": [
+      "taxi via S1",
+      "taxi via S2",
+      "taxi via S3",
+      "taxi via SA",
+      "taxi via HA"
+    ]
+  },
+  "Runway Vacate Taxiway": {
+    "description": "This is a command instructing a pilot on which taxiway to use to exit the runway after landing. For example, 'runway vacated via S1' is the confirmation a pilot gives after they have followed the instruction.",
+    "values": [
+      "runway vacated via S1",
+      "runway vacated via S2",
+      "runway vacated via S3",
+      "runway vacated via SA",
+      "runway vacated via HA"
+    ]
+  },
+  "Parking Taxiway": {
+    "description": "This is the final ground route an aircraft follows to its designated parking spot or gate. For example, 'taxi via S1-S-C' is the final set of instructions a pilot receives to reach their parking spot.",
+    "values": [
+      "taxi via S1-S-C",
+      "taxi via S1-S-F",
+      "taxi via S1-S-V",
+      "taxi via S2-S-C",
+      "taxi via S2-S-F",
+      "taxi via S2-S-V",
+      "taxi via S3-S-C",
+      "taxi via S3-S-F",
+      "taxi via S3-S-V"
+    ]
+  },
+  "Pushback Face": {
+    "description": "This is a ground command that tells a pilot which direction to face the aircraft after pushing back from the gate. For example, 'push to face north' tells the pilot and ground crew which way to orient the aircraft before starting the engines.",
+    "values": [
+      "push to face north",
+      "push to face south"
+    ]
+  },
+  "TIME": {
+    "description": "This is the time, typically provided in UTC (Coordinated Universal Time) format. For example, a pilot might receive 'TIME 1335' to be aware of a specific time-sensitive instruction.",
+    "values": [
+      "TIME 1335",
+      "TIME 1454",
+      "TIME 923",
+      "TIME 1037",
+      "TIME 1146"
+    ]
+  },
+  "Arrival Approach": {
+    "description": "This is a report from a pilot confirming their current location and status during the final approach to the airport. For example, 'call you established 12 dme arc' is a common phrase to let the controller know the aircraft is on a specific part of the approach path.",
+    "values": [
+      "call you established outbound of letdown for VDI 14",
+      "call you established 12 dme arc",
+      "call you over delta alpha, proceeding outbound of letdown, rwy 14",
+      "call you victor 1"
+    ]
+  },
+  "Call Sign": {
+    "description": "The specific name or code used to identify an aircraft during a flight. For example, 'THAI321' is the unique identifier for a Thai Airways flight.",
+    "values": [
+      "THAI321",
+      "EK584",
+      "BG367",
+      "IGO1113",
+      "QR638",
+      "CX667",
+      "SQ446",
+      "BG602",
+      "BG492",
+      "BG472",
+      "NVQ946",
+      "AWA446",
+      "UBG108",
+      "GFN391",
+      "BJR471",
+      "UNC1031",
+      "AJX1483",
+      "S2AGP"
+    ]
+  }
+}
