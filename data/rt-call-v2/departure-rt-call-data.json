@@ -40,7 +40,7 @@
       },
       {
         "speaker": "Pilot",
-        "caption": "Wilco, taxi to holding point",
+        "caption": "Taxi to holding point",
         "message": "{Taxi via O-P-M} to holding point RWY-16, {QNH 746}, {Call Sign}."
       }
     ],
@@ -90,6 +90,73 @@
         "speaker": "Pilot",
         "caption": "lineup and wait",
         "message": "Lineup runway 16, report ready for departure, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "PT6" ],
+    "icao": [ "VGJR" ]
+  },
+  {
+    "phase": "take_off",
+    "category": "Tower",
+    "description": "A pilot informs the tower they are ready and receives final clearance for takeoff with wind and area information.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Ready for departure",
+        "message": "{JSR TWR}, {Call Sign}, ready."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Cleared for takeoff",
+        "message": "{Call Sign}, {JSR TWR}, area NH1, 1000ft, S/W 210/06 kts, cleared for takeoff Rwy-16."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Cleared for takeoff",
+        "message": "Area NH1, 1000ft, S/W 210/06 kts, cleared for takeoff Rwy-16, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "PT6" ],
+    "icao": [ "VGJR" ]
+  },
+  {
+    "phase": "airborne",
+    "category": "Tower",
+    "description": "The tower confirms the aircraft is airborne and instructs the pilot to report when abeam a specific waypoint.",
+    "calls": [
+      {
+        "speaker": "TWR",
+        "caption": "Confirm airborne",
+        "message": "{Call Sign}, airborne {time 35}, report abeam Z2."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Report abeam Z2",
+        "message": "Airborne {time 35}, report abeam Z2, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "PT6" ],
+    "icao": [ "VGJR" ]
+  },
+  {
+    "phase": "change_to_training",
+    "category": "Tower",
+    "description": "The pilot reports being abeam a waypoint and requests to switch to the training frequency.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Abeam Z2, request change",
+        "message": "{JSR TWR}, {Call Sign}, we are abeam Z2, like to change to training."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Change approved",
+        "message": "Change approved."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Changing to training",
+        "message": "Changing to training, {Call Sign}."
       }
     ],
     "aircraft": [ "PT6" ],
