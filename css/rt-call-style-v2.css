@@ -1,9 +1,30 @@
+:root {
+    --primary-bg: #1a1a1d;
+    --secondary-bg: #252529;
+    --card-bg: #2a2a2e;
+    --header-bg: #1f1f22;
+    --border-color: #444;
+    --text-primary: #e8e8e8;
+    --text-secondary: #b3b3b3;
+    --accent-color: #ad9bf8; /* Main title purple from image */
+    --accent-hover: #bb86fc; /* Active button purple from image */
+    --phase-color: #3ab09e; /* A balanced cyan for labels/phases */
+    --phase-color-highlight: #45d3bb; /* A brighter cyan for icons */
+    --speaker-pilot-color: #e57373; /* Pilot speaker red from image */
+    --variable-color: #b4cff0; /* A lighter blue, closer to the text color */
+    --pilot-text-color: #e8e8e8; /* Brighter text for pilot */
+    --atc-text-color: #b3b3b3;  /* Dimmer text for ATC */
+    --font-family: 'Inter', sans-serif;
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: #121212;
-    color: #e0e0e0;
+    font-family: var(--font-family);
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
     margin: 0;
     padding: 20px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .header-container {
@@ -16,7 +37,7 @@ body {
     position: relative; /* New positioning context */
 }
 h1 {
-    color: #bb86fc;
+    color: var(--accent-hover);
     /* text-align is already center, which is good */
     margin: 0; /* Remove default margins to help with centering */
 }
@@ -30,23 +51,23 @@ h1 {
 
 /* Set a fixed width for the phase column and prevent it from shrinking */
 .phase-column {
-    width: 220px; /* Adjust this value as needed */
+    width: 200px; /* Adjust this value as needed */
     flex-shrink: 0;
 }
 /* --- Filter Styles --- */
 .filter-container {
-    background-color: #1e1e1e;
-    padding: 20px;
+    background-color: var(--secondary-bg);    
+    padding: 15px; /* Reduced padding */
     border-radius: 8px;
     margin: 0 auto 25px auto;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px; /* Reduced gap */
     justify-content: center;
     align-items: center;
     width: 80%;
     max-width: 1200px;
-    border: 1px solid #333;
+    border: 1px solid var(--border-color);
 }
 
 .filter-group {
@@ -57,50 +78,49 @@ h1 {
 
 .filter-group label {
     font-weight: bold;
-    color: #03dac6;
+    color: var(--phase-color);
 }
 
 .filter-btn {
-    background-color: #333;
-    color: #e0e0e0;
-    border: 1px solid #444;
-    padding: 8px 15px;
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 8px 15px; /* Reduced padding */
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.2s ease;
+    font-size: 0.9em; /* Reduced font size */
+    font-weight: 500;
+}
+
+/* Ensure the type filter buttons have a uniform width */
+.filter-btn[data-filter-group="type"] {
+    min-width: 110px;
 }
 
 .filter-btn:hover {
-    background-color: #444;
+    background-color: var(--border-color);
 }
 
 .filter-btn.active {
-    background-color: #bb86fc;
-    color: #121212;
-    border-color: #bb86fc;
+    background-color: var(--accent-hover);
+    color: var(--primary-bg);
+    border-color: var(--accent-hover);
 }
 
 /* Style for the aircraft dropdown to make it wider and match the theme */
 #aircraft-filter {
-    min-width: 150px; /* Give the dropdown a minimum width */
-    padding: 8px 10px;
+    min-width: 140px; /* Give the dropdown a minimum width */
+    padding: 8px 10px; /* Reduced padding */
     border-radius: 5px;
-    background-color: #333;
-    color: #e0e0e0;
-    border: 1px solid #444;
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
     cursor: pointer;
+    font-size: 0.9em; /* Match button font size */
 }
 
 /* Style for the callsign input to match the theme */
-#callsign-filter {
-    min-width: 150px;
-    padding: 8px 10px;
-    border-radius: 5px;
-    background-color: #333;
-    color: #e0e0e0;
-    border: 1px solid #444;
-}
-
 /* Custom styling for the aircraft dropdown arrow */
 .aircraft-select-wrapper {
     position: relative;
@@ -120,8 +140,8 @@ h1 {
     align-items: center; /* Center cards horizontally */
 }
 .rt-card {
-    background-color: #1e1e1e;
-    border: 1px solid #333;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 15px;
     width: 80%; /* Use more width */
@@ -133,13 +153,13 @@ h1 {
 
 .phase-column h2 {
     margin-top: 0;
-    color: #03dac6;
+    color: var(--phase-color);
     text-transform: capitalize;
 }
 
 .phase-column .meta-info {
     font-size: 0.9em;
-    color: #aaa;
+    color: var(--text-secondary);
     margin: 5px 0;
 }
 
@@ -157,18 +177,43 @@ h1 {
 }
 
 .call-row .speaker {
-    font-weight: bold;
-    color: #cf6679;
+    color: var(--text-secondary);
     min-width: 50px; /* Align the call text */
+}
+
+.call-row[data-speaker="Pilot"] .speaker,
+.call-row[data-speaker="TWR"] .speaker,
+.call-row[data-speaker="GRD"] .speaker {
+    color: var(--speaker-pilot-color);
+    font-weight: 500;
 }
 
 .call-row .call-text {
     margin: 0;
-    font-family: "Courier New", Courier, monospace;
-    background-color: #252525;
+    font-family: var(--font-family);
+    background-color: var(--secondary-bg);
     padding: 8px;
     border-radius: 4px;
     flex-grow: 1;
+}
+
+/* More focus for Pilot calls */
+.call-row[data-speaker="Pilot"] .call-text {
+    color: var(--pilot-text-color); /* Brighter color */
+    font-weight: 500; /* Slightly bolder font */
+}
+
+/* Less focus for ATC calls */
+.call-row[data-speaker="TWR"] .call-text,
+.call-row[data-speaker="GRD"] .call-text {
+    color: var(--atc-text-color); /* Dimmer color */
+    font-weight: 400; /* Regular font weight */
+}
+
+/* Style for variables inside pilot call text */
+.call-row[data-speaker="Pilot"] .call-text .call-variable {
+    color: var(--variable-color);
+    font-weight: 700;
 }
 
 /* --- Action Button Group in Phase Column --- */
@@ -181,7 +226,7 @@ h1 {
 .aircraft-btn {
     background: none;
     border: 1px solid transparent; /* Add border for hover effect */
-    color: #909090; /* Use a less prominent color */
+    color: var(--text-secondary); /* Use a less prominent color */
     cursor: pointer;
     font-size: 1.1em;
     padding: 5px;
@@ -190,14 +235,14 @@ h1 {
 }
 
 .aircraft-btn:hover {
-    color: #fff;
+    color: var(--text-primary);
     transform: scale(1.1);
 }
 
 .description-btn {
     background: none;
     border: 1px solid transparent; /* Add border for hover effect */
-    color: #909090; /* Use a less prominent color */
+    color: var(--text-secondary); /* Use a less prominent color */
     cursor: pointer;
     font-size: 1.1em;
     padding: 5px;
@@ -227,7 +272,7 @@ h1 {
 }
 
 .popup-content {
-    background-color: #1e1e1e;
+    background-color: var(--card-bg);
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.5);
@@ -244,8 +289,8 @@ h1 {
 
 .popup-content h3, #help-popup .popup-content h3 {
     margin-top: 0;
-    color: #03dac6;
-    border-bottom: 1px solid #333;
+    color: var(--accent-color);
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 10px;
 }
 
@@ -270,11 +315,11 @@ h1 {
 }
 
 .popup-content .instruction-list code {
-    background-color: #333;
+    background-color: var(--secondary-bg);
     padding: 2px 5px;
     border-radius: 4px;
-    font-family: "Courier New", Courier, monospace;
-    color: #bb86fc;
+    font-family: monospace;
+    color: var(--accent-color);
 }
 
 .popup-content p {
@@ -294,7 +339,7 @@ h1 {
 }
 
 .popup-content li {
-    background-color: #252525;
+    background-color: var(--secondary-bg);
     padding: 8px;
     border-radius: 4px;
     text-align: center;
@@ -302,7 +347,7 @@ h1 {
 }
 
 .phase-column {
-    border-right: 2px solid #333;
+    border-right: 2px solid var(--border-color);
     padding-right: 20px;
     text-align: center;
     display: flex;
@@ -322,11 +367,14 @@ h1 {
 }
 
 #callsign-filter {
-    background-color: #1a1a1a; /* Darker background */
-    border: 1px solid #00aaff; /* Bright blue border */
-    color: #e0e0e0;
-    padding: 8px 12px;
+    width: 100px; /* Set a fixed width */
+    box-sizing: border-box; /* Include padding in the width calculation */
+    background-color: var(--primary-bg);
+    border: 1px solid #61afef; /* Blue border from image */
+    color: var(--text-primary);
+    padding: 8px 10px; /* Reduced padding */
     border-radius: 5px;
+    font-size: 0.9em;
     font-weight: bold;
     transition: all 0.3s ease;
 }
@@ -340,13 +388,13 @@ h1 {
     top: 50%;
     transform: translateY(-50%);
     pointer-events: none; /* Allows clicks to pass through to the select */
-    color: #aaa;
+    color: var(--text-secondary);
 }
 
 /* --- Print Styles --- */
 #print-btn {
-    background-color: #444;
-    color: #03dac6;
+    background-color: var(--card-bg);
+    color: var(--phase-color-highlight);
     border: none;
     /* Adjust padding for an icon-only button */
     padding: 8px 10px;
@@ -366,8 +414,8 @@ h1 {
 
 /* Style for the new help button */
 #help-btn {
-    background-color: #444;
-    color: #03dac6;
+    background-color: var(--card-bg);
+    color: var(--phase-color-highlight);
     border: none;
     padding: 8px 10px;
     width: 40px;
@@ -379,11 +427,11 @@ h1 {
 }
 
 #print-btn:hover {
-    background-color: #555;
+    background-color: var(--border-color);
 }
 
 #help-btn:hover {
-    background-color: #555;
+    background-color: var(--border-color);
 }
 
 @media print {
@@ -422,18 +470,10 @@ h1 {
         padding: 0;
         font-family: inherit; /* Ensure call text uses the body's print font */
     }
-    /* Pilot call styles: darker and heavier */
-    .call-row[data-speaker="Pilot"] .speaker,
-    .call-row[data-speaker="Pilot"] .call-text {
-        color: #000 !important;
-        font-weight: 600;
-    }
-    /* ATC call styles: lighter color and thinner font */
-    .call-row[data-speaker="TWR"] .speaker,
-    .call-row[data-speaker="TWR"] .call-text,
-    .call-row[data-speaker="GRD"] .speaker,
-    .call-row[data-speaker="GRD"] .call-text {
-        color: #333 !important;
-        font-weight: 400;
+
+    /* Reset variable color and weight for printing */
+    .call-variable {
+        color: inherit !important;
+        font-weight: inherit !important;
     }
 }
