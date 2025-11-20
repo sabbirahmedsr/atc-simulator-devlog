@@ -16,6 +16,7 @@
     <div class="header-container">
         <h1>ATC Simulator - RT Calls (V2)</h1>
         <div class="header-btn-group">
+            <button id="params-btn" title="View All Parameters"><i class="fa-solid fa-list-ul"></i></button>
             <button id="help-btn" title="Recording Instructions"><i class="fa-solid fa-comment-dots"></i></button>
             <button id="print-btn" title="Print as PDF"><i class="fa-solid fa-print"></i></button>
         </div>
@@ -62,6 +63,19 @@
             </ul>
         </div>
     </div>
+
+    <!-- Parameters Popup -->
+    <div class="popup-overlay" id="params-popup">
+        <div class="popup-content">
+            <h3>Parameters in Context</h3>
+            <div id="params-content-container">
+                <!-- Parameters will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Container for printing parameters, hidden by default -->
+    <div id="print-params-container"></div>
 
 
     <script>
@@ -250,6 +264,144 @@
                 });
             }
 
+            async function renderParametersPopup() {
+                const paramsContainer = document.getElementById('params-content-container');
+                try {
+                    const response = await fetch('../data/rt-call-v2/all-parameter-data.json');
+                    if (!response.ok) {
+                        paramsContainer.innerHTML = '<p>Error: Could not load parameters.</p>';
+                        return;
+                    }
+                    const paramsData = await response.json();
+                    const activeCallsign = callsignFilter.value || 'call-sign';
+
+                    let html = '';
+                    for (const key in paramsData) {
+                        if (key === 'Call Sign') continue; // Skip call sign as it's used in the sentence
+
+                        html += `<div class="param-group"><h4>${key}</h4>`;
+                        const values = paramsData[key].values;
+
+                        // Define sentence structures for each parameter type
+                        const sentences = values.map(value => {
+                            let prefix = '', paramValue = '', suffix = '';
+                            const callsignPlaceholder = `{${activeCallsign}}`;
+                            
+                            // More robust phonetic replacement
+                            const phoneticReplace = (str) => {
+                                return str.replace(/-/g, ' - ')
+                                          .replace(/SA/g, 'South Alpha').replace(/HA/g, 'Hotel Alpha')
+                                          .replace(/S1/g, 'Sierra One').replace(/S2/g, 'Sierra Two').replace(/S3/g, 'Sierra Three')
+                                          .replace(/C/g, 'Charlie').replace(/F/g, 'Foxtrot').replace(/V/g, 'Victor')
+                                          .replace(/N2/g, 'November Two').replace(/N-A-P/g, 'North Alpha - Papa').replace(/N-A/g, 'North Alpha');
+                            };
+                            // Strip "taxi via " or similar prefixes from the value before phonetic replacement
+                            const cleanValue = value.replace(/^(taxi via|runway vacated via|push to face)\s*/, '');
+                            const phoneticValue = phoneticReplace(cleanValue);
+
+                            switch (key) {
+                                case 'QNH':
+                                    prefix = ``;
+                                    paramValue = `${value}, `;
+                                    suffix = `descending 3000 feet, call you established 12 dme arc, ${callsignPlaceholder}`;
+                                    break;
+                                case 'Altitude':
+                                    prefix = `QNH 1013, `;
+                                    paramValue = `${value.toLowerCase().replace('ft', ' feet')}, `;
+                                    suffix = `call you established 12 dme arc, ${callsignPlaceholder}`;
+                                    break;
+                                case 'Departure Taxiway':
+                                    prefix = `QNH 1013, SQUAWK 4771, taxi via `;
+                                    paramValue = `${phoneticValue}, `;
+                                    suffix = `to holding point rwy-14, ${callsignPlaceholder}`;
+                                    break;
+                                case 'Parking Taxiway':
+                                    prefix = `Roger, taxi via `;
+                                    paramValue = `${phoneticValue}, `;
+                                    suffix = `to Stand no 05, ${callsignPlaceholder}`;
+                                    break;
+                                case 'Arrival Taxiway':
+                                    prefix = `taxi via `;
+                                    paramValue = `${phoneticValue}, `;
+                                    suffix = `changing to ground 121.8, ${callsignPlaceholder}`;
+                                    break;
+                                case 'Runway Vacate Taxiway':
+                                    prefix = `Runway vacated via `;
+                                    paramValue = `${phoneticValue}, `;
+                                    suffix = `${callsignPlaceholder}`;
+                                    break;
+                                case 'Pushback Face':
+                                    prefix = `Pushback approved, Temp 32, time 1200, push to face `;
+                                    paramValue = `${cleanValue}, `;
+                                    suffix = `${callsignPlaceholder}`;
+                                    break;
+                                default:
+                                    prefix = ``;
+                                    paramValue = `${value}`;
+                                    suffix = ``;
+                                    break;
+                            }
+                            return `<p class="param-sentence"><span class="param-prefix">${prefix}</span><span class="param-value">${paramValue}</span><span class="param-suffix">${suffix}</span></p>`;
+                        }).join('');
+
+                        html += `<div class="param-sentences-box">${sentences}</div></div>`;
+                    }
+                    paramsContainer.innerHTML = html;
+                } catch (error) {
+                    paramsContainer.innerHTML = '<p>Error: Could not load parameters.</p>';
+                }
+            }
+
+            async function prepareParametersForPrint() {
+                const printContainer = document.getElementById('print-params-container');
+                printContainer.innerHTML = ''; // Clear previous content
+
+                try {
+                    const response = await fetch('../data/rt-call-v2/all-parameter-data.json');
+                    if (!response.ok) return;
+
+                    const paramsData = await response.json();
+                    const activeCallsign = callsignFilter.value || 'call-sign';
+
+                    let html = '<h3>All Parameter Calls</h3>';
+                    for (const key in paramsData) {
+                        if (key === 'Call Sign') continue;
+
+                        html += `<h4>${key}</h4>`;
+                        const values = paramsData[key].values;
+
+                        const sentences = values.map(value => {
+                            let sentence = '';
+                            const callsignPlaceholder = `{${activeCallsign}}`;
+                            const cleanValue = value.replace(/^(taxi via|runway vacated via|push to face)\s*/, '');
+                            const phoneticValue = value.replace(/-/g, ' - ')
+                                .replace(/SA/g, 'South Alpha').replace(/HA/g, 'Hotel Alpha')
+                                .replace(/S1/g, 'Sierra One').replace(/S2/g, 'Sierra Two').replace(/S3/g, 'Sierra Three')
+                                .replace(/C/g, 'Charlie').replace(/F/g, 'Foxtrot').replace(/V/g, 'Victor')
+                                .replace(/N2/g, 'November Two').replace(/N-A-P/g, 'North Alpha - Papa').replace(/N-A/g, 'North Alpha');
+
+                            switch (key) {
+                                case 'QNH': sentence = `${value}, descending 3000 feet, call you established 12 dme arc, ${callsignPlaceholder}`; break;
+                                case 'Altitude': sentence = `QNH 1013, ${value.toLowerCase().replace('ft', ' feet')}, call you established 12 dme arc, ${callsignPlaceholder}`; break;
+                                case 'Departure Taxiway': sentence = `QNH 1013, SQUAWK 4771, taxi via ${phoneticValue}, to holding point rwy-14, ${callsignPlaceholder}`; break;
+                                case 'Parking Taxiway': sentence = `Roger, taxi via ${phoneticValue}, to Stand no 05, ${callsignPlaceholder}`; break;
+                                case 'Arrival Taxiway': sentence = `taxi via ${phoneticValue}, changing to ground 121.8, ${callsignPlaceholder}`; break;
+                                case 'Runway Vacate Taxiway': sentence = `Runway vacated via ${phoneticValue}, ${callsignPlaceholder}`; break;
+                                case 'Pushback Face': sentence = `Pushback approved, Temp 32, time 1200, push to face ${cleanValue}, ${callsignPlaceholder}`; break;
+                                default: sentence = `${value}`; break;
+                            }
+                            return `<p>${sentence}</p>`;
+                        }).join('');
+
+                        html += sentences;
+                    }
+                    printContainer.innerHTML = html;
+                } catch (error) {
+                    console.error('Could not prepare parameters for printing:', error);
+                    printContainer.innerHTML = ''; // Ensure it's empty on error
+                }
+            }
+
             function setupEventListeners() {
                 // Use event delegation for filter buttons
                 document.querySelector('.filter-container').addEventListener('click', (e) => {
@@ -267,7 +419,7 @@
                 callsignFilter.addEventListener('input', renderCalls);
 
                 // Event delegation for popups
-                document.body.addEventListener('click', function (e) {
+                document.body.addEventListener('click', function(e) {
                     if (e.target.matches('.aircraft-btn, .aircraft-btn *, .description-btn, .description-btn *')) {
                         const btn = e.target.closest('.aircraft-btn, .description-btn');
                         const popup = document.querySelector(btn.dataset.popupTarget);
@@ -279,12 +431,18 @@
                 });
             }
 
-            document.getElementById('print-btn').addEventListener('click', () => {
-                window.print();
+            document.getElementById('print-btn').addEventListener('click', async () => {
+                await prepareParametersForPrint(); // Wait for parameters to be ready
+                window.print(); // Then open the print dialog
             });
 
             document.getElementById('help-btn').addEventListener('click', () => {
                 document.getElementById('help-popup').classList.add('visible');
+            });
+
+            document.getElementById('params-btn').addEventListener('click', () => {
+                renderParametersPopup(); // Re-render with latest callsign
+                document.getElementById('params-popup').classList.add('visible');
             });
 
             // Initial Load

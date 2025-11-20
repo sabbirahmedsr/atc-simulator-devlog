@@ -11,6 +11,9 @@
     --phase-color: #3ab09e; /* A balanced cyan for labels/phases */
     --phase-color-highlight: #45d3bb; /* A brighter cyan for icons */
     --speaker-pilot-color: #e57373; /* Pilot speaker red from image */
+    --param-prefix-color: #8a9099; /* A neutral gray for sentence prefixes */
+    --param-value-color: #e8e8e8; /* The main text color for the parameter itself */
+    --param-suffix-color: #b3b3b3; /* A secondary gray for sentence suffixes */
     --variable-color: #b4cff0; /* A lighter blue, closer to the text color */
     --pilot-text-color: #e8e8e8; /* Brighter text for pilot */
     --atc-text-color: #b3b3b3;  /* Dimmer text for ATC */
@@ -391,6 +394,66 @@ h1 {
     color: var(--text-secondary);
 }
 
+/* --- Parameter Popup Styles --- */
+#params-popup .popup-content {
+    max-width: 800px; /* Wider popup for sentences */
+    max-height: 80vh; /* Limit height and allow scrolling */
+    overflow-y: auto;
+}
+
+.param-group {
+    margin-bottom: 25px;
+}
+
+.param-group h4 {
+    color: var(--accent-hover);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+.param-sentences-box {
+    background-color: var(--secondary-bg);
+    border-radius: 6px;
+    padding: 15px;
+}
+
+.param-sentence {
+    margin: 0 0 8px 0;
+    line-height: 1.5;
+}
+
+.param-sentence .param-prefix {
+    color: var(--param-prefix-color);
+}
+
+.param-sentence .param-value {
+    color: var(--param-value-color);
+    font-weight: 500;
+}
+
+.param-sentence .param-suffix {
+    color: var(--param-suffix-color);
+}
+
+/* Custom Scrollbar for Popups */
+.popup-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.popup-content::-webkit-scrollbar-track {
+    background: var(--secondary-bg);
+    border-radius: 4px;
+}
+
+.popup-content::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 4px;
+}
+
+/* Hide the print-only container by default */
+#print-params-container { display: none; }
+
 /* --- Print Styles --- */
 #print-btn {
     background-color: var(--card-bg);
@@ -412,6 +475,20 @@ h1 {
     gap: 10px;
 }
 
+/* Style for the new parameters button */
+#params-btn {
+    background-color: var(--card-bg);
+    color: var(--phase-color-highlight);
+    border: none;
+    padding: 8px 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
 /* Style for the new help button */
 #help-btn {
     background-color: var(--card-bg);
@@ -430,6 +507,10 @@ h1 {
     background-color: var(--border-color);
 }
 
+#params-btn:hover {
+    background-color: var(--border-color);
+}
+
 #help-btn:hover {
     background-color: var(--border-color);
 }
@@ -441,7 +522,7 @@ h1 {
         background-color: #fff;
         color: #000;
     }
-    .filter-container, .header-btn-group, .action-btn-group, .popup-overlay { display: none !important; }
+    .filter-container, .header-btn-group, .action-btn-group, .popup-overlay { display: none !important; }    
     h1 { font-size: 14pt; margin-bottom: 10px; color: #000 !important; }
     .category-header { 
         font-size: 12pt; 
@@ -475,5 +556,27 @@ h1 {
     .call-variable {
         color: inherit !important;
         font-weight: inherit !important;
+    }
+
+    /* Styles for the parameter list in the print version */
+    #print-params-container {
+        display: block !important; /* Show the container for printing */
+        margin-top: 30px;
+        page-break-before: always; /* Start parameters on a new page */
+    }
+
+    #print-params-container h3 {
+        font-size: 14pt;
+        border-bottom: 2px solid #000;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+    }
+
+    #print-params-container h4 {
+        font-size: 12pt;
+        margin-top: 20px;
+        margin-bottom: 8px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 4px;
     }
 }
