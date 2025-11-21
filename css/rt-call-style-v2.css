@@ -410,6 +410,7 @@ h1 {
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 8px;
     margin-bottom: 12px;
+    text-transform: uppercase;
 }
 
 .param-sentences-box {
@@ -453,6 +454,7 @@ h1 {
 
 /* Hide the print-only container by default */
 #print-params-container { display: none; }
+#print-rt-call-container { display: none; }
 
 /* --- Print Styles --- */
 #print-btn {
@@ -517,19 +519,29 @@ h1 {
 
 @media print {
     body {
-        font-size: 10pt;
+        /* Use a slightly smaller font size for better density */
+        font-size: 9pt;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         background-color: #fff;
         color: #000;
     }
-    .filter-container, .header-btn-group, .action-btn-group, .popup-overlay { display: none !important; }    
-    h1 { font-size: 14pt; margin-bottom: 10px; color: #000 !important; }
+    .header-container, .filter-container, .header-btn-group, .action-btn-group, .popup-overlay { display: none !important; }
+    /* Style for major section titles (e.g., "VGJR - ... - Arrival - RT CALL") */
+    h1 {
+        font-size: 14pt;
+        margin-bottom: 20px;
+        padding-bottom: 5px;
+        color: #000 !important;
+        text-align: center;
+        border-bottom: 2px solid #000; /* Bold separator for major sections */
+    }
     .category-header { 
-        font-size: 12pt; 
+        font-size: 13pt;
         color: #000 !important; 
-        margin-top: 10px; 
+        text-align: center;
+        margin-top: 20px; 
         margin-bottom: 2px; 
-        border-bottom: 2px solid #000; 
+        border-bottom: 1px solid #ccc; /* Subtle separator for sub-sections */
     }
     .rt-card { 
         display: table; 
@@ -537,6 +549,7 @@ h1 {
         box-shadow: none; 
         border: none; 
         page-break-inside: avoid; padding: 0; 
+        margin-bottom: 5px; /* Add a small margin between cards */
     }
     .phase-column, .dialogue-column { vertical-align: top; border: none; padding: 1px 5px; }
     .phase-column { display: none; }
@@ -544,12 +557,13 @@ h1 {
     .call-row { gap: 5px; padding: 1px 0; }
     .call-row .speaker,
     .call-row .call-text {
-        font-size: 10pt;
+        font-size: 9pt;
         color: #000 !important;
         background: none;
         margin: 0;
         padding: 0;
         font-family: inherit; /* Ensure call text uses the body's print font */
+        text-align: justify;
     }
 
     /* Reset variable color and weight for printing */
@@ -557,6 +571,12 @@ h1 {
         color: inherit !important;
         font-weight: inherit !important;
     }
+
+    /* Hide the on-screen container and show the print-specific one */
+    #rt-call-container {
+        display: none !important;
+    }
+    #print-rt-call-container { display: block !important; }
 
     /* Styles for the parameter list in the print version */
     #print-params-container {
@@ -566,17 +586,26 @@ h1 {
     }
 
     #print-params-container h3 {
-        font-size: 14pt;
+        font-size: 14pt;        
+        text-align: center;
         border-bottom: 2px solid #000;
+        page-break-before: always; /* Ensure parameters start on a new page */
         padding-bottom: 5px;
         margin-bottom: 15px;
     }
 
     #print-params-container h4 {
-        font-size: 12pt;
+        font-size: 12pt;        
+        text-align: center;
         margin-top: 20px;
         margin-bottom: 8px;
         border-bottom: 1px solid #ccc;
         padding-bottom: 4px;
+        text-transform: uppercase;
+    }
+
+    #print-params-container p {
+        margin-top: 4px;
+        margin-bottom: 4px;
     }
 }

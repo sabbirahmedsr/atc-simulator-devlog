@@ -12,7 +12,7 @@
       {
         "speaker": "GRD",
         "caption": "Startup approved",
-        "message": "{Call Sign}, startup approved, temp 32 and {time 23}"
+        "message": "{Call Sign}, startup approved, temp 32, {time 23}"
       },
       {
         "speaker": "Pilot",

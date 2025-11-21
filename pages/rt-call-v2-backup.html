@@ -74,9 +74,6 @@
         </div>
     </div>
 
-    <!-- Container for printing RT calls, hidden by default -->
-    <div id="print-rt-call-container"></div>
-
     <!-- Container for printing parameters, hidden by default -->
     <div id="print-params-container"></div>
 
@@ -88,34 +85,12 @@
             const aircraftFilter = document.getElementById('aircraft-filter');
             const callsignFilter = document.getElementById('callsign-filter');
             let allRtCallData = []; // To store all fetched data
-            let allParameters = {}; // To store parameter data
 
             async function fetchAllData() {
-                const urlParams = new URLSearchParams(window.location.search);
-                const icaoParam = urlParams.get('icao');
-
-                let dataPath = '../data/rt-call-v2'; // Default path
-                if (icaoParam === 'vgjr') {
-                    dataPath = '../data/rt-call-vgjr';
-                } else if (icaoParam === 'vghs') {
-                    dataPath = '../data/rt-call-vghs';
-                }
-
-                // Update filter buttons based on URL param
-                const icaoButtons = document.querySelectorAll('.filter-btn[data-filter-group="icao"]');
-                icaoButtons.forEach(btn => {
-                    btn.classList.remove('active');
-                    if (icaoParam && btn.dataset.filterValue === icaoParam) {
-                        btn.classList.add('active');
-                    } else if (!icaoParam && btn.dataset.filterValue === 'vghs') { // Default to VGHS if no param
-                        btn.classList.add('active');
-                    }
-                });
-
                 const filesToFetch = [
-                    `${dataPath}/arrival-rt-call-data.json`,
-                    `${dataPath}/departure-rt-call-data.json`,
-                    `${dataPath}/circuit-rt-call-data.json`
+                    '../data/rt-call-v2/arrival-rt-call-data.json',
+                    '../data/rt-call-v2/departure-rt-call-data.json',
+                    '../data/rt-call-v2/circuit-rt-call-data.json'
                 ];
 
                 try {
@@ -129,15 +104,8 @@
                             .catch(() => []); // On network error, also return an empty array
                     });
 
-                    // Also fetch the parameters file
-                    const paramsPromise = fetch(`${dataPath}/all-parameter-data.json`)
-                        .then(res => res.ok ? res.json() : {})
-                        .catch(() => ({}));
-
-                    const [results, paramsData] = await Promise.all([Promise.all(filePromises), paramsPromise]);
-                    
+                    const results = await Promise.all(filePromises);
                     allRtCallData = results.flat(); // Flatten the array of arrays
-                    allParameters = paramsData; // Store parameters
                     
                     populateAircraftFilter();
                     renderCalls();
@@ -181,7 +149,7 @@
 
                 const baseFilteredData = allRtCallData.filter(data => {
                     const typeMatch = data.type === activeType;
-                    const icaoMatch = true; // ICAO is now filtered by folder, so this check is no longer needed at the item level.
+                    const icaoMatch = data.icao && data.icao.includes(activeIcao.toUpperCase());
                     const aircraftMatch = activeAircraft === 'all' || (data.aircraft && data.aircraft.includes(activeAircraft));
 
                     return typeMatch && icaoMatch && aircraftMatch;
@@ -296,174 +264,142 @@
                 });
             }
 
-            function prepareRtCallsForPrint() {
-                const printContainer = document.getElementById('print-rt-call-container');
-                printContainer.innerHTML = ''; // Clear previous content
-
-                const activeIcao = document.querySelector('.filter-btn[data-filter-group="icao"].active').dataset.filterValue;
-                const activeAircraft = aircraftFilter.value;
-                const activeCallsign = callsignFilter.value || 'call-sign';
-
-                const callTypesToPrint = ['arrival', 'departure', 'circuit'];
-
-                callTypesToPrint.forEach(callType => {
-                    const typeFilteredData = allRtCallData.filter(data => {
-                        const typeMatch = data.type === callType;
-                        // We still respect the ICAO (folder) and Aircraft filters for the print version
-                        const aircraftMatch = activeAircraft === 'all' || (data.aircraft && data.aircraft.includes(activeAircraft));
-                        return typeMatch && aircraftMatch;
-                    });
-
-                    if (typeFilteredData.length > 0) {
-                        // Add a main header for the call type (e.g., "Arrival Calls")
-                        const typeHeader = document.createElement('h1');
-                        
-                        // --- Create dynamic page title for print ---
-                        const displayAircraft = activeAircraft === 'all' ? 'All Aircraft' : activeAircraft.toUpperCase();
-                        const displayType = callType.charAt(0).toUpperCase() + callType.slice(1);
-                        const pageTitle = `${activeIcao.toUpperCase()} - ${displayAircraft} - {${activeCallsign}} - ${displayType} - RT CALL`;
-                        typeHeader.textContent = pageTitle;
-                        // --- End title creation ---
-
-                        // Start each new section on a new page
-                        typeHeader.style.pageBreakBefore = 'always'; 
-                        if (callType === 'arrival') {
-                            typeHeader.style.pageBreakBefore = 'auto'; // Don't break before the very first one
-                        }
-                        printContainer.appendChild(typeHeader);
-
-                        const groupedByCategory = typeFilteredData.reduce((acc, call) => {
-                            const category = call.category || 'Uncategorized';
-                            if (!acc[category]) acc[category] = [];
-                            acc[category].push(call);
-                            return acc;
-                        }, {});
-
-                        const orderedCategories = [];
-                        const categorySet = new Set();
-                        typeFilteredData.forEach(call => {
-                            const category = call.category || 'Uncategorized';
-                            if (!categorySet.has(category)) {
-                                categorySet.add(category);
-                                orderedCategories.push(category);
-                            }
-                        });
-
-                        orderedCategories.forEach(category => {
-                            const categoryHeader = document.createElement('h3');
-                            categoryHeader.className = 'category-header';
-                            categoryHeader.textContent = category.toUpperCase();
-                            printContainer.appendChild(categoryHeader);
-
-                            groupedByCategory[category].forEach(data => {
-                                const card = document.createElement('div');
-                                card.className = 'rt-card';
-
-                                const processedCalls = data.calls.map(call => {
-                                    let { speaker, message } = call;
-                                    const callsignRegex = /{Call Sign}/gi;
-                                    if (activeIcao === 'vghs') {
-                                        message = message.replace(/{GRD}|{GND}/g, '{DHK GRD}').replace(/{TWR}/g, '{DHK TWR}');
-                                    } else if (activeIcao === 'vgjr') {
-                                        message = message.replace(/{GRD}|{GND}/g, '{JSR GRD}').replace(/{TWR}/g, '{JSR TWR}');
-                                    }
-                                    message = message.replace(callsignRegex, `{${activeCallsign}}`);
-                                    return { speaker, message };
-                                });
-
-                                const dialogueRows = processedCalls.map(call => `
-                                    <div class="call-row" data-speaker="${call.speaker}">
-                                        <span class="speaker">${call.speaker}:</span>
-                                        <p class="call-text">${call.message || '...'}</p>
-                                    </div>`).join('');
-
-                                card.innerHTML = `<div class="dialogue-column">${dialogueRows}</div>`;
-                                printContainer.appendChild(card);
-                            });
-                        });
-                    }
-                });
-            }
-
             async function renderParametersPopup() {
                 const paramsContainer = document.getElementById('params-content-container');
-                const paramsData = allParameters; // Use stored parameters
-                if (Object.keys(paramsData).length === 0) {
-                    paramsContainer.innerHTML = '<p>No parameters loaded.</p>';
-                    return;
+                try {
+                    const response = await fetch('../data/rt-call-v2/all-parameter-data.json');
+                    if (!response.ok) {
+                        paramsContainer.innerHTML = '<p>Error: Could not load parameters.</p>';
+                        return;
+                    }
+                    const paramsData = await response.json();
+                    const activeCallsign = callsignFilter.value || 'call-sign';
+
+                    let html = '';
+                    for (const key in paramsData) {
+                        if (key === 'Call Sign') continue; // Skip call sign as it's used in the sentence
+
+                        html += `<div class="param-group"><h4>${key}</h4>`;
+                        const values = paramsData[key].values;
+
+                        // Define sentence structures for each parameter type
+                        const sentences = values.map(value => {
+                            let prefix = '', paramValue = '', suffix = '';
+                            const callsignPlaceholder = `{${activeCallsign}}`;
+                            
+                            // More robust phonetic replacement
+                            const phoneticReplace = (str) => {
+                                return str.replace(/-/g, ' - ')
+                                          .replace(/SA/g, 'South Alpha').replace(/HA/g, 'Hotel Alpha')
+                                          .replace(/S1/g, 'Sierra One').replace(/S2/g, 'Sierra Two').replace(/S3/g, 'Sierra Three')
+                                          .replace(/C/g, 'Charlie').replace(/F/g, 'Foxtrot').replace(/V/g, 'Victor')
+                                          .replace(/N2/g, 'November Two').replace(/N-A-P/g, 'North Alpha - Papa').replace(/N-A/g, 'North Alpha');
+                            };
+                            // Strip "taxi via " or similar prefixes from the value before phonetic replacement
+                            const cleanValue = value.replace(/^(taxi via|runway vacated via|push to face)\s*/, '');
+                            const phoneticValue = phoneticReplace(cleanValue);
+
+                            switch (key) {
+                                case 'QNH':
+                                    prefix = ``;
+                                    paramValue = `${value}, `;
+                                    suffix = `descending 3000 feet, call you established 12 dme arc, ${callsignPlaceholder}`;
+                                    break;
+                                case 'Altitude':
+                                    prefix = `QNH 1013, `;
+                                    paramValue = `${value.toLowerCase().replace('ft', ' feet')}, `;
+                                    suffix = `call you established 12 dme arc, ${callsignPlaceholder}`;
+                                    break;
+                                case 'Departure Taxiway':
+                                    prefix = `QNH 1013, SQUAWK 4771, taxi via `;
+                                    paramValue = `${phoneticValue}, `;
+                                    suffix = `to holding point rwy-14, ${callsignPlaceholder}`;
+                                    break;
+                                case 'Parking Taxiway':
+                                    prefix = `Roger, taxi via `;
+                                    paramValue = `${phoneticValue}, `;
+                                    suffix = `to Stand no 05, ${callsignPlaceholder}`;
+                                    break;
+                                case 'Arrival Taxiway':
+                                    prefix = `taxi via `;
+                                    paramValue = `${phoneticValue}, `;
+                                    suffix = `changing to ground 121.8, ${callsignPlaceholder}`;
+                                    break;
+                                case 'Runway Vacate Taxiway':
+                                    prefix = `Runway vacated via `;
+                                    paramValue = `${phoneticValue}, `;
+                                    suffix = `${callsignPlaceholder}`;
+                                    break;
+                                case 'Pushback Face':
+                                    prefix = `Pushback approved, Temp 32, time 1200, push to face `;
+                                    paramValue = `${cleanValue}, `;
+                                    suffix = `${callsignPlaceholder}`;
+                                    break;
+                                default:
+                                    prefix = ``;
+                                    paramValue = `${value}`;
+                                    suffix = ``;
+                                    break;
+                            }
+                            return `<p class="param-sentence"><span class="param-prefix">${prefix}</span><span class="param-value">${paramValue}</span><span class="param-suffix">${suffix}</span></p>`;
+                        }).join('');
+
+                        html += `<div class="param-sentences-box">${sentences}</div></div>`;
+                    }
+                    paramsContainer.innerHTML = html;
+                } catch (error) {
+                    paramsContainer.innerHTML = '<p>Error: Could not load parameters.</p>';
                 }
-
-                const activeCallsign = callsignFilter.value || 'call-sign';
-                let html = '';
-                const callsignRegex = /{Call Sign}/gi;
-                for (const key in paramsData) {
-                    if (key === 'Call Sign') continue; // Skip call sign as it's used in the sentence
-
-                    html += `<div class="param-group"><h4>${key}</h4>`;
-                    const param = paramsData[key];
-                    const prefix = param.prefix || '';
-                    const suffix = param.suffix || '';
-
-                    const sentences = param.values.map(value => {
-                        const callsignPlaceholder = `{${activeCallsign}}`;
-
-                        const phoneticReplace = (str) => {
-                            return str.replace(/-/g, ' - ')
-                                      .replace(/SA/g, 'South Alpha').replace(/HA/g, 'Hotel Alpha')
-                                      .replace(/S1/g, 'Sierra One').replace(/S2/g, 'Sierra Two').replace(/S3/g, 'Sierra Three')
-                                      .replace(/C/g, 'Charlie').replace(/F/g, 'Foxtrot').replace(/V/g, 'Victor')
-                                      .replace(/N2/g, 'November Two').replace(/N-A-P/g, 'North Alpha - Papa').replace(/N-A/g, 'North Alpha');
-                        }
-                        
-                        const finalPrefix = prefix.replace(callsignRegex, callsignPlaceholder);
-                        const finalSuffix = suffix.replace(callsignRegex, callsignPlaceholder);
-                        const paramValue = (key.toLowerCase().includes('taxiway')) ? phoneticReplace(value) : value;
-
-                        return `<p class="param-sentence"><span class="param-prefix">${finalPrefix}</span><span class="param-value">${paramValue}</span><span class="param-suffix">${finalSuffix}</span></p>`;
-                    }).join('');
-
-                    html += `<div class="param-sentences-box">${sentences}</div></div>`;
-                }
-                paramsContainer.innerHTML = html;
             }
 
             async function prepareParametersForPrint() {
                 const printContainer = document.getElementById('print-params-container');
                 printContainer.innerHTML = ''; // Clear previous content
-                const paramsData = allParameters; // Use stored parameters
-                if (Object.keys(paramsData).length === 0) return;
 
-                const activeCallsign = callsignFilter.value || 'call-sign';
-                let html = '<h3>All Parameter Calls</h3>';
-                const callsignRegex = /{Call Sign}/gi;
-                for (const key in paramsData) {
-                    if (key === 'Call Sign') continue;
+                try {
+                    const response = await fetch('../data/rt-call-v2/all-parameter-data.json');
+                    if (!response.ok) return;
 
-                    html += `<h4>${key}</h4>`;
-                    const param = paramsData[key];
-                    const prefix = param.prefix || '';
-                    const suffix = param.suffix || '';
+                    const paramsData = await response.json();
+                    const activeCallsign = callsignFilter.value || 'call-sign';
 
-                    const sentences = param.values.map(value => {
-                        const callsignPlaceholder = `{${activeCallsign}}`;
-                        const phoneticReplace = (str) => {
-                            return str.replace(/-/g, ' - ')
-                            .replace(/SA/g, 'South Alpha').replace(/HA/g, 'Hotel Alpha')
-                            .replace(/S1/g, 'Sierra One').replace(/S2/g, 'Sierra Two').replace(/S3/g, 'Sierra Three')
-                            .replace(/C/g, 'Charlie').replace(/F/g, 'Foxtrot').replace(/V/g, 'Victor')
-                            .replace(/N2/g, 'November Two').replace(/N-A-P/g, 'North Alpha - Papa').replace(/N-A/g, 'North Alpha');
-                        }
+                    let html = '<h3>All Parameter Calls</h3>';
+                    for (const key in paramsData) {
+                        if (key === 'Call Sign') continue;
 
-                        const finalPrefix = prefix.replace(callsignRegex, callsignPlaceholder);
-                        const finalSuffix = suffix.replace(callsignRegex, callsignPlaceholder);
-                        const paramValue = (key.toLowerCase().includes('taxiway')) ? phoneticReplace(value) : value;
-                        const sentence = `<span class="print-param-prefix">${finalPrefix}</span><strong>${paramValue}</strong><span class="print-param-suffix">${finalSuffix}</span>`;
-                        return `<p>${sentence}</p>`;
-                    }).join('');
+                        html += `<h4>${key}</h4>`;
+                        const values = paramsData[key].values;
 
-                    html += sentences;
+                        const sentences = values.map(value => {
+                            let sentence = '';
+                            const callsignPlaceholder = `{${activeCallsign}}`;
+                            const cleanValue = value.replace(/^(taxi via|runway vacated via|push to face)\s*/, '');
+                            const phoneticValue = value.replace(/-/g, ' - ')
+                                .replace(/SA/g, 'South Alpha').replace(/HA/g, 'Hotel Alpha')
+                                .replace(/S1/g, 'Sierra One').replace(/S2/g, 'Sierra Two').replace(/S3/g, 'Sierra Three')
+                                .replace(/C/g, 'Charlie').replace(/F/g, 'Foxtrot').replace(/V/g, 'Victor')
+                                .replace(/N2/g, 'November Two').replace(/N-A-P/g, 'North Alpha - Papa').replace(/N-A/g, 'North Alpha');
+
+                            switch (key) {
+                                case 'QNH': sentence = `${value}, descending 3000 feet, call you established 12 dme arc, ${callsignPlaceholder}`; break;
+                                case 'Altitude': sentence = `QNH 1013, ${value.toLowerCase().replace('ft', ' feet')}, call you established 12 dme arc, ${callsignPlaceholder}`; break;
+                                case 'Departure Taxiway': sentence = `QNH 1013, SQUAWK 4771, taxi via ${phoneticValue}, to holding point rwy-14, ${callsignPlaceholder}`; break;
+                                case 'Parking Taxiway': sentence = `Roger, taxi via ${phoneticValue}, to Stand no 05, ${callsignPlaceholder}`; break;
+                                case 'Arrival Taxiway': sentence = `taxi via ${phoneticValue}, changing to ground 121.8, ${callsignPlaceholder}`; break;
+                                case 'Runway Vacate Taxiway': sentence = `Runway vacated via ${phoneticValue}, ${callsignPlaceholder}`; break;
+                                case 'Pushback Face': sentence = `Pushback approved, Temp 32, time 1200, push to face ${cleanValue}, ${callsignPlaceholder}`; break;
+                                default: sentence = `${value}`; break;
+                            }
+                            return `<p>${sentence}</p>`;
+                        }).join('');
+
+                        html += sentences;
+                    }
+                    printContainer.innerHTML = html;
+                } catch (error) {
+                    console.error('Could not prepare parameters for printing:', error);
+                    printContainer.innerHTML = ''; // Ensure it's empty on error
                 }
-                printContainer.innerHTML = html;
             }
 
             function setupEventListeners() {
@@ -472,14 +408,6 @@
                     if (e.target.matches('.filter-btn[data-filter-group]')) {
                         const btn = e.target;
                         const group = btn.dataset.filterGroup;
-                        
-                        // If an ICAO button is clicked, reload the page with the new parameter
-                        if (group === 'icao') {
-                            const icaoValue = btn.dataset.filterValue;
-                            window.location.search = `?icao=${icaoValue}`;
-                            return; // Stop further execution as the page will reload
-                        }
-
                         document.querySelectorAll(`.filter-btn[data-filter-group="${group}"]`).forEach(b => b.classList.remove('active'));
                         btn.classList.add('active');
 
@@ -504,7 +432,6 @@
             }
 
             document.getElementById('print-btn').addEventListener('click', async () => {
-                await prepareRtCallsForPrint(); // Prepare the full RT call list for printing
                 await prepareParametersForPrint(); // Wait for parameters to be ready
                 window.print(); // Then open the print dialog
             });

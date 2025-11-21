@@ -1,0 +1,209 @@
+[
+  {
+    "phase": "startup",
+    "category": "Ground",
+    "description": "The pilot requests permission to start the engines.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Request startup",
+        "message": "{JSR GRD}, {Call Sign}, request startup."
+      },
+      {
+        "speaker": "GRD",
+        "caption": "Startup approved",
+        "message": "{Call Sign}, startup approved, temp 32, {time 23}."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm startup",
+        "message": "Startup approved, temp 32, {time 23}, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "PT6" ]
+  },
+  {
+    "phase": "taxi",
+    "category": "Ground",
+    "description": "The pilot requests permission to taxi to the runway.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Request taxi",
+        "message": "{JSR GRD}, {Call Sign}, request taxi."
+      },
+      {
+        "speaker": "GRD",
+        "caption": "Taxi to holding point",
+        "message": "{Call Sign}, {JSR GRD}, {taxi via O-P-M} to holding point RWY-16, {QNH 746}."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm taxi",
+        "message": "{QNH 746}, squawk 4154, {Taxi via O-P-M} to holding point RWY-16, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "PT6" ]
+  },
+  {
+    "phase": "change_to_tower",
+    "category": "Ground",
+    "description": "The pilot reports approaching a taxiway line and requests to change to the tower frequency.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Request change to tower",
+        "message": "{JSR GRD}, {Call Sign}, approaching M, like to change to tower."
+      },
+      {
+        "speaker": "GRD",
+        "caption": "Contact tower",
+        "message": "{Call Sign}, contact tower 123.2."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm contact tower",
+        "message": "Contact tower 123.2, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "PT6" ]
+  },
+  {
+    "phase": "line_up",
+    "category": "Tower",
+    "description": "The pilot requests permission to enter the runway and wait for takeoff clearance.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Request lineup",
+        "message": "{JSR TWR}, {Call Sign}, request lineup."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Lineup and wait",
+        "message": "{Call Sign}, {JSR TWR}, lineup runway 16, report ready for departure."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm lineup",
+        "message": "Lineup runway 16, call you ready for departure, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "PT6" ]
+  },
+  {
+    "phase": "take_off",
+    "category": "Tower",
+    "description": "The pilot reports ready and receives takeoff clearance from the tower.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Ready for departure",
+        "message": "{JSR TWR}, {Call Sign}, ready for departure."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Cleared for takeoff",
+        "message": "{Call Sign}, {JSR TWR}, area NH1, 1000ft, S/W 210/06 kts, cleared for takeoff Rwy-16."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm takeoff",
+        "message": "S/W copied, cleared for takeoff Rwy-16, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "PT6" ]
+  },
+  {
+    "phase": "change_to_training",
+    "category": "General Flying",
+    "description": "The pilot reports abeam a waypoint and requests to switch to the training frequency.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Request change to training",
+        "message": "{JSR TWR}, {Call Sign}, we are abeam Z2, like to change to training."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Change approved",
+        "message": "Change approved."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm change to training",
+        "message": "Over to training, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "PT6" ]
+  },
+  {
+    "phase": "turning_right",
+    "category": "Nav Mission",
+    "description": "The pilot reports turning right and climbing, and awaits further instruction.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Turning right, climbing 3500ft",
+        "message": "{JSR TWR}, {Call Sign}, turning right, climbing to 3500 feet, stand by for estimate."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Report setting course",
+        "message": "{Call Sign}, copied, report setting course."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm report setting course",
+        "message": "Call you setting course, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "PT6" ]
+  },
+  {
+    "phase": "set_course",
+    "category": "Nav Mission",
+    "description": "The pilot reports setting course and provides an estimate for a waypoint.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Setting course, estimate Alfadanga",
+        "message": "{JSR TWR}, {Call Sign}, now setting course, estimating Alfadanga at {40}."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Roger, report 5 miles out",
+        "message": "{Call Sign}, roger, estimate Alfadanga at {40}, Report 5 miles out."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm report 5 miles out",
+        "message": "Call you 5 miles out, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "PT6" ]
+  },
+  {
+    "phase": "5_miles_out",
+    "category": "Nav Mission",
+    "description": "The pilot reports being five miles out and is handed off to the training frequency.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "5 miles out",
+        "message": "{JSR TWR}, {Call Sign}, 5 miles out."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Contact training",
+        "message": "{Call Sign}, contact training."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm contact training",
+        "message": "Over to training, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "PT6" ]
+  }
+]
