@@ -92,6 +92,29 @@
     "aircraft": [ "Military Jet", "Military Transport" ]
   },
   {
+    "phase": "line_up_cct",
+    "category": "Tower",
+    "description": "A pilot makes this call to the tower controller to get permission to move onto the runway and prepare for takeoff to fly a local circuit (a repeating pattern of flight around the airport).",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Request line up for circuit",
+        "message": "{JSR TWR} {call-sign}, holding point runway 16, request line up for circuit."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Line up for circuit",
+        "message": "{call-sign}, circuit approved, line up runway 16, report ready for departure."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Lining up for circuit",
+        "message": "Lining up runway 16 for circuit, will call ready for departure, {call-sign}."
+      }
+    ],
+    "aircraft": [ "Military Trainer", "Helicopter" ]
+  },
+  {
     "phase": "take_off",
     "category": "Tower",
     "description": "The pilot reports ready and receives takeoff clearance from the tower.",

@@ -92,35 +92,34 @@
 
             async function fetchAllData() {
                 const urlParams = new URLSearchParams(window.location.search);
-                const icaoParam = urlParams.get('icao');
+                let icaoParam = urlParams.get('icao');
 
-                let dataPath = '../data/rt-call-v2'; // Default path
-                if (icaoParam === 'vgjr') {
-                    dataPath = '../data/rt-call-vgjr';
-                } else if (icaoParam === 'vghs') {
-                    dataPath = '../data/rt-call-vghs';
+                // Default to 'vghs' if no parameter is provided
+                if (!icaoParam || (icaoParam !== 'vghs' && icaoParam !== 'vgjr')) {
+                    icaoParam = 'vghs';
                 }
+
+                const dataPath = `../data/rt-call-${icaoParam}`;
 
                 // Update filter buttons based on URL param
                 const icaoButtons = document.querySelectorAll('.filter-btn[data-filter-group="icao"]');
                 icaoButtons.forEach(btn => {
                     btn.classList.remove('active');
-                    if (icaoParam && btn.dataset.filterValue === icaoParam) {
-                        btn.classList.add('active');
-                    } else if (!icaoParam && btn.dataset.filterValue === 'vghs') { // Default to VGHS if no param
+                    if (btn.dataset.filterValue === icaoParam) {
                         btn.classList.add('active');
                     }
                 });
 
+                // Construct file names with the ICAO prefix
                 const filesToFetch = [
-                    `${dataPath}/arrival-rt-call-data.json`,
-                    `${dataPath}/departure-rt-call-data.json`,
-                    `${dataPath}/circuit-rt-call-data.json`
+                    `${dataPath}/${icaoParam}-arrival-call-data.json`,
+                    `${dataPath}/${icaoParam}-departure-call-data.json`,
+                    `${dataPath}/${icaoParam}-circuit-call-data.json`
                 ];
 
                 try {
                     const filePromises = filesToFetch.map(fileUrl => {
-                        const type = fileUrl.split('/').pop().split('-')[0]; // 'arrival', 'departure', etc.
+                        const type = fileUrl.split('/').pop().split('-')[1]; // 'arrival', 'departure', etc.
                         return fetch(fileUrl)
                             .then(res => {
                                 if (!res.ok) return []; // If a file doesn't exist, return an empty array
@@ -130,7 +129,7 @@
                     });
 
                     // Also fetch the parameters file
-                    const paramsPromise = fetch(`${dataPath}/all-parameter-data.json`)
+                    const paramsPromise = fetch(`${dataPath}/${icaoParam}-parameter-data.json`)
                         .then(res => res.ok ? res.json() : {})
                         .catch(() => ({}));
 

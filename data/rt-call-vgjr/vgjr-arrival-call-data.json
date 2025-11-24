@@ -366,6 +366,143 @@
       }
     ],
     "aircraft": [ "PT6" ]
+  },{
+    "phase": "b1_fix",
+    "category": "VOR-Y",
+    "description": "The pilot reports over the B-1 fix during a VOR-Y approach.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Report B-1 fix",
+        "message": "{JSR TWR}, {Call Sign}, B-1, 3000 feet."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Maintain altitude, report B-2",
+        "message": "{Call Sign}, {JSR TWR}, maintain 3000 feet, report B-2."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm report B-2",
+        "message": "Maintain 3000 feet, will report B-2, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "Civil", "Military Jet", "Military Transport" ]
+  },
+  {
+    "phase": "b2_fix",
+    "category": "VOR-Y",
+    "description": "The pilot reports over the B-2 fix and approaching the outbound leg.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Report B-2 fix",
+        "message": "{JSR TWR}, {Call Sign}, B-2, 3000 feet, approaching outbound."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Report 6 miles out",
+        "message": "{Call Sign}, {JSR TWR}, report 6 miles out."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm report 6 miles out",
+        "message": "Will report 6 miles out, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "Civil", "Military Jet", "Military Transport" ]
+  },
+  {
+    "phase": "6_miles_out",
+    "category": "VOR-Y",
+    "description": "The pilot reports 6 miles out and receives approach clearance.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Report 6 miles out",
+        "message": "{JSR TWR}, {Call Sign}, 6 miles out."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Cleared for approach, descend",
+        "message": "{Call Sign}, {JSR TWR}, cleared for the approach. Descend to 1700 feet, report turning inbound."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm cleared for approach",
+        "message": "Cleared for the approach, descending to 1700 feet, will report turning inbound, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "Civil", "Military Jet", "Military Transport" ]
+  },
+  {
+    "phase": "turning_inbound_vor_y",
+    "category": "VOR-Y",
+    "description": "The pilot reports turning inbound on the VOR-Y approach.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Turning inbound",
+        "message": "{JSR TWR}, {Call Sign}, turning inbound, 1700 feet."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Report steady inbound",
+        "message": "{Call Sign}, {JSR TWR}, report steady inbound."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm report steady inbound",
+        "message": "Will report steady inbound, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "Civil", "Military Jet", "Military Transport" ]
+  },
+  {
+    "phase": "steady_inbound",
+    "category": "VOR-Y",
+    "description": "The pilot reports steady on the inbound course.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Steady inbound",
+        "message": "{JSR TWR}, {Call Sign}, steady inbound."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Descend to minima, report runway",
+        "message": "{Call Sign}, {JSR TWR}, descend to minima, report runway in sight."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm descend to minima",
+        "message": "Descending to minima, will report runway in sight, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "Civil", "Military Jet", "Military Transport" ]
+  },
+  {
+    "phase": "runway_in_sight_vor_y",
+    "category": "VOR-Y",
+    "description": "The pilot reports the runway in sight and receives clearance for a low go.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Runway in sight",
+        "message": "{JSR TWR}, {Call Sign}, runway in sight."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Cleared for low go",
+        "message": "{Call Sign}, {JSR TWR}, check gears down and locked, surface wind 180 at 05 knots, cleared for low go Runway 16."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm cleared for low go",
+        "message": "Wind copied, cleared for low go Runway 16, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "Civil", "Military Jet", "Military Transport" ]
   },
   {
     "phase": "12_dme_arc",
@@ -528,6 +665,65 @@
     ],
     "aircraft": [ "Civil" ]
   },
+    {
+    "phase": "runway_vacate",
+    "category": "Landing Call",
+    "description": "After landing, the tower provides taxi instructions to the pilot.",
+    "calls": [
+      {
+        "speaker": "TWR",
+        "caption": "Taxi to ground",
+        "message": "{Call Sign}, {JSR TWR}, taxi via Oscar after vacating contact ground 121.8."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm taxi to ground",
+        "message": "Taxi via Oscar, after vacating contact ground 121.8, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "Civil", "Military Jet", "Military Transport" ]
+  },
+  {
+    "phase": "taxi_to_tarmac",
+    "category": "Landing Call",
+    "description": "The pilot contacts ground control after landing for taxi instructions to the tarmac.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Contacting Ground",
+        "message": "{JSR GRD}, {Call Sign}, with you."
+      },
+      {
+        "speaker": "GRD",
+        "caption": "Taxi to tarmac",
+        "message": "{Call Sign}, {JSR GRD}, taxi via Oscar-Papa-Alpha to tarmac."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm taxi to tarmac",
+        "message": "Taxi via Oscar-Papa-Alpha to tarmac, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "Civil", "Military Jet", "Military Transport" ]
+  },
+  {
+    "phase": "taxi_to_bay",
+    "category": "Landing Call",
+    "description": "After landing, the tower provides taxi instructions to a specific bay.",
+    "calls": [
+      {
+        "speaker": "TWR",
+        "caption": "Taxi to Bay 04",
+        "message": "{Call Sign}, {JSR TWR}, landed at {time 52}, taxi via Romeo-Papa-Lima to Bay 04."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm taxi to bay",
+        "message": "Taxi via Romeo-Papa-Lima to Bay 04, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "Civil", "Military Jet", "Military Transport" ]
+  },
   {
     "phase": "entry_5mw",
     "category": "Helicopter Arrival",
@@ -596,202 +792,5 @@
       }
     ],
     "aircraft": [ "Helicopter" ]
-  },
-  {
-    "phase": "b1_fix",
-    "category": "VOR-Y",
-    "description": "The pilot reports over the B-1 fix during a VOR-Y approach.",
-    "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Report B-1 fix",
-        "message": "{JSR TWR}, {Call Sign}, B-1, 3000 feet."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Maintain altitude, report B-2",
-        "message": "{Call Sign}, {JSR TWR}, maintain 3000 feet, report B-2."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report B-2",
-        "message": "Maintain 3000 feet, will report B-2, {Call Sign}."
-      }
-    ],
-    "aircraft": [ "Civil", "Military Jet", "Military Transport" ]
-  },
-  {
-    "phase": "b2_fix",
-    "category": "VOR-Y",
-    "description": "The pilot reports over the B-2 fix and approaching the outbound leg.",
-    "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Report B-2 fix",
-        "message": "{JSR TWR}, {Call Sign}, B-2, 3000 feet, approaching outbound."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Report 6 miles out",
-        "message": "{Call Sign}, {JSR TWR}, report 6 miles out."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report 6 miles out",
-        "message": "Will report 6 miles out, {Call Sign}."
-      }
-    ],
-    "aircraft": [ "Civil", "Military Jet", "Military Transport" ]
-  },
-  {
-    "phase": "6_miles_out",
-    "category": "VOR-Y",
-    "description": "The pilot reports 6 miles out and receives approach clearance.",
-    "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Report 6 miles out",
-        "message": "{JSR TWR}, {Call Sign}, 6 miles out."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Cleared for approach, descend",
-        "message": "{Call Sign}, {JSR TWR}, cleared for the approach. Descend to 1700 feet, report turning inbound."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm cleared for approach",
-        "message": "Cleared for the approach, descending to 1700 feet, will report turning inbound, {Call Sign}."
-      }
-    ],
-    "aircraft": [ "Civil", "Military Jet", "Military Transport" ]
-  },
-  {
-    "phase": "turning_inbound_vor_y",
-    "category": "VOR-Y",
-    "description": "The pilot reports turning inbound on the VOR-Y approach.",
-    "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Turning inbound",
-        "message": "{JSR TWR}, {Call Sign}, turning inbound, 1700 feet."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Report steady inbound",
-        "message": "{Call Sign}, {JSR TWR}, report steady inbound."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report steady inbound",
-        "message": "Will report steady inbound, {Call Sign}."
-      }
-    ],
-    "aircraft": [ "Civil", "Military Jet", "Military Transport" ]
-  },
-  {
-    "phase": "steady_inbound",
-    "category": "VOR-Y",
-    "description": "The pilot reports steady on the inbound course.",
-    "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Steady inbound",
-        "message": "{JSR TWR}, {Call Sign}, steady inbound."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Descend to minima, report runway",
-        "message": "{Call Sign}, {JSR TWR}, descend to minima, report runway in sight."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm descend to minima",
-        "message": "Descending to minima, will report runway in sight, {Call Sign}."
-      }
-    ],
-    "aircraft": [ "Civil", "Military Jet", "Military Transport" ]
-  },
-  {
-    "phase": "runway_in_sight_vor_y",
-    "category": "VOR-Y",
-    "description": "The pilot reports the runway in sight and receives clearance for a low go.",
-    "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Runway in sight",
-        "message": "{JSR TWR}, {Call Sign}, runway in sight."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Cleared for low go",
-        "message": "{Call Sign}, {JSR TWR}, check gears down and locked, surface wind 180 at 05 knots, cleared for low go Runway 16."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm cleared for low go",
-        "message": "Wind copied, cleared for low go Runway 16, {Call Sign}."
-      }
-    ],
-    "aircraft": [ "Civil", "Military Jet", "Military Transport" ]
-  },
-  {
-    "phase": "runway_vacate",
-    "category": "Landing Call",
-    "description": "After landing, the tower provides taxi instructions to the pilot.",
-    "calls": [
-      {
-        "speaker": "TWR",
-        "caption": "Taxi to ground",
-        "message": "{Call Sign}, {JSR TWR}, taxi via Oscar after vacating contact ground 121.8."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm taxi to ground",
-        "message": "Taxi via Oscar, after vacating contact ground 121.8, {Call Sign}."
-      }
-    ],
-    "aircraft": [ "Civil", "Military Jet", "Military Transport" ]
-  },
-  {
-    "phase": "taxi_to_tarmac",
-    "category": "Landing Call",
-    "description": "The pilot contacts ground control after landing for taxi instructions to the tarmac.",
-    "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Contacting Ground",
-        "message": "{JSR GRD}, {Call Sign}, with you."
-      },
-      {
-        "speaker": "GRD",
-        "caption": "Taxi to tarmac",
-        "message": "{Call Sign}, {JSR GRD}, taxi via Oscar-Papa-Alpha to tarmac."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm taxi to tarmac",
-        "message": "Taxi via Oscar-Papa-Alpha to tarmac, {Call Sign}."
-      }
-    ],
-    "aircraft": [ "Civil", "Military Jet", "Military Transport" ]
-  },
-  {
-    "phase": "taxi_to_bay",
-    "category": "Landing Call",
-    "description": "After landing, the tower provides taxi instructions to a specific bay.",
-    "calls": [
-      {
-        "speaker": "TWR",
-        "caption": "Taxi to Bay 04",
-        "message": "{Call Sign}, {JSR TWR}, landed at {time 52}, taxi via Romeo-Papa-Lima to Bay 04."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm taxi to bay",
-        "message": "Taxi via Romeo-Papa-Lima to Bay 04, {Call Sign}."
-      }
-    ],
-    "aircraft": [ "Civil", "Military Jet", "Military Transport" ]
   }
 ]
