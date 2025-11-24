@@ -82,15 +82,6 @@
       "taxi via S3-S-V"
     ]
   },
-  "Pushback Face": {
-    "description": "This is a ground command that tells a pilot which direction to face the aircraft after pushing back from the gate. For example, 'push to face north' tells the pilot and ground crew which way to orient the aircraft before starting the engines.",
-    "prefix": "Pushback approved, Temp 32, time 1200, ",
-    "suffix": ", {Call Sign}",
-    "values": [
-      "push to face north",
-      "push to face south"
-    ]
-  },
   "TIME": {
     "description": "This is the time, typically provided in UTC (Coordinated Universal Time) format. For example, a pilot might receive 'TIME 1335' to be aware of a specific time-sensitive instruction.",
     "prefix": "Startup approved, temp 32, ",
@@ -101,42 +92,6 @@
       "TIME 923",
       "TIME 1037",
       "TIME 1146"
-    ]
-  },
-  "Arrival Approach": {
-    "description": "This is a report from a pilot confirming their current location and status during the final approach to the airport. For example, 'call you established 12 dme arc' is a common phrase to let the controller know the aircraft is on a specific part of the approach path.",
-    "prefix": "QNH 1013, descending 3000ft, ",
-    "suffix": ", {Call Sign}",
-    "values": [
-      "call you established outbound of letdown for VDI 14",
-      "call you established 12 dme arc",
-      "call you over delta alpha, proceeding outbound of letdown, rwy 14",
-      "call you victor 1"
-    ]
-  },
-  "Call Sign": {
-    "description": "The specific name or code used to identify an aircraft during a flight. For example, 'THAI321' is the unique identifier for a Thai Airways flight.",
-    "prefix": "",
-    "suffix": "",
-    "values": [
-      "THAI321",
-      "EK584",
-      "BG367",
-      "IGO1113",
-      "QR638",
-      "CX667",
-      "SQ446",
-      "BG602",
-      "BG492",
-      "BG472",
-      "NVQ946",
-      "AWA446",
-      "UBG108",
-      "GFN391",
-      "BJR471",
-      "UNC1031",
-      "AJX1483",
-      "S2AGP"
     ]
   }
 }

@@ -148,22 +148,68 @@
             }
 
             function populateAircraftFilter() {
-                const allAircraft = new Set();
-                allRtCallData.forEach(call => {
-                    if (call.aircraft) {
-                        call.aircraft.forEach(ac => allAircraft.add(ac));
+                const activeIcao = document.querySelector('.filter-btn[data-filter-group="icao"].active').dataset.filterValue;
+
+                const aircraftDataByIcao = {
+                    vghs: {
+                        "CIVIL": ["B777", "B787", "A320", "A330", "Dash8Q", "ATR72"],
+                        "Military Jet": ["MIG29", "F7"],
+                        "Military Transport": ["AN32", "C130"],
+                        "Helicopter": ["R66"]
+                    },
+                    vgjr: {
+                        "CIVIL": ["ATR72"],
+                        "Military Jet": ["K8"],
+                        "Military Transport": ["PT6", "GROB120"],
+                        "Helicopter": ["BELL206", "AW119"]
                     }
-                });
+                };
 
                 aircraftFilter.innerHTML = '<option value="all">All</option>'; // Reset
-                [...allAircraft].sort().forEach(ac => {
-                    const option = document.createElement('option');
-                    option.value = ac;
-                    option.textContent = ac;
-                    aircraftFilter.appendChild(option);
-                });
+
+                const aircraftForIcao = aircraftDataByIcao[activeIcao];
+
+                if (aircraftForIcao) {
+                    for (const category in aircraftForIcao) {
+                        const optgroup = document.createElement('optgroup');
+                        optgroup.label = category;
+
+                        aircraftForIcao[category].forEach(aircraftModel => {
+                            const option = document.createElement('option');
+                            option.value = aircraftModel;
+                            option.textContent = aircraftModel;
+                            optgroup.appendChild(option);
+                        });
+
+                        aircraftFilter.appendChild(optgroup);
+                    }
+                } else {
+                    // Fallback for old data structure if needed
+                    const allAircraft = new Set(allRtCallData.flatMap(call => call.aircraft || []));
+                    [...allAircraft].sort().forEach(ac => aircraftFilter.add(new Option(ac, ac)));
+                }
             }
 
+            function formatMessageWithVariables(message) {
+                const activeCallsign = callsignFilter.value || 'call-sign';
+                // A list of variables that should have the subtle style.
+                // We check for "Call Sign" and common ATC identifiers.
+                const subtleVariables = ["Call Sign", "DHK TWR", "DHK GRD", "JSR TWR", "JSR GRD"];
+
+                return message.replace(/{([^}]+)}/g, (match, variableName) => {
+                    // Trim the variable name to be safe
+                    const trimmedVar = variableName.trim();
+
+                    // Check if the variable name is in our subtle list
+                    if (subtleVariables.includes(trimmedVar) || trimmedVar === activeCallsign) {
+                        // Apply the subtle class
+                        return `<span class="variable-subtle">${match}</span>`;
+                    } else {
+                        // Apply the high-contrast class for all other variables
+                        return `<span class="variable-contrast">${match}</span>`;
+                    }
+                });
+            }
 
             function renderCalls() {
                 container.innerHTML = ''; // Clear previous results
@@ -173,6 +219,19 @@
                 const activeAircraft = aircraftFilter.value;
                 const activeCallsign = callsignFilter.value || 'call-sign'; // Use default if empty
 
+                // Map specific aircraft models to their general categories
+                const aircraftToCategoryMap = {
+                    // VGHS
+                    "B777": "Civil", "B787": "Civil", "A320": "Civil", "A330": "Civil", "Dash8Q": "Civil", "ATR72": "Civil",
+                    "MIG29": "Military Jet", "F7": "Military Jet",
+                    "AN32": "Military Transport", "C130": "Military Transport",
+                    "R66": "Helicopter",
+                    // VGJR
+                    "K8": "Military Jet",
+                    "PT6": "Military Transport", "GROB120": "Military Transport",
+                    "BELL206": "Helicopter", "AW119": "Helicopter"
+                };
+
                 // --- Update Main Title ---
                 const displayAircraft = activeAircraft === 'all' ? 'All Aircraft' : activeAircraft.toUpperCase();
                 const displayType = activeType.charAt(0).toUpperCase() + activeType.slice(1);
@@ -181,8 +240,18 @@
 
                 const baseFilteredData = allRtCallData.filter(data => {
                     const typeMatch = data.type === activeType;
-                    const icaoMatch = true; // ICAO is now filtered by folder, so this check is no longer needed at the item level.
-                    const aircraftMatch = activeAircraft === 'all' || (data.aircraft && data.aircraft.includes(activeAircraft));
+                    const icaoMatch = true; // ICAO is filtered by folder, so this is always true here.
+
+                    // --- New Aircraft Filtering Logic ---
+                    let aircraftMatch = false;
+                    if (activeAircraft === 'all') {
+                        aircraftMatch = true;
+                    } else if (data.aircraft) {
+                        // Get the category for the selected aircraft (e.g., "B777" -> "Civil")
+                        const categoryOfSelectedAircraft = aircraftToCategoryMap[activeAircraft];
+                        // Match if the call's aircraft list includes the specific model OR its general category
+                        aircraftMatch = data.aircraft.includes(activeAircraft) || (categoryOfSelectedAircraft && data.aircraft.includes(categoryOfSelectedAircraft));
+                    }
 
                     return typeMatch && icaoMatch && aircraftMatch;
                 });
@@ -229,15 +298,8 @@
                         }
                         message = message.replace(callsignRegex, `{${activeCallsign}}`);
 
-                        // For pilot calls, wrap variables in a span to style them differently
-                        if (speaker === 'Pilot') {
-                            const variableRegex = /({[^}]+})/g;
-                            message = message.replace(variableRegex, `<span class="call-variable">${'$&'}</span>`);
-                        }
-
-                        return { speaker, message };
+                        return { speaker, message: formatMessageWithVariables(message) };
                     });
-
 
                     const dialogueRows = processedCalls.map(call => `
                         <div class="call-row" data-speaker="${call.speaker}">
@@ -251,6 +313,22 @@
                     const aircraftPopupId = `aircraft-popup-${index}`;
                     const descPopupId = `desc-popup-${index}`;
 
+                    // --- Create Aircraft Category Symbols ---
+                    const aircraftCategories = data.aircraft || [];
+                    const categorySymbols = {
+                        "Civil": "C",
+                        "Military Jet": "MJ",
+                        "Military Transport": "MT",
+                        "Helicopter": "H"
+                    };
+
+                    const symbolsHtml = aircraftCategories.map(cat => {
+                        const symbol = categorySymbols[cat];
+                        // Add a class for specific styling, e.g., data-category="Civil"
+                        return symbol ? `<span class="aircraft-symbol" title="${cat}">${symbol}</span>` : '';
+                    }).join('');
+                    // --- End Symbol Creation ---
+
                     card.innerHTML = `
                         <div class="phase-column">
                             <h2>${(data.phase || 'N/A').replace(/_/g, ' ')}</h2>
@@ -263,9 +341,8 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="dialogue-column">
-                            ${dialogueRows}
-                        </div>
+                        <div class="dialogue-column">${dialogueRows}</div>
+                        <div class="aircraft-symbols-container">${symbolsHtml}</div>
                         <div class="popup-overlay" id="${aircraftPopupId}">
                             <div class="popup-content">
                                 <h3>Applicable Aircraft</h3>

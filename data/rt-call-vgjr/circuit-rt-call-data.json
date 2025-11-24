@@ -1,1 +1,209 @@
-[]
+[
+  {
+    "phase": "downwind",
+    "category": "Downwind Leg",
+    "description": "The pilot reports entering the downwind leg of the traffic pattern.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Beginning of downwind",
+        "message": "{Call Sign}, we are beginning of downwind Rwy-16."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Report end of downwind",
+        "message": "{Call Sign}, {JSR TWR}, report end of downwind Rwy-16."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm report end of downwind",
+        "message": "Will report end of downwind Rwy-16, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "Military Trainer" ]
+  },
+  {
+    "phase": "base_leg",
+    "category": "Base Leg",
+    "description": "The pilot reports turning onto the base leg.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Turning base",
+        "message": "{JSR TWR}, {Call Sign}, we are turning base leg."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Report final",
+        "message": "{Call Sign}, {JSR TWR}, report final for Rwy-16."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm report final",
+        "message": "Will report final for Rwy-16, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "Military Trainer" ]
+  },
+  {
+    "phase": "final_full_stop",
+    "category": "Final Leg",
+    "description": "The pilot reports on final for a full stop landing and receives clearance.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Final for full stop",
+        "message": "{JSR TWR}, {Call Sign}, final for full stop."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Cleared to land",
+        "message": "{Call Sign}, {JSR TWR}, check gears down and locked, S/W 210/08 kts, clear for full stop."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm cleared to land",
+        "message": "Wind copied, cleared to land Rwy-16, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "Military Trainer" ]
+  },
+  {
+    "phase": "final_touch_and_go",
+    "category": "Final Leg",
+    "description": "The pilot reports on final for a touch & go and receives clearance.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Final for touch & go",
+        "message": "{JSR TWR}, {Call Sign}, final for touch & go."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Cleared for touch & go",
+        "message": "{Call Sign}, {JSR TWR}, check gears down and locked, S/W 210/08 kts, clear for touch & go."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm cleared for touch & go",
+        "message": "Wind copied, cleared for touch & go Rwy-16, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "Military Trainer" ]
+  },
+  {
+    "phase": "final_low_go",
+    "category": "Final Leg",
+    "description": "The pilot reports on final for a low go and receives clearance.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Final for low go",
+        "message": "{JSR TWR}, {Call Sign}, final for low go."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Cleared for low go",
+        "message": "{Call Sign}, {JSR TWR}, check gears down and locked, S/W 210/08 kts, clear for low go."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm cleared for low go",
+        "message": "Wind copied, cleared for low go Rwy-16, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "Military Trainer" ]
+  },
+  {
+    "phase": "downwind_full_stop",
+    "category": "Downwind Leg",
+    "description": "The pilot reports on the downwind leg with the intention of a full-stop landing.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Downwind for full stop",
+        "message": "{JSR TWR}, {Call Sign}, downwind for full stop."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Report final",
+        "message": "{Call Sign}, report final."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm report final",
+        "message": "Will report final, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "Military Trainer" ]
+  },
+  {
+    "phase": "final_approach",
+    "category": "Final Leg",
+    "description": "The pilot reports on final for a full stop landing and receives clearance.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Final for full stop",
+        "message": "{JSR TWR}, {Call Sign}, final for full stop."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Cleared to land",
+        "message": "{Call Sign}, check gears down and locked, surface wind 160/07 knots, cleared to land Runway 16."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm cleared to land",
+        "message": "Wind copied, cleared to land Runway 16, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "Military Trainer" ]
+  },
+  {
+    "phase": "downwind_heli",
+    "category": "Helicopter Circuit",
+    "description": "The helicopter pilot reports on the downwind leg.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Downwind",
+        "message": "{JSR TWR}, {Call Sign}, downwind."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Report final for R-P",
+        "message": "{Call Sign}, {JSR TWR}, report final for R-P."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm report final",
+        "message": "Will report final for R-P, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "Helicopter" ]
+  },
+  {
+    "phase": "final_heli",
+    "category": "Helicopter Circuit",
+    "description": "The helicopter pilot reports on final for R-P and receives landing clearance.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Final for R-P",
+        "message": "{JSR TWR}, {Call Sign}, final for R-P."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Cleared to land",
+        "message": "{Call Sign}, {JSR TWR}, surface wind 180 at 05 knots, cleared to land at R-P."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm cleared to land",
+        "message": "Wind copied, cleared to land, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "Helicopter" ]
+  }
+]

@@ -35,11 +35,11 @@
     "prefix": "QNH 1013, SQUAWK 4771, ",
     "suffix": ", to holding point rwy-14, {Call Sign}",
     "values": [
-      "taxi via C-N-N2",
-      "taxi via F-N-N2",
-      "taxi via V-N-N2",
-      "taxi via NA-P",
-      "taxi via NA"
+      "Taxi via C-N-N2",
+      "Taxi via F-N-N2",
+      "Taxi via V-N-N2",
+      "Taxi via NA-P",
+      "Taxi via NA"
     ]
   },
   "Arrival Taxiway": {
@@ -47,11 +47,11 @@
     "prefix": "",
     "suffix": ", changing to ground 121.8, {Call Sign}",
     "values": [
-      "taxi via S1",
-      "taxi via S2",
-      "taxi via S3",
-      "taxi via SA",
-      "taxi via HA"
+      "Taxi via S1",
+      "Taxi via S2",
+      "Taxi via S3",
+      "Taxi via SA",
+      "Taxi via HA"
     ]
   },
   "Runway Vacate Taxiway": {
@@ -59,11 +59,11 @@
     "prefix": "",
     "suffix": ", {Call Sign}",
     "values": [
-      "runway vacated via S1",
-      "runway vacated via S2",
-      "runway vacated via S3",
-      "runway vacated via SA",
-      "runway vacated via HA"
+      "Runway vacated via S1",
+      "Runway vacated via S2",
+      "Runway vacated via S3",
+      "Runway vacated via SA",
+      "Runway vacated via HA"
     ]
   },
   "Parking Taxiway": {
@@ -71,24 +71,24 @@
     "prefix": "Roger, ",
     "suffix": ", to Stand no 05, {Call Sign}",
     "values": [
-      "taxi via S1-S-C",
-      "taxi via S1-S-F",
-      "taxi via S1-S-V",
-      "taxi via S2-S-C",
-      "taxi via S2-S-F",
-      "taxi via S2-S-V",
-      "taxi via S3-S-C",
-      "taxi via S3-S-F",
-      "taxi via S3-S-V"
+      "Taxi via S1-S-C",
+      "Taxi via S1-S-F",
+      "Taxi via S1-S-V",
+      "Taxi via S2-S-C",
+      "Taxi via S2-S-F",
+      "Taxi via S2-S-V",
+      "Taxi via S3-S-C",
+      "Taxi via S3-S-F",
+      "Taxi via S3-S-V"
     ]
   },
   "Pushback Face": {
     "description": "This is a ground command that tells a pilot which direction to face the aircraft after pushing back from the gate. For example, 'push to face north' tells the pilot and ground crew which way to orient the aircraft before starting the engines.",
-    "prefix": "Pushback approved, Temp 32, time 1200, ",
+    "prefix": "Pushback approved, Temp 32, time 40,",
     "suffix": ", {Call Sign}",
     "values": [
-      "push to face north",
-      "push to face south"
+      "Push to face north",
+      "Push to face south"
     ]
   },
   "TIME": {
@@ -108,35 +108,27 @@
     "prefix": "QNH 1013, descending 3000ft, ",
     "suffix": ", {Call Sign}",
     "values": [
-      "call you established outbound of letdown for VDI 14",
-      "call you established 12 dme arc",
-      "call you over delta alpha, proceeding outbound of letdown, rwy 14",
-      "call you victor 1"
+      "Call you established outbound of letdown for VDI 14",
+      "Call you established 12 dme arc",
+      "Call you over delta alpha, proceeding outbound of letdown, rwy 14",
+      "Call you victor 1"
     ]
   },
-  "Call Sign": {
-    "description": "The specific name or code used to identify an aircraft during a flight. For example, 'THAI321' is the unique identifier for a Thai Airways flight.",
+  "Number": {
+    "description": "This represents a numerical value spoken as a word, often used for stand numbers or other single-digit references.",
     "prefix": "",
     "suffix": "",
     "values": [
-      "THAI321",
-      "EK584",
-      "BG367",
-      "IGO1113",
-      "QR638",
-      "CX667",
-      "SQ446",
-      "BG602",
-      "BG492",
-      "BG472",
-      "NVQ946",
-      "AWA446",
-      "UBG108",
-      "GFN391",
-      "BJR471",
-      "UNC1031",
-      "AJX1483",
-      "S2AGP"
+      "Zero",
+      "One",
+      "Two",
+      "Three",
+      "Four",
+      "Five",
+      "Six",
+      "Seven",
+      "Eight",
+      "Nine"
     ]
   }
 }

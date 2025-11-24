@@ -1,53 +1,7 @@
 [
   {
-    "phase": "startup",
-    "category": "Departure Call",
-    "description": "A pilot makes this call to the ground controller to request permission to start the plane's engines. This is the first step before a flight.",
-    "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Request startup",
-        "message": "{DHK GND} {Call Sign}, request startup"
-      },
-      {
-        "speaker": "GRD",
-        "caption": "Startup approved",
-        "message": "{Call Sign}, startup approved, temp 32, time 40, push to face north"
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Wilco, startup approved",
-        "message": "startup approved, temp 32, time 1200 {Call Sign}"
-      }
-    ],
-    "aircraft": [ "B737", "A320", "ATR72", "C172", "pt6", "k8", "Grob", "Generic" ]
-  },
-  {
     "phase": "pushback",
-    "category": "Departure Call",
-    "description": "This is a call to the ground controller to request permission to be pushed back from the gate by a special ground vehicle.",
-    "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Request pushback",
-        "message": "{DHK GND} {Call Sign}, request pushback"
-      },
-      {
-        "speaker": "GRD",
-        "caption": "Pushback approved",
-        "message": "{Call Sign}, pushback approved, push to face north"
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Wilco, pushback approved",
-        "message": "copied, push to face north, {Call Sign}"
-      }
-    ],
-    "aircraft": [ "B737", "A320", "ATR72", "C172", "pt6", "k8", "Grob", "Generic" ]
-  },
-  {
-    "phase": "startup_&_pushback",
-    "category": "Departure Call",
+    "category": "Civil Ground",
     "description": "A pilot makes this single call to request permission for both starting the engines and being pushed back from the gate at the same time.",
     "calls": [
       {
@@ -58,19 +12,19 @@
       {
         "speaker": "GRD",
         "caption": "Startup and pushback approved",
-        "message": "{Call Sign}, startup and pushback approved, temp 32, time 40, push to face north"
+        "message": "{Call Sign}, startup and pushback approved, temp 32, {Time 40}, push to face north"
       },
       {
         "speaker": "Pilot",
-        "caption": "Wilco, startup and pushback approved",
-        "message": "copied, startup and pushback approved, temp 32, time 40, push to face north {Call Sign}"
+        "caption": "startup and pushback approved",
+        "message": "startup and pushback approved, temp 32, {time 40}, push to face north {Call Sign}"
       }
     ],
-    "aircraft": [ "B737", "A320", "ATR72", "C172", "pt6", "k8", "Grob", "Generic" ]
+    "aircraft": [ "Civil" ]
   },
   {
     "phase": "taxi",
-    "category": "Departure Call",
+    "category": "Civil Ground",
     "description": "This is a call made by a pilot to the ground controller to request permission to move the plane on the ground from the gate to the runway.",
     "calls": [
       {
@@ -89,11 +43,57 @@
         "message": "{QNH 1013}, Squawk 4771, taxi via C-N-N2 to holding point runway-14 {Call Sign}"
       }
     ],
-    "aircraft": [ "B737", "A320", "ATR72", "C172", "pt6", "k8", "Grob", "Generic" ]
+    "aircraft": [ "Civil" ]
+  },
+  {
+    "phase": "change_to_TWR_on_go",
+    "category": "Civil Ground",
+    "description": "A pilot makes this call to the ground controller when they are approaching the runway, to get a final clearance to take off and to switch communication to the airport's tower controller.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "At holding point",
+        "message": "{DHK GND} {Call Sign}, holding point runway 14, like to change to tower"
+      },
+      {
+        "speaker": "GRD",
+        "caption": "ATC clearance",
+        "message": "{Call Sign}, cleared to [Destination] SID ADMIL ONE, climb and cruse FL 290"
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Changing to tower",
+        "message": "over to tower {Call Sign}"
+      }
+    ],
+    "aircraft": [ "Civil" ]
+  },
+  {
+    "phase": "startup",
+    "category": "Military Ground",
+    "description": "A pilot makes this call to the ground controller to request permission to start the plane's engines. This is the first step before a flight.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Request startup",
+        "message": "{DHK GND} {Call Sign}, request startup"
+      },
+      {
+        "speaker": "GRD",
+        "caption": "Startup approved",
+        "message": "{Call Sign}, startup approved, temp 32, time 40, push to face north"
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Wilco, startup approved",
+        "message": "startup approved, temp 32, time 1200 {Call Sign}"
+      }
+    ],
+    "aircraft": [ "Military Jet", "Military Transport" ]
   },
   {
     "phase": "military_taxi",
-    "category": "Departure Call",
+    "category": "Military Ground",
     "description": "This is a specific call made by a military pilot to the ground controller to request permission to move the plane on the ground from the gate to the runway, following a designated route for military aircraft.",
     "calls": [
       {
@@ -112,40 +112,17 @@
         "message": "QNH 760, SQUAWK 4141, taxi via NA-P to holding point runway-14 {Call Sign}"
       }
     ],
-    "aircraft": [ "B737", "A320", "ATR72", "C172", "pt6", "k8", "Grob", "Generic" ]
+    "aircraft": [ "Military Jet", "Military Transport" ]
   },
   {
-    "phase": "atc_clearance_1_(run)",
-    "category": "Departure Call",
+    "phase": "change_to_TWR_at_end",
+    "category": "Military Ground",
     "description": "A pilot makes this call to the ground controller when they are approaching the runway, to get a final clearance to take off and to switch communication to the airport's tower controller.",
     "calls": [
       {
         "speaker": "Pilot",
         "caption": "Approaching holding point",
-        "message": "{DHK GND} {Call Sign}, aproaching holding point rwy 14, like to change to tower"
-      },
-      {
-        "speaker": "GRD",
-        "caption": "ATC clearance",
-        "message": "{Call Sign}, cleared to [Destination] SID ADMIL ONE, climb and cruse FL 290"
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Changing to tower",
-        "message": "over to tower {Call Sign}"
-      }
-    ],
-    "aircraft": [ "B737", "A320", "ATR72", "C172", "pt6", "k8", "Grob", "Generic" ]
-  },
-  {
-    "phase": "atc_clearance_2_(end)",
-    "category": "Departure Call",
-    "description": "A pilot makes this call to the ground controller when they are at the end of the runway and ready to take off, to get final clearance and switch to the airport's tower controller.",
-    "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "At holding point",
-        "message": "{DHK GND} {Call Sign}, holding point runway 14, like to change to tower"
+        "message": "{DHK GND} {Call Sign}, approaching holding point rwy 14, like to change to tower"
       },
       {
         "speaker": "GRD",
@@ -158,11 +135,11 @@
         "message": "over to tower {Call Sign}"
       }
     ],
-    "aircraft": [ "B737", "A320", "ATR72", "C172", "pt6", "k8", "Grob", "Generic" ]
+    "aircraft": [ "Military Jet", "Military Transport" ]
   },
   {
-    "phase": "line_up_1",
-    "category": "Departure Call",
+    "phase": "line_up_civil",
+    "category": "Civil Tower",
     "description": "This is a call made by a pilot to the tower controller to request permission to move onto the runway and prepare for takeoff.",
     "calls": [
       {
@@ -181,34 +158,11 @@
         "message": "line up runway 14, call you ready for departure {Call Sign}"
       }
     ],
-    "aircraft": [ "B737", "A320", "ATR72", "C172", "pt6", "k8", "Grob", "Generic" ]
-  },
-  {
-    "phase": "line_up_2_(circuit)",
-    "category": "Departure Call",
-    "description": "A pilot makes this call to the tower controller to get permission to move onto the runway and prepare for takeoff to fly a local circuit (a repeating pattern of flight around the airport).",
-    "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Request line up for circuit",
-        "message": "{DHK TWR} {Call Sign}, holding point runway 14, Request line up for cct"
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Line up for circuit",
-        "message": "{Call Sign}, circuite approved line up runway 14, report ready for departure"
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Wilco, line up for circuit",
-        "message": "lining up runway 14 for circuite, call you ready for departure {Call Sign}"
-      }
-    ],
-    "aircraft": [ "B737", "A320", "ATR72", "C172", "pt6", "k8", "Grob", "Generic" ]
+    "aircraft": [ "Civil" ]
   },
   {
     "phase": "departure",
-    "category": "Departure Call",
+    "category": "Civil Tower",
     "description": "A pilot makes this call to the tower controller to confirm they are ready for takeoff and to get the final clearance to proceed.",
     "calls": [
       {
@@ -227,11 +181,29 @@
         "message": "s/w copied, runway 14, cleared for takeoff {Call Sign}"
       }
     ],
-    "aircraft": [ "B737", "A320", "ATR72", "C172", "pt6", "k8", "Grob", "Generic" ]
+    "aircraft": [ "Civil", "Military Jet", "Military Transport" ]
+  },
+  {
+    "phase": "airborne",
+    "category": "Civil Tower",
+    "description": "A call from the tower immediately after takeoff, instructing the pilot on their next reporting point for a standard departure.",
+    "calls": [
+      {
+        "speaker": "TWR",
+        "caption": "Airborne, report 4000ft",
+        "message": "{Call Sign}, airborne {time}, report passing 4000ft"
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Report 4000ft",
+        "message": "airborne copied, call you passing 4000ft {Call Sign}"
+      }
+    ],
+    "aircraft": [ "Civil" ]
   },
   {
     "phase": "transfer_to_control",
-    "category": "Departure Call",
+    "category": "Civil Tower",
     "description": "This is a call made when a plane has flown far enough from the airport to be handed off from the airport's tower controller to the regional air traffic controller for the next part of its flight.",
     "calls": [
       {
@@ -250,6 +222,116 @@
         "message": "over to control, good day {Call Sign}"
       }
     ],
-    "aircraft": [ "B737", "A320", "ATR72", "C172", "pt6", "k8", "Grob", "Generic" ]
+    "aircraft": [ "Civil" ]
+  },
+  {
+    "phase": "line_up_military",
+    "category": "Military Tower",
+    "description": "This is a call made by a military pilot to the tower controller to request permission to move onto the runway and prepare for takeoff.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Request line up",
+        "message": "{DHK TWR} {Call Sign}, request line up"
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Line up and wait",
+        "message": "{Call Sign}, line up runway 14, report ready for departure"
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Wilco, line up and wait",
+        "message": "line up runway 14, call you ready for departure {Call Sign}"
+      }
+    ],
+    "aircraft": [ "Military Jet", "Military Transport" ]
+  },
+  {
+    "phase": "line_up_for_CCT",
+    "category": "Military Tower",
+    "description": "A pilot makes this call to the tower controller to get permission to move onto the runway and prepare for takeoff to fly a local circuit (a repeating pattern of flight around the airport).",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Request line up for circuit",
+        "message": "{DHK TWR} {Call Sign}, holding point runway 14, Request line up for cct"
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Line up for circuit",
+        "message": "{Call Sign}, circuite approved line up runway 14, report ready for departure"
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Wilco, line up for circuit",
+        "message": "lining up runway 14 for circuite, call you ready for departure {Call Sign}"
+      }
+    ],
+    "aircraft": [ "Military Jet" ]
+  },
+  {
+    "phase": "line_up_for_TRG",
+    "category": "Military Tower",
+    "description": "A pilot makes this call to the tower controller to get permission to move onto the runway for takeoff, with the intention of flying to a designated training area.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Request line up for training area",
+        "message": "{DHK TWR} {Call Sign}, holding point runway 14, Request line up for training area east"
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Line up for training area",
+        "message": "{Call Sign}, line up runway 14 for training area east, report ready for departure"
+      },  
+      {
+        "speaker": "Pilot",
+        "caption": "Line up for training area",
+        "message": "lining up runway 14 for trg area east, call you ready for departure {Call Sign}"
+      }
+    ],
+    "aircraft": [ "Military Jet", "Military Transport" ]
+  },
+  {
+    "phase": "airborne_mil",
+    "category": "Military Tower",
+    "description": "A military-specific call from the tower after takeoff, instructing the pilot to report their position relative to a visual waypoint for circuit training.",
+    "calls": [
+      {
+        "speaker": "TWR",
+        "caption": "Airborne, report Victor One",
+        "message": "{Call Sign}, airborne {time}, report abeam victor one"
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Report Victor One",
+        "message": "airborne copied, call you abeam victor one {Call Sign}"
+      }
+    ],
+    "aircraft": [ "Military Jet", "Military Transport" ]
+  },
+  {
+    "phase": "transfer_to_training",
+    "category": "Military Tower",
+    "description": "A military-specific call to hand off the pilot from the tower to the training frequency once they reach a specific waypoint.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Abeam Victor One",
+        "message": "{DHK TWR} {Call Sign}, Abeam victor one, 3000ft"
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Contact training",
+        "message": "{Call Sign}, contact training"
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Over to training",
+        "message": "Over to training, {Call Sign}"
+      }
+    ],
+    "aircraft": [ "Military Jet", "Military Transport" ]
   }
 ]

@@ -123,6 +123,15 @@ h1 {
     font-size: 0.9em; /* Match button font size */
 }
 
+/* Style for the optgroup labels (e.g., CIVIL, Military Jet) */
+#aircraft-filter optgroup {
+    font-weight: 600;
+    font-style: normal; /* Remove italics for a cleaner look */
+    text-transform: uppercase;
+    color: var(--text-secondary); /* Use a subtle color for the header */
+    background-color: var(--card-bg); /* Provides a subtle background in some browsers */
+    font-size: 0.9em;
+}
 /* Style for the callsign input to match the theme */
 /* Custom styling for the aircraft dropdown arrow */
 .aircraft-select-wrapper {
@@ -150,6 +159,7 @@ h1 {
     width: 80%; /* Use more width */
     max-width: 1200px; /* Set a max-width for very large screens */
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    position: relative; /* This is crucial for positioning the tags */
     display: flex; /* Enable flexbox for two-column layout */
     gap: 20px;
 }
@@ -214,6 +224,21 @@ h1 {
 }
 
 /* Style for variables inside pilot call text */
+/* Style 1: Subtle color for Call Signs and ATC Types (ONLY for Pilot) */
+.call-row[data-speaker="Pilot"] .variable-subtle {
+    color: #a0c4ff; /* A slightly different, muted blue for identifiers */
+    font-weight: 600;
+}
+
+/* Style 2: High-contrast color for other variables (ONLY for Pilot) */
+.call-row[data-speaker="Pilot"] .variable-contrast {
+    color: #ffd6a5; /* A warm, attention-grabbing orange/yellow */
+    font-weight: 700;
+    background-color: rgba(255, 214, 165, 0.1); /* A very faint highlight */
+    padding: 1px 4px;
+    border-radius: 4px;
+    border-bottom: 1px solid #fdc270;
+}
 .call-row[data-speaker="Pilot"] .call-text .call-variable {
     color: var(--variable-color);
     font-weight: 700;
@@ -367,6 +392,33 @@ h1 {
     white-space: normal; /* Ensure text can wrap */
     line-height: 1.2; /* Adjust line height for wrapped text */
     hyphens: auto; /* Optional: helps break long words */
+}
+
+/* Container for the new aircraft symbols */
+.aircraft-symbols-container {
+    position: absolute;
+    top: 15px; /* Position from the top of the card */
+    right: 0; /* Align to the right edge of the card */
+    transform: translateX(100%); /* Push the container just outside the card's boundary */
+    display: flex;
+    flex-direction: column; /* Stack symbols vertically */
+    gap: 6px;
+    align-items: flex-start; /* This will left-align the tags */
+}
+
+/* Individual aircraft category symbol style */
+.aircraft-symbol {
+    font-size: 0.7em; /* Make text slightly smaller */
+    font-weight: 500; /* Use a lighter font weight */
+    color: var(--text-secondary);
+    background-color: transparent; /* Remove the solid background */
+    padding: 2px 8px;
+    border-radius: 0 4px 4px 0; /* Rounds the right-side corners */
+    border: 1px solid var(--border-color);
+    border-left: none; /* Remove the border that would be against the card */
+    text-transform: uppercase;
+    cursor: default; /* Show a normal cursor on hover */
+    opacity: 0.7; /* Make the entire tag semi-transparent */
 }
 
 #callsign-filter {
