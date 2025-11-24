@@ -160,7 +160,7 @@
                     vgjr: {
                         "CIVIL": ["ATR72"],
                         "Military Jet": ["K8"],
-                        "Military Transport": ["PT6", "GROB120"],
+                        "Military Trainer": ["PT6", "GROB120"],
                         "Helicopter": ["BELL206", "AW119"]
                     }
                 };
@@ -228,7 +228,7 @@
                     "R66": "Helicopter",
                     // VGJR
                     "K8": "Military Jet",
-                    "PT6": "Military Transport", "GROB120": "Military Transport",
+                    "PT6": "Military Trainer", "GROB120": "Military Trainer",
                     "BELL206": "Helicopter", "AW119": "Helicopter"
                 };
 
@@ -313,46 +313,40 @@
                     const aircraftPopupId = `aircraft-popup-${index}`;
                     const descPopupId = `desc-popup-${index}`;
 
-                    // --- Create Aircraft Category Symbols ---
-                    const aircraftCategories = data.aircraft || [];
-                    const categorySymbols = {
-                        "Civil": "C",
-                        "Military Jet": "MJ",
-                        "Military Transport": "MT",
-                        "Helicopter": "H"
+                    // --- Create Aircraft Symbols Dynamically ---
+                    const getAircraftSymbol = (name) => {
+                        if (!name) return '';
+                        // For specific models that shouldn't be shortened
+                        if (["PT6", "K8", "F7", "R66", "AN32", "C130", "MIG29", "BELL206", "AW119", "GROB120"].includes(name.toUpperCase())) {
+                            return name;
+                        }
+                        // For multi-word names like "Military Jet" -> "MJ"
+                        if (name.includes(' ')) {
+                            return name.split(' ').map(word => word[0]).join('').toUpperCase();
+                        }
+                        // For single-word names like "Civil" -> "C"
+                        return name[0].toUpperCase();
                     };
 
-                    const symbolsHtml = aircraftCategories.map(cat => {
-                        const symbol = categorySymbols[cat];
-                        // Add a class for specific styling, e.g., data-category="Civil"
-                        return symbol ? `<span class="aircraft-symbol" title="${cat}">${symbol}</span>` : '';
-                    }).join('');
-                    // --- End Symbol Creation ---
-
                     card.innerHTML = `
+                        <div class="details-btn-container">
+                            <button class="details-btn" data-popup-target="#${descPopupId}" title="View Details">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+                        </div>
                         <div class="phase-column">
                             <h2>${(data.phase || 'N/A').replace(/_/g, ' ')}</h2>
-                            <div class="action-btn-group">
-                                <button class="aircraft-btn" data-popup-target="#${aircraftPopupId}" title="View Applicable Aircraft">
-                                    <i class="fa-solid fa-plane"></i>
-                                </button>
-                                <button class="description-btn" data-popup-target="#${descPopupId}" title="View Description">
-                                    <i class="fa-solid fa-circle-info"></i>
-                                </button>
-                            </div>
                         </div>
                         <div class="dialogue-column">${dialogueRows}</div>
-                        <div class="aircraft-symbols-container">${symbolsHtml}</div>
-                        <div class="popup-overlay" id="${aircraftPopupId}">
-                            <div class="popup-content">
-                                <h3>Applicable Aircraft</h3>
-                                <ul>${aircraftListItems}</ul>
-                            </div>
+                        <div class="aircraft-symbols-top-container">
+                             ${(data.aircraft || []).map(ac => `<span class="aircraft-symbol" title="${ac}">${getAircraftSymbol(ac)}</span>`).join('')}
                         </div>
                         <div class="popup-overlay" id="${descPopupId}">
                             <div class="popup-content">
                                 <h3 style="text-transform: capitalize;">${(data.phase || 'Description').replace(/_/g, ' ')}</h3>
                                 <p>${data.description || 'No description available.'}</p>
+                                <h3 class="popup-section-header">Applicable Aircraft</h3>
+                                <ul>${aircraftListItems}</ul>
                             </div>
                         </div>
                     `;
@@ -569,8 +563,8 @@
 
                 // Event delegation for popups
                 document.body.addEventListener('click', function(e) {
-                    if (e.target.matches('.aircraft-btn, .aircraft-btn *, .description-btn, .description-btn *')) {
-                        const btn = e.target.closest('.aircraft-btn, .description-btn');
+                    if (e.target.matches('.details-btn, .details-btn *')) {
+                        const btn = e.target.closest('.details-btn');
                         const popup = document.querySelector(btn.dataset.popupTarget);
                         if (popup) popup.classList.add('visible');
                     }

@@ -154,7 +154,7 @@ h1 {
 .rt-card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 8px 0 8px 8px; /* Square off top-right corner to align with button */
     padding: 15px;
     width: 80%; /* Use more width */
     max-width: 1200px; /* Set a max-width for very large screens */
@@ -162,6 +162,7 @@ h1 {
     position: relative; /* This is crucial for positioning the tags */
     display: flex; /* Enable flexbox for two-column layout */
     gap: 20px;
+    align-items: stretch; /* Make columns equal height */
 }
 
 .phase-column h2 {
@@ -244,39 +245,29 @@ h1 {
     font-weight: 700;
 }
 
-/* --- Action Button Group in Phase Column --- */
-.action-btn-group {
-    display: flex;
-    gap: 20px;
-}
-
 /* --- Popup Styles --- */
-.aircraft-btn {
-    background: none;
-    border: 1px solid transparent; /* Add border for hover effect */
-    color: var(--text-secondary); /* Use a less prominent color */
-    cursor: pointer;
-    font-size: 1.1em;
-    padding: 5px;
-    transition: all 0.2s ease-in-out;
-    border-radius: 4px;
-}
-
-.aircraft-btn:hover {
-    color: var(--text-primary);
-    transform: scale(1.1);
-}
 
 .description-btn {
-    background: none;
-    border: 1px solid transparent; /* Add border for hover effect */
-    color: var(--text-secondary); /* Use a less prominent color */
+    font-size: 0.7em;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background-color: transparent;
+    padding: 4px 8px;
+    border-radius: 4px 0 0 4px; /* Rounds the left-side corners */
+    border: 1px solid var(--border-color);
+    border-right: none; /* Remove the border that would be against the card */
     cursor: pointer;
-    font-size: 1.1em;
-    padding: 5px;
-    transition: all 0.2s ease-in-out;
-    border-radius: 4px;
+    opacity: 0.8;
+    transition: all 0.2s ease;
 }
+
+.description-btn:hover {
+    opacity: 1;
+    background-color: var(--secondary-bg);
+    color: var(--accent-hover);
+}
+
+.description-btn i { font-size: 1em; }
 
 .popup-overlay {
     position: fixed;
@@ -320,6 +311,14 @@ h1 {
     color: var(--accent-color);
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 10px;
+}
+
+/* Style for the second header inside the merged popup */
+.popup-content .popup-section-header {
+    color: var(--accent-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-top: 20px; /* Add space above the new section */
 }
 
 /* Specific styles for the help popup to make it larger */
@@ -380,13 +379,12 @@ h1 {
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Pushes phase name up and buttons down */
+    justify-content: center; /* Vertically center the content */
     align-items: center;
-    padding-top: 15px; /* Add padding to give content space */
-    padding-bottom: 15px;
 }
 
 .phase-column h2 {
+    margin: 0; /* Remove default margins to allow perfect centering */
     word-wrap: break-word; /* For older browsers */
     overflow-wrap: break-word; /* Standard property */
     white-space: normal; /* Ensure text can wrap */
@@ -394,10 +392,22 @@ h1 {
     hyphens: auto; /* Optional: helps break long words */
 }
 
-/* Container for the new aircraft symbols */
-.aircraft-symbols-container {
+/* Container for the details button */
+.details-btn-container {
     position: absolute;
-    top: 15px; /* Position from the top of the card */
+    top: -1px; /* Align perfectly with the card's top border */
+    right: 0; /* Align to the right edge of the card */
+    transform: translateX(100%); /* Push the container just outside the card's boundary */
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start; /* This will left-align the tag */
+}
+
+/* Container for the new aircraft symbols */
+.aircraft-symbols-top-container {
+    position: absolute;
+    top: 30px; /* Increased top margin to avoid overlap with the details button */
     right: 0; /* Align to the right edge of the card */
     transform: translateX(100%); /* Push the container just outside the card's boundary */
     display: flex;
@@ -406,13 +416,38 @@ h1 {
     align-items: flex-start; /* This will left-align the tags */
 }
 
+/* Renamed from .description-btn */
+.details-btn {
+    font-size: 0.7em;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background-color: var(--card-bg);
+    padding: 4px 8px;
+    border-radius: 0 4px 4px 0; /* Rounds the right-side corners */
+    border: 1px solid var(--border-color);
+    border-left: none; /* Remove the border that would be against the card */
+    cursor: pointer;
+    opacity: 0.8;
+    transition: all 0.2s ease;
+}
+
+.details-btn:hover {
+    opacity: 1;
+    background-color: var(--secondary-bg);
+    color: var(--accent-hover);
+}
+
+.details-btn i {
+    font-size: 1em;
+}
+
 /* Individual aircraft category symbol style */
 .aircraft-symbol {
     font-size: 0.7em; /* Make text slightly smaller */
     font-weight: 500; /* Use a lighter font weight */
     color: var(--text-secondary);
     background-color: transparent; /* Remove the solid background */
-    padding: 2px 8px;
+    padding: 2px 6px; /* Reduced horizontal padding */
     border-radius: 0 4px 4px 0; /* Rounds the right-side corners */
     border: 1px solid var(--border-color);
     border-left: none; /* Remove the border that would be against the card */
@@ -420,6 +455,8 @@ h1 {
     cursor: default; /* Show a normal cursor on hover */
     opacity: 0.7; /* Make the entire tag semi-transparent */
 }
+
+
 
 #callsign-filter {
     width: 100px; /* Set a fixed width */
