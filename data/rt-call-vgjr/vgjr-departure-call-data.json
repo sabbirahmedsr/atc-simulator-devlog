@@ -20,7 +20,7 @@
         "message": "Startup approved, temp 32, {time 23}, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Jet", "Military Transport" ]
+    "aircraft": [ "Civil", "Military Trainer", "Military Jet" ]
   },
   {
     "phase": "taxi",
@@ -35,15 +35,15 @@
       {
         "speaker": "GRD",
         "caption": "Taxi to holding point",
-        "message": "{Call Sign}, {JSR GRD}, {taxi via O-P-M} to holding point RWY-16, {QNH 746}."
+        "message": "{Call Sign}, {JSR GRD}, {taxi via O-P-M} to holding point Rwy-16, {QNH 746}."
       },
       {
         "speaker": "Pilot",
         "caption": "Confirm taxi",
-        "message": "{QNH 746}, squawk 4154, {Taxi via O-P-M} to holding point RWY-16, {Call Sign}."
+        "message": "{QNH 746}, squawk 4154, {Taxi via O-P-M} to holding point Rwy-16, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Jet", "Military Transport" ]
+    "aircraft": [ "Civil", "Military Trainer", "Military Jet" ]
   },
   {
     "phase": "change_to_tower",
@@ -66,7 +66,7 @@
         "message": "Contact tower 123.2, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Jet", "Military Transport" ]
+    "aircraft": [ "Civil", "Military Trainer", "Military Jet" ]
   },
   {
     "phase": "line_up",
@@ -81,15 +81,15 @@
       {
         "speaker": "TWR",
         "caption": "Lineup and wait",
-        "message": "{Call Sign}, {JSR TWR}, lineup runway 16, report ready for departure."
+        "message": "{Call Sign}, {JSR TWR}, lineup Rwy-16, report ready for departure."
       },
       {
         "speaker": "Pilot",
         "caption": "Confirm lineup",
-        "message": "Lineup runway 16, call you ready for departure, {Call Sign}."
+        "message": "Lining up Rwy-16, call you ready for departure, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Jet", "Military Transport" ]
+    "aircraft": [ "Civil", "Military Trainer", "Military Jet" ]
   },
   {
     "phase": "line_up_cct",
@@ -99,20 +99,20 @@
       {
         "speaker": "Pilot",
         "caption": "Request line up for circuit",
-        "message": "{JSR TWR} {call-sign}, holding point runway 16, request line up for circuit."
+        "message": "{JSR TWR} {call-sign}, holding point Rwy-16, request line up for circuit."
       },
       {
         "speaker": "TWR",
         "caption": "Line up for circuit",
-        "message": "{call-sign}, circuit approved, line up runway 16, report ready for departure."
+        "message": "{call-sign}, circuit approved, line up Rwy-16, report ready for departure."
       },
       {
         "speaker": "Pilot",
         "caption": "Lining up for circuit",
-        "message": "Lining up runway 16 for circuit, will call ready for departure, {call-sign}."
+        "message": "Lining up Rwy-16 for circuit, call you ready for departure, {call-sign}."
       }
     ],
-    "aircraft": [ "Military Trainer", "Helicopter" ]
+    "aircraft": [ "Military Trainer" ]
   },
   {
     "phase": "take_off",
@@ -127,33 +127,56 @@
       {
         "speaker": "TWR",
         "caption": "Cleared for takeoff",
-        "message": "{Call Sign}, {JSR TWR}, area NH1, 1000ft, S/W 210/06 kts, cleared for takeoff Rwy-16."
+        "message": "{Call Sign}, {JSR TWR}, s/w 210/06 kts, cleared for takeoff Rwy-16."
       },
       {
         "speaker": "Pilot",
         "caption": "Confirm takeoff",
-        "message": "S/W copied, cleared for takeoff Rwy-16, {Call Sign}."
+        "message": "s/w copied, cleared for takeoff Rwy-16, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Jet", "Military Transport" ]
+    "aircraft": [ "Civil", "Military Trainer", "Military Jet" ]
   },
   {
     "phase": "airborne",
-    "category": "Tower",
-    "description": "A call from the tower immediately after takeoff, instructing the pilot on their next reporting point.",
+    "category": "Civil Tower",
+    "description": "A call from the tower immediately after takeoff, instructing the pilot on their next reporting point for a standard departure.",
     "calls": [
       {
         "speaker": "TWR",
-        "caption": "Airborne, report Z-2",
-        "message": "{Call Sign}, airborne at {time}, report abeam Z-2."
+        "caption": "Airborne, report 4000ft",
+        "message": "{Call Sign}, airborne {time}, report passing 4000ft"
       },
       {
         "speaker": "Pilot",
-        "caption": "Confirm report Z-2",
-        "message": "Airborne copied, will report abeam Z-2, {Call Sign}."
+        "caption": "Report 4000ft",
+        "message": "airborne copied, call you passing 4000ft {Call Sign}"
       }
     ],
-    "aircraft": [ "Military Jet", "Military Transport" ]
+    "aircraft": [ "Civil" ]
+  },
+  {
+    "phase": "transfer_to_control",
+    "category": "Civil Tower",
+    "description": "This is a call made when a plane has flown far enough from the airport to be handed off from the airport's tower controller to the regional air traffic controller for the next part of its flight.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Passing 4000ft",
+        "message": "{JSR TWR} {Call Sign}, passing 4000ft"
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Contact control",
+        "message": "{Call Sign}, contact dhaka control 126.7"
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Wilco, contact control",
+        "message": "over to control, good day {Call Sign}"
+      }
+    ],
+    "aircraft": [ "Civil" ]
   },
   {
     "phase": "change_to_training",
@@ -168,7 +191,7 @@
       {
         "speaker": "TWR",
         "caption": "Change approved",
-        "message": "Change approved."
+        "message": "Contact training."
       },
       {
         "speaker": "Pilot",
@@ -176,7 +199,7 @@
         "message": "Over to training, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Jet", "Military Transport" ]
+    "aircraft": [ "Military Trainer", "Military Jet" ]
   },
   {
     "phase": "turning_right",
@@ -199,7 +222,7 @@
         "message": "Call you setting course, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Jet", "Military Transport" ]
+    "aircraft": [ "Military Trainer", "Military Jet" ]
   },
   {
     "phase": "set_course",
@@ -209,7 +232,7 @@
       {
         "speaker": "Pilot",
         "caption": "Setting course, estimate Alfadanga",
-        "message": "{JSR TWR}, {Call Sign}, now setting course, estimating Alfadanga at {40}."
+        "message": "{JSR TWR}, {Call Sign}, setting course."
       },
       {
         "speaker": "TWR",
@@ -222,7 +245,7 @@
         "message": "Call you 5 miles out, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Jet", "Military Transport" ]
+    "aircraft": [ "Military Trainer", "Military Jet" ]
   },
   {
     "phase": "5_miles_out",
@@ -245,10 +268,10 @@
         "message": "Over to training, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Jet", "Military Transport" ]
+    "aircraft": [ "Military Trainer", "Military Jet" ]
   },
   {
-    "phase": "heli_startup",
+    "phase": "startup",
     "category": "Helicopter Ground",
     "description": "The helicopter pilot requests permission to start the engines.",
     "calls": [
@@ -265,36 +288,36 @@
       {
         "speaker": "Pilot",
         "caption": "Confirm startup",
-        "message": "Startup approved, {Call Sign}."
+        "message": "Startup approved, temp 32, {time 23}, {Call Sign}."
       }
     ],
     "aircraft": [ "Helicopter" ]
   },
   {
-    "phase": "heli_air_taxi",
+    "phase": "air_taxi",
     "category": "Helicopter Ground",
-    "description": "The helicopter pilot requests permission to air taxi to the runway point.",
+    "description": "The helicopter pilot requests permission to air taxi to R-P.",
     "calls": [
       {
         "speaker": "Pilot",
         "caption": "Request air taxi",
-        "message": "{JSR GRD}, {Call Sign}, request air taxi to the runway point."
+        "message": "{JSR GRD}, {Call Sign}, request air taxi to the R-P."
       },
       {
         "speaker": "GRD",
         "caption": "Cleared for air taxi",
-        "message": "{Call Sign}, {JSR GRD}, cleared for air taxi to the runway point via Quebec, QNH 1012."
+        "message": "{Call Sign}, {JSR GRD}, cleared for air taxi to R-P via Q, QNH 1012."
       },
       {
         "speaker": "Pilot",
         "caption": "Confirm air taxi",
-        "message": "Cleared for air taxi to the runway point via Quebec, QNH 1012, {Call Sign}."
+        "message": "Cleared for air taxi to the R-P via Q, QNH 1012, {Call Sign}."
       }
     ],
     "aircraft": [ "Helicopter" ]
   },
   {
-    "phase": "heli_change_to_tower_cct",
+    "phase": "change_to_tower_cct",
     "category": "Helicopter Ground",
     "description": "The pilot informs ground of their intention to operate in the circuit and requests to change to tower frequency.",
     "calls": [
@@ -317,7 +340,7 @@
     "aircraft": [ "Helicopter" ]
   },
   {
-    "phase": "heli_change_to_tower_5mw",
+    "phase": "change_to_tower_5mw",
     "category": "Helicopter Ground",
     "description": "The pilot informs ground of their intention to operate 5 miles west and requests to change to tower frequency.",
     "calls": [
@@ -340,7 +363,7 @@
     "aircraft": [ "Helicopter" ]
   },
   {
-    "phase": "heli_takeoff_cct",
+    "phase": "takeoff_cct",
     "category": "Helicopter Tower",
     "description": "The helicopter pilot reports ready and receives takeoff clearance for circuit operations.",
     "calls": [
@@ -363,7 +386,7 @@
     "aircraft": [ "Helicopter" ]
   },
   {
-    "phase": "heli_takeoff_5mw",
+    "phase": "takeoff_5mw",
     "category": "Helicopter Tower",
     "description": "The helicopter pilot receives takeoff clearance to operate 5 miles west.",
     "calls": [
@@ -386,7 +409,7 @@
     "aircraft": [ "Helicopter" ]
   },
   {
-    "phase": "heli_report_5mw",
+    "phase": "report_5mw",
     "category": "Helicopter Tower",
     "description": "The pilot reports reaching the 5-mile west operating area.",
     "calls": [
@@ -409,7 +432,7 @@
     "aircraft": [ "Helicopter" ]
   },
   {
-    "phase": "heli_ops_normal",
+    "phase": "ops_normal",
     "category": "Helicopter Tower",
     "description": "The pilot provides a periodic operational status update from the 5-mile west area.",
     "calls": [

@@ -374,13 +374,36 @@
                 const activeAircraft = aircraftFilter.value;
                 const activeCallsign = callsignFilter.value || 'call-sign';
 
+                // This map needs to be available here as well for the print filter.
+                const aircraftToCategoryMap = {
+                    // VGHS
+                    "B777": "Civil", "B787": "Civil", "A320": "Civil", "A330": "Civil", "Dash8Q": "Civil", "ATR72": "Civil",
+                    "MIG29": "Military Jet", "F7": "Military Jet",
+                    "AN32": "Military Transport", "C130": "Military Transport",
+                    "R66": "Helicopter",
+                    // VGJR
+                    "K8": "Military Jet",
+                    "PT6": "Military Trainer", "GROB120": "Military Trainer",
+                    "BELL206": "Helicopter", "AW119": "Helicopter"
+                };
+                // Add VGJR's ATR72 to the map
+                if (activeIcao === 'vgjr') aircraftToCategoryMap["ATR72"] = "Civil";
+
                 const callTypesToPrint = ['arrival', 'departure', 'circuit'];
 
                 callTypesToPrint.forEach(callType => {
                     const typeFilteredData = allRtCallData.filter(data => {
                         const typeMatch = data.type === callType;
                         // We still respect the ICAO (folder) and Aircraft filters for the print version
-                        const aircraftMatch = activeAircraft === 'all' || (data.aircraft && data.aircraft.includes(activeAircraft));
+                        let aircraftMatch = false;
+                        if (activeAircraft === 'all') {
+                            aircraftMatch = true;
+                        } else if (data.aircraft) {
+                            const categoryOfSelectedAircraft = aircraftToCategoryMap[activeAircraft];
+                            aircraftMatch = data.aircraft.includes(activeAircraft) || 
+                                            (categoryOfSelectedAircraft && data.aircraft.includes(categoryOfSelectedAircraft));
+                        }
+
                         return typeMatch && aircraftMatch;
                     });
 
