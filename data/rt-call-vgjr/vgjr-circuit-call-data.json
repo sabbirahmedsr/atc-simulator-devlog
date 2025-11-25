@@ -251,51 +251,5 @@
       }
     ],
     "aircraft": [ "Military Trainer", "K8" ]
-  },
-  {
-    "phase": "downwind_heli",
-    "category": "Helicopter Circuit",
-    "description": "The helicopter pilot reports on the downwind leg.",
-    "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Downwind",
-        "message": "{JSR TWR}, {Call Sign}, downwind."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Report final for R-P",
-        "message": "{Call Sign}, {JSR TWR}, report final for R-P."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report final",
-        "message": "call you final for R-P, {Call Sign}."
-      }
-    ],
-    "aircraft": [ "Helicopter" ]
-  },
-  {
-    "phase": "final_heli",
-    "category": "Helicopter Circuit",
-    "description": "The helicopter pilot reports on final for R-P and receives landing clearance.",
-    "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Final for R-P",
-        "message": "{JSR TWR}, {Call Sign}, final for R-P."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Cleared to land",
-        "message": "{Call Sign}, {JSR TWR}, surface wind 180 at 05 knots, cleared to land at R-P."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm cleared to land",
-        "message": "s/w copied, cleared to land, {Call Sign}."
-      }
-    ],
-    "aircraft": [ "Helicopter" ]
   }
 ]

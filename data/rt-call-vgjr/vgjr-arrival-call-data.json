@@ -730,7 +730,53 @@
     "aircraft": [ "Helicopter" ]
   },
   {
-    "phase": "runway_vacate_heli",
+    "phase": "downwind",
+    "category": "Helicopter Arrival",
+    "description": "The helicopter pilot reports on the downwind leg.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Downwind",
+        "message": "{JSR TWR}, {Call Sign}, downwind."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Report final for R-P",
+        "message": "{Call Sign}, {JSR TWR}, report final for R-P."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm report final",
+        "message": "call you final for R-P, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "Helicopter" ]
+  },
+  {
+    "phase": "final",
+    "category": "Helicopter Arrival",
+    "description": "The helicopter pilot reports on final for R-P and receives landing clearance.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Final for R-P",
+        "message": "{JSR TWR}, {Call Sign}, final for R-P."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Cleared to land",
+        "message": "{Call Sign}, {JSR TWR}, surface wind 180 at 05 knots, cleared to land at R-P."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm cleared to land",
+        "message": "s/w copied, cleared to land, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "Helicopter" ]
+  },
+  {
+    "phase": "runway_vacate",
     "category": "Helicopter Arrival",
     "description": "After landing, the pilot requests dispersal and receives taxi instructions.",
     "calls": [
@@ -742,35 +788,35 @@
       {
         "speaker": "TWR",
         "caption": "Air taxi, contact ground",
-        "message": "{Call Sign}, {JSR TWR}, air taxi via Quebec, contact ground when clear."
+        "message": "{Call Sign}, {JSR TWR}, air taxi via Q, contact ground when clear."
       },
       {
         "speaker": "Pilot",
         "caption": "Confirm air taxi",
-        "message": "Air taxi via Quebec, will contact ground when clear, {Call Sign}."
+        "message": "Air taxi via Q, will contact ground when clear, {Call Sign}."
       }
     ],
     "aircraft": [ "Helicopter" ]
   },
   {
-    "phase": "taxi_to_helipad",
+    "phase": "taxi_to_tarmac",
     "category": "Helicopter Arrival",
     "description": "The pilot contacts ground for taxi instructions to the helipad.",
     "calls": [
       {
         "speaker": "Pilot",
         "caption": "Contacting Ground",
-        "message": "{JSR GRD}, {Call Sign}, with you."
+        "message": "{JSR GRD}, {Call Sign}, back to your frequency."
       },
       {
         "speaker": "GRD",
         "caption": "Air taxi to helipad",
-        "message": "{Call Sign}, {JSR GRD}, air taxi via Quebec to the helipad."
+        "message": "{Call Sign}, {JSR GRD}, air taxi via Q to the helipad."
       },
       {
         "speaker": "Pilot",
         "caption": "Confirm air taxi to helipad",
-        "message": "Air taxi via Quebec to the helipad, {Call Sign}."
+        "message": "Q to helipad copied, {Call Sign}."
       }
     ],
     "aircraft": [ "Helicopter" ]

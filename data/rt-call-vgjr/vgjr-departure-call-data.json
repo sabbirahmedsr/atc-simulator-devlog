@@ -363,7 +363,7 @@
     "aircraft": [ "Helicopter" ]
   },
   {
-    "phase": "takeoff_cct",
+    "phase": "takeoff",
     "category": "Helicopter Tower",
     "description": "The helicopter pilot reports ready and receives takeoff clearance for circuit operations.",
     "calls": [
@@ -386,24 +386,24 @@
     "aircraft": [ "Helicopter" ]
   },
   {
-    "phase": "takeoff_5mw",
+    "phase": "downwind",
     "category": "Helicopter Tower",
-    "description": "The helicopter pilot receives takeoff clearance to operate 5 miles west.",
+    "description": "The helicopter pilot reports on the downwind leg.",
     "calls": [
       {
         "speaker": "Pilot",
-        "caption": "Ready for departure",
-        "message": "{JSR TWR}, {Call Sign}, ready for departure."
+        "caption": "Downwind",
+        "message": "{JSR TWR}, {Call Sign}, downwind."
       },
       {
         "speaker": "TWR",
-        "caption": "Cleared for takeoff, report 5 miles west",
-        "message": "{Call Sign}, {JSR TWR}, after departure proceed 5 miles west, surface wind 180 at 05 knots, cleared for takeoff. Report reaching 5 miles west."
+        "caption": "Report final for R-P",
+        "message": "{Call Sign}, {JSR TWR}, report final for R-P."
       },
       {
         "speaker": "Pilot",
-        "caption": "Confirm takeoff",
-        "message": "Cleared for takeoff, will report 5 miles west, {Call Sign}."
+        "caption": "Confirm report final",
+        "message": "call you final for R-P, {Call Sign}."
       }
     ],
     "aircraft": [ "Helicopter" ]
@@ -426,7 +426,7 @@
       {
         "speaker": "Pilot",
         "caption": "Confirm ops normal report",
-        "message": "Will report ops normal every 10 minutes, {Call Sign}."
+        "message": "call you ops normal every 10 minutes, {Call Sign}."
       }
     ],
     "aircraft": [ "Helicopter" ]

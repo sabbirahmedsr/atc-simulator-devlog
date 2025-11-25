@@ -193,7 +193,7 @@
                 const activeCallsign = callsignFilter.value || 'call-sign';
                 // A list of variables that should have the subtle style.
                 // We check for "Call Sign" and common ATC identifiers.
-                const subtleVariables = ["Call Sign", "DHK TWR", "DHK GRD", "JSR TWR", "JSR GRD"];
+                const subtleVariables = ["Call Sign", "DHK TWR", "DHK GRD", "DHK GND", "JSR TWR", "JSR GRD"];
 
                 return message.replace(/{([^}]+)}/g, (match, variableName) => {
                     // Trim the variable name to be safe
@@ -288,14 +288,15 @@
                     // Dynamically replace placeholders based on the selected airport
                     const processedCalls = data.calls.map(call => {
                         let { speaker, message } = call;
-                        const callsignRegex = /{Call Sign}/gi;
+                        const genericCallsignRegex = /{call-sign}|{Call Sign}/gi;
 
                         if (activeIcao === 'vghs') {
                             message = message.replace(/{GRD}|{GND}/g, '{DHK GRD}').replace(/{TWR}/g, '{DHK TWR}');
                         } else if (activeIcao === 'vgjr') {
                             message = message.replace(/{GRD}|{GND}/g, '{JSR GRD}').replace(/{TWR}/g, '{JSR TWR}');
                         }
-                        message = message.replace(callsignRegex, `{${activeCallsign}}`);
+                        // First, replace the generic placeholder with the active callsign.
+                        message = message.replace(genericCallsignRegex, `{${activeCallsign}}`);
 
                         return { speaker, message: formatMessageWithVariables(message) };
                     });
