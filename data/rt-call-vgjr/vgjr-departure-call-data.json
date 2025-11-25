@@ -306,12 +306,12 @@
       {
         "speaker": "GRD",
         "caption": "Cleared for air taxi",
-        "message": "{Call Sign}, {JSR GRD}, cleared for air taxi to R-P via Q, QNH 1012."
+        "message": "{Call Sign}, {JSR GRD}, cleared for air taxi to R-P via Q, QNH 29.19."
       },
       {
         "speaker": "Pilot",
         "caption": "Confirm air taxi",
-        "message": "Cleared for air taxi to the R-P via Q, QNH 1012, {Call Sign}."
+        "message": "Cleared for air taxi to R-P via Q, QNH 29.19, {Call Sign}."
       }
     ],
     "aircraft": [ "Helicopter" ]
@@ -426,7 +426,7 @@
       {
         "speaker": "Pilot",
         "caption": "Confirm ops normal report",
-        "message": "call you ops normal every 10 minutes, {Call Sign}."
+        "message": "call you ops normal, {Call Sign}."
       }
     ],
     "aircraft": [ "Helicopter" ]
@@ -439,7 +439,7 @@
       {
         "speaker": "Pilot",
         "caption": "Ops normal",
-        "message": "{JSR TWR}, {Call Sign}, 5 miles west, operations normal."
+        "message": "{JSR TWR}, {Call Sign}, 5 miles west, operating normal."
       },
       {
         "speaker": "TWR",

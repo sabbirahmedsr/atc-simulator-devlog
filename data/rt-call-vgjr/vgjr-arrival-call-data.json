@@ -69,7 +69,7 @@
     "aircraft": [ "Military Trainer", "Military Jet" ]
   },
   {
-    "phase": "entry_VOR-Y",
+    "phase": "entry_VOR-Y_military",
     "category": "Entry Call",
     "description": "The pilot makes an entry call for a VOR-Y approach.",
     "calls": [
@@ -92,6 +92,29 @@
     "aircraft": [ "Civil", "Military Trainer", "Military Jet" ]
   },
   {
+    "phase": "entry_VOR-Y_civil",
+    "category": "Entry Call",
+    "description": "The pilot is released from Dhaka Control and requests descent for a VOR-Y approach.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Request descent for VOR-Y",
+        "message": "{JSR TWR}, {Call Sign}, released by DAC control, ready for descend."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Descend, report over VOR",
+        "message": "{Call Sign}, {JSR TWR}, descend to 3000 feet, {QNH 1013}, report over VOR, proceeding outbound of let down Rwy-16."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm descend and report",
+        "message": "Descending to 3000 feet, {QNH 1013}, call you over VOR, proceeding outbound of let down Rwy-16, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "Civil" ]
+  },
+  {
     "phase": "entry_VOR-Z",
     "category": "Entry Call",
     "description": "The pilot is released from Dhaka Control and requests descent for a VOR-Z approach.",
@@ -99,17 +122,17 @@
       {
         "speaker": "Pilot",
         "caption": "Request descent for VOR-Z",
-        "message": "{JSR TWR}, {Call Sign}, released by Dhaka Control, ready for descent."
+        "message": "{JSR TWR}, {Call Sign}, released by DAC Control, ready for descent."
       },
       {
         "speaker": "TWR",
         "caption": "Descend, report 12 DME Arc",
-        "message": "{Call Sign}, {JSR TWR}, descend to 3000 feet, QNH 1013, report established 12 DME Arc Rwy-16."
+        "message": "{Call Sign}, {JSR TWR}, descend to 3000 feet, {QNH 1013}, report established 12 DME Arc Rwy-16."
       },
       {
         "speaker": "Pilot",
         "caption": "Confirm descend and report",
-        "message": "Descend to 3000 feet, QNH 1013, call you established 12 DME Arc Rwy-16, {Call Sign}."
+        "message": "Descending to 3000 feet, {QNH 1013}, call you established 12 DME Arc Rwy-16, {Call Sign}."
       }
     ],
     "aircraft": [ "Civil" ]
@@ -122,7 +145,7 @@
       {
         "speaker": "Pilot",
         "caption": "Request descent for RNP",
-        "message": "{JSR TWR}, {Call Sign}, released by Dhaka Control, ready for descent."
+        "message": "{JSR TWR}, {Call Sign}, released by DAC Control, ready for descent."
       },
       {
         "speaker": "TWR",
@@ -132,7 +155,7 @@
       {
         "speaker": "Pilot",
         "caption": "Confirm descend and report",
-        "message": "Descend to 3000 feet, QNH 1013, call you over JERIN, {Call Sign}."
+        "message": "Descending to 3000 feet, {QNH 1013}, call you over JERIN, {Call Sign}."
       }
     ],
     "aircraft": [ "Civil" ]
@@ -368,7 +391,7 @@
     "aircraft": [ "PT6" ]
   },{
     "phase": "b1_fix",
-    "category": "VOR-Y",
+    "category": "VOR-Y Military",
     "description": "The pilot reports over the B-1 fix during a VOR-Y approach.",
     "calls": [
       {
@@ -387,11 +410,11 @@
         "message": "call you B-2, {Call Sign}."
       }
     ],
-    "aircraft": [ "Civil", "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Military Trainer", "Military Jet" ]
   },
   {
     "phase": "b2_fix",
-    "category": "VOR-Y",
+    "category": "VOR-Y Military",
     "description": "The pilot reports over the B-2 fix and approaching the outbound leg.",
     "calls": [
       {
@@ -410,11 +433,11 @@
         "message": "call you 6 miles out, {Call Sign}."
       }
     ],
-    "aircraft": [ "Civil", "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Military Trainer", "Military Jet" ]
   },
   {
     "phase": "6_miles_out",
-    "category": "VOR-Y",
+    "category": "VOR-Y Military",
     "description": "The pilot reports 6 miles out and receives approach clearance.",
     "calls": [
       {
@@ -433,11 +456,11 @@
         "message": "Cleared for the approach, call you turning inbound, {Call Sign}."
       }
     ],
-    "aircraft": [ "Civil", "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Military Trainer", "Military Jet" ]
   },
   {
     "phase": "turning_inbound",
-    "category": "VOR-Y",
+    "category": "VOR-Y Military",
     "description": "The pilot reports turning inbound on the VOR-Y approach.",
     "calls": [
       {
@@ -456,11 +479,11 @@
         "message": "call you steady inbound, {Call Sign}."
       }
     ],
-    "aircraft": [ "Civil", "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Military Trainer", "Military Jet" ]
   },
   {
     "phase": "steady_inbound",
-    "category": "VOR-Y",
+    "category": "VOR-Y Military",
     "description": "The pilot reports steady on the inbound course.",
     "calls": [
       {
@@ -479,11 +502,11 @@
         "message": "Descending to minima, call you runway in sight, {Call Sign}."
       }
     ],
-    "aircraft": [ "Civil", "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Military Trainer", "Military Jet" ]
   },
   {
     "phase": "runway_in_sight",
-    "category": "VOR-Y",
+    "category": "VOR-Y Military",
     "description": "The pilot reports the runway in sight and receives clearance for landing.",
     "calls": [
       {
@@ -502,7 +525,99 @@
         "message": "s/w copied, clear to land Rwy-16, {Call Sign}."
       }
     ],
-    "aircraft": [ "Civil", "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Military Trainer", "Military Jet" ]
+  },
+  {
+    "phase": "over_vor",
+    "category": "VOR-Y Civil",
+    "description": "The pilot reports over the VOR and proceeding outbound for a civil VOR-Y approach.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Over VOR proceeding outbound",
+        "message": "{JSR TWR}, {Call Sign}, over VOR proceeding outbound of letdown."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Cleared for approach, descend",
+        "message": "{Call Sign}, {JSR TWR}, cleared for the approach, descend to 1700 feet, report turning inbound."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm approach and descend",
+        "message": "Cleared for the approach, call you turning inbound, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "Civil" ]
+  },
+  {
+    "phase": "turning_inbound",
+    "category": "VOR-Y Civil",
+    "description": "The pilot reports turning inbound during a civil VOR-Y approach.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Turning inbound",
+        "message": "{JSR TWR}, {Call Sign}, turning inbound."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Report established inbound",
+        "message": "{Call Sign}, {JSR TWR}, report established inbound."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm report established",
+        "message": "call you established inbound, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "Civil" ]
+  },
+  {
+    "phase": "established_inbound",
+    "category": "VOR-Y Civil",
+    "description": "The pilot reports established on the inbound course for a civil VOR-Y approach.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Established inbound",
+        "message": "{JSR TWR}, {Call Sign}, established inbound."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Descend to minima, report runway",
+        "message": "{Call Sign}, {JSR TWR}, descend to your minima, report runway in sight."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm descend and report",
+        "message": "Descending to minima, call you runway in sight, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "Civil" ]
+  },
+  {
+    "phase": "runway_in_sight",
+    "category": "VOR-Y Civil",
+    "description": "The pilot reports the runway in sight during a civil VOR-Y approach and is cleared to land.",
+    "calls": [
+      {
+        "speaker": "Pilot",
+        "caption": "Runway in sight",
+        "message": "{JSR TWR}, {Call Sign}, runway in sight."
+      },
+      {
+        "speaker": "TWR",
+        "caption": "Cleared to land",
+        "message": "{Call Sign}, {JSR TWR}, check gears down and locked, surface wind 280 at 05 knots, Rwy-16, cleared to land."
+      },
+      {
+        "speaker": "Pilot",
+        "caption": "Confirm cleared to land",
+        "message": "s/w copied, clear to land Rwy-16, {Call Sign}."
+      }
+    ],
+    "aircraft": [ "Civil" ]
   },
   {
     "phase": "12_dme_arc",
@@ -522,7 +637,7 @@
       {
         "speaker": "Pilot",
         "caption": "Confirm cleared for approach",
-        "message": "Cleared for the approach, descending to 1700 feet, call you crossing radial 300, {Call Sign}."
+        "message": "call you crossing radial 300, {Call Sign}."
       }
     ],
     "aircraft": [ "Civil", "K8" ]
@@ -591,7 +706,7 @@
       {
         "speaker": "Pilot",
         "caption": "Confirm cleared to land",
-        "message": "Cleared to land Rwy-16, {Call Sign}."
+        "message": "s/w copied, clear to land Rwy-16, {Call Sign}."
       }
     ],
     "aircraft": [ "Civil", "K8" ]
@@ -614,7 +729,7 @@
       {
         "speaker": "Pilot",
         "caption": "Confirm cleared for approach",
-        "message": "Cleared for the approach, descending to 1700 feet, call you over JR161, {Call Sign}."
+        "message": "call you over JR161, {Call Sign}."
       }
     ],
     "aircraft": [ "Civil", "K8" ]
@@ -660,7 +775,7 @@
       {
         "speaker": "Pilot",
         "caption": "Confirm cleared to land",
-        "message": "Cleared to land Rwy-16, {Call Sign}."
+        "message": "s/w copied, clear to land Rwy-16, {Call Sign}."
       }
     ],
     "aircraft": [ "Civil", "K8" ]
