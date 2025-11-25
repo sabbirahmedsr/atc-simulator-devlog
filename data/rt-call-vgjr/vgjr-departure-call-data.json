@@ -324,7 +324,7 @@
       {
         "speaker": "Pilot",
         "caption": "Request change to tower for circuit",
-        "message": "{JSR GRD}, {Call Sign}, we will operate in the circuit, request change to tower."
+        "message": "{JSR GRD}, {Call Sign}, we will operate in the circuit, like to change to tower."
       },
       {
         "speaker": "GRD",
@@ -334,7 +334,7 @@
       {
         "speaker": "Pilot",
         "caption": "Confirm contact tower",
-        "message": "Contacting tower, {Call Sign}."
+        "message": "over to tower, {Call Sign}."
       }
     ],
     "aircraft": [ "Helicopter" ]
@@ -347,7 +347,7 @@
       {
         "speaker": "Pilot",
         "caption": "Request change to tower for 5 miles west",
-        "message": "{JSR GRD}, {Call Sign}, we will operate 5 miles west, request change to tower."
+        "message": "{JSR GRD}, {Call Sign}, we will operate 5 miles west, like to change to tower."
       },
       {
         "speaker": "GRD",
@@ -357,7 +357,7 @@
       {
         "speaker": "Pilot",
         "caption": "Confirm contact tower",
-        "message": "Contacting tower, {Call Sign}."
+        "message": "Over to tower, {Call Sign}."
       }
     ],
     "aircraft": [ "Helicopter" ]
@@ -380,7 +380,7 @@
       {
         "speaker": "Pilot",
         "caption": "Confirm takeoff",
-        "message": "Wind copied, cleared for takeoff, {Call Sign}."
+        "message": "s/w copied, cleared for takeoff, {Call Sign}."
       }
     ],
     "aircraft": [ "Helicopter" ]
