@@ -20,7 +20,7 @@
         "message": "call you base, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Trainer" ]
+    "aircraft": [ "Military Trainer", "K8" ]
   },
   {
     "phase": "downwind_for_low_go",
@@ -43,7 +43,7 @@
         "message": "call you base, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Trainer" ]
+    "aircraft": [ "Military Trainer", "K8" ]
   },
   {
     "phase": "downwind_for_touch_and_go",
@@ -66,7 +66,7 @@
         "message": "call you base, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Trainer" ]
+    "aircraft": [ "Military Trainer", "K8" ]
   },
   {
     "phase": "downwind_for_full_stop",
@@ -89,7 +89,7 @@
         "message": "call you base, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Trainer" ]
+    "aircraft": [ "Military Trainer", "K8" ]
   },
   {
     "phase": "base_for_low_go",
@@ -112,7 +112,7 @@
         "message": "Gears are green, call you final for Rwy-16, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Trainer" ]
+    "aircraft": [ "Military Trainer", "K8" ]
   },
   {
     "phase": "base_for_touch_and_go",
@@ -135,7 +135,7 @@
         "message": "Gears are green, call you final for Rwy-16, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Trainer" ]
+    "aircraft": [ "Military Trainer", "K8" ]
   },
   {
     "phase": "base_for_full_stop",
@@ -158,7 +158,7 @@
         "message": "Gears are green, call you final for Rwy-16, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Trainer" ]
+    "aircraft": [ "Military Trainer", "K8" ]
   },
   {
     "phase": "initial_to_downwind",
@@ -181,7 +181,7 @@
         "message": "call you downwind, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Trainer" ]
+    "aircraft": [ "Military Trainer", "K8" ]
   },
   {
     "phase": "final_for_full_stop",
@@ -204,7 +204,7 @@
         "message": "s/w copied, cleared to land Runway 16, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Trainer" ]
+    "aircraft": [ "Military Trainer", "K8" ]
   },
   {
     "phase": "final_for_touch_and_go",
@@ -227,7 +227,7 @@
         "message": "s/w copied, cleared for touch and go Runway 16, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Trainer" ]
+    "aircraft": [ "Military Trainer", "K8" ]
   },
   {
     "phase": "final_for_low_go",
@@ -250,7 +250,7 @@
         "message": "s/w copied, cleared for low go Runway 16, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Trainer" ]
+    "aircraft": [ "Military Trainer", "K8" ]
   },
   {
     "phase": "downwind_heli",
