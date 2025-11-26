@@ -474,13 +474,13 @@
 
                                 const processedCalls = data.calls.map(call => {
                                     let { speaker, message } = call;
-                                    const callsignRegex = /{Call Sign}/gi;
+                                    const callsignRegex = /{call-sign}|{Call Sign}/gi;
                                     if (activeIcao === 'vghs') {
                                         message = message.replace(/{GRD}|{GND}/g, '{DHK GRD}').replace(/{TWR}/g, '{DHK TWR}');
                                     } else if (activeIcao === 'vgjr') {
                                         message = message.replace(/{GRD}|{GND}/g, '{JSR GRD}').replace(/{TWR}/g, '{JSR TWR}');
                                     }
-                                    message = message.replace(callsignRegex, `{${activeCallsign}}`);
+                                    message = message.replace(callsignRegex, `{${activeCallsign}}`); // Replace both placeholders
                                     return { speaker, message };
                                 });
 
@@ -548,7 +548,7 @@
 
                 const activeCallsign = callsignFilter.value || 'call-sign';
                 let html = '<h3>All Parameter Calls</h3>';
-                const callsignRegex = /{Call Sign}/gi;
+                const callsignRegex = /{call-sign}|{Call Sign}/gi;
                 for (const key in paramsData) {
                     if (key === 'Call Sign') continue;
 
