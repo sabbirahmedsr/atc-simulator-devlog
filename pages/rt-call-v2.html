@@ -89,6 +89,7 @@
             const callsignFilter = document.getElementById('callsign-filter');
             let allRtCallData = []; // To store all fetched data
             let allParameters = {}; // To store parameter data
+            let aircraftCategoryMap = {}; // To store the new aircraft category data
 
             async function fetchAllData() {
                 const urlParams = new URLSearchParams(window.location.search);
@@ -133,11 +134,16 @@
                         .then(res => res.ok ? res.json() : {})
                         .catch(() => ({}));
 
-                    const [results, paramsData] = await Promise.all([Promise.all(filePromises), paramsPromise]);
+                    // Fetch the new aircraft category map
+                    const aircraftMapPromise = fetch(`../data/aircraft-category-map.json`)
+                        .then(res => res.ok ? res.json() : {})
+                        .catch(() => ({}));
+
+                    const [results, paramsData, aircraftMapData] = await Promise.all([Promise.all(filePromises), paramsPromise, aircraftMapPromise]);
                     
                     allRtCallData = results.flat(); // Flatten the array of arrays
                     allParameters = paramsData; // Store parameters
-                    
+                    aircraftCategoryMap = aircraftMapData; // Store aircraft category map
                     populateAircraftFilter();
                     renderCalls();
                 } catch (error) {
@@ -309,10 +315,21 @@
                     `).join('');
 
 
-                    const aircraftListItems = data.aircraft ? data.aircraft.map(ac => `<li>${ac}</li>`).join('') : '<li>N/A</li>';
+                    // --- New logic for generating aircraft tags in popup ---
+                    const aircraftTagsHtml = data.aircraft ? data.aircraft.map(ac => {
+                        const models = aircraftCategoryMap[activeIcao]?.[ac] || aircraftCategoryMap[activeIcao]?.[ac.toUpperCase()];
+                        if (models && models.length > 0) {
+                            // If it's a category with models, show them
+                            return `<span class="popup-aircraft-tag">${ac} <span class="popup-aircraft-models">(${models.join(', ')})</span></span>`;
+                        } else {
+                            // Otherwise, just show the aircraft/category name
+                            return `<span class="popup-aircraft-tag">${ac}</span>`;
+                        }
+                    }).join('') : '<span class="popup-aircraft-tag na">N/A</span>';
+                    // --- End of new logic ---
+
                     const aircraftPopupId = `aircraft-popup-${index}`;
                     const descPopupId = `desc-popup-${index}`;
-
                     // --- Create Aircraft Symbols Dynamically ---
                     const getAircraftSymbol = (name) => {
                         if (!name) return '';
@@ -346,7 +363,9 @@
                                 <h3 style="text-transform: capitalize;">${(data.phase || 'Description').replace(/_/g, ' ')}</h3>
                                 <p>${data.description || 'No description available.'}</p>
                                 <h3 class="popup-section-header">Applicable Aircraft</h3>
-                                <ul>${aircraftListItems}</ul>
+                                <div class="popup-aircraft-container">
+                                    ${aircraftTagsHtml}
+                                </div>
                             </div>
                         </div>
                     `;

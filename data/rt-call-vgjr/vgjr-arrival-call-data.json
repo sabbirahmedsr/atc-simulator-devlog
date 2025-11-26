@@ -20,7 +20,7 @@
         "message": "Maintain 1500ft, call you field in sight Rwy-16, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Military Trainer", "K8" ]
   },  
   {
     "phase": "entry_NAV",
@@ -43,7 +43,7 @@
         "message": "call you field in sight Rwy-16, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Military Trainer", "K8" ]
   },
   {
     "phase": "entry_PFL",
@@ -66,7 +66,7 @@
         "message": "Maintain 2000 feet, call you field in sight Rwy-16, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Trainer", "Military Jet" ]
+    "aircraft": [ "PT6", "K8" ]
   },
   {
     "phase": "entry_VOR-Y_military",
@@ -89,7 +89,7 @@
         "message": "Maintain 3000 feet, call you B-1, {Call Sign}."
       }
     ],
-    "aircraft": [ "Civil", "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Military Trainer", "K8" ]
   },
   {
     "phase": "entry_VOR-Y_civil",
@@ -135,7 +135,7 @@
         "message": "Descending to 3000 feet, {QNH 1013}, call you established 12 DME Arc Rwy-16, {Call Sign}."
       }
     ],
-    "aircraft": [ "Civil" ]
+    "aircraft": [ "Civil", "K8" ]
   },
   {
     "phase": "entry_RNP",
@@ -158,7 +158,7 @@
         "message": "Descending to 3000 feet, {QNH 1013}, call you over JERIN, {Call Sign}."
       }
     ],
-    "aircraft": [ "Civil" ]
+    "aircraft": [ "Civil", "K8" ]
   },
   {
     "phase": "field_in_sight",
@@ -181,7 +181,7 @@
         "message": "call you initial Rwy-16, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Military Trainer", "K8" ]
   },
   {
     "phase": "beginning_of_initial",
@@ -204,7 +204,7 @@
         "message": "call you end of initial Rwy-16, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Military Trainer", "K8" ]
   },
   {
     "phase": "end_of_initial",
@@ -227,7 +227,7 @@
         "message": "call you downwind, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Military Trainer", "K8" ]
   },
   {
     "phase": "field_in_sight_undershoot",
@@ -250,7 +250,7 @@
         "message": "call you crossing undershoot Rwy-16, {Call Sign}."
       }
     ],
-    "aircraft": [ "PT6" ]
+    "aircraft": [ "PT6", "K8" ]
   },
   {
     "phase": "undershoot",
@@ -273,7 +273,7 @@
         "message": "Maintain 2000 feet, call you approaching high key, {Call Sign}."
       }
     ],
-    "aircraft": [ "PT6" ]
+    "aircraft": [ "PT6", "K8" ]
   },
   {
     "phase": "approaching_high_key",
@@ -296,7 +296,7 @@
         "message": "call you report high key, {Call Sign}."
       }
     ],
-    "aircraft": [ "PT6" ]
+    "aircraft": [ "PT6", "K8" ]
   },
   {
     "phase": "high_key",
@@ -319,7 +319,7 @@
         "message": "call you low key, {Call Sign}."
       }
     ],
-    "aircraft": [ "PT6" ]
+    "aircraft": [ "PT6", "K8" ]
   },
   {
     "phase": "low_key",
@@ -342,7 +342,7 @@
         "message": "call you base key, {Call Sign}."
       }
     ],
-    "aircraft": [ "PT6" ]
+    "aircraft": [ "PT6", "K8" ]
   },
   {
     "phase": "base_key",
@@ -365,7 +365,7 @@
         "message": "s/w copied, gears are green, call you final Rwy-16, {Call Sign}."
       }
     ],
-    "aircraft": [ "PT6" ]
+    "aircraft": [ "PT6", "K8" ]
   },
   {
     "phase": "final_land_pfl",
@@ -388,7 +388,7 @@
         "message": "Cleared to land Rwy-16, {Call Sign}."
       }
     ],
-    "aircraft": [ "PT6" ]
+    "aircraft": [ "PT6", "K8" ]
   },{
     "phase": "b1_fix",
     "category": "VOR-Y Military",
@@ -410,7 +410,7 @@
         "message": "call you B-2, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Military Trainer", "K8" ]
   },
   {
     "phase": "b2_fix",
@@ -433,7 +433,7 @@
         "message": "call you 6 miles out, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Military Trainer", "K8" ]
   },
   {
     "phase": "6_miles_out",
@@ -453,10 +453,10 @@
       {
         "speaker": "Pilot",
         "caption": "Confirm cleared for approach",
-        "message": "Cleared for the approach, call you turning inbound, {Call Sign}."
+        "message": "call you turning inbound, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Military Trainer", "K8" ]
   },
   {
     "phase": "turning_inbound",
@@ -479,7 +479,7 @@
         "message": "call you steady inbound, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Military Trainer", "K8" ]
   },
   {
     "phase": "steady_inbound",
@@ -502,7 +502,7 @@
         "message": "Descending to minima, call you runway in sight, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Military Trainer", "K8" ]
   },
   {
     "phase": "runway_in_sight",
@@ -525,7 +525,7 @@
         "message": "s/w copied, clear to land Rwy-16, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Military Trainer", "K8" ]
   },
   {
     "phase": "over_vor",
@@ -545,7 +545,7 @@
       {
         "speaker": "Pilot",
         "caption": "Confirm approach and descend",
-        "message": "Cleared for the approach, call you turning inbound, {Call Sign}."
+        "message": "call you turning inbound, {Call Sign}."
       }
     ],
     "aircraft": [ "Civil" ]
@@ -796,7 +796,7 @@
         "message": "{Taxi via C}, after vacating contact ground 121.8, {Call Sign}."
       }
     ],
-    "aircraft": [ "Civil", "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Civil", "Military Trainer", "K8" ]
   },
   {
     "phase": "taxi_to_tarmac",
@@ -819,7 +819,7 @@
         "message": "{taxi via C-P-A} to tarmac, {Call Sign}."
       }
     ],
-    "aircraft": [ "Civil", "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Civil", "Military Trainer", "K8" ]
   },
   {
     "phase": "entry_5mw",

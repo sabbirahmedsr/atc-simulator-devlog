@@ -43,7 +43,7 @@
         "message": "{QNH 1013}, {Descending 3000ft}, call you established outbound of letdown for VDI-14 {call-sign}"
       }
     ],
-    "aircraft": [ "Civil" ]
+    "aircraft": [ "Civil", "Helicopter" ]
   },
   {
     "phase": "entry_call_Delta",
@@ -66,7 +66,7 @@
         "message": "{QNH 1013}, {Descending 3000ft}, call you over delta alpha, proceeding outbound of letdown rwy 14, {call-sign}"
       }
     ],
-    "aircraft": [ "Civil" ]
+    "aircraft": [ "Civil", "Military Transport", "Military Jet" ]
   },
   {
     "phase": "entry_call_TRG",
@@ -89,7 +89,7 @@
         "message": "{QNH 1013}, {Descending 3000ft}, call you over V1 {call-sign}"
       }
     ],
-    "aircraft": [ "Military Jet", "Military Transport" ]
+    "aircraft": [ "Military Transport", "Military Jet" ]
   },
   {
     "phase": "victor_1_to_field",
@@ -112,7 +112,7 @@
         "message": "call you field in sight rwy-14 {call-sign}"
       }
     ],
-    "aircraft": [ "Military Jet", "Military Transport" ]
+    "aircraft": [ "Military Transport", "Military Jet" ]
   },
   {
     "phase": "field_to_downwind",
@@ -135,7 +135,7 @@
         "message": "call you downwind {call-sign}"
       }
     ],
-    "aircraft": [ "Military Jet", "Military Transport" ]
+    "aircraft": [ "Military Transport", "Military Jet" ]
   },
   {
     "phase": "vor_to_outbound",
@@ -342,7 +342,7 @@
         "message": "Roger, cleared for the approach, descending 3000ft, call you turning inbound {call-sign}"
       }
     ],
-    "aircraft": [ "Civil", "Military Jet", "Military Transport" ]
+    "aircraft": [ "Civil", "Military Transport", "Military Jet" ]
   },
   {
     "phase": "outbound_to_inbound",
@@ -365,7 +365,7 @@
         "message": "call you steady inbound {call-sign}"
       }
     ],
-    "aircraft": [ "Civil", "Military Jet", "Military Transport" ]
+    "aircraft": [ "Civil", "Military Transport", "Military Jet" ]
   },
   {
     "phase": "steady_inbound",
@@ -388,7 +388,7 @@
         "message": "call you 6 ILS DME {call-sign}"
       }
     ],
-    "aircraft": [ "Civil", "Military Jet", "Military Transport" ]
+    "aircraft": [ "Civil", "Military Transport", "Military Jet" ]
   },
   {
     "phase": "6dme_to_land",
@@ -411,7 +411,7 @@
         "message": "gears are green, s/w copied, Cleared to land rwy-14 {call-sign}"
       }
     ],
-    "aircraft": [ "Civil", "Military Jet", "Military Transport" ]
+    "aircraft": [ "Civil", "Military Transport", "Military Jet" ]
   },
   {
     "phase": "landed_and_taxi",
@@ -429,7 +429,7 @@
         "message": "{Taxi via S1}, after vacating change to ground 121.8, call you runway vacated {call-sign}"
       }
     ],
-    "aircraft": [ "Civil", "Military Jet", "Military Transport" ]
+    "aircraft": [ "Civil", "Military Transport", "Military Jet" ]
   },
   {
     "phase": "vacated_to_tarmac",
@@ -475,7 +475,7 @@
         "message": "{taxi via  HA}, changing to ground 121.8 {call-sign}"
       }
     ],
-    "aircraft": [ "Military Jet", "Military Transport" ]
+    "aircraft": [ "Military Transport", "Military Jet" ]
   },
   {
     "phase": "fly_away",

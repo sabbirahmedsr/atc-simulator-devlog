@@ -20,7 +20,7 @@
         "message": "Startup approved, temp 32, {time 23}, {Call Sign}."
       }
     ],
-    "aircraft": [ "Civil", "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Civil", "Military Trainer", "K8" ]
   },
   {
     "phase": "taxi",
@@ -43,7 +43,7 @@
         "message": "{QNH 746}, squawk 4154, {Taxi via O-P-M} to holding point Rwy-16, {Call Sign}."
       }
     ],
-    "aircraft": [ "Civil", "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Civil", "Military Trainer", "K8" ]
   },
   {
     "phase": "change_to_tower",
@@ -66,7 +66,7 @@
         "message": "Contact tower 123.2, {Call Sign}."
       }
     ],
-    "aircraft": [ "Civil", "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Civil", "Military Trainer", "K8" ]
   },
   {
     "phase": "line_up",
@@ -89,7 +89,7 @@
         "message": "Lining up Rwy-16, call you ready for departure, {Call Sign}."
       }
     ],
-    "aircraft": [ "Civil", "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Civil", "Military Trainer", "K8" ]
   },
   {
     "phase": "line_up_cct",
@@ -112,7 +112,7 @@
         "message": "Lining up Rwy-16 for circuit, call you ready for departure, {call-sign}."
       }
     ],
-    "aircraft": [ "Military Trainer" ]
+    "aircraft": [ "Military Trainer", "K8" ]
   },
   {
     "phase": "take_off",
@@ -135,7 +135,7 @@
         "message": "s/w copied, cleared for takeoff Rwy-16, {Call Sign}."
       }
     ],
-    "aircraft": [ "Civil", "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Civil", "Military Trainer", "K8" ]
   },
   {
     "phase": "airborne",
@@ -199,7 +199,7 @@
         "message": "Over to training, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Military Trainer", "K8" ]
   },
   {
     "phase": "turning_right",
@@ -222,7 +222,7 @@
         "message": "Call you setting course, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Military Trainer", "K8" ]
   },
   {
     "phase": "set_course",
@@ -245,7 +245,7 @@
         "message": "Call you 5 miles out, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Military Trainer", "K8" ]
   },
   {
     "phase": "5_miles_out",
@@ -268,7 +268,7 @@
         "message": "Over to training, {Call Sign}."
       }
     ],
-    "aircraft": [ "Military Trainer", "Military Jet" ]
+    "aircraft": [ "Military Trainer", "K8" ]
   },
   {
     "phase": "startup",

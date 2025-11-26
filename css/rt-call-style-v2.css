@@ -354,25 +354,6 @@ h1 {
     line-height: 1.6;
 }
 
-/* This style should ONLY apply to the aircraft list popups, not the instruction list */
-.popup-content ul:not(.instruction-list) {
-    list-style-type: none;
-    padding: 0;
-    max-height: none; /* Remove max-height to prevent scrolling */
-    overflow-y: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-    gap: 8px;
-}
-
-.popup-content li {
-    background-color: var(--secondary-bg);
-    padding: 8px;
-    border-radius: 4px;
-    text-align: center;
-    font-size: 0.9em;
-}
-
 .phase-column {
     border-right: 2px solid var(--border-color);
     padding-right: 20px;
@@ -381,6 +362,32 @@ h1 {
     flex-direction: column;
     justify-content: center; /* Vertically center the content */
     align-items: center;
+}
+
+/* --- New Aircraft Tags in Popup --- */
+.popup-aircraft-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.popup-aircraft-tag {
+    background-color: var(--secondary-bg);
+    padding: 6px 12px;
+    border-radius: 15px; /* Pill shape */
+    font-size: 0.9em;
+    font-weight: 500;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    white-space: nowrap;
+}
+
+.popup-aircraft-models {
+    font-size: 0.9em;
+    color: var(--text-secondary);
+    margin-left: 4px;
+    font-weight: 400;
 }
 
 .phase-column h2 {

@@ -20,7 +20,7 @@
         "message": "call you initial rwy 14 {Call Sign}"
       }
     ],
-    "aircraft": [ "Military Jet" ]
+    "aircraft": [ "Military Transport", "Military Jet" ]
   },
   {
     "phase": "downwind_for_low_go",
@@ -43,7 +43,7 @@
         "message": "call you base {Call Sign}"
       }
     ],
-    "aircraft": [ "Military Jet" ]
+    "aircraft": [ "Military Transport", "Military Jet" ]
   },
   {
     "phase": "downwind_for_full_stop",
@@ -66,7 +66,7 @@
         "message": "call you base {Call Sign}"
       }
     ],
-    "aircraft": [ "Military Jet" ]
+    "aircraft": [ "Military Transport", "Military Jet" ]
   },
   {
     "phase": "base_for_low_go",
@@ -89,7 +89,7 @@
         "message": "Gears are green, s/w copied, runway 14, call you final {Call Sign}"
       }
     ],
-    "aircraft": [ "Military Jet" ]
+    "aircraft": [ "Military Transport", "Military Jet" ]
   },
   {
     "phase": "base_for_full_stop",
@@ -112,7 +112,7 @@
         "message": "Gears are green, s/w copied, runway 14, call you final {Call Sign}"
       }
     ],
-    "aircraft": [ "Military Jet" ]
+    "aircraft": [ "Military Transport", "Military Jet" ]
   },
   {
     "phase": "initial_to_downwind",
@@ -135,7 +135,7 @@
         "message": "call you downwind {Call Sign}"
       }
     ],
-    "aircraft": [ "Military Jet" ]
+    "aircraft": [ "Military Transport", "Military Jet" ]
   },
   {
     "phase": "final_for_low_go",
@@ -158,7 +158,7 @@
         "message": "Gears are green, s/w copied, runway 14, cleared for low go {Call Sign}"
       }
     ],
-    "aircraft": [ "Military Jet" ]
+    "aircraft": [ "Military Transport", "Military Jet" ]
   },
   {
     "phase": "final_for_landing",
@@ -181,7 +181,7 @@
         "message": "Gears are green, s/w copied, runway 14, cleared to land {Call Sign}"
       }
     ],
-    "aircraft": [ "Military Jet" ]
+    "aircraft": [ "Military Transport", "Military Jet" ]
   },
   {
     "phase": "crosswind_to_downwind",
@@ -204,6 +204,6 @@
         "message": "call you downwind {Call Sign}"
       }
     ],
-    "aircraft": [ "Military Jet" ]
+    "aircraft": [ "Military Transport", "Military Jet" ]
   }
 ]
