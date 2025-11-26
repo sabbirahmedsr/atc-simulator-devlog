@@ -89,7 +89,7 @@
         "message": "startup approved, temp 32, time 1200 {Call Sign}"
       }
     ],
-    "aircraft": [ "Military Jet", "Military Transport" ]
+    "aircraft": [ "Military Transport", "Military Jet" ]
   },
   {
     "phase": "military_taxi",
@@ -112,7 +112,7 @@
         "message": "QNH 760, SQUAWK 4141, taxi via NA-P to holding point runway-14 {Call Sign}"
       }
     ],
-    "aircraft": [ "Military Jet", "Military Transport" ]
+    "aircraft": [ "Military Transport", "Military Jet" ]
   },
   {
     "phase": "change_to_TWR_at_end",
@@ -135,7 +135,7 @@
         "message": "over to tower {Call Sign}"
       }
     ],
-    "aircraft": [ "Military Jet", "Military Transport" ]
+    "aircraft": [ "Military Transport", "Military Jet" ]
   },
   {
     "phase": "line_up_civil",
@@ -181,7 +181,7 @@
         "message": "s/w copied, runway 14, cleared for takeoff {Call Sign}"
       }
     ],
-    "aircraft": [ "Civil", "Military Jet", "Military Transport" ]
+    "aircraft": [ "Civil", "Military Transport", "Military Jet" ]
   },
   {
     "phase": "airborne",
@@ -245,7 +245,7 @@
         "message": "line up runway 14, call you ready for departure {Call Sign}"
       }
     ],
-    "aircraft": [ "Military Jet", "Military Transport" ]
+    "aircraft": [ "Military Transport", "Military Jet" ]
   },
   {
     "phase": "line_up_for_CCT",
@@ -268,7 +268,7 @@
         "message": "lining up runway 14 for circuite, call you ready for departure {Call Sign}"
       }
     ],
-    "aircraft": [ "Military Jet" ]
+    "aircraft": [ "Military Transport", "Military Jet" ]
   },
   {
     "phase": "line_up_for_TRG",
@@ -291,7 +291,7 @@
         "message": "lining up runway 14 for trg area east, call you ready for departure {Call Sign}"
       }
     ],
-    "aircraft": [ "Military Jet", "Military Transport" ]
+    "aircraft": [ "Military Transport", "Military Jet" ]
   },
   {
     "phase": "airborne_mil",
@@ -309,7 +309,7 @@
         "message": "airborne copied, call you abeam victor one {Call Sign}"
       }
     ],
-    "aircraft": [ "Military Jet", "Military Transport" ]
+    "aircraft": [ "Military Transport", "Military Jet" ]
   },
   {
     "phase": "transfer_to_training",
@@ -332,6 +332,6 @@
         "message": "Over to training, {Call Sign}"
       }
     ],
-    "aircraft": [ "Military Jet", "Military Transport" ]
+    "aircraft": [ "Military Transport", "Military Jet" ]
   }
 ]
