@@ -112,8 +112,8 @@ h1 {
 }
 
 /* Style for the aircraft dropdown to make it wider and match the theme */
-#aircraft-filter {
-    min-width: 140px; /* Give the dropdown a minimum width */
+#callsign-filter {
+    min-width: 150px; /* Give the dropdown a minimum width */
     padding: 8px 10px; /* Reduced padding */
     border-radius: 5px;
     background-color: var(--card-bg);
@@ -124,45 +124,68 @@ h1 {
 }
 
 /* Style for the optgroup labels (e.g., CIVIL, Military Jet) */
-#aircraft-filter optgroup {
-    font-weight: 600;
+#callsign-filter optgroup {
+    font-weight: 700;
     font-style: normal; /* Remove italics for a cleaner look */
     text-transform: uppercase;
     color: var(--text-secondary); /* Use a subtle color for the header */
     background-color: var(--card-bg); /* Provides a subtle background in some browsers */
     font-size: 0.9em;
 }
-/* Style for the callsign input to match the theme */
+
 /* Custom styling for the aircraft dropdown arrow */
 .aircraft-select-wrapper {
     position: relative;
     display: inline-block;
 }
 
-#aircraft-filter {
-    -webkit-appearance: none; /* Remove default arrow for Chrome/Safari */
-    -moz-appearance: none;    /* Remove default arrow for Firefox */
-    appearance: none;         /* Remove default arrow for other browsers */
-    padding-right: 30px;      /* Add space for the custom arrow */
-}
 #rt-call-container {
     display: flex;    
     flex-direction: column; /* Stack cards vertically */
     gap: 20px;
     align-items: center; /* Center cards horizontally */
 }
+
+.rt-card-wrapper {
+    width: 80%; /* Use more width */
+    max-width: 1200px; /* Set a max-width for very large screens */
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
 .rt-card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 8px 0 8px 8px; /* Square off top-right corner to align with button */
     padding: 15px;
-    width: 80%; /* Use more width */
-    max-width: 1200px; /* Set a max-width for very large screens */
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     position: relative; /* This is crucial for positioning the tags */
     display: flex; /* Enable flexbox for two-column layout */
     gap: 20px;
     align-items: stretch; /* Make columns equal height */
+    width: 100%; /* Fill the wrapper */
+}
+
+.rt-side-panel {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    bottom: 0;
+    padding-left: 15px;
+    padding-top: 35px; /* Clear the details button */
+    padding-bottom: 15px;
+    width: 300px;
+    font-size: 0.75em;
+    color: var(--text-secondary);
+    opacity: 0.4;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 2px 12px;
+    pointer-events: none; /* Allow clicks to pass through */
+    user-select: none;
 }
 
 .phase-column h2 {
@@ -362,17 +385,18 @@ h1 {
     flex-direction: column;
     justify-content: center; /* Vertically center the content */
     align-items: center;
+    cursor: pointer;
 }
 
-/* --- New Aircraft Tags in Popup --- */
-.popup-aircraft-container {
+/* --- New Call Sign Tags in Popup --- */
+.popup-callsigns-container {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     margin-top: 10px;
 }
 
-.popup-aircraft-tag {
+.popup-callsign-tag {
     background-color: var(--secondary-bg);
     padding: 6px 12px;
     border-radius: 15px; /* Pill shape */
@@ -383,13 +407,10 @@ h1 {
     white-space: nowrap;
 }
 
-.popup-aircraft-models {
-    font-size: 0.9em;
+.popup-callsign-tag.na {
     color: var(--text-secondary);
-    margin-left: 4px;
-    font-weight: 400;
+    font-style: italic;
 }
-
 .phase-column h2 {
     margin: 0; /* Remove default margins to allow perfect centering */
     word-wrap: break-word; /* For older browsers */
@@ -409,18 +430,6 @@ h1 {
     flex-direction: column;
     gap: 6px;
     align-items: flex-start; /* This will left-align the tag */
-}
-
-/* Container for the new aircraft symbols */
-.aircraft-symbols-top-container {
-    position: absolute;
-    top: 30px; /* Increased top margin to avoid overlap with the details button */
-    right: 0; /* Align to the right edge of the card */
-    transform: translateX(100%); /* Push the container just outside the card's boundary */
-    display: flex;
-    flex-direction: column; /* Stack symbols vertically */
-    gap: 6px;
-    align-items: flex-start; /* This will left-align the tags */
 }
 
 /* Renamed from .description-btn */
@@ -448,36 +457,6 @@ h1 {
     font-size: 1em;
 }
 
-/* Individual aircraft category symbol style */
-.aircraft-symbol {
-    font-size: 0.7em; /* Make text slightly smaller */
-    font-weight: 500; /* Use a lighter font weight */
-    color: var(--text-secondary);
-    background-color: transparent; /* Remove the solid background */
-    padding: 2px 6px; /* Reduced horizontal padding */
-    border-radius: 0 4px 4px 0; /* Rounds the right-side corners */
-    border: 1px solid var(--border-color);
-    border-left: none; /* Remove the border that would be against the card */
-    text-transform: uppercase;
-    cursor: default; /* Show a normal cursor on hover */
-    opacity: 0.7; /* Make the entire tag semi-transparent */
-}
-
-
-
-#callsign-filter {
-    width: 100px; /* Set a fixed width */
-    box-sizing: border-box; /* Include padding in the width calculation */
-    background-color: var(--primary-bg);
-    border: 1px solid #61afef; /* Blue border from image */
-    color: var(--text-primary);
-    padding: 8px 10px; /* Reduced padding */
-    border-radius: 5px;
-    font-size: 0.9em;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
 .aircraft-select-wrapper::after {
     content: '\f078'; /* Font Awesome down-chevron icon */
     font-family: 'Font Awesome 6 Free';
@@ -490,6 +469,13 @@ h1 {
     color: var(--text-secondary);
 }
 
+/* Remove default appearance and add space for custom arrow on both dropdowns */
+#callsign-filter {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-right: 30px;
+}
 /* --- Parameter Popup Styles --- */
 #params-popup .popup-content {
     max-width: 800px; /* Wider popup for sentences */
@@ -548,9 +534,24 @@ h1 {
     border-radius: 4px;
 }
 
+/* Custom Scrollbar for Call Sign Dropdown */
+#callsign-filter::-webkit-scrollbar {
+    width: 10px;
+}
+
+#callsign-filter::-webkit-scrollbar-track {
+    background: var(--secondary-bg);
+}
+
+#callsign-filter::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 5px;
+}
+
 /* Hide the print-only container by default */
 #print-params-container { display: none; }
 #print-rt-call-container { display: none; }
+#print-instructions-container { display: none; }
 
 /* --- Print Styles --- */
 #print-btn {
@@ -703,5 +704,40 @@ h1 {
     #print-params-container p {
         margin-top: 4px;
         margin-bottom: 4px;
+    }
+
+    /* Styles for instructions in print version */
+    #print-instructions-container {
+        display: block !important;
+        page-break-before: always;
+        margin-top: 30px;
+    }
+
+    #print-instructions-container h3 {
+        font-size: 14pt;
+        text-align: center;
+        border-bottom: 2px solid #000;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+        color: #000 !important;
+    }
+
+    #print-instructions-container ul {
+        padding-left: 20px;
+    }
+
+    #print-instructions-container li {
+        margin-bottom: 10px;
+        font-size: 9pt;
+        color: #000 !important;
+        line-height: 1.4;
+        text-align: justify;
+    }
+    
+    #print-instructions-container code {
+        background-color: transparent;
+        border: 1px solid #ccc;
+        padding: 1px 3px;
+        color: #000;
     }
 }

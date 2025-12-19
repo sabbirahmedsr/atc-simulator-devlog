@@ -1,0 +1,705 @@
+1.              Departure - Rt Call (BG367)
+Airport:Vghs
+Civil Ground
+Pushback
+Pilot: 	{Dhk Gnd} {Bg367}, Request Startup And Pushback
+Grd: 	{Bg367}, Startup And Pushback Approved, Temp 32, {Time 40}, Push To Face {North/South}.
+Pilot: 	Startup And Pushback Approved, Temp 32, {Time 40}, Push To Face {North}/South {Bg367}.
+
+Taxi
+Pilot: 	{Dhk Gnd} {Bg367}, Request Taxi
+Grd: 	{Bg367}, Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14, {Qnh 1013}, {Squawk 4771}{Bg367}
+Pilot: 	{Qnh 1013}, Squawk 4771, Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14 {Bg367}
+
+Pilot: 	Request ATC Clearance.
+Grd: 	Confirm ready to copy ATC Clearance.
+Pilot: 	Affirm.
+Grd: 	Cleared to CTG SID ADMIL-1 Climb and Cruse FL 150  
+Pilot: 	Cleared to CTG SID ADMIL-1 Climb and Cruse FL 150  
+Grd: 	Redback correct
+
+Pilot: 	{Dhk Gnd} {Bg367}, Holding Point Runway 14, Like To Change To Tower
+Grd: 	{Bg367}, Over To Tower 
+Pilot: 	Over To Tower {Bg367}
+                                      
+
+Civil Tower
+Line Up Civil
+Pilot: 	{Dhk Twr} {Bg367}, Request Line Up
+Twr: 	{Bg367}, Line Up Runway 14, Report Ready For Departure
+Pilot: 	Line Up Runway 14, Call You Ready For Departure {Bg367}
+
+Departure
+Pilot: 	{Dhk Twr} {Bg367}, Ready For Departure
+Twr: 	{Bg367}, Sid Admil One, Initially Fl-130, Surface Wind 260/60kts, Cleared For Takeoff Runway 14
+Pilot:	S/W Copied, Runway 14, Cleared For Takeoff {Bg367}
+
+Airborne
+Twr: {Bg367}, Airborne {Time}, Report Passing 4000ft
+Pilot: Airborne Copied, Call You Passing 4000ft {Bg367}
+C
+Transfer To Control
+Pilot: 	{Dhk Twr} {Bg367}, Passing 4000ft
+Twr: 	{Bg367}, Contact Dhaka Control 126.7
+Pilot: 	Over To Control, Good Day {Bg367}
+C
+
+
+
+
+
+
+
+
+    2.                    Departure - Rt Call (CX667)
+Airport:Vghs
+                                     Civil Ground
+Pushback
+Pilot: {Dhk Gnd} {CX667}, Request Startup And Pushback
+Grd: {CX667},, Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North/South}.
+Pilot: Startup And Pushback Approved, {Temp 32}, , {Time 40}, Push To Face {North}/South {CX667},
+C
+Taxi
+Pilot: {Dhk Gnd} {CX667}, Request Taxi
+Grd: {Bg367}, Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14, {Qnh 1013}, {Squawk 4771{CX667},
+Pilot: {Qnh 1013}, Squawk 4771,Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14 {CX667},
+Pilot: Request ATC Clearance.
+Grd: Confirm ready to copy ATC Clearance.
+Pilot:Afirm.
+Grd: Cleared to HKG SID ADMIL-1 Climb and Cruse FL 290  
+Pilot: Cleared to HKG SID ADMIL-1 Climb and Cruse FL 290  
+Grd: Redback currect
+Pilot: {Dhk Gnd} {CX667}, Holding Point Runway 14, Like To Change To Tower
+Grd: {CX667}, Over To Tower 
+Pilot: Over To Tower {CX667},
+C
+                                      
+
+                                         Civil Tower
+Line Up Civil
+Pilot: {Dhk Twr} {CX667}, Request Line Up
+Twr: {Bg367}, Line Up Runway 14, Report Ready For Departure
+Pilot: Line Up Runway 14, Call You Ready For Departure {CX667},
+C
+Departure
+Pilot: {Dhk Twr} {CX667}, Ready For Departure
+Twr: {CX667}, Initially FL-130, Surface Wind 260/60kts, Cleared For Takeoff Runway 14 
+Pilot:
+S/W Copied, Runway 14, Cleared For Takeoff {CX667},
+Cmtmj
+Airborne
+Twr: {CX667}, Airborne {Time}, Report Passing 4000ft
+Pilot: Airborne Copied, Call You Passing 4000ft {CX667}, C
+Transfer To Control
+Pilot: {Dhk Twr} {CX667}, Passing 4000ft
+Twr: {CX667}, Contact Dhaka Control 126.7
+Pilot: Over To Control, Good Day {CX667},
+C
+
+
+
+
+
+
+
+
+
+3.           Departure - Rt Call (EK584)
+Airport:Vghs
+                                     Civil Ground
+Pushback
+Pilot: {Dhk Gnd} {EK584}, Request Startup And Pushback
+Grd: {EK584},, Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North/South}.
+Pilot: Startup And Pushback Approved, {Temp 32}, , {Time 40}, Push To Face {North/South} {EK584}
+C
+Taxi
+Pilot: {Dhk Gnd} {EK584} Request Taxi
+Grd: {EK584} Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14, {Qnh 1013}, {Squawk 4771{EK584}
+Pilot: {Qnh 1013}, Squawk 4771,Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14 {EK584}
+Pilot: Request ATC Clearance.
+Grd: Confirm ready to copy ATC Clearance.
+Pilot:Afirm.
+Grd: Cleared to DUBAI SID IDLOX-1A Climb and Cruse FL 280
+Pilot: Cleared to DUBAI SID IDLOX-1A Climb and Cruse FL 280  
+Grd: Redback currect
+Pilot: {Dhk Gnd} {EK584} Holding Point Runway 14, Like To Change To Tower
+Grd: {EK584} Over To Tower  
+Pilot: Over To Tower {EK584}
+C
+                                      
+
+                                         Civil Tower
+Line Up Civil
+Pilot: {Dhk Twr} {EK584} Request Line Up
+Twr: {EK584} Line Up Runway 14, Report Ready For Departure
+Pilot: Line Up Runway 14, Call You Ready For Departure {EK584}
+C
+Departure
+Pilot: {Dhk Twr} {EK584} Ready For Departure
+Twr: {EK584} Initially 4000, Surface Wind 260/60kts, Cleared For Takeoff Runway 14 
+Pilot:
+S/W Copied, Runway 14, Cleared For Takeoff {EK584}
+Cmtmj
+Airborne
+Twr: {EK584} Airborne {Time}, Report Passing 4000ft
+Pilot: Airborne Copied, Call You Passing 4000ft {EK584}C
+Transfer To Control
+Pilot: {Dhk Twr} {EK584}Passing 4000ft
+Twr: {EK584} Contact Dhaka Control 126.7
+Pilot: Over To Control, Good Day {EK584}
+ 
+
+
+
+
+
+
+
+
+
+
+4.       Departure - Rt Call (THAI321)
+Airport:Vghs
+                                     Civil Ground
+Pushback
+Pilot: {Dhk Gnd} {THAI321}, Request Startup And Pushback
+Grd{THAI321}, Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North}/South.
+Pilot: Startup And Pushback Approved, {Temp 32}, , {Time 40}, Push To Face {North}/South {THAI321},
+C
+Taxi
+Pilot: {Dhk Gnd} {THAI321}, Request Taxi
+Grd: {THAI321}, Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14, {Qnh 1013}, {Squawk 4771{EK584}
+Pilot: {Qnh 1013}, Squawk 4771,Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14 {THAI321},
+Pilot: Request ATC Clearance.
+Grd: Confirm ready to copy ATC Clearance.
+Pilot: Affirm.
+Grd: Cleared to BKK SID ADMIL-1 Climb and Cruse FL 290
+Pilot: Cleared to BKK SID ADMIL-1 Climb and Cruse FL 290  
+Grd: Red back correct
+Pilot: {Dhk Gnd} {THAI321}, Holding Point Runway 14, Like To Change To Tower
+Grd: {THAI321}, Over To Tower  
+Pilot: Over To Tower {THAI321},
+C
+                                      
+
+                                         Civil Tower
+Line Up Civil
+Pilot: {Dhk Twr} {THAI321}, Request Line Up
+Twr: {THAI321}, Line Up Runway 14, Report Ready For Departure
+Pilot: Line Up Runway 14, Call You Ready For Departure {THAI321},
+C
+Departure
+Pilot: {Dhk Twr} {THAI321}, Ready For Departure
+Twr: {THAI321}, Initially 4000, Surface Wind 260/60kts, Cleared For Takeoff Runway 14 
+Pilot:
+S/W Copied, Runway 14, Cleared For Takeoff {THAI321},
+Cmtmj
+Airborne
+Twr: {THAI321}, Airborne {Time}, Report Passing 4000ft
+Pilot: Airborne Copied, Call You Passing 4000ft {THAI321}, C
+Transfer To Control
+Pilot: {Dhk Twr} {THAI321}, Passing 4000ft
+Twr: {THAI321}, Contact Dhaka Control 126.7
+Pilot: Over To Control, Good Day {THAI321},
+
+
+
+
+
+
+
+
+5. Departure - Rt Call (IGO1113)
+Airport:Vghs
+                                     Civil Ground
+Pushback
+Pilot: {Dhk Gnd} {IGO1113}, Request Startup And Pushback
+Grd {IGO1113}, Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North}/South.
+Pilot: Startup And Pushback Approved, {Temp 32}, , {Time 40}, Push To Face {North}/South {IGO1113},
+ C
+Taxi
+Pilot: {Dhk Gnd} {IGO1113}, Request Taxi
+Grd: {IGO1113}, Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14, {Qnh 1013}, {Squawk 4771{IGO1113},
+ Pilot: {Qnh 1013}, Squawk 4771,Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14 {IGO1113}, 
+Pilot: Request ATC Clearance.
+Grd: Confirm ready to copy ATC Clearance.
+Pilot: Affirm.
+Grd: Cleared to CHENNAI SID IDLOX-1A Climb and Cruse FL 260
+Pilot: Cleared to CHENNAI SID IDLOX-1A Climb and Cruse FL 260
+Grd: Redback currect
+Pilot: {Dhk Gnd} {IGO1113}, Holding Point Runway 14, Like To Change To Tower
+Grd: {IGO1113}, Over To Tower  
+Pilot: Over To Tower {IGO1113},
+C
+                                      
+
+                                         Civil Tower
+Line Up Civil
+Pilot: {Dhk Twr} {IGO1113}, Request Line Up
+Twr: {IGO1113},, Line Up Runway 14, Report Ready For Departure
+Pilot: Line Up Runway 14, Call You Ready For Departure {IGO1113},
+C
+Departure
+Pilot: {Dhk Twr} {IGO1113}, Ready For Departure
+Twr: {IGO1113}, Initially 4000, Surface Wind 260/60kts, Cleared For Takeoff Runway 14 
+Pilot:
+S/W Copied, Runway 14, Cleared For Takeoff {IGO1113},
+Cmtmj
+Airborne
+Twr: {IGO1113}, Airborne {Time}, Report Passing 4000ft
+Pilot: Airborne Copied, Call You Passing 4000ft {IGO1113}, C
+Transfer To Control
+Pilot: {Dhk Twr} {IGO1113}, Passing 4000ft
+Twr: {IGO1113}, Contact Dhaka Control 126.7
+Pilot: Over To Control, Good Day {IGO1113},
+
+
+
+
+
+
+
+
+
+
+6.  Departure - Rt Call (QRT638)
+Airport:Vghs
+                                     Civil Ground
+Pushback
+Pilot: {Dhk Gnd} {QTR638}, Request Startup And Pushback
+Grd {QTR638} Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North/South}.
+Pilot: Startup And Pushback Approved, {Temp 32}, , {Time 40}, Push To Face {North/South} {QTR638}
+ C
+Taxi
+Pilot: {Dhk Gnd} {QTR638}Request Taxi
+Grd: {QTR638}Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14, {Qnh 1013}, {Squawk 4771{QTR638}Pilot: {Qnh 1013}, Squawk 4771,Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14 {QTR638}
+Pilot: Request ATC Clearance.
+Grd: Confirm ready to copy ATC Clearance.
+Pilot:Afirm.
+Grd: Cleared to DOHA SID IKAGO-1A Climb and Cruse FL 280
+Pilot: Cleared to DOHA SID IKAGO-1A Climb and Cruse FL 280
+Grd: Red back correct
+Pilot: {Dhk Gnd} {QTR638}Holding Point Runway 14, Like To Change To Tower
+Grd: {QTR638}, Over To Tower  
+Pilot: Over To Tower {QTR638}.
+C
+                                      
+
+                                         Civil Tower
+Line Up Civil
+Pilot: {Dhk Twr} {QTR638}, Request Line Up
+Twr: {QTR638}, Line Up Runway 14, Report Ready For Departure
+Pilot: Line Up Runway 14, Call You Ready For Departure {QTR638}
+C
+Departure
+Pilot: {Dhk Twr} {QTR638}, Ready For Departure
+Twr: {QTR638}, Initially 4000, Surface Wind 260/60kts, Cleared For Takeoff Runway 14 
+Pilot:
+S/W Copied, Runway 14, Cleared For Takeoff {QTR638}
+Cmtmj
+Airborne
+Twr: {QTR638}, Airborne {Time}, Report Passing 4000ft
+Pilot: Airborne Copied, Call You Passing 4000ft {QTR638}
+C
+Transfer To Control
+Pilot: {Dhk Twr} {QTR638}, Passing 4000ft
+Twr: {QTR638}, Contact Dhaka Control 126.7
+Pilot: Over To Control, Good Day {QTR638},
+
+
+
+
+
+
+
+
+
+
+7. Departure - Rt Call (SQ446)
+Airport:Vghs
+                                     Civil Ground
+Pushback
+Pilot: {Dhk Gnd} {SQ446}, Request Startup And Pushback
+Grd {SQ446}Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North/South}.
+Pilot: Startup And Pushback Approved, {Temp 32}, , {Time 40}, Push To Face {North/South} {SQ446}
+ C
+Taxi
+Pilot: {Dhk Gnd} {SQ446} Request Taxi
+Grd: {SQ446} Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14, {Qnh 1013}, {Squawk 4771, {SQ446}Pilot: {Qnh 1013}, Squawk 4771,Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14 {SQ446} 
+Pilot: Request ATC Clearance.
+Grd: Confirm ready to copy ATC Clearance.
+Pilot:Afirm.
+Grd: Cleared to BKK SID ADMIL-1 Climb and Cruse FL 290
+Pilot: Cleared to BKK SID ADMIL-1 Climb and Cruse FL 290
+Grd: Redback currect
+Pilot: {Dhk Gnd} {SQ446} Holding Point Runway 14, Like To Change To Tower
+Grd: {SQ446}, Over To Tower  
+Pilot: Over To Tower {SQ446}.
+             
+                                         Civil Tower
+Line Up Civil
+Pilot: {Dhk Twr} {SQ446}, Request Line Up
+Twr: {SQ446} ,Line Up Runway 14, Report Ready For Departure
+Pilot: Line Up Runway 14, Call You Ready For Departure {SQ446}
+C
+Departure
+Pilot: {Dhk Twr} {SQ446} Ready For Departure
+Twr: {SQ446}, Initially 4000, Surface Wind 260/60kts, Cleared For Takeoff Runway 14 
+Pilot: S/W Copied, Runway 14, Cleared For Takeoff, {SQ446}
+Cmtmj
+Airborne
+Twr: {SQ446}, Airborne {Time}, Report Passing 4000ft
+Pilot: Airborne Copied, Call You Passing 4000ft {SQ446}.
+C
+Transfer To Control
+Pilot: {Dhk Twr} {SQ446}, Passing 4000ft
+Twr: {SQ446}, Contact Dhaka Control 126.7
+Pilot: Over To Control, Good Day {SQ446}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+DOMESTIC DEPARTURE
+1.
+Departure - Rt Call (AWA446)
+Airport:Vghs
+                                     Civil Ground
+Pushback
+Pilot: {Dhk Gnd} {AWA446}, Request Startup And Pushback
+Grd {AWA446} Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North/South}.
+Pilot: Startup And Pushback Approved, {Temp 32}, , {Time 40}, Push To Face {North/South} {AWA446}
+ C
+Taxi
+Pilot: {Dhk Gnd} {AWA446} Request Taxi
+Grd: {AWA446} Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14, {Qnh 1013}, {Squawk 4771, {AWA446} Pilot: {Qnh 1013}, Squawk 4771,Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14 {AWA446} 
+Pilot: Request ATC Clearance.
+Grd: Confirm ready to copy ATC Clearance.
+Pilot: Afirm.
+Grd: Cleared to CTG SID ADMIL-1 Climb and Cruse FL 130
+Pilot: Cleared to CTG SID ADMIL-1 Climb and Cruse FL 130
+Grd: Red back correct
+Pilot: {Dhk Gnd {AWA446} Holding Point Runway 14, Like To Change To Tower
+Grd: {AWA446}, Over To Tower   
+Pilot: Over To Tower {AWA446}.
+             
+                                         Civil Tower
+Line Up Civil
+Pilot: {Dhk Twr} {AWA446} Request Line Up
+Twr: {AWA446}, Line Up Runway 14, Report Ready For Departure
+Pilot: Line Up Runway 14, Call You Ready For Departure {AWA446}
+C
+Departure
+Pilot: {Dhk Twr} {AWA446} Ready For Departure
+Twr: {AWA446}, Initially 4000, Surface Wind 260/60kts, Cleared For Takeoff Runway 14  
+Pilot: S/W Copied, Runway 14, Cleared For Takeoff, {AWA446}
+Cmtmj
+Airborne
+Twr: {AWA446}, Airborne {Time}, Report Passing 4000ft
+Pilot: Airborne Copied, Call You Passing 4000ft {AWA446}
+C
+Transfer To Control
+Pilot: {Dhk Twr} {AWA446} Passing 4000ft
+Twr: {AWA446}, Contact Dhaka Control 126.7
+Pilot: Over To Control, Good Day {AWA446}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2.   Departure - Rt Call (BG472)
+Airport:Vghs
+                                     Civil Ground
+Pushback
+Pilot: {Dhk Gnd} {BG472} Request Startup And Pushback
+Grd: {BG472}, Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North/South}.
+Pilot: Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North}/South {BG472},
+ C
+Taxi
+Pilot: {Dhk Gnd} {BG472}, Request Taxi 
+Grd: {BG472}, Taxi Via {C-N-N2,F-N-N2,V-N-N2} } To Holding Point Runway-14, {Qnh 1013}, {Squawk 4771, {BG472},
+ Pilot: {Qnh 1013}, Squawk 4771,Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14  {BG472}, 
+Pilot: Request ATC Clearance.
+Grd: Confirm ready to copy ATC Clearance.
+Pilot: Afirm.
+Grd: Cleared to BSL SID KAKBO Climb and Cruse FL 140
+Pilot: Cleared to BSL SID KAKBO Climb and Cruse FL 140
+Grd: Red back correct
+Pilot: {Dhk Gnd {BG472}, Holding Point Runway 14, Like To Change To Tower
+Grd: {BG472}, Over To Tower   
+Pilot: Over To Tower {BG472}. 
+             
+                                       
+                                  Civil Tower
+Line Up Civil
+Pilot: {Dhk Twr} {BG472}, Request Line Up
+Twr: {BG472}, Line Up Runway 14, Report Ready For Departure
+Pilot: Line Up Runway 14, Call You Ready For Departure {BG472},
+C
+Departure
+Pilot: {Dhk Twr} {BG472}, Ready For Departure
+Twr: {BG472}, Initially 4000, Surface Wind 260/60kts, Cleared For Takeoff Runway 14  
+Pilot: S/W Copied, Runway 14, Cleared For Takeoff, {BG472}.
+Cmtmj
+Airborne
+Twr: {BG472}, Airborne {Time}, Report Passing 4000ft
+Pilot: Airborne Copied, Call You Passing 4000ft {BG472},
+C
+Transfer To Control
+Pilot: {Dhk Twr} {BG472}, Passing 4000ft.
+Twr: {BG472}, Contact Dhaka Control 126.7
+Pilot: Over To Control, Good Day {BG472}.
+
+
+
+
+
+
+
+
+
+
+
+3.   Departure - Rt Call (BG492)
+Airport:Vghs
+                                     Civil Ground
+Pushback
+Pilot: {Dhk Gnd} {BG492} Request Startup And Pushback
+Grd: {BG492}, Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North/South}.
+Pilot: Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North/South} {BG492} 
+ C
+Taxi
+Pilot: {Dhk Gnd} {BG492} Request Taxi 
+Grd: {BG492} Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14, {Qnh 1013}, {Squawk 4773, 
+Pilot: {Qnh 1013}, Squawk 4771,Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14  {BG492} 
+ Pilot: Request ATC Clearance.
+Grd: Confirm ready to copy ATC Clearance.
+Pilot:Afirm.
+Grd: Cleared to SAIDPUR SID TEGAK-1 Climb and Cruse FL 120
+Pilot: Cleared to SAIDPUR SID TEGAK-1 Climb and Cruse FL 120
+Grd: Red back correct
+Pilot: {Dhk Gnd {BG492} }, Holding Point Runway 14, Like To Change To Tower
+Grd: {BG492} Over To Tower   
+Pilot: Over To Tower {BG492} . 
+             
+                                        
+
+
+ Civil Tower
+Line Up Civil
+Pilot: {Dhk Twr} {BG492} Request Line Up
+Twr: {BG492} Line Up Runway 14, Report Ready For Departure
+Pilot: Line Up Runway 14, Call You Ready For Departure {BG492} 
+C
+Departure
+Pilot: {Dhk Twr} {BG492} Ready For Departure
+Twr: {BG492} Initially 4000, Surface Wind 260/60kts, Cleared For Takeoff Runway 14  
+Pilot: S/W Copied, Runway 14, Cleared For Takeoff, {BG492} 
+Cmtmj
+Airborne
+Twr: {BG492} Airborne {Time}, Report Passing 4000ft
+Pilot: Airborne Copied, Call You Passing 4000ft {BG492} 
+C
+Transfer To Control
+Pilot: {Dhk Twr} {BG492} Passing 4000ft.
+Twr: {BG492} Contact Dhaka Control 126.7
+Pilot: Over To Control, Good Day {BG492} 
+
+
+
+
+
+
+
+
+
+
+
+4.   Departure - Rt Call (BG602)
+Airport:Vghs
+                                     Civil Ground
+Pushback
+Pilot: {Dhk Gnd} {BG602} Request Startup And Pushback
+Grd: {BG602} Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North/South}.
+Pilot: Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North}/South {BG602}  C
+Taxi
+Pilot: {Dhk Gnd} {BG602} Request Taxi 
+Grd: {BG602} Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14, {Qnh 1013}, {Squawk 4773}, 
+Pilot: {Qnh 1013}, }, {Squawk 4773},,Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14  {BG602} 
+ Pilot: Request ATC Clearance.
+Grd: Confirm ready to copy ATC Clearance.
+Pilot: Affirm.
+Grd: Cleared to BSL SID KAKBO Climb and Cruse FL 140
+Pilot: Cleared to BSL SID KAKBO Climb and Cruse FL 140
+Grd: Red back correct
+Pilot: {Dhk Gnd {BG602} Holding Point Runway 14, Like To Change To Tower
+Grd: {BG602} Over To Tower   
+Pilot: Over To Tower {BG602} . 
+             
+
+
+                                         Civil Tower
+Line Up Civil
+Pilot: {Dhk Twr} {BG602} Request Line Up
+Twr: {BG602} Line Up Runway 14, Report Ready For Departure
+Pilot: Line Up Runway 14, Call You Ready For Departure {BG602} C
+Departure
+Pilot: {Dhk Twr} {BG602} Ready For Departure
+Twr: {BG602} Initially 4000, Surface Wind 260/60kts, Cleared For Takeoff Runway 14  
+Pilot: S/W Copied, Runway 14, Cleared For Takeoff, {BG602} Cmtmj
+Airborne
+Twr: {BG602} Airborne {Time}, Report Passing 4000ft
+Pilot: Airborne Copied, Call You Passing 4000ft {BG602} 
+C
+Transfer To Control
+Pilot: {Dhk Twr} {BG602} Passing 4000ft.
+Twr: {BG602} Contact Dhaka Control 126.7
+Pilot: Over To Control, Good Day {BG602} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5.   Departure - Rt Call (NVQ946)
+Airport:Vghs
+                                     Civil Ground
+Pushback
+Pilot: {Dhk Gnd} {NVQ946} Request Startup And Pushback
+Grd: {NVQ946} Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North/South}.
+Pilot: Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North}/South {NVQ946} C
+Taxi
+Pilot: {Dhk Gnd} {NVQ946} Request Taxi 
+Grd: {NVQ946} Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14, {Qnh 1013}, {Squawk 4773, 
+Pilot: {Qnh 1013}, Squawk 4771,Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14  {NVQ946} 
+ Pilot: Request ATC Clearance.
+Grd: Confirm ready to copy ATC Clearance.
+Pilot: Affirm.
+Grd: Cleared to JSR SID IBANU-1 Climb and Cruse FL 120
+Pilot: Cleared to JSR SID IBANU-1 Climb and Cruse FL 120
+Grd: Red back correct
+Pilot: {Dhk Gnd {NVQ946} Holding Point Runway 14, Like To Change To Tower
+Grd: {NVQ946} Over To Tower   
+Pilot: Over To Tower {NVQ946} 
+             
+                        
+                                 Civil Tower
+Line Up Civil
+Pilot: {Dhk Twr} {NVQ946} Request Line Up
+Twr: {NVQ946} Line Up Runway 14, Report Ready For Departure
+Pilot: Line Up Runway 14, Call You Ready For Departure {NVQ946} 
+Departure
+Pilot: {Dhk Twr} {NVQ946} Ready For Departure
+Twr: {NVQ946} Initially 4000, Surface Wind 260/60kts, Cleared For Takeoff Runway 14  
+Pilot: S/W Copied, Runway 14, Cleared For Takeoff, {NVQ946} Cmtmj
+Airborne
+Twr: {NVQ946} Airborne {Time}, Report Passing 4000ft
+Pilot: Airborne Copied, Call You Passing 4000ft {NVQ946} C
+Transfer To Control
+Pilot: {Dhk Twr} {NVQ946}  Passing 4000ft.
+Twr {NVQ946}  Contact Dhaka Control 126.7
+Pilot: Over To Control, Good Day {NVQ946} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.   Departure - Rt Call (UBG108)
+Airport:Vghs
+                                     Civil Ground
+Pushback
+Pilot: {Dhk Gnd} {UBG108} Request Startup And Pushback
+Grd: {UBG108} Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North/South}.
+Pilot: Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North/South} {UBG108} C
+Taxi
+Pilot: {Dhk Gnd} {UBG108} Request Taxi 
+Grd: {UBG108}  Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14, {Qnh 1013}, {Squawk 4773, 
+Pilot: {Qnh 1013}, Squawk 4771,Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14  {UBG108} 
+ Pilot: Request ATC Clearance.
+Grd: Confirm ready to copy ATC Clearance.
+Pilot: Affirm.
+Grd: Cleared to CTG SID ADMIL-1 Climb and Cruse FL 110
+Pilot: Cleared to CTG SID ADMIL-1 Climb and Cruse FL 110
+Grd: Red back correct
+Pilot: {Dhk Gnd {UBG108} Holding Point Runway 14, Like To Change To Tower
+Grd: {UBG108} Over To Tower   
+Pilot: Over To Tower {UBG108}              
+                                       
+
+
+
+                                    Civil Tower
+Line Up Civil
+Pilot: {Dhk Twr} {UBG108} Request Line Up
+Twr: {UBG108} Line Up Runway 14, Report Ready For Departure
+Pilot: Line Up Runway 14, Call You Ready For Departure {UBG108} 
+                          Departure
+Pilot: {Dhk Twr} {UBG108} Ready For Departure
+Twr: {UBG108} Initially 4000, Surface Wind 260/60kts, Cleared For Takeoff Runway 14  
+Pilot: S/W Copied, Runway 14, Cleared For Takeoff, {UBG108} Cmtmj
+Airborne
+Twr: {UBG108} Airborne {Time}, Report Passing 4000ft
+Pilot: Airborne Copied, Call You Passing 4000ft {UBG108} C
+Transfer To Control
+Pilot: {Dhk Twr} {UBG108} Passing 4000ft.
+Twr {UBG108} Contact Dhaka Control 126.7
+Pilot: Over To Control, Good Day {UBG108} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

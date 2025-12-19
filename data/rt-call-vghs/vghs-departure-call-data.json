@@ -4,334 +4,283 @@
     "category": "Civil Ground",
     "description": "A pilot makes this single call to request permission for both starting the engines and being pushed back from the gate at the same time.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Request startup and pushback",
-        "message": "{DHK GND} {Call Sign}, request startup and pushback"
-      },
-      {
-        "speaker": "GRD",
-        "caption": "Startup and pushback approved",
-        "message": "{Call Sign}, startup and pushback approved, temp 32, {Time 40}, push to face north"
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "startup and pushback approved",
-        "message": "startup and pushback approved, temp 32, {time 40}, push to face north {Call Sign}"
-      }
+      { "speaker": "Pilot", "message": "{DHK GND} {Call Sign}, request startup and pushback" },
+      { "speaker": "GRD", "message": "{Call Sign}, startup and pushback approved, temp 32, Time {0,1,2,3,4,5,6,7,8,9}, {push to face North / push to face South}" },
+      { "speaker": "Pilot", "message": "startup and pushback approved, temp 32, Time {0,1,2,3,4,5,6,7,8,9}, {push to face North / push to face South} {Call Sign}" }
     ],
-    "aircraft": [ "Civil" ]
+    "callsigns": [ "THAI321", "EK584", "BG367", "IGO1113", "QR638", "CX667", "SQ446", "BG602", "BG492", "BG472", "NVQ946", "AWA446", "UBG108" ]
   },
   {
     "phase": "taxi",
     "category": "Civil Ground",
     "description": "This is a call made by a pilot to the ground controller to request permission to move the plane on the ground from the gate to the runway.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Request taxi",
-        "message": "{DHK GND} {Call Sign}, request taxi"
-      },
-      {
-        "speaker": "GRD",
-        "caption": "Taxi to holding point",
-        "message": "{Call Sign}, taxi via C-N-N2 to holding point runway-14, {QNH 1013}, Squawk 4771"
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Wilco, taxi to holding point",
-        "message": "{QNH 1013}, Squawk 4771, taxi via C-N-N2 to holding point runway-14 {Call Sign}"
-      }
+      { "speaker": "Pilot", "message": "{DHK GND} {Call Sign}, request taxi" },
+      { "speaker": "GRD", "message": "{Call Sign}, taxi via {C-N-N2,F-N-N2,V-N-N2} to holding point runway-14, {QNH 1013}, {Squawk 4771}" },
+      { "speaker": "Pilot", "message": "{QNH 1013}, Squawk 4771, {taxi via C-N-N2 / taxi via F-N-N2 / taxi via V-N-N2} to holding point runway-14 {Call Sign}" }
     ],
-    "aircraft": [ "Civil" ]
+    "callsigns": [ "THAI321", "EK584", "BG367", "IGO1113", "QR638", "CX667", "SQ446", "BG602", "BG492", "BG472", "NVQ946", "AWA446", "UBG108" ]
   },
   {
-    "phase": "change_to_TWR_on_go",
+    "phase": "atc_clearance_request",
+    "category": "Civil Ground",
+    "description": "The initial sequence where a pilot requests ATC clearance and confirms they are ready to copy.",
+    "calls": [
+      { "speaker": "Pilot", "message": "{DHK GND} {Call Sign}, request ATC clearance" },
+      { "speaker": "GRD", "message": "{Call Sign}, confirm ready to copy ATC clearance" },
+      { "speaker": "Pilot", "message": "Affirm, {Call Sign}" }
+    ],
+    "callsigns": [ "THAI321", "EK584", "BG367", "IGO1113", "QR638", "CX667", "SQ446", "BG602", "BG492", "BG472", "NVQ946", "AWA446", "UBG108" ]
+  },
+  {
+    "phase": "atc_clearance_CTG",
+    "category": "Civil Ground",
+    "description": "The pilot requests and receives their IFR clearance from the ground controller before taxiing.",
+    "calls": [
+      { "speaker": "GRD", "message": "{Call Sign}, cleared to CTG, SID ADMIL-1, climb and cruise FL 150" },
+      { "speaker": "Pilot", "message": "Cleared to CTG, SID ADMIL-1, climb and cruise FL 150, {Call Sign}" },
+      { "speaker": "GRD", "message": "{Call Sign}, readback correct" }
+    ],
+    "callsigns": [ "BG367", "AWA446", "UBG108"]
+  },
+  {
+    "phase": "atc_clearance_hkg",
+    "category": "Civil Ground",
+    "description": "ATC clearance for flights departing to Hong Kong (HKG).",
+    "calls": [
+      { "speaker": "GRD", "message": "{Call Sign}, cleared to HKG, SID ADMIL-1, climb and cruise FL 290" },
+      { "speaker": "Pilot", "message": "Cleared to HKG, SID ADMIL-1, climb and cruise FL 290, {Call Sign}" },
+      { "speaker": "GRD", "message": "{Call Sign}, readback correct" }
+    ],
+    "callsigns": [ "CX667" ]
+  },
+  {
+    "phase": "atc_clearance_dubai",
+    "category": "Civil Ground",
+    "description": "ATC clearance for flights departing to Dubai (DUBAI).",
+    "calls": [
+      { "speaker": "GRD", "message": "{Call Sign}, cleared to DUBAI, SID IDLOX-1A, climb and cruise FL 280" },
+      { "speaker": "Pilot", "message": "Cleared to DUBAI, SID IDLOX-1A, climb and cruise FL 280, {Call Sign}" },
+      { "speaker": "GRD", "message": "{Call Sign}, readback correct" }
+    ],
+    "callsigns": [ "EK584" ]
+  },
+  {
+    "phase": "atc_clearance_bkk",
+    "category": "Civil Ground",
+    "description": "ATC clearance for flights departing to Bangkok (BKK).",
+    "calls": [
+      { "speaker": "GRD", "message": "{Call Sign}, cleared to BKK, SID ADMIL-1, climb and cruise FL 290" },
+      { "speaker": "Pilot", "message": "Cleared to BKK, SID ADMIL-1, climb and cruise FL 290, {Call Sign}" },
+      { "speaker": "GRD", "message": "{Call Sign}, readback correct" }
+    ],
+    "callsigns": [ "THAI321", "SQ446" ]
+  },
+  {
+    "phase": "atc_clearance_chennai",
+    "category": "Civil Ground",
+    "description": "ATC clearance for flights departing to Chennai (CHENNAI).",
+    "calls": [
+      { "speaker": "GRD", "message": "{Call Sign}, cleared to CHENNAI, SID IDLOX-1A, climb and cruise FL 260" },
+      { "speaker": "Pilot", "message": "Cleared to CHENNAI, SID IDLOX-1A, climb and cruise FL 260, {Call Sign}" },
+      { "speaker": "GRD", "message": "{Call Sign}, readback correct" }
+    ],
+    "callsigns": [ "IGO1113" ]
+  },
+  {
+    "phase": "atc_clearance_doha",
+    "category": "Civil Ground",
+    "description": "ATC clearance for flights departing to Doha (DOHA).",
+    "calls": [
+      { "speaker": "GRD", "message": "{Call Sign}, cleared to DOHA, SID IKAGO-1A, climb and cruise FL 280" },
+      { "speaker": "Pilot", "message": "Cleared to DOHA, SID IKAGO-1A, climb and cruise FL 280, {Call Sign}" },
+      { "speaker": "GRD", "message": "{Call Sign}, readback correct" }
+    ],
+    "callsigns": [ "QR638" ]
+  },
+  {
+    "phase": "atc_clearance_bsl",
+    "category": "Civil Ground",
+    "description": "ATC clearance for flights departing to Barishal (BSL).",
+    "calls": [
+      { "speaker": "GRD", "message": "{Call Sign}, cleared to BSL, SID KAKBO, climb and cruise FL 140" },
+      { "speaker": "Pilot", "message": "Cleared to BSL, SID KAKBO, climb and cruise FL 140, {Call Sign}" },
+      { "speaker": "GRD", "message": "{Call Sign}, readback correct" }
+    ],
+    "callsigns": [ "BG472", "BG602" ]
+  },
+  {
+    "phase": "atc_clearance_saidpur",
+    "category": "Civil Ground",
+    "description": "ATC clearance for flights departing to Saidpur (SAIDPUR).",
+    "calls": [
+      { "speaker": "GRD", "message": "{Call Sign}, cleared to SAIDPUR, SID TEGAK-1, climb and cruise FL 120" },
+      { "speaker": "Pilot", "message": "Cleared to SAIDPUR, SID TEGAK-1, climb and cruise FL 120, {Call Sign}" },
+      { "speaker": "GRD", "message": "{Call Sign}, readback correct" }
+    ],
+    "callsigns": [ "BG492" ]
+  },
+  {
+    "phase": "atc_clearance_jsr",
+    "category": "Civil Ground",
+    "description": "ATC clearance for flights departing to Jashore (JSR).",
+    "calls": [
+      { "speaker": "GRD", "message": "{Call Sign}, cleared to JSR, SID IBANU-1, climb and cruise FL 120" },
+      { "speaker": "Pilot", "message": "Cleared to JSR, SID IBANU-1, climb and cruise FL 120, {Call Sign}" },
+      { "speaker": "GRD", "message": "{Call Sign}, readback correct" }
+    ],
+    "callsigns": [ "NVQ946" ]
+  },
+  {
+    "phase": "change_to_TWR_civil",
     "category": "Civil Ground",
     "description": "A pilot makes this call to the ground controller when they are approaching the runway, to get a final clearance to take off and to switch communication to the airport's tower controller.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "At holding point",
-        "message": "{DHK GND} {Call Sign}, holding point runway 14, like to change to tower"
-      },
-      {
-        "speaker": "GRD",
-        "caption": "ATC clearance",
-        "message": "{Call Sign}, cleared to [Destination] SID ADMIL ONE, climb and cruse FL 290"
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Changing to tower",
-        "message": "over to tower {Call Sign}"
-      }
+      { "speaker": "Pilot", "message": "{DHK GND} {Call Sign}, approaching holding point runway 14, like to change to tower" },
+      { "speaker": "GRD", "message": "{Call Sign}, over to tower" },
+      { "speaker": "Pilot", "message": "Over to tower {Call Sign}" }
     ],
-    "aircraft": [ "Civil" ]
+    "callsigns": [ "THAI321", "EK584", "BG367", "IGO1113", "QR638", "CX667", "SQ446", "BG602", "BG492", "BG472", "NVQ946", "AWA446", "UBG108" ]
   },
   {
     "phase": "startup",
     "category": "Military Ground",
     "description": "A pilot makes this call to the ground controller to request permission to start the plane's engines. This is the first step before a flight.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Request startup",
-        "message": "{DHK GND} {Call Sign}, request startup"
-      },
-      {
-        "speaker": "GRD",
-        "caption": "Startup approved",
-        "message": "{Call Sign}, startup approved, temp 32, time 40, push to face north"
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Wilco, startup approved",
-        "message": "startup approved, temp 32, time 1200 {Call Sign}"
-      }
+      { "speaker": "Pilot", "message": "{DHK GND} {Call Sign}, request startup" },
+      { "speaker": "GRD", "message": "{Call Sign}, startup approved, {Temp 32}, {Time 40}" },
+      { "speaker": "Pilot", "message": "startup approved, temp 32, time 1200 {Call Sign}" }
     ],
-    "aircraft": [ "Military Transport", "Military Jet" ]
+    "callsigns": [ "GFN391", "BJR471", "UNC1031", "AJX1483" ]
   },
   {
     "phase": "military_taxi",
     "category": "Military Ground",
     "description": "This is a specific call made by a military pilot to the ground controller to request permission to move the plane on the ground from the gate to the runway, following a designated route for military aircraft.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Request taxi (military)",
-        "message": "{DHK GND} {Call Sign}, request taxi"
-      },
-      {
-        "speaker": "GRD",
-        "caption": "Taxi to holding point (military)",
-        "message": "{Call Sign}, taxi via NA-P to holding point runway-14, QNH 760, SQUAWK 4771"
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Wilco, taxi to holding point",
-        "message": "QNH 760, SQUAWK 4141, taxi via NA-P to holding point runway-14 {Call Sign}"
-      }
+      { "speaker": "Pilot", "message": "{DHK GND} {Call Sign}, request taxi" },
+      { "speaker": "GRD", "message": "{Call Sign}, taxi via NA-P to holding point runway-14, QNH 760, SQUAWK 4771" },
+      { "speaker": "Pilot", "message": "QNH 760, SQUAWK 4141, taxi via NA-P to holding point runway-14 {Call Sign}" }
     ],
-    "aircraft": [ "Military Transport", "Military Jet" ]
+    "callsigns": [ "GFN391", "BJR471", "UNC1031", "AJX1483" ]
   },
   {
-    "phase": "change_to_TWR_at_end",
+    "phase": "change_to_TWR_mil",
     "category": "Military Ground",
     "description": "A pilot makes this call to the ground controller when they are approaching the runway, to get a final clearance to take off and to switch communication to the airport's tower controller.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Approaching holding point",
-        "message": "{DHK GND} {Call Sign}, approaching holding point rwy 14, like to change to tower"
-      },
-      {
-        "speaker": "GRD",
-        "caption": "Contact tower",
-        "message": "{Call Sign}, contact tower"
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Changing to tower",
-        "message": "over to tower {Call Sign}"
-      }
+      { "speaker": "Pilot", "message": "{DHK GND} {Call Sign}, approaching holding point rwy 14, like to change to tower" },
+      { "speaker": "GRD", "message": "{Call Sign}, contact tower" },
+      { "speaker": "Pilot", "message": "over to tower {Call Sign}" }
     ],
-    "aircraft": [ "Military Transport", "Military Jet" ]
+    "callsigns": [ "GFN391", "BJR471", "UNC1031", "AJX1483" ]
   },
   {
     "phase": "line_up_civil",
     "category": "Civil Tower",
     "description": "This is a call made by a pilot to the tower controller to request permission to move onto the runway and prepare for takeoff.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Request line up",
-        "message": "{DHK TWR} {Call Sign}, request line up"
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Line up and wait",
-        "message": "{Call Sign}, line up runway 14, report ready for departure"
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Wilco, line up and wait",
-        "message": "line up runway 14, call you ready for departure {Call Sign}"
-      }
+      { "speaker": "Pilot", "message": "{DHK TWR} {Call Sign}, request line up" },
+      { "speaker": "TWR", "message": "{Call Sign}, line up runway 14, report ready for departure" },
+      { "speaker": "Pilot", "message": "line up runway 14, call you ready for departure {Call Sign}" }
     ],
-    "aircraft": [ "Civil" ]
+    "callsigns": [ "THAI321", "EK584", "BG367", "IGO1113", "QR638", "CX667", "SQ446", "BG602", "BG492", "BG472", "NVQ946", "AWA446", "UBG108" ]
   },
   {
     "phase": "departure",
     "category": "Civil Tower",
     "description": "A pilot makes this call to the tower controller to confirm they are ready for takeoff and to get the final clearance to proceed.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Ready for Departure",
-        "message": "{DHK TWR} {Call Sign}, ready for Departure"
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Cleared for takeoff",
-        "message": "{Call Sign}, SID ADMIL ONE, initially FL-130, surface wind 260/60kts, cleared for takeoff runway 14"
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Wilco, cleared for takeoff",
-        "message": "s/w copied, runway 14, cleared for takeoff {Call Sign}"
-      }
+      { "speaker": "Pilot", "message": "{DHK TWR} {Call Sign}, ready for Departure" },
+      { "speaker": "TWR", "message": "{Call Sign}, {SID}, {initially FL-130}, surface wind 260/60kts, cleared for takeoff runway 14" },
+      { "speaker": "Pilot", "message": "S/W copied, runway 14, cleared for takeoff {Call Sign}" }
     ],
-    "aircraft": [ "Civil", "Military Transport", "Military Jet" ]
+    "callsigns": [ "THAI321", "EK584", "BG367", "IGO1113", "QR638", "CX667", "SQ446", "BG602", "BG492", "BG472", "NVQ946", "AWA446", "UBG108" ]
   },
   {
     "phase": "airborne",
     "category": "Civil Tower",
     "description": "A call from the tower immediately after takeoff, instructing the pilot on their next reporting point for a standard departure.",
     "calls": [
-      {
-        "speaker": "TWR",
-        "caption": "Airborne, report 4000ft",
-        "message": "{Call Sign}, airborne {time}, report passing 4000ft"
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Report 4000ft",
-        "message": "airborne copied, call you passing 4000ft {Call Sign}"
-      }
+      { "speaker": "TWR", "message": "{Call Sign}, airborne {Time}, report passing 4000ft" },
+      { "speaker": "Pilot", "message": "Airborne copied, call you passing 4000ft {Call Sign}" }
     ],
-    "aircraft": [ "Civil" ]
+    "callsigns": [ "THAI321", "EK584", "BG367", "IGO1113", "QR638", "CX667", "SQ446", "BG602", "BG492", "BG472", "NVQ946", "AWA446", "UBG108" ]
   },
   {
     "phase": "transfer_to_control",
     "category": "Civil Tower",
     "description": "This is a call made when a plane has flown far enough from the airport to be handed off from the airport's tower controller to the regional air traffic controller for the next part of its flight.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Passing 4000ft",
-        "message": "{DHK TWR} {Call Sign}, passing 4000ft"
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Contact control",
-        "message": "{Call Sign}, contact dhaka control 126.7"
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Wilco, contact control",
-        "message": "over to control, good day {Call Sign}"
-      }
+      { "speaker": "Pilot", "message": "{DHK TWR} {Call Sign}, passing 4000ft" },
+      { "speaker": "TWR", "message": "{Call Sign}, contact dhaka control 126.7" },
+      { "speaker": "Pilot", "message": "Over to control, good day {Call Sign}" }
     ],
-    "aircraft": [ "Civil" ]
+    "callsigns": [ "THAI321", "EK584", "BG367", "IGO1113", "QR638", "CX667", "SQ446", "BG602", "BG492", "BG472", "NVQ946", "AWA446", "UBG108" ]
   },
   {
     "phase": "line_up_military",
     "category": "Military Tower",
     "description": "This is a call made by a military pilot to the tower controller to request permission to move onto the runway and prepare for takeoff.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Request line up",
-        "message": "{DHK TWR} {Call Sign}, request line up"
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Line up and wait",
-        "message": "{Call Sign}, line up runway 14, report ready for departure"
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Wilco, line up and wait",
-        "message": "line up runway 14, call you ready for departure {Call Sign}"
-      }
+      { "speaker": "Pilot", "message": "{DHK TWR} {Call Sign}, request line up" },
+      { "speaker": "TWR", "message": "{Call Sign}, line up runway 14, report ready for departure" },
+      { "speaker": "Pilot", "message": "line up runway 14, call you ready for departure {Call Sign}" }
     ],
-    "aircraft": [ "Military Transport", "Military Jet" ]
+    "callsigns": [ "GFN391", "BJR471", "UNC1031", "AJX1483" ]
   },
   {
     "phase": "line_up_for_CCT",
     "category": "Military Tower",
     "description": "A pilot makes this call to the tower controller to get permission to move onto the runway and prepare for takeoff to fly a local circuit (a repeating pattern of flight around the airport).",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Request line up for circuit",
-        "message": "{DHK TWR} {Call Sign}, holding point runway 14, Request line up for cct"
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Line up for circuit",
-        "message": "{Call Sign}, circuite approved line up runway 14, report ready for departure"
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Wilco, line up for circuit",
-        "message": "lining up runway 14 for circuite, call you ready for departure {Call Sign}"
-      }
+      { "speaker": "Pilot", "message": "{DHK TWR} {Call Sign}, approaching holding point runway 14, Request line up for cct" },
+      { "speaker": "TWR", "message": "{Call Sign}, circuite approved line up runway 14, report ready for departure" },
+      { "speaker": "Pilot", "message": "lining up runway 14 for circuite, call you ready for departure {Call Sign}" }
     ],
-    "aircraft": [ "Military Transport", "Military Jet" ]
+    "callsigns": [ "GFN391", "BJR471", "UNC1031", "AJX1483" ]
   },
   {
-    "phase": "line_up_for_TRG",
+    "phase": "line_up_for_TRG_east",
     "category": "Military Tower",
     "description": "A pilot makes this call to the tower controller to get permission to move onto the runway for takeoff, with the intention of flying to a designated training area.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Request line up for training area",
-        "message": "{DHK TWR} {Call Sign}, holding point runway 14, Request line up for training area east"
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Line up for training area",
-        "message": "{Call Sign}, line up runway 14 for training area east, report ready for departure"
-      },  
-      {
-        "speaker": "Pilot",
-        "caption": "Line up for training area",
-        "message": "lining up runway 14 for trg area east, call you ready for departure {Call Sign}"
-      }
+      { "speaker": "Pilot", "message": "{DHK TWR} {Call Sign}, holding point runway 14, Request line up for training area east" },
+      { "speaker": "TWR", "message": "{Call Sign}, line up runway 14 for training area east, report ready for departure" },
+      { "speaker": "Pilot", "message": "lining up runway 14 for trg area east, call you ready for departure {Call Sign}" }
     ],
-    "aircraft": [ "Military Transport", "Military Jet" ]
+    "callsigns": [ "GFN391", "BJR471", "UNC1031", "AJX1483" ]
+  },
+  {
+    "phase": "line_up_for_TRG_north",
+    "category": "Military Tower",
+    "description": "A pilot makes this call to the tower controller to get permission to move onto the runway for takeoff, with the intention of flying to a designated training area.",
+    "calls": [
+      { "speaker": "Pilot", "message": "{DHK TWR} {Call Sign}, holding point runway 14, Request line up for training area north" },
+      { "speaker": "TWR", "message": "{Call Sign}, line up runway 14 for training area north, report ready for departure" },
+      { "speaker": "Pilot", "message": "lining up runway 14 for trg area north, call you ready for departure {Call Sign}" }
+    ],
+    "callsigns": [ "GFN391", "BJR471", "UNC1031", "AJX1483" ]
   },
   {
     "phase": "airborne_mil",
     "category": "Military Tower",
     "description": "A military-specific call from the tower after takeoff, instructing the pilot to report their position relative to a visual waypoint for circuit training.",
     "calls": [
-      {
-        "speaker": "TWR",
-        "caption": "Airborne, report Victor One",
-        "message": "{Call Sign}, airborne {time}, report abeam victor one"
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Report Victor One",
-        "message": "airborne copied, call you abeam victor one {Call Sign}"
-      }
+      { "speaker": "TWR", "message": "{Call Sign}, airborne {Time}, report abeam victor one" },
+      { "speaker": "Pilot", "message": "airborne copied, call you abeam victor one {Call Sign}" }
     ],
-    "aircraft": [ "Military Transport", "Military Jet" ]
+    "callsigns": [ "GFN391", "BJR471", "UNC1031", "AJX1483" ]
   },
   {
     "phase": "transfer_to_training",
     "category": "Military Tower",
     "description": "A military-specific call to hand off the pilot from the tower to the training frequency once they reach a specific waypoint.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Abeam Victor One",
-        "message": "{DHK TWR} {Call Sign}, Abeam victor one, 3000ft"
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Contact training",
-        "message": "{Call Sign}, contact training"
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Over to training",
-        "message": "Over to training, {Call Sign}"
-      }
+      { "speaker": "Pilot", "message": "{DHK TWR} {Call Sign}, Abeam victor one, 3000ft" },
+      { "speaker": "TWR", "message": "{Call Sign}, contact training" },
+      { "speaker": "Pilot", "message": "Over to training, {Call Sign}" }
     ],
-    "aircraft": [ "Military Transport", "Military Jet" ]
+    "callsigns": [ "GFN391", "BJR471", "UNC1031", "AJX1483" ]
   }
 ]

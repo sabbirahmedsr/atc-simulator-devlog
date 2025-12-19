@@ -91,29 +91,6 @@
       "Push to face south"
     ]
   },
-  "TIME": {
-    "description": "This is the time, typically provided in UTC (Coordinated Universal Time) format. For example, a pilot might receive 'TIME 1335' to be aware of a specific time-sensitive instruction.",
-    "prefix": "Startup approved, temp 32, ",
-    "suffix": ", {Call Sign}",
-    "values": [
-      "TIME 1335",
-      "TIME 1454",
-      "TIME 923",
-      "TIME 1037",
-      "TIME 1146"
-    ]
-  },
-  "Arrival Approach": {
-    "description": "This is a report from a pilot confirming their current location and status during the final approach to the airport. For example, 'call you established 12 dme arc' is a common phrase to let the controller know the aircraft is on a specific part of the approach path.",
-    "prefix": "QNH 1013, descending 3000ft, ",
-    "suffix": ", {Call Sign}",
-    "values": [
-      "Call you established outbound of letdown for VDI 14",
-      "Call you established 12 dme arc",
-      "Call you over delta alpha, proceeding outbound of letdown, rwy 14",
-      "Call you victor 1"
-    ]
-  },
   "Number": {
     "description": "This represents a numerical value spoken as a word, often used for stand numbers or other single-digit references.",
     "prefix": "",

@@ -4,936 +4,476 @@
     "category": "Entry Call",
     "description": "The pilot makes an entry call to the tower, reporting their position and altitude.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Crossing Z-2",
-        "message": "{JSR TWR}, {Call Sign}, we are crossing Z-2 maintaining 1500ft."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Report field in sight",
-        "message": "{Call Sign}, {JSR TWR}, maintain 1500ft, report field in sight Rwy-16."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report field in sight",
-        "message": "Maintain 1500ft, call you field in sight Rwy-16, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, we are crossing Z-2 maintaining 1500ft." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, maintain 1500ft, report field in sight Rwy-16." },
+      { "speaker": "Pilot", "message": "Maintain 1500ft, call you field in sight Rwy-16, {Call Sign}." }
     ],
-    "aircraft": [ "Military Trainer", "K8" ]
+    "callsigns": []
   },  
   {
     "phase": "entry_NAV",
     "category": "Entry Call",
     "description": "The pilot makes an entry call for an initial pitch out.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Request initial pitch out",
-        "message": "{JSR TWR}, {Call Sign}, over Z-2 at 1500 feet for initial pitch out."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Maintain altitude, report field in sight",
-        "message": "{Call Sign}, {JSR TWR}, maintain 1500 feet, report field in sight."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report field in sight",
-        "message": "call you field in sight Rwy-16, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, over Z-2 at 1500 feet for initial pitch out." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, maintain 1500 feet, report field in sight." },
+      { "speaker": "Pilot", "message": "call you field in sight Rwy-16, {Call Sign}." }
     ],
-    "aircraft": [ "Military Trainer", "K8" ]
+    "callsigns": []
   },
   {
     "phase": "entry_PFL",
     "category": "Entry Call",
     "description": "The pilot initiates a PFL overhead procedure with a radio check.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Radio Check",
-        "message": "{JSR TWR}, {Call Sign}, radio check."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Loud and clear, report field in sight",
-        "message": "{Call Sign}, {JSR TWR}, loud and clear. Maintain 2000 feet, report field in sight Rwy-16."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report field in sight",
-        "message": "Maintain 2000 feet, call you field in sight Rwy-16, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, radio check." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, loud and clear. Maintain 2000 feet, report field in sight Rwy-16." },
+      { "speaker": "Pilot", "message": "Maintain 2000 feet, call you field in sight Rwy-16, {Call Sign}." }
     ],
-    "aircraft": [ "PT6", "K8" ]
+    "callsigns": []
   },
   {
     "phase": "entry_VOR-Y_military",
     "category": "Entry Call",
     "description": "The pilot makes an entry call for a VOR-Y approach.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Request VOR-Y approach",
-        "message": "{JSR TWR}, {Call Sign}, maintaining 3000 feet for VOR-Y approach."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Maintain altitude, report B-1",
-        "message": "{Call Sign}, {JSR TWR}, maintain 3000 feet, report B-1."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report B-1",
-        "message": "Maintain 3000 feet, call you B-1, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, maintaining 3000 feet for VOR-Y approach." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, maintain 3000 feet, report B-1." },
+      { "speaker": "Pilot", "message": "Maintain 3000 feet, call you B-1, {Call Sign}." }
     ],
-    "aircraft": [ "Military Trainer", "K8" ]
+    "callsigns": []
   },
   {
     "phase": "entry_VOR-Y_civil",
     "category": "Entry Call",
     "description": "The pilot is released from Dhaka Control and requests descent for a VOR-Y approach.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Request descent for VOR-Y",
-        "message": "{JSR TWR}, {Call Sign}, released by DAC control, ready for descend."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Descend, report over VOR",
-        "message": "{Call Sign}, {JSR TWR}, descend to 3000 feet, {QNH 1013}, report over VOR, proceeding outbound of let down Rwy-16."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm descend and report",
-        "message": "Descending to 3000 feet, {QNH 1013}, call you over VOR, proceeding outbound of let down Rwy-16, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, released by DAC control, ready for descend." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, descend to 3000 feet, {QNH 1013}, report over VOR, proceeding outbound of let down Rwy-16." },
+      { "speaker": "Pilot", "message": "Descending to 3000 feet, {QNH 1013}, call you over VOR, proceeding outbound of let down Rwy-16, {Call Sign}." }
     ],
-    "aircraft": [ "Civil" ]
+    "callsigns": []
   },
   {
     "phase": "entry_VOR-Z",
     "category": "Entry Call",
     "description": "The pilot is released from Dhaka Control and requests descent for a VOR-Z approach.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Request descent for VOR-Z",
-        "message": "{JSR TWR}, {Call Sign}, released by DAC Control, ready for descent."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Descend, report 12 DME Arc",
-        "message": "{Call Sign}, {JSR TWR}, descend to 3000 feet, {QNH 1013}, report established 12 DME Arc Rwy-16."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm descend and report",
-        "message": "Descending to 3000 feet, {QNH 1013}, call you established 12 DME Arc Rwy-16, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, released by DAC Control, ready for descent." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, descend to 3000 feet, {QNH 1013}, report established 12 DME Arc Rwy-16." },
+      { "speaker": "Pilot", "message": "Descending to 3000 feet, {QNH 1013}, call you established 12 DME Arc Rwy-16, {Call Sign}." }
     ],
-    "aircraft": [ "Civil", "K8" ]
+    "callsigns": []
   },
   {
     "phase": "entry_RNP",
     "category": "Entry Call",
     "description": "The pilot is released from Dhaka Control and requests descent for an RNP approach.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Request descent for RNP",
-        "message": "{JSR TWR}, {Call Sign}, released by DAC Control, ready for descent."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Descend, report over JERIN",
-        "message": "{Call Sign}, {JSR TWR}, descend to 3000 feet, QNH 1013, report over JERIN."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm descend and report",
-        "message": "Descending to 3000 feet, {QNH 1013}, call you over JERIN, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, released by DAC Control, ready for descent." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, descend to 3000 feet, QNH 1013, report over JERIN." },
+      { "speaker": "Pilot", "message": "Descending to 3000 feet, {QNH 1013}, call you over JERIN, {Call Sign}." }
     ],
-    "aircraft": [ "Civil", "K8" ]
+    "callsigns": []
   },
   {
     "phase": "field_in_sight",
     "category": "GF/Navigation/Initial call",
     "description": "The pilot reports that the airfield is in sight.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Field in sight",
-        "message": "{JSR TWR}, {Call Sign}, field in sight Rwy-16."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Report initial",
-        "message": "{Call Sign}, {JSR TWR}, report initial Rwy-16."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report initial",
-        "message": "call you initial Rwy-16, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, field in sight Rwy-16." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, report initial Rwy-16." },
+      { "speaker": "Pilot", "message": "call you initial Rwy-16, {Call Sign}." }
     ],
-    "aircraft": [ "Military Trainer", "K8" ]
+    "callsigns": []
   },
   {
     "phase": "beginning_of_initial",
     "category": "GF/Navigation/Initial call",
     "description": "The pilot reports the beginning of the initial approach.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Initial",
-        "message": "{Call Sign}, initial Rwy-16."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Report end of initial",
-        "message": "{Call Sign}, {JSR TWR}, report end of initial Rwy-16."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report end of initial",
-        "message": "call you end of initial Rwy-16, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{Call Sign}, initial Rwy-16." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, report end of initial Rwy-16." },
+      { "speaker": "Pilot", "message": "call you end of initial Rwy-16, {Call Sign}." }
     ],
-    "aircraft": [ "Military Trainer", "K8" ]
+    "callsigns": []
   },
   {
     "phase": "end_of_initial",
     "category": "GF/Navigation/Initial call",
     "description": "The pilot reports the end of the initial approach and receives descent instructions.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "End of initial",
-        "message": "{JSR TWR} {Call Sign}, end of initial."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Descend to 1000ft",
-        "message": "{Call Sign}, {JSR TWR}, descent to 1000ft join beginning of downwind."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm descend to 1000ft",
-        "message": "call you downwind, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR} {Call Sign}, end of initial." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, descent to 1000ft join beginning of downwind." },
+      { "speaker": "Pilot", "message": "call you downwind, {Call Sign}." }
     ],
-    "aircraft": [ "Military Trainer", "K8" ]
+    "callsigns": []
   },
   {
     "phase": "field_in_sight_undershoot",
     "category": "PFL Overhead",
     "description": "The pilot reports the field is in sight for the PFL procedure.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Field in sight",
-        "message": "{JSR TWR}, {Call Sign}, field in sight Rwy-16."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Report crossing undershoot",
-        "message": "{Call Sign}, {JSR TWR}, report crossing undershoot Rwy-16."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report undershoot",
-        "message": "call you crossing undershoot Rwy-16, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, field in sight Rwy-16." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, report crossing undershoot Rwy-16." },
+      { "speaker": "Pilot", "message": "call you crossing undershoot Rwy-16, {Call Sign}." }
     ],
-    "aircraft": [ "PT6", "K8" ]
+    "callsigns": []
   },
   {
     "phase": "undershoot",
     "category": "PFL Overhead",
     "description": "The pilot reports crossing the undershoot and receives further instructions.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Crossing undershoot",
-        "message": "{Call Sign}, crossing undershoot Rwy-16."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Report approaching high key",
-        "message": "{Call Sign}, {JSR TWR}, maintain 2000 feet, report approaching high key."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report high key",
-        "message": "Maintain 2000 feet, call you approaching high key, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{Call Sign}, crossing undershoot Rwy-16." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, maintain 2000 feet, report approaching high key." },
+      { "speaker": "Pilot", "message": "Maintain 2000 feet, call you approaching high key, {Call Sign}." }
     ],
-    "aircraft": [ "PT6", "K8" ]
+    "callsigns": []
   },
   {
     "phase": "approaching_high_key",
     "category": "PFL Overhead",
     "description": "The pilot reports approaching the high key position.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Approaching high key",
-        "message": "{JSR TWR}, {Call Sign}, approaching high key."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Report high key",
-        "message": "{Call Sign}, {JSR TWR}, report high key."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report high key",
-        "message": "call you report high key, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, approaching high key." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, report high key." },
+      { "speaker": "Pilot", "message": "call you report high key, {Call Sign}." }
     ],
-    "aircraft": [ "PT6", "K8" ]
+    "callsigns": []
   },
   {
     "phase": "high_key",
     "category": "PFL Overhead",
     "description": "The pilot reports at the high key position.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "High key",
-        "message": "{JSR TWR}, {Call Sign}, high key."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Report low key",
-        "message": "{Call Sign}, {JSR TWR}, report low key."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report low key",
-        "message": "call you low key, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, high key." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, report low key." },
+      { "speaker": "Pilot", "message": "call you low key, {Call Sign}." }
     ],
-    "aircraft": [ "PT6", "K8" ]
+    "aircraft": [ "PT6", "K8" ],
+    "callsigns": []
   },
   {
     "phase": "low_key",
     "category": "PFL Overhead",
     "description": "The pilot reports at the low key position.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Low key",
-        "message": "{JSR TWR}, {Call Sign}, low key."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Report base key",
-        "message": "{Call Sign}, {JSR TWR}, report base key."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report base key",
-        "message": "call you base key, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, low key." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, report base key." },
+      { "speaker": "Pilot", "message": "call you base key, {Call Sign}." }
     ],
-    "aircraft": [ "PT6", "K8" ]
+    "aircraft": [ "PT6", "K8" ],
+    "callsigns": []
   },
   {
     "phase": "base_key",
     "category": "PFL Overhead",
     "description": "The pilot reports at the base key position.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Base key",
-        "message": "{JSR TWR}, {Call Sign}, base key."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Check gears, report final",
-        "message": "{Call Sign}, {JSR TWR}, surface wind 320 at 05 knots, check gears down and locked, report final Rwy-16."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report final",
-        "message": "s/w copied, gears are green, call you final Rwy-16, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, base key." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, surface wind 320 at 05 knots, check gears down and locked, report final Rwy-16." },
+      { "speaker": "Pilot", "message": "s/w copied, gears are green, call you final Rwy-16, {Call Sign}." }
     ],
-    "aircraft": [ "PT6", "K8" ]
+    "aircraft": [ "PT6", "K8" ],
+    "callsigns": []
   },
   {
     "phase": "final_land_pfl",
     "category": "PFL Overhead",
     "description": "The pilot reports on final for a full stop landing during a PFL.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Final for full stop",
-        "message": "{JSR TWR}, {Call Sign}, final, three green, for full stop."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Cleared to land",
-        "message": "{Call Sign}, {JSR TWR}, recheck gears down and locked, surface wind 320 at 05 knots, cleared to land Rwy-16."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm cleared to land",
-        "message": "Cleared to land Rwy-16, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, final, three green, for full stop." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, recheck gears down and locked, surface wind 320 at 05 knots, cleared to land Rwy-16." },
+      { "speaker": "Pilot", "message": "Cleared to land Rwy-16, {Call Sign}." }
     ],
-    "aircraft": [ "PT6", "K8" ]
+    "aircraft": [ "PT6", "K8" ],
+    "callsigns": []
   },{
     "phase": "b1_fix",
     "category": "VOR-Y Military",
     "description": "The pilot reports over the B-1 fix during a VOR-Y approach.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Report B-1 fix",
-        "message": "{JSR TWR}, {Call Sign}, B-1"
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Maintain altitude, report B-2",
-        "message": "{Call Sign}, {JSR TWR}, maintain 3000 feet, report B-2."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report B-2",
-        "message": "call you B-2, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, B-1" },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, maintain 3000 feet, report B-2." },
+      { "speaker": "Pilot", "message": "call you B-2, {Call Sign}." }
     ],
-    "aircraft": [ "Military Trainer", "K8" ]
+    "aircraft": [ "Military Trainer", "K8" ],
+    "callsigns": []
   },
   {
     "phase": "b2_fix",
     "category": "VOR-Y Military",
     "description": "The pilot reports over the B-2 fix and approaching the outbound leg.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Report B-2 fix",
-        "message": "{JSR TWR}, {Call Sign}, B-2, approaching outbound."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Report 6 miles out",
-        "message": "{Call Sign}, {JSR TWR}, report 6 miles out."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report 6 miles out",
-        "message": "call you 6 miles out, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, B-2, approaching outbound." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, report 6 miles out." },
+      { "speaker": "Pilot", "message": "call you 6 miles out, {Call Sign}." }
     ],
-    "aircraft": [ "Military Trainer", "K8" ]
+    "aircraft": [ "Military Trainer", "K8" ],
+    "callsigns": []
   },
   {
     "phase": "6_miles_out",
     "category": "VOR-Y Military",
     "description": "The pilot reports 6 miles out and receives approach clearance.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Report 6 miles out",
-        "message": "{JSR TWR}, {Call Sign}, 6 miles out."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Cleared for approach, descend",
-        "message": "{Call Sign}, {JSR TWR}, cleared for the approach. report turning inbound."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm cleared for approach",
-        "message": "call you turning inbound, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, 6 miles out." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, cleared for the approach. report turning inbound." },
+      { "speaker": "Pilot", "message": "call you turning inbound, {Call Sign}." }
     ],
-    "aircraft": [ "Military Trainer", "K8" ]
+    "aircraft": [ "Military Trainer", "K8" ],
+    "callsigns": []
   },
   {
     "phase": "turning_inbound",
     "category": "VOR-Y Military",
     "description": "The pilot reports turning inbound on the VOR-Y approach.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Turning inbound",
-        "message": "{JSR TWR}, {Call Sign}, turning inbound."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Report steady inbound",
-        "message": "{Call Sign}, {JSR TWR}, report steady inbound."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report steady inbound",
-        "message": "call you steady inbound, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, turning inbound." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, report steady inbound." },
+      { "speaker": "Pilot", "message": "call you steady inbound, {Call Sign}." }
     ],
-    "aircraft": [ "Military Trainer", "K8" ]
+    "aircraft": [ "Military Trainer", "K8" ],
+    "callsigns": []
   },
   {
     "phase": "steady_inbound",
     "category": "VOR-Y Military",
     "description": "The pilot reports steady on the inbound course.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Steady inbound",
-        "message": "{JSR TWR}, {Call Sign}, steady inbound."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Descend to minima, report runway",
-        "message": "{Call Sign}, {JSR TWR}, descend to minima, report runway in sight."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm descend to minima",
-        "message": "Descending to minima, call you runway in sight, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, steady inbound." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, descend to minima, report runway in sight." },
+      { "speaker": "Pilot", "message": "Descending to minima, call you runway in sight, {Call Sign}." }
     ],
-    "aircraft": [ "Military Trainer", "K8" ]
+    "aircraft": [ "Military Trainer", "K8" ],
+    "callsigns": []
   },
   {
     "phase": "runway_in_sight",
     "category": "VOR-Y Military",
     "description": "The pilot reports the runway in sight and receives clearance for landing.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Runway in sight",
-        "message": "{JSR TWR}, {Call Sign}, runway in sight."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Cleared for landing",
-        "message": "{Call Sign}, {JSR TWR}, check gears down and locked, surface wind 180 at 05 knots, cleared to land Rwy-16."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm cleared to land",
-        "message": "s/w copied, clear to land Rwy-16, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, runway in sight." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, check gears down and locked, surface wind 180 at 05 knots, cleared to land Rwy-16." },
+      { "speaker": "Pilot", "message": "s/w copied, clear to land Rwy-16, {Call Sign}." }
     ],
-    "aircraft": [ "Military Trainer", "K8" ]
+    "aircraft": [ "Military Trainer", "K8" ],
+    "callsigns": []
   },
   {
     "phase": "over_vor",
     "category": "VOR-Y Civil",
     "description": "The pilot reports over the VOR and proceeding outbound for a civil VOR-Y approach.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Over VOR proceeding outbound",
-        "message": "{JSR TWR}, {Call Sign}, over VOR proceeding outbound of letdown."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Cleared for approach, descend",
-        "message": "{Call Sign}, {JSR TWR}, cleared for the approach, descend to 1700 feet, report turning inbound."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm approach and descend",
-        "message": "call you turning inbound, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, over VOR proceeding outbound of letdown." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, cleared for the approach, descend to 1700 feet, report turning inbound." },
+      { "speaker": "Pilot", "message": "call you turning inbound, {Call Sign}." }
     ],
-    "aircraft": [ "Civil" ]
+    "aircraft": [ "Civil" ],
+    "callsigns": []
   },
   {
     "phase": "turning_inbound",
     "category": "VOR-Y Civil",
     "description": "The pilot reports turning inbound during a civil VOR-Y approach.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Turning inbound",
-        "message": "{JSR TWR}, {Call Sign}, turning inbound."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Report established inbound",
-        "message": "{Call Sign}, {JSR TWR}, report established inbound."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report established",
-        "message": "call you established inbound, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, turning inbound." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, report established inbound." },
+      { "speaker": "Pilot", "message": "call you established inbound, {Call Sign}." }
     ],
-    "aircraft": [ "Civil" ]
+    "aircraft": [ "Civil" ],
+    "callsigns": []
   },
   {
     "phase": "established_inbound",
     "category": "VOR-Y Civil",
     "description": "The pilot reports established on the inbound course for a civil VOR-Y approach.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Established inbound",
-        "message": "{JSR TWR}, {Call Sign}, established inbound."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Descend to minima, report runway",
-        "message": "{Call Sign}, {JSR TWR}, descend to your minima, report runway in sight."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm descend and report",
-        "message": "Descending to minima, call you runway in sight, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, established inbound." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, descend to your minima, report runway in sight." },
+      { "speaker": "Pilot", "message": "Descending to minima, call you runway in sight, {Call Sign}." }
     ],
-    "aircraft": [ "Civil" ]
+    "aircraft": [ "Civil" ],
+    "callsigns": []
   },
   {
     "phase": "runway_in_sight",
     "category": "VOR-Y Civil",
     "description": "The pilot reports the runway in sight during a civil VOR-Y approach and is cleared to land.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Runway in sight",
-        "message": "{JSR TWR}, {Call Sign}, runway in sight."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Cleared to land",
-        "message": "{Call Sign}, {JSR TWR}, check gears down and locked, surface wind 280 at 05 knots, Rwy-16, cleared to land."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm cleared to land",
-        "message": "s/w copied, clear to land Rwy-16, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, runway in sight." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, check gears down and locked, surface wind 280 at 05 knots, Rwy-16, cleared to land." },
+      { "speaker": "Pilot", "message": "s/w copied, clear to land Rwy-16, {Call Sign}." }
     ],
-    "aircraft": [ "Civil" ]
+    "aircraft": [ "Civil" ],
+    "callsigns": []
   },
   {
     "phase": "12_dme_arc",
     "category": "VOR Z/Arc",
     "description": "The pilot reports established on the 12 DME Arc.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Established 12 DME Arc",
-        "message": "{Call Sign}, established 12 DME Arc."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Cleared for approach, report radial",
-        "message": "{Call Sign}, cleared for the approach. Descend to 1700 feet, report crossing radial 300."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm cleared for approach",
-        "message": "call you crossing radial 300, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{Call Sign}, established 12 DME Arc." },
+      { "speaker": "TWR", "message": "{Call Sign}, cleared for the approach. Descend to 1700 feet, report crossing radial 300." },
+      { "speaker": "Pilot", "message": "call you crossing radial 300, {Call Sign}." }
     ],
-    "aircraft": [ "Civil", "K8" ]
+    "aircraft": [ "Civil", "K8" ],
+    "callsigns": []
   },
   {
     "phase": "crossing_radial",
     "category": "VOR Z/Arc",
     "description": "The pilot reports crossing the specified radial.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Crossing radial 300",
-        "message": "{Call Sign}, crossing radial 300."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Report turning inbound",
-        "message": "{Call Sign}, report turning inbound Rwy-16."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report turning inbound",
-        "message": "call you turning inbound Rwy-16, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{Call Sign}, crossing radial 300." },
+      { "speaker": "TWR", "message": "{Call Sign}, report turning inbound Rwy-16." },
+      { "speaker": "Pilot", "message": "call you turning inbound Rwy-16, {Call Sign}." }
     ],
-    "aircraft": [ "Civil", "K8" ]
+    "aircraft": [ "Civil", "K8" ],
+    "callsigns": []
   },
   {
     "phase": "turning_inbound",
     "category": "VOR Z/Arc",
     "description": "The pilot reports turning inbound and receives descent instructions.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Turning inbound",
-        "message": "{Call Sign}, turning inbound."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Descend to minima",
-        "message": "{Call Sign}, descend to minima, report runway in sight."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm descend to minima",
-        "message": "Descending to minima, call you runway in sight, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{Call Sign}, turning inbound." },
+      { "speaker": "TWR", "message": "{Call Sign}, descend to minima, report runway in sight." },
+      { "speaker": "Pilot", "message": "Descending to minima, call you runway in sight, {Call Sign}." }
     ],
-    "aircraft": [ "Civil", "K8" ]
+    "aircraft": [ "Civil", "K8" ],
+    "callsigns": []
   },
   {
     "phase": "runway_in_sight",
     "category": "VOR Z/Arc",
     "description": "The pilot reports the runway in sight and receives landing clearance.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Runway in sight",
-        "message": "{Call Sign}, runway in sight."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Cleared to land",
-        "message": "{Call Sign}, check gears down and locked, wind calm, Rwy-16, cleared to land."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm cleared to land",
-        "message": "s/w copied, clear to land Rwy-16, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{Call Sign}, runway in sight." },
+      { "speaker": "TWR", "message": "{Call Sign}, check gears down and locked, wind calm, Rwy-16, cleared to land." },
+      { "speaker": "Pilot", "message": "s/w copied, clear to land Rwy-16, {Call Sign}." }
     ],
-    "aircraft": [ "Civil", "K8" ]
+    "aircraft": [ "Civil", "K8" ],
+    "callsigns": []
   },
   {
     "phase": "over_jerin",
     "category": "RNP/GPS Approach",
     "description": "The pilot reports over the JERIN waypoint.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Over JERIN",
-        "message": "{Call Sign}, over JERIN."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Cleared for approach, report JR161",
-        "message": "{Call Sign}, cleared for the approach. Descend to 1700 feet, report over JR161."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm cleared for approach",
-        "message": "call you over JR161, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{Call Sign}, over JERIN." },
+      { "speaker": "TWR", "message": "{Call Sign}, cleared for the approach. Descend to 1700 feet, report over JR161." },
+      { "speaker": "Pilot", "message": "call you over JR161, {Call Sign}." }
     ],
-    "aircraft": [ "Civil", "K8" ]
+    "aircraft": [ "Civil", "K8" ],
+    "callsigns": []
   },
   {
     "phase": "over_jr161",
     "category": "RNP/GPS Approach",
     "description": "The pilot reports over the JR161 waypoint.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Over JR161",
-        "message": "{Call Sign}, over JR161."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Report over JR160",
-        "message": "{Call Sign}, report over JR160."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report over JR160",
-        "message": "call you over JR160, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{Call Sign}, over JR161." },
+      { "speaker": "TWR", "message": "{Call Sign}, report over JR160." },
+      { "speaker": "Pilot", "message": "call you over JR160, {Call Sign}." }
     ],
-    "aircraft": [ "Civil", "K8" ]
+    "aircraft": [ "Civil", "K8" ],
+    "callsigns": []
   },
   {
     "phase": "over_jr160",
     "category": "RNP/GPS Approach",
     "description": "The pilot reports over the JR160 waypoint and receives landing clearance.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Over JR160",
-        "message": "{Call Sign}, over JR160."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Cleared to land",
-        "message": "{Call Sign}, check gears down and locked, wind calm, Rwy-16, cleared to land."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm cleared to land",
-        "message": "s/w copied, clear to land Rwy-16, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{Call Sign}, over JR160." },
+      { "speaker": "TWR", "message": "{Call Sign}, check gears down and locked, wind calm, Rwy-16, cleared to land." },
+      { "speaker": "Pilot", "message": "s/w copied, clear to land Rwy-16, {Call Sign}." }
     ],
-    "aircraft": [ "Civil", "K8" ]
+    "aircraft": [ "Civil", "K8" ],
+    "callsigns": []
   },
     {
     "phase": "runway_vacate",
     "category": "Landing Call",
     "description": "After landing, the tower provides taxi instructions to the pilot.",
     "calls": [
-      {
-        "speaker": "TWR",
-        "caption": "Taxi to ground",
-        "message": "{Call Sign}, {JSR TWR}, {taxi via C} after vacating contact ground 121.8."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm taxi to ground",
-        "message": "{Taxi via C}, after vacating contact ground 121.8, {Call Sign}."
-      }
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, {taxi via C} after vacating contact ground 121.8." },
+      { "speaker": "Pilot", "message": "{Taxi via C}, after vacating contact ground 121.8, {Call Sign}." }
     ],
-    "aircraft": [ "Civil", "Military Trainer", "K8" ]
+    "aircraft": [ "Civil", "Military Trainer", "K8" ],
+    "callsigns": []
   },
   {
     "phase": "taxi_to_tarmac",
     "category": "Landing Call",
     "description": "The pilot contacts ground control after landing for taxi instructions to the tarmac.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Contacting Ground",
-        "message": "{JSR GRD}, {Call Sign}, back to your frequency."
-      },
-      {
-        "speaker": "GRD",
-        "caption": "Taxi to tarmac",
-        "message": "{Call Sign}, {JSR GRD}, {taxi via C-P-A} to tarmac."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm taxi to tarmac",
-        "message": "{taxi via C-P-A} to tarmac, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR GRD}, {Call Sign}, back to your frequency." },
+      { "speaker": "GRD", "message": "{Call Sign}, {JSR GRD}, {taxi via C-P-A} to tarmac." },
+      { "speaker": "Pilot", "message": "{taxi via C-P-A} to tarmac, {Call Sign}." }
     ],
-    "aircraft": [ "Civil", "Military Trainer", "K8" ]
+    "aircraft": [ "Civil", "Military Trainer", "K8" ],
+    "callsigns": []
   },
   {
     "phase": "entry_5mw",
     "category": "Helicopter Arrival",
     "description": "The pilot, operating 5 miles west, requests to rejoin the circuit for landing.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Request to join circuit",
-        "message": "{JSR TWR}, {Call Sign}, operating 5 miles west, request to join the circuit for landing."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Report downwind",
-        "message": "{Call Sign}, {JSR TWR}, report downwind Rwy-16."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report downwind",
-        "message": "call you downwind Rwy-16, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, operating 5 miles west, request to join the circuit for landing." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, report downwind Rwy-16." },
+      { "speaker": "Pilot", "message": "call you downwind Rwy-16, {Call Sign}." }
     ],
-    "aircraft": [ "Helicopter" ]
+    "aircraft": [ "Helicopter" ],
+    "callsigns": []
   },
   {
     "phase": "downwind",
     "category": "Helicopter Arrival",
     "description": "The helicopter pilot reports on the downwind leg.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Downwind",
-        "message": "{JSR TWR}, {Call Sign}, downwind."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Report final for R-P",
-        "message": "{Call Sign}, {JSR TWR}, report final for R-P."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report final",
-        "message": "call you final for R-P, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, downwind." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, report final for R-P." },
+      { "speaker": "Pilot", "message": "call you final for R-P, {Call Sign}." }
     ],
-    "aircraft": [ "Helicopter" ]
+    "aircraft": [ "Helicopter" ],
+    "callsigns": []
   },
   {
     "phase": "final",
     "category": "Helicopter Arrival",
     "description": "The helicopter pilot reports on final for R-P and receives landing clearance.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Final for R-P",
-        "message": "{JSR TWR}, {Call Sign}, final for R-P."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Cleared to land",
-        "message": "{Call Sign}, {JSR TWR}, surface wind 180 at 05 knots, cleared to land at R-P."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm cleared to land",
-        "message": "s/w copied, cleared to land, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, final for R-P." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, surface wind 180 at 05 knots, cleared to land at R-P." },
+      { "speaker": "Pilot", "message": "s/w copied, cleared to land, {Call Sign}." }
     ],
-    "aircraft": [ "Helicopter" ]
+    "aircraft": [ "Helicopter" ],
+    "callsigns": []
   },
   {
     "phase": "runway_vacate",
     "category": "Helicopter Arrival",
     "description": "After landing, the pilot requests dispersal and receives taxi instructions.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Request dispersal",
-        "message": "{JSR TWR}, {Call Sign}, request dispersal."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Air taxi, contact ground",
-        "message": "{Call Sign}, {JSR TWR}, air taxi via Q, contact ground when clear."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm air taxi",
-        "message": "Air taxi via Q, will contact ground when clear, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, request dispersal." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, air taxi via Q, contact ground when clear." },
+      { "speaker": "Pilot", "message": "Air taxi via Q, will contact ground when clear, {Call Sign}." }
     ],
-    "aircraft": [ "Helicopter" ]
+    "aircraft": [ "Helicopter" ],
+    "callsigns": []
   },
   {
     "phase": "taxi_to_tarmac",
     "category": "Helicopter Arrival",
     "description": "The pilot contacts ground for taxi instructions to the helipad.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Contacting Ground",
-        "message": "{JSR GRD}, {Call Sign}, back to your frequency."
-      },
-      {
-        "speaker": "GRD",
-        "caption": "Air taxi to helipad",
-        "message": "{Call Sign}, {JSR GRD}, air taxi via Q to the helipad."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm air taxi to helipad",
-        "message": "Q to helipad copied, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR GRD}, {Call Sign}, back to your frequency." },
+      { "speaker": "GRD", "message": "{Call Sign}, {JSR GRD}, air taxi via Q to the helipad." },
+      { "speaker": "Pilot", "message": "Q to helipad copied, {Call Sign}." }
     ],
-    "aircraft": [ "Helicopter" ]
+    "aircraft": [ "Helicopter" ],
+    "callsigns": []
   }
 ]

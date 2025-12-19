@@ -29,22 +29,22 @@
             <button class="filter-btn" data-filter-group="icao" data-filter-value="vgjr">VGJR</button>
         </div>
         <div class="filter-group">
-            <label for="aircraft-filter">Aircraft:</label>
+            <label for="callsign-filter">Call Sign:</label>
             <div class="aircraft-select-wrapper">
-                <select id="aircraft-filter">
+                <select id="callsign-filter">
                     <option value="all">All</option>
                 </select>
             </div>
-        </div>
-        <div class="filter-group">
-            <label for="callsign-filter">Call Sign:</label>
-            <input type="text" id="callsign-filter" value="call-sign">
         </div>
         <div class="filter-group">
             <label>Type:</label>
             <button class="filter-btn active" data-filter-group="type" data-filter-value="arrival">Arrival</button>
             <button class="filter-btn" data-filter-group="type" data-filter-value="departure">Departure</button>
             <button class="filter-btn" data-filter-group="type" data-filter-value="circuit">Circuit</button>
+        </div>
+        <div class="filter-group">
+            <label>View:</label>
+            <button id="toggle-callsigns-btn" class="filter-btn" title="Show/Hide Call Signs beside cards">Show Call Signs</button>
         </div>
     </div>
 
@@ -55,11 +55,14 @@
     <!-- Help/Instructions Popup -->
     <div class="popup-overlay" id="help-popup">
         <div class="popup-content">
-            <h3>Voice Recording Guidelines</h3>
+            <h3>Voice-Over Recording Instructions</h3>
             <ul class="instruction-list">
-                <li><strong>Pause for Variables:</strong> Pause briefly before and after reading any text in <code>{curly brackets}</code>. This helps the audio editor splice the recordings cleanly.</li>
-                <li><strong>Standalone Delivery:</strong> Read each line as a separate, new radio call. Avoid a conversational flow and maintain a formal tone.</li>
-                <li><strong>Enunciate Clearly:</strong> Pronounce every word distinctly. Pay special attention to the first and last word of each phrase to ensure the full instruction is understood.</li>
+                <li><strong>Recording Discipline:</strong> Before starting a new set of RT calls (i.e., a new card), leave at least <strong>5 seconds of silence</strong>. This creates clean separation between different scenarios.</li>
+                <li><strong>Standalone Delivery:</strong> Treat each line as a completely fresh and separate radio call. Avoid any conversational flow or carrying the tone over from the previous line. Start fresh every time.</li>
+                <li><strong>Pause for Variables:</strong> For any text inside <code>{curly brackets}</code>, you must pause for about <strong>half a second (0.5s)</strong> both before and after reading the variable text. This is critical for editing.</li>
+                <li><strong>Record the Full Line:</strong> When a line contains a variable (e.g., <code>{QNH 1013}</code>), you must record the <strong>entire sentence</strong>, not just the variable part. This applies to both the main RT calls and the parameter lists.</li>
+                <li><strong>Clarity and Consistency:</strong> Enunciate every word clearly, especially the first and last words of a phrase. Maintain a consistent volume and a formal, professional tone throughout the entire recording session.</li>
+                <li><strong>Recording Individual Digits:</strong> For parameters like <code>Time</code> or <code>Stand Number</code>, you must record each digit from <strong>0 to 9</strong> as a separate, standalone audio file. Say "Zero," "One," "Two," etc., with a clean start and end, no conversational flow. This allows us to create any number dynamically.</li>
             </ul>
         </div>
     </div>
@@ -80,16 +83,17 @@
     <!-- Container for printing parameters, hidden by default -->
     <div id="print-params-container"></div>
 
+    <!-- Container for printing instructions, hidden by default -->
+    <div id="print-instructions-container"></div>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const mainTitle = document.querySelector('h1');
             const container = document.getElementById('rt-call-container');
-            const aircraftFilter = document.getElementById('aircraft-filter');
             const callsignFilter = document.getElementById('callsign-filter');
             let allRtCallData = []; // To store all fetched data
             let allParameters = {}; // To store parameter data
-            let aircraftCategoryMap = {}; // To store the new aircraft category data
 
             async function fetchAllData() {
                 const urlParams = new URLSearchParams(window.location.search);
@@ -134,17 +138,11 @@
                         .then(res => res.ok ? res.json() : {})
                         .catch(() => ({}));
 
-                    // Fetch the new aircraft category map
-                    const aircraftMapPromise = fetch(`../data/aircraft-category-map.json`)
-                        .then(res => res.ok ? res.json() : {})
-                        .catch(() => ({}));
-
-                    const [results, paramsData, aircraftMapData] = await Promise.all([Promise.all(filePromises), paramsPromise, aircraftMapPromise]);
+                    const [results, paramsData] = await Promise.all([Promise.all(filePromises), paramsPromise]);
                     
                     allRtCallData = results.flat(); // Flatten the array of arrays
                     allParameters = paramsData; // Store parameters
-                    aircraftCategoryMap = aircraftMapData; // Store aircraft category map
-                    populateAircraftFilter();
+                    populateCallsignFilter();
                     renderCalls();
                 } catch (error) {
                     console.error('Error processing RT call data:', error);
@@ -152,54 +150,48 @@
                 }
             }
 
-            function populateAircraftFilter() {
+            function populateCallsignFilter() {
                 const activeIcao = document.querySelector('.filter-btn[data-filter-group="icao"].active').dataset.filterValue;
+                const callsignSelect = document.getElementById('callsign-filter');
 
-                const aircraftDataByIcao = {
+                const callsignDataByIcao = {
                     vghs: {
-                        "CIVIL": ["B777", "B787", "A320", "A330", "Dash8Q", "ATR72"],
-                        "Military Jet": ["MIG29", "F7"],
-                        "Military Transport": ["AN32", "C130"],
-                        "Helicopter": ["R66"]
+                        "Civil International": ["THAI321", "EK584", "IGO1113", "BG367", "QR638", "CX667", "SQ446"],
+                        "Civil Domestic": [ "BG602", "BG492", "BG472", "NVQ946", "AWA446", "UBG108" ],
+                        "Military Transport": ["UNC1031", "AJX1483", ],
+                        "Military Jet": ["GFN391", "BJR471"],
+                        "Helicopter": ["S2AGP"]
                     },
                     vgjr: {
-                        "CIVIL": ["ATR72"],
-                        "Military Jet": ["K8"],
-                        "Military Trainer": ["PT6", "GROB120"],
-                        "Helicopter": ["BELL206", "AW119"]
+                        "Test Calls": ["TEST01", "TEST02", "TEST03", "TRAINER01"]
                     }
                 };
 
-                aircraftFilter.innerHTML = '<option value="all">All</option>'; // Reset
 
-                const aircraftForIcao = aircraftDataByIcao[activeIcao];
+                callsignSelect.innerHTML = '<option value="all">All</option>'; // Reset with "All" option
 
-                if (aircraftForIcao) {
-                    for (const category in aircraftForIcao) {
-                        const optgroup = document.createElement('optgroup');
-                        optgroup.label = category;
+                const callsignGroups = callsignDataByIcao[activeIcao] || {};
 
-                        aircraftForIcao[category].forEach(aircraftModel => {
-                            const option = document.createElement('option');
-                            option.value = aircraftModel;
-                            option.textContent = aircraftModel;
-                            optgroup.appendChild(option);
-                        });
+                for (const groupName in callsignGroups) {
+                    const optgroup = document.createElement('optgroup');
+                    optgroup.label = groupName;
 
-                        aircraftFilter.appendChild(optgroup);
-                    }
-                } else {
-                    // Fallback for old data structure if needed
-                    const allAircraft = new Set(allRtCallData.flatMap(call => call.aircraft || []));
-                    [...allAircraft].sort().forEach(ac => aircraftFilter.add(new Option(ac, ac)));
+                    callsignGroups[groupName].forEach(callsign => {
+                        const option = document.createElement('option');
+                        option.value = callsign;
+                        option.textContent = callsign;
+                        optgroup.appendChild(option);
+                    });
+
+                    callsignSelect.appendChild(optgroup);
                 }
             }
 
-            function formatMessageWithVariables(message) {
-                const activeCallsign = callsignFilter.value || 'call-sign';
+            function formatMessageWithVariables(message, activeCallsign) {
+                // The activeCallsign here refers to the *selected filter value*, not necessarily the displayed one.
                 // A list of variables that should have the subtle style.
-                // We check for "Call Sign" and common ATC identifiers.
-                const subtleVariables = ["Call Sign", "DHK TWR", "DHK GRD", "DHK GND", "JSR TWR", "JSR GRD"];
+                // We include "call-sign" as it's the generic placeholder when "All" is selected.
+                const subtleVariables = ["Call Sign", "call-sign", "DHK TWR", "DHK GRD", "DHK GND", "JSR TWR", "JSR GRD"];
 
                 return message.replace(/{([^}]+)}/g, (match, variableName) => {
                     // Trim the variable name to be safe
@@ -221,44 +213,29 @@
 
                 const activeType = document.querySelector('.filter-btn[data-filter-group="type"].active').dataset.filterValue;
                 const activeIcao = document.querySelector('.filter-btn[data-filter-group="icao"].active').dataset.filterValue;
-                const activeAircraft = aircraftFilter.value;
-                const activeCallsign = callsignFilter.value || 'call-sign'; // Use default if empty
-
-                // Map specific aircraft models to their general categories
-                const aircraftToCategoryMap = {
-                    // VGHS
-                    "B777": "Civil", "B787": "Civil", "A320": "Civil", "A330": "Civil", "Dash8Q": "Civil", "ATR72": "Civil",
-                    "MIG29": "Military Jet", "F7": "Military Jet",
-                    "AN32": "Military Transport", "C130": "Military Transport",
-                    "R66": "Helicopter",
-                    // VGJR
-                    "K8": "Military Jet",
-                    "PT6": "Military Trainer", "GROB120": "Military Trainer",
-                    "BELL206": "Helicopter", "AW119": "Helicopter"
-                };
+                const activeCallsign = callsignFilter.value;
+                const showCallsigns = document.getElementById('toggle-callsigns-btn').classList.contains('active');
 
                 // --- Update Main Title ---
-                const displayAircraft = activeAircraft === 'all' ? 'All Aircraft' : activeAircraft.toUpperCase();
                 const displayType = activeType.charAt(0).toUpperCase() + activeType.slice(1);
-                mainTitle.textContent = `${activeIcao.toUpperCase()} - ${displayAircraft} - {${activeCallsign}} - ${displayType} - RT CALL`;
+                const callsignForTitle = (activeCallsign === 'all') ? 'call-sign' : activeCallsign;
+                mainTitle.textContent = `${activeIcao.toUpperCase()} - {${callsignForTitle}} - ${displayType} - RT CALL`;
                 // --- End Title Update ---
 
                 const baseFilteredData = allRtCallData.filter(data => {
                     const typeMatch = data.type === activeType;
                     const icaoMatch = true; // ICAO is filtered by folder, so this is always true here.
 
-                    // --- New Aircraft Filtering Logic ---
-                    let aircraftMatch = false;
-                    if (activeAircraft === 'all') {
-                        aircraftMatch = true;
-                    } else if (data.aircraft) {
-                        // Get the category for the selected aircraft (e.g., "B777" -> "Civil")
-                        const categoryOfSelectedAircraft = aircraftToCategoryMap[activeAircraft];
-                        // Match if the call's aircraft list includes the specific model OR its general category
-                        aircraftMatch = data.aircraft.includes(activeAircraft) || (categoryOfSelectedAircraft && data.aircraft.includes(categoryOfSelectedAircraft));
+                    // --- New Callsign Filtering Logic ---
+                    let callsignMatch = false;
+                    if (activeCallsign === 'all') {
+                        callsignMatch = true; // Always show if "All" is selected.
+                    } else {
+                        // Only show if the call's list includes the active callsign.
+                        callsignMatch = data.callsigns && data.callsigns.includes(activeCallsign);
                     }
 
-                    return typeMatch && icaoMatch && aircraftMatch;
+                    return typeMatch && icaoMatch && callsignMatch;
                 });
 
                 // Group the filtered data by category
@@ -288,6 +265,9 @@
                 }
 
                 const createCard = (data, index) => {
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'rt-card-wrapper';
+
                     const card = document.createElement('div');
                     card.className = 'rt-card';
 
@@ -301,10 +281,12 @@
                         } else if (activeIcao === 'vgjr') {
                             message = message.replace(/{GRD}|{GND}/g, '{JSR GRD}').replace(/{TWR}/g, '{JSR TWR}');
                         }
-                        // First, replace the generic placeholder with the active callsign.
-                        message = message.replace(genericCallsignRegex, `{${activeCallsign}}`);
+                        // Replace the generic placeholder with the active callsign.
+                        // If 'all' is selected, use a generic placeholder text.
+                        const callsignToDisplay = (activeCallsign === 'all') ? 'call-sign' : activeCallsign;
+                        message = message.replace(genericCallsignRegex, `{${callsignToDisplay}}`); // This handles both {Call Sign} and {call-sign}
 
-                        return { speaker, message: formatMessageWithVariables(message) };
+                        return { speaker, message: formatMessageWithVariables(message, activeCallsign) };
                     });
 
                     const dialogueRows = processedCalls.map(call => `
@@ -314,36 +296,12 @@
                         </div>
                     `).join('');
 
-
-                    // --- New logic for generating aircraft tags in popup ---
-                    const aircraftTagsHtml = data.aircraft ? data.aircraft.map(ac => {
-                        const models = aircraftCategoryMap[activeIcao]?.[ac] || aircraftCategoryMap[activeIcao]?.[ac.toUpperCase()];
-                        if (models && models.length > 0) {
-                            // If it's a category with models, show them
-                            return `<span class="popup-aircraft-tag">${ac} <span class="popup-aircraft-models">(${models.join(', ')})</span></span>`;
-                        } else {
-                            // Otherwise, just show the aircraft/category name
-                            return `<span class="popup-aircraft-tag">${ac}</span>`;
-                        }
-                    }).join('') : '<span class="popup-aircraft-tag na">N/A</span>';
-                    // --- End of new logic ---
-
-                    const aircraftPopupId = `aircraft-popup-${index}`;
                     const descPopupId = `desc-popup-${index}`;
-                    // --- Create Aircraft Symbols Dynamically ---
-                    const getAircraftSymbol = (name) => {
-                        if (!name) return '';
-                        // For specific models that shouldn't be shortened
-                        if (["PT6", "K8", "F7", "R66", "AN32", "C130", "MIG29", "BELL206", "AW119", "GROB120"].includes(name.toUpperCase())) {
-                            return name;
-                        }
-                        // For multi-word names like "Military Jet" -> "MJ"
-                        if (name.includes(' ')) {
-                            return name.split(' ').map(word => word[0]).join('').toUpperCase();
-                        }
-                        // For single-word names like "Civil" -> "C"
-                        return name[0].toUpperCase();
-                    };
+
+                    const callsignsHtml = data.callsigns && data.callsigns.length > 0
+                        ? data.callsigns.map(cs => `<span class="popup-callsign-tag">${cs}</span>`).join('')
+                        : '<span class="popup-callsign-tag na">Not yet assigned</span>';
+
 
                     card.innerHTML = `
                         <div class="details-btn-container">
@@ -351,25 +309,32 @@
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </button>
                         </div>
-                        <div class="phase-column">
+                        <div class="phase-column" data-popup-target="#${descPopupId}" title="View Details">
                             <h2>${(data.phase || 'N/A').replace(/_/g, ' ')}</h2>
                         </div>
                         <div class="dialogue-column">${dialogueRows}</div>
-                        <div class="aircraft-symbols-top-container">
-                             ${(data.aircraft || []).map(ac => `<span class="aircraft-symbol" title="${ac}">${getAircraftSymbol(ac)}</span>`).join('')}
-                        </div>
                         <div class="popup-overlay" id="${descPopupId}">
                             <div class="popup-content">
                                 <h3 style="text-transform: capitalize;">${(data.phase || 'Description').replace(/_/g, ' ')}</h3>
                                 <p>${data.description || 'No description available.'}</p>
-                                <h3 class="popup-section-header">Applicable Aircraft</h3>
-                                <div class="popup-aircraft-container">
-                                    ${aircraftTagsHtml}
+                                <h3 class="popup-section-header">Applicable Call Signs</h3>
+                                <div class="popup-callsigns-container">
+                                    ${callsignsHtml}
                                 </div>
                             </div>
                         </div>
                     `;
-                    container.appendChild(card);
+                    
+                    wrapper.appendChild(card);
+
+                    if (showCallsigns && data.callsigns && data.callsigns.length > 0) {
+                        const sidePanel = document.createElement('div');
+                        sidePanel.className = 'rt-side-panel';
+                        sidePanel.innerHTML = data.callsigns.map(cs => `<div>${cs}</div>`).join('');
+                        wrapper.appendChild(sidePanel);
+                    }
+
+                    container.appendChild(wrapper);
                 };
 
                 let globalIndex = 0;
@@ -391,40 +356,19 @@
                 printContainer.innerHTML = ''; // Clear previous content
 
                 const activeIcao = document.querySelector('.filter-btn[data-filter-group="icao"].active').dataset.filterValue;
-                const activeAircraft = aircraftFilter.value;
                 const activeCallsign = callsignFilter.value || 'call-sign';
-
-                // This map needs to be available here as well for the print filter.
-                const aircraftToCategoryMap = {
-                    // VGHS
-                    "B777": "Civil", "B787": "Civil", "A320": "Civil", "A330": "Civil", "Dash8Q": "Civil", "ATR72": "Civil",
-                    "MIG29": "Military Jet", "F7": "Military Jet",
-                    "AN32": "Military Transport", "C130": "Military Transport",
-                    "R66": "Helicopter",
-                    // VGJR
-                    "K8": "Military Jet",
-                    "PT6": "Military Trainer", "GROB120": "Military Trainer",
-                    "BELL206": "Helicopter", "AW119": "Helicopter"
-                };
-                // Add VGJR's ATR72 to the map
-                if (activeIcao === 'vgjr') aircraftToCategoryMap["ATR72"] = "Civil";
 
                 const callTypesToPrint = ['arrival', 'departure', 'circuit'];
 
                 callTypesToPrint.forEach(callType => {
+                    const callsignForTitle = (activeCallsign === 'all') ? 'call-sign' : activeCallsign;
                     const typeFilteredData = allRtCallData.filter(data => {
                         const typeMatch = data.type === callType;
-                        // We still respect the ICAO (folder) and Aircraft filters for the print version
-                        let aircraftMatch = false;
-                        if (activeAircraft === 'all') {
-                            aircraftMatch = true;
-                        } else if (data.aircraft) {
-                            const categoryOfSelectedAircraft = aircraftToCategoryMap[activeAircraft];
-                            aircraftMatch = data.aircraft.includes(activeAircraft) || 
-                                            (categoryOfSelectedAircraft && data.aircraft.includes(categoryOfSelectedAircraft));
+                        let callsignMatch = true;
+                        if (activeCallsign !== 'all') {
+                            callsignMatch = data.callsigns && data.callsigns.includes(activeCallsign);
                         }
-
-                        return typeMatch && aircraftMatch;
+                        return typeMatch && callsignMatch;
                     });
 
                     if (typeFilteredData.length > 0) {
@@ -432,9 +376,8 @@
                         const typeHeader = document.createElement('h1');
                         
                         // --- Create dynamic page title for print ---
-                        const displayAircraft = activeAircraft === 'all' ? 'All Aircraft' : activeAircraft.toUpperCase();
                         const displayType = callType.charAt(0).toUpperCase() + callType.slice(1);
-                        const pageTitle = `${activeIcao.toUpperCase()} - ${displayAircraft} - {${activeCallsign}} - ${displayType} - RT CALL`;
+                        const pageTitle = `${activeIcao.toUpperCase()} - {${callsignForTitle}} - ${displayType} - RT CALL`;
                         typeHeader.textContent = pageTitle;
                         // --- End title creation ---
 
@@ -478,9 +421,10 @@
                                     if (activeIcao === 'vghs') {
                                         message = message.replace(/{GRD}|{GND}/g, '{DHK GRD}').replace(/{TWR}/g, '{DHK TWR}');
                                     } else if (activeIcao === 'vgjr') {
-                                        message = message.replace(/{GRD}|{GND}/g, '{JSR GRD}').replace(/{TWR}/g, '{JSR TWR}');
+                                        message = message.replace(/{GRD}|{GND}/g, '{JSR GRD}').replace(/{TWR}/g, '{JSR TWR}');                                        
                                     }
-                                    message = message.replace(callsignRegex, `{${activeCallsign}}`); // Replace both placeholders
+                                    const callsignToDisplay = (activeCallsign === 'all') ? 'call-sign' : activeCallsign;
+                                    message = message.replace(callsignRegex, `{${callsignToDisplay}}`); // Replace both placeholders
                                     return { speaker, message };
                                 });
 
@@ -506,7 +450,7 @@
                     return;
                 }
 
-                const activeCallsign = callsignFilter.value || 'call-sign';
+                const activeCallsign = (callsignFilter.value === 'all') ? 'call-sign' : callsignFilter.value;
                 let html = '';
                 const callsignRegex = /{Call Sign}/gi;
                 for (const key in paramsData) {
@@ -518,7 +462,7 @@
                     const suffix = param.suffix || '';
 
                     const sentences = param.values.map(value => {
-                        const callsignPlaceholder = `{${activeCallsign}}`;
+                        const callsignPlaceholder = `{${activeCallsign}}`;                        
 
                         const phoneticReplace = (str) => {
                             return str.replace(/-/g, ' - ')
@@ -545,8 +489,8 @@
                 printContainer.innerHTML = ''; // Clear previous content
                 const paramsData = allParameters; // Use stored parameters
                 if (Object.keys(paramsData).length === 0) return;
-
-                const activeCallsign = callsignFilter.value || 'call-sign';
+                
+                const activeCallsign = (callsignFilter.value === 'all') ? 'call-sign' : callsignFilter.value;
                 let html = '<h3>All Parameter Calls</h3>';
                 const callsignRegex = /{call-sign}|{Call Sign}/gi;
                 for (const key in paramsData) {
@@ -558,7 +502,7 @@
                     const suffix = param.suffix || '';
 
                     const sentences = param.values.map(value => {
-                        const callsignPlaceholder = `{${activeCallsign}}`;
+                        const callsignPlaceholder = `{${activeCallsign}}`;                        
                         const phoneticReplace = (str) => {
                             return str.replace(/-/g, ' - ')
                             .replace(/SA/g, 'South Alpha').replace(/HA/g, 'Hotel Alpha')
@@ -577,6 +521,12 @@
                     html += sentences;
                 }
                 printContainer.innerHTML = html;
+            }
+
+            function prepareInstructionsForPrint() {
+                const printContainer = document.getElementById('print-instructions-container');
+                const instructionsContent = document.querySelector('#help-popup .popup-content').innerHTML;
+                printContainer.innerHTML = instructionsContent;
             }
 
             function setupEventListeners() {
@@ -600,13 +550,17 @@
                     }
                 });
 
-                aircraftFilter.addEventListener('change', renderCalls);
-                callsignFilter.addEventListener('input', renderCalls);
+                callsignFilter.addEventListener('change', renderCalls);
+
+                document.getElementById('toggle-callsigns-btn').addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    renderCalls();
+                });
 
                 // Event delegation for popups
                 document.body.addEventListener('click', function(e) {
-                    if (e.target.matches('.details-btn, .details-btn *')) {
-                        const btn = e.target.closest('.details-btn');
+                    if (e.target.matches('.phase-column, .phase-column *, .details-btn, .details-btn *')) {
+                        const btn = e.target.closest('.phase-column, .details-btn');
                         const popup = document.querySelector(btn.dataset.popupTarget);
                         if (popup) popup.classList.add('visible');
                     }
@@ -619,6 +573,7 @@
             document.getElementById('print-btn').addEventListener('click', async () => {
                 await prepareRtCallsForPrint(); // Prepare the full RT call list for printing
                 await prepareParametersForPrint(); // Wait for parameters to be ready
+                prepareInstructionsForPrint(); // Prepare instructions
                 window.print(); // Then open the print dialog
             });
 

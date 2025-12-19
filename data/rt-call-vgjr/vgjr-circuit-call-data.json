@@ -4,252 +4,131 @@
     "category": "Downwind Leg",
     "description": "The pilot reports on the downwind leg with the intention of flying an initial approach.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Downwind for initial",
-        "message": "{JSR TWR}, {Call Sign}, downwind for initial."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Report initial",
-        "message": "{Call Sign}, {JSR TWR}, report base."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report initial",
-        "message": "call you base, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, downwind for initial." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, report base." },
+      { "speaker": "Pilot", "message": "call you base, {Call Sign}." }
     ],
-    "aircraft": [ "Military Trainer", "K8" ]
+    "aircraft": [ "Military Trainer", "K8" ],
+    "callsigns": []
   },
   {
     "phase": "downwind_for_low_go",
     "category": "Downwind Leg",
     "description": "The pilot reports on the downwind leg with the intention of performing a low go.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Downwind for low go",
-        "message": "{JSR TWR}, {Call Sign}, downwind for low go."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Report base",
-        "message": "{Call Sign}, {JSR TWR}, report base."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report base",
-        "message": "call you base, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, downwind for low go." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, report base." },
+      { "speaker": "Pilot", "message": "call you base, {Call Sign}." }
     ],
-    "aircraft": [ "Military Trainer", "K8" ]
+    "aircraft": [ "Military Trainer", "K8" ],
+    "callsigns": []
   },
   {
     "phase": "downwind_for_touch_and_go",
     "category": "Downwind Leg",
     "description": "The pilot reports on the downwind leg with the intention of performing a touch and go.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Downwind for touch & go",
-        "message": "{JSR TWR}, {Call Sign}, downwind for touch and go."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Report base",
-        "message": "{Call Sign}, {JSR TWR}, report base."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report base",
-        "message": "call you base, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, downwind for touch and go." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, report base." },
+      { "speaker": "Pilot", "message": "call you base, {Call Sign}." }
     ],
-    "aircraft": [ "Military Trainer", "K8" ]
+    "aircraft": [ "Military Trainer", "K8" ],
+    "callsigns": []
   },
   {
     "phase": "downwind_for_full_stop",
     "category": "Downwind Leg",
     "description": "The pilot reports on the downwind leg with the intention of a full-stop landing.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Downwind for full stop",
-        "message": "{JSR TWR}, {Call Sign}, downwind for full stop."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Report final",
-        "message": "{Call Sign}, {JSR TWR}, report base."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report final",
-        "message": "call you base, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, downwind for full stop." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, report base." },
+      { "speaker": "Pilot", "message": "call you base, {Call Sign}." }
     ],
-    "aircraft": [ "Military Trainer", "K8" ]
+    "aircraft": [ "Military Trainer", "K8" ],
+    "callsigns": []
   },
   {
     "phase": "base_for_low_go",
     "category": "Base Leg",
     "description": "The pilot reports turning onto the base leg for a low go.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Base for low go",
-        "message": "{JSR TWR}, {Call Sign}, base for low go."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Report final",
-        "message": "{Call Sign}, {JSR TWR}, check gears down, report final for Rwy-16."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report final",
-        "message": "Gears are green, call you final for Rwy-16, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, base for low go." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, check gears down, report final for Rwy-16." },
+      { "speaker": "Pilot", "message": "Gears are green, call you final for Rwy-16, {Call Sign}." }
     ],
-    "aircraft": [ "Military Trainer", "K8" ]
+    "aircraft": [ "Military Trainer", "K8" ],
+    "callsigns": []
   },
   {
     "phase": "base_for_touch_and_go",
     "category": "Base Leg",
     "description": "The pilot reports turning onto the base leg for a touch and go.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Base for touch & go",
-        "message": "{JSR TWR}, {Call Sign}, base for touch and go."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Report final",
-        "message": "{Call Sign}, {JSR TWR}, check gears down, report final for Rwy-16."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report final",
-        "message": "Gears are green, call you final for Rwy-16, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, base for touch and go." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, check gears down, report final for Rwy-16." },
+      { "speaker": "Pilot", "message": "Gears are green, call you final for Rwy-16, {Call Sign}." }
     ],
-    "aircraft": [ "Military Trainer", "K8" ]
+    "aircraft": [ "Military Trainer", "K8" ],
+    "callsigns": []
   },
   {
     "phase": "base_for_full_stop",
     "category": "Base Leg",
     "description": "The pilot reports turning onto the base leg for a full stop landing.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Base for full stop",
-        "message": "{JSR TWR}, {Call Sign}, base for full stop."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Report final",
-        "message": "{Call Sign}, {JSR TWR}, check gears down, report final for Rwy-16."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report final",
-        "message": "Gears are green, call you final for Rwy-16, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, base for full stop." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, check gears down, report final for Rwy-16." },
+      { "speaker": "Pilot", "message": "Gears are green, call you final for Rwy-16, {Call Sign}." }
     ],
-    "aircraft": [ "Military Trainer", "K8" ]
+    "aircraft": [ "Military Trainer", "K8" ],
+    "callsigns": []
   },
   {
     "phase": "initial_to_downwind",
     "category": "Initial Leg",
     "description": "The pilot reports on the initial leg and is instructed to report downwind.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Initial",
-        "message": "{JSR TWR}, {Call Sign}, initial."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Report downwind",
-        "message": "{Call Sign}, {JSR TWR}, report downwind."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm report downwind",
-        "message": "call you downwind, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, initial." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, report downwind." },
+      { "speaker": "Pilot", "message": "call you downwind, {Call Sign}." }
     ],
-    "aircraft": [ "Military Trainer", "K8" ]
+    "aircraft": [ "Military Trainer", "K8" ],
+    "callsigns": []
   },
   {
     "phase": "final_for_full_stop",
     "category": "Final Leg",
     "description": "The pilot reports on final for a full stop landing and receives clearance.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Final for full stop",
-        "message": "{JSR TWR}, {Call Sign}, final for full stop."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Cleared to land",
-        "message": "{Call Sign}, {JSR TWR}, surface wind 210 at 08 knots, cleared to land Runway 16."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm cleared to land",
-        "message": "s/w copied, cleared to land Runway 16, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, final for full stop." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, surface wind 210 at 08 knots, cleared to land Runway 16." },
+      { "speaker": "Pilot", "message": "s/w copied, cleared to land Runway 16, {Call Sign}." }
     ],
-    "aircraft": [ "Military Trainer", "K8" ]
+    "aircraft": [ "Military Trainer", "K8" ],
+    "callsigns": []
   },
   {
     "phase": "final_for_touch_and_go",
     "category": "Final Leg",
     "description": "The pilot reports on final for a touch & go and receives clearance.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Final for touch & go",
-        "message": "{JSR TWR}, {Call Sign}, final for touch and go."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Cleared for touch & go",
-        "message": "{Call Sign}, {JSR TWR}, surface wind 210 at 08 knots, cleared for touch and go Runway 16."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm cleared for touch & go",
-        "message": "s/w copied, cleared for touch and go Runway 16, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, final for touch and go." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, surface wind 210 at 08 knots, cleared for touch and go Runway 16." },
+      { "speaker": "Pilot", "message": "s/w copied, cleared for touch and go Runway 16, {Call Sign}." }
     ],
-    "aircraft": [ "Military Trainer", "K8" ]
+    "aircraft": [ "Military Trainer", "K8" ],
+    "callsigns": []
   },
   {
     "phase": "final_for_low_go",
     "category": "Final Leg",
     "description": "The pilot reports on final for a low go and receives clearance.",
     "calls": [
-      {
-        "speaker": "Pilot",
-        "caption": "Final for low go",
-        "message": "{JSR TWR}, {Call Sign}, final for low go."
-      },
-      {
-        "speaker": "TWR",
-        "caption": "Cleared for low go",
-        "message": "{Call Sign}, {JSR TWR}, surface wind 210 at 08 knots, cleared for low go Runway 16."
-      },
-      {
-        "speaker": "Pilot",
-        "caption": "Confirm cleared for low go",
-        "message": "s/w copied, cleared for low go Runway 16, {Call Sign}."
-      }
+      { "speaker": "Pilot", "message": "{JSR TWR}, {Call Sign}, final for low go." },
+      { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, surface wind 210 at 08 knots, cleared for low go Runway 16." },
+      { "speaker": "Pilot", "message": "s/w copied, cleared for low go Runway 16, {Call Sign}." }
     ],
-    "aircraft": [ "Military Trainer", "K8" ]
+    "aircraft": [ "Military Trainer", "K8" ],
+    "callsigns": []
   }
 ]
