@@ -8,7 +8,7 @@
       { "speaker": "TWR", "message": "{Call Sign}, copied, report initial rwy 14" },
       { "speaker": "Pilot", "message": "call you initial rwy 14 {Call Sign}" }
     ],
-    "callsigns": []
+    "callsigns": [ "GFN391", "BJR471", "UNC1031", "AJX1483" ]
   },
   {
     "phase": "downwind_for_low_go",
@@ -19,7 +19,7 @@
       { "speaker": "TWR", "message": "{Call Sign}, copied, report base" },
       { "speaker": "Pilot", "message": "call you base {Call Sign}" }
     ],
-    "callsigns": []
+    "callsigns": [ "GFN391", "BJR471", "UNC1031", "AJX1483" ]
   },
   {
     "phase": "downwind_for_full_stop",
@@ -30,7 +30,7 @@
       { "speaker": "TWR", "message": "{Call Sign}, copied, report base" },
       { "speaker": "Pilot", "message": "call you base {Call Sign}" }
     ],
-    "callsigns": []
+    "callsigns": [ "GFN391", "BJR471", "UNC1031", "AJX1483" ]
   },
   {
     "phase": "base_for_low_go",
@@ -41,7 +41,7 @@
       { "speaker": "TWR", "message": "{Call Sign}, check gears down and locked S/W calm, report final runway 14" },
       { "speaker": "Pilot", "message": "Gears are green, s/w copied, runway 14, call you final {Call Sign}" }
     ],
-    "callsigns": []
+    "callsigns": [ "GFN391", "BJR471", "UNC1031", "AJX1483" ]
   },
   {
     "phase": "base_for_full_stop",
@@ -52,7 +52,7 @@
       { "speaker": "TWR", "message": "{Call Sign}, check gears down and locked S/W calm, report final runway 14" },
       { "speaker": "Pilot", "message": "Gears are green, s/w copied, runway 14, call you final {Call Sign}" }
     ],
-    "callsigns": []
+    "callsigns": [ "GFN391", "BJR471", "UNC1031", "AJX1483" ]
   },
   {
     "phase": "initial_to_downwind",
@@ -63,7 +63,7 @@
       { "speaker": "TWR", "message": "{Call Sign}, report downwind" },
       { "speaker": "Pilot", "message": "call you downwind {Call Sign}" }
     ],
-    "callsigns": []
+    "callsigns": [ "GFN391", "BJR471", "UNC1031", "AJX1483" ]
   },
   {
     "phase": "final_for_low_go",
@@ -74,7 +74,7 @@
       { "speaker": "TWR", "message": "{Call Sign}, recheck gears down and locked S/W calm, runway 14, cleared for low go" },
       { "speaker": "Pilot", "message": "Gears are green, s/w copied, runway 14, cleared for low go {Call Sign}" }
     ],
-    "callsigns": []
+    "callsigns": [ "GFN391", "BJR471", "UNC1031", "AJX1483" ]
   },
   {
     "phase": "final_for_landing",
@@ -85,7 +85,7 @@
       { "speaker": "TWR", "message": "{Call Sign}, recheck gears down and locked S/W calm, cleared to land" },
       { "speaker": "Pilot", "message": "Gears are green, s/w copied, runway 14, cleared to land {Call Sign}" }
     ],
-    "callsigns": []
+    "callsigns": [ "GFN391", "BJR471", "UNC1031", "AJX1483" ]
   },
   {
     "phase": "crosswind_to_downwind",
@@ -96,6 +96,6 @@
       { "speaker": "TWR", "message": "{Call Sign}, report downwind" },
       { "speaker": "Pilot", "message": "call you downwind {Call Sign}" }
     ],
-    "callsigns": []
+    "callsigns": [ "GFN391", "BJR471", "UNC1031", "AJX1483" ]
   }
 ]

@@ -2,7 +2,7 @@
   "QNH": {
     "description": "This is the air pressure setting used to calibrate an aircraft's altimeter, which shows its height above sea level. For example, if a pilot hears 'QNH 1013', they will set this value on their altimeter to get an accurate reading.",
     "prefix": "",
-    "suffix": ", descending 3000 feet, call you established 12 dme arc, {Call Sign}",
+    "suffix": ",  Squawk 4771, taxi via C-N-N2, to holding point runway-14 {call-sign}",
     "values": [
       "QNH 1013",
       "QNH 1012",
@@ -19,93 +19,69 @@
       "QNH 29.85"
     ]
   },
-  "Altitude": {
-    "description": "This is a command for the height an aircraft should fly at or descend to. For example, 'descending 4000ft' tells a pilot to lower their aircraft to that specific height.",
-    "prefix": "QNH 1013, ",
-    "suffix": ", call you established 12 dme arc, {Call Sign}",
-    "values": [
-      "Descending 4000ft",
-      "Descending 3000ft",
-      "Descending 2000ft",
-      "Descending 1500ft"
-    ]
-  },
-  "Departure Taxiway": {
-    "description": "This is the specific route an aircraft must follow on the ground to get to the runway for takeoff. For example, 'taxi via C-N-N2' instructs the pilot on the path to take.",
-    "prefix": "QNH 1013, SQUAWK 4771, ",
-    "suffix": ", to holding point rwy-14, {Call Sign}",
-    "values": [
-      "Taxi via C-N-N2",
-      "Taxi via F-N-N2",
-      "Taxi via V-N-N2",
-      "Taxi via NA-P",
-      "Taxi via NA"
-    ]
-  },
-  "Arrival Taxiway": {
-    "description": "This is the route an aircraft follows on the ground after landing to get to its gate or parking area. For example, 'taxi via S1' tells the pilot which path to take after leaving the runway.",
-    "prefix": "",
-    "suffix": ", changing to ground 121.8, {Call Sign}",
-    "values": [
-      "Taxi via S1",
-      "Taxi via S2",
-      "Taxi via S3",
-      "Taxi via SA",
-      "Taxi via HA"
-    ]
-  },
-  "Runway Vacate Taxiway": {
-    "description": "This is a command instructing a pilot on which taxiway to use to exit the runway after landing. For example, 'runway vacated via S1' is the confirmation a pilot gives after they have followed the instruction.",
-    "prefix": "",
-    "suffix": ", {Call Sign}",
-    "values": [
-      "Runway vacated via S1",
-      "Runway vacated via S2",
-      "Runway vacated via S3",
-      "Runway vacated via SA",
-      "Runway vacated via HA"
-    ]
-  },
-  "Parking Taxiway": {
-    "description": "This is the final ground route an aircraft follows to its designated parking spot or gate. For example, 'taxi via S1-S-C' is the final set of instructions a pilot receives to reach their parking spot.",
-    "prefix": "Roger, ",
-    "suffix": ", to Stand no 05, {Call Sign}",
-    "values": [
-      "Taxi via S1-S-C",
-      "Taxi via S1-S-F",
-      "Taxi via S1-S-V",
-      "Taxi via S2-S-C",
-      "Taxi via S2-S-F",
-      "Taxi via S2-S-V",
-      "Taxi via S3-S-C",
-      "Taxi via S3-S-F",
-      "Taxi via S3-S-V"
-    ]
-  },
-  "Pushback Face": {
-    "description": "This is a ground command that tells a pilot which direction to face the aircraft after pushing back from the gate. For example, 'push to face north' tells the pilot and ground crew which way to orient the aircraft before starting the engines.",
-    "prefix": "Pushback approved, Temp 32, time 40,",
-    "suffix": ", {Call Sign}",
-    "values": [
-      "Push to face north",
-      "Push to face south"
-    ]
-  },
   "Number": {
     "description": "This represents a numerical value spoken as a word, often used for stand numbers or other single-digit references.",
     "prefix": "",
     "suffix": "",
     "values": [
-      "Zero",
-      "One",
-      "Two",
-      "Three",
-      "Four",
-      "Five",
-      "Six",
-      "Seven",
-      "Eight",
-      "Nine"
+      "Zero - - - Zero - - - Zero",
+      "One - - - One - - - One",
+      "Two - - - Two - - - Two",
+      "Three - - - Three - - - Three",
+      "Four - - - Four - - - Four",
+      "Five - - - Five - - - Five",
+      "Six - - - Six - - - Six",  
+      "Seven - - - Seven - - - Seven",
+      "Eight - - - Eight - - - Eight",
+      "Nine - - - Nine - - - Nine"
+    ]
+  },
+  "Altitude": {
+    "description": "This is a command for the height an aircraft should fly at or descend to. For example, 'descending 4000ft' tells a pilot to lower their aircraft to that specific height.",
+    "prefix": "Directly written in related RT call --- ",
+    "suffix": " --- `arrival entry call phase` ",
+    "values": [
+      "N/A"
+    ]
+  },
+  "Departure Taxiway": {
+    "description": "This is the specific route an aircraft must follow on the ground to get to the runway for takeoff. For example, 'taxi via C-N-N2' instructs the pilot on the path to take.",
+    "prefix": "Directly written in related RT call --- ",
+    "suffix": " --- `departure taxi to holding point phase` ",
+    "values": [
+      "N/A"
+    ]
+  },
+  "Arrival Taxiway": {
+    "description": "This is the route an aircraft follows on the ground after landing to get to its gate or parking area. For example, 'taxi via S1' tells the pilot which path to take after leaving the runway.",
+    "prefix": "Directly written in related RT call --- ",
+    "suffix": " --- `arrival, taxi to tarmac phase` ",
+    "values": [
+      "N/A"
+    ]
+  },
+  "Runway Vacate Taxiway": {
+    "description": "This is a command instructing a pilot on which taxiway to use to exit the runway after landing. For example, 'runway vacated via S1' is the confirmation a pilot gives after they have followed the instruction.",
+    "prefix": "Directly written in related RT call --- ",
+    "suffix": " --- `arrival runway vacate phase` ",
+    "values": [
+      "N/A"
+    ]
+  },
+  "Parking Taxiway": {
+    "description": "This is the final ground route an aircraft follows to its designated parking spot or gate. For example, 'taxi via S1-S-C' is the final set of instructions a pilot receives to reach their parking spot.",
+    "prefix": "Directly written in related RT call --- ",
+    "suffix": " --- `arrival, taxi to tarmac phase` ",
+    "values": [
+      "N/A"
+    ]
+  },
+  "Pushback Face": {
+    "description": "This is a ground command that tells a pilot which direction to face the aircraft after pushing back from the gate. For example, 'push to face north' tells the pilot and ground crew which way to orient the aircraft before starting the engines.",
+    "prefix": "Directly written in related RT call --- ",
+    "suffix": " --- `departure pushback phase` ",
+    "values": [
+      "N/A"
     ]
   }
 }

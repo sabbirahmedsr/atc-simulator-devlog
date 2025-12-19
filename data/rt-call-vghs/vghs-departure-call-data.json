@@ -149,7 +149,7 @@
     "calls": [
       { "speaker": "Pilot", "message": "{DHK GND} {Call Sign}, request startup" },
       { "speaker": "GRD", "message": "{Call Sign}, startup approved, {Temp 32}, {Time 40}" },
-      { "speaker": "Pilot", "message": "startup approved, temp 32, time 1200 {Call Sign}" }
+      { "speaker": "Pilot", "message": "startup approved, temp 32, time {0,1,2,3,4,5,6,7,8,9} {Call Sign}" }
     ],
     "callsigns": [ "GFN391", "BJR471", "UNC1031", "AJX1483" ]
   },
@@ -159,8 +159,8 @@
     "description": "This is a specific call made by a military pilot to the ground controller to request permission to move the plane on the ground from the gate to the runway, following a designated route for military aircraft.",
     "calls": [
       { "speaker": "Pilot", "message": "{DHK GND} {Call Sign}, request taxi" },
-      { "speaker": "GRD", "message": "{Call Sign}, taxi via NA-P to holding point runway-14, QNH 760, SQUAWK 4771" },
-      { "speaker": "Pilot", "message": "QNH 760, SQUAWK 4141, taxi via NA-P to holding point runway-14 {Call Sign}" }
+      { "speaker": "GRD", "message": "{Call Sign}, {taxi via NA / taxi via NA-P} to holding point runway-14, {QNH 760}, SQUAWK 4771" },
+      { "speaker": "Pilot", "message": "{QNH 760}, SQUAWK 4141, {taxi via NA / taxi via NA-P} to holding point runway-14 {Call Sign}" }
     ],
     "callsigns": [ "GFN391", "BJR471", "UNC1031", "AJX1483" ]
   },

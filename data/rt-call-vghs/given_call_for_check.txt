@@ -1,154 +1,339 @@
-1.              Departure - Rt Call (BG367)
-Airport:Vghs
-Civil Ground
-Pushback
-Pilot: 	{Dhk Gnd} {Bg367}, Request Startup And Pushback
-Grd: 	{Bg367}, Startup And Pushback Approved, Temp 32, {Time 40}, Push To Face {North/South}.
-Pilot: 	Startup And Pushback Approved, Temp 32, {Time 40}, Push To Face {North}/South {Bg367}.
+1.		VGHS - B777 - BG367} - Arrival - RT 
+                    CIVIL ENTRY
+entry call ARC
 
-Taxi
-Pilot: 	{Dhk Gnd} {Bg367}, Request Taxi
-Grd: 	{Bg367}, Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14, {Qnh 1013}, {Squawk 4771}{Bg367}
-Pilot: 	{Qnh 1013}, Squawk 4771, Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14 {Bg367}
-
-Pilot: 	Request ATC Clearance.
-Grd: 	Confirm ready to copy ATC Clearance.
-Pilot: 	Affirm.
-Grd: 	Cleared to CTG SID ADMIL-1 Climb and Cruse FL 150  
-Pilot: 	Cleared to CTG SID ADMIL-1 Climb and Cruse FL 150  
-Grd: 	Redback correct
-
-Pilot: 	{Dhk Gnd} {Bg367}, Holding Point Runway 14, Like To Change To Tower
-Grd: 	{Bg367}, Over To Tower 
-Pilot: 	Over To Tower {Bg367}
-                                      
-
-Civil Tower
-Line Up Civil
-Pilot: 	{Dhk Twr} {Bg367}, Request Line Up
-Twr: 	{Bg367}, Line Up Runway 14, Report Ready For Departure
-Pilot: 	Line Up Runway 14, Call You Ready For Departure {Bg367}
-
-Departure
-Pilot: 	{Dhk Twr} {Bg367}, Ready For Departure
-Twr: 	{Bg367}, Sid Admil One, Initially Fl-130, Surface Wind 260/60kts, Cleared For Takeoff Runway 14
-Pilot:	S/W Copied, Runway 14, Cleared For Takeoff {Bg367}
-
-Airborne
-Twr: {Bg367}, Airborne {Time}, Report Passing 4000ft
-Pilot: Airborne Copied, Call You Passing 4000ft {Bg367}
+Pilot: {Dhk Twr} { BG367}, Descending FL60, 20dme Inbound Dac
+Twr: { BG367}, {Descend 4000ft}, {Qnh 1013} Report Established 12dme Arc For Dia-14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Established 12dme Arc BG367
 C
-Transfer To Control
-Pilot: 	{Dhk Twr} {Bg367}, Passing 4000ft
-Twr: 	{Bg367}, Contact Dhaka Control 126.7
-Pilot: 	Over To Control, Good Day {Bg367}
-C
+Entry Call Vor
+Pilot: {Dhk Twr} { BG367}, Descending FL60 , 15dme Inbound Dac
+Twr{ BG367}, {Descend 4000ft}, {Qnh 1013} Report Over Vor Proceeding Outbound Of Letdown For Vdi-14
+
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Established Outbound Of Letdown For Vdi-14 { BG367}, CH
+Entry Call Delta
+Pilot: {Dhk Twr} { BG367}, Descending FL60, 15dme Inbound Dac
+Twr: { BG367}, {Descend 4000ft}, {Qnh 1013} Report Over Delta Alpha, Proceeding Outbound Of Letdown For Runway 1
 
 
 
-
-
-
-
-
-    2.                    Departure - Rt Call (CX667)
-Airport:Vghs
-                                     Civil Ground
-Pushback
-Pilot: {Dhk Gnd} {CX667}, Request Startup And Pushback
-Grd: {CX667},, Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North/South}.
-Pilot: Startup And Pushback Approved, {Temp 32}, , {Time 40}, Push To Face {North}/South {CX667},
-C
-Taxi
-Pilot: {Dhk Gnd} {CX667}, Request Taxi
-Grd: {Bg367}, Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14, {Qnh 1013}, {Squawk 4771{CX667},
-Pilot: {Qnh 1013}, Squawk 4771,Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14 {CX667},
-Pilot: Request ATC Clearance.
-Grd: Confirm ready to copy ATC Clearance.
-Pilot:Afirm.
-Grd: Cleared to HKG SID ADMIL-1 Climb and Cruse FL 290  
-Pilot: Cleared to HKG SID ADMIL-1 Climb and Cruse FL 290  
-Grd: Redback currect
-Pilot: {Dhk Gnd} {CX667}, Holding Point Runway 14, Like To Change To Tower
-Grd: {CX667}, Over To Tower 
-Pilot: Over To Tower {CX667},
-C
-                                      
-
-                                         Civil Tower
-Line Up Civil
-Pilot: {Dhk Twr} {CX667}, Request Line Up
-Twr: {Bg367}, Line Up Runway 14, Report Ready For Departure
-Pilot: Line Up Runway 14, Call You Ready For Departure {CX667},
-C
-Departure
-Pilot: {Dhk Twr} {CX667}, Ready For Departure
-Twr: {CX667}, Initially FL-130, Surface Wind 260/60kts, Cleared For Takeoff Runway 14 
+Pilot:{Qnh 1013}, {Descending 4000ft}, Call You Over Delta Alpha, Proceeding Outbound Of Letdown Rwy 14, { BG367}, Cmtmj
+CMTMJ
+                                             VOR CALL
+vor to outbound
 Pilot:
-S/W Copied, Runway 14, Cleared For Takeoff {CX667},
-Cmtmj
-Airborne
-Twr: {CX667}, Airborne {Time}, Report Passing 4000ft
-Pilot: Airborne Copied, Call You Passing 4000ft {CX667}, C
-Transfer To Control
-Pilot: {Dhk Twr} {CX667}, Passing 4000ft
-Twr: {CX667}, Contact Dhaka Control 126.7
-Pilot: Over To Control, Good Day {CX667},
-C
-
-
-
-
-
-
-
-
-
-3.           Departure - Rt Call (EK584)
-Airport:Vghs
-                                     Civil Ground
-Pushback
-Pilot: {Dhk Gnd} {EK584}, Request Startup And Pushback
-Grd: {EK584},, Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North/South}.
-Pilot: Startup And Pushback Approved, {Temp 32}, , {Time 40}, Push To Face {North/South} {EK584}
-C
-Taxi
-Pilot: {Dhk Gnd} {EK584} Request Taxi
-Grd: {EK584} Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14, {Qnh 1013}, {Squawk 4771{EK584}
-Pilot: {Qnh 1013}, Squawk 4771,Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14 {EK584}
-Pilot: Request ATC Clearance.
-Grd: Confirm ready to copy ATC Clearance.
-Pilot:Afirm.
-Grd: Cleared to DUBAI SID IDLOX-1A Climb and Cruse FL 280
-Pilot: Cleared to DUBAI SID IDLOX-1A Climb and Cruse FL 280  
-Grd: Redback currect
-Pilot: {Dhk Gnd} {EK584} Holding Point Runway 14, Like To Change To Tower
-Grd: {EK584} Over To Tower  
-Pilot: Over To Tower {EK584}
-C
-                                      
-
-                                         Civil Tower
-Line Up Civil
-Pilot: {Dhk Twr} {EK584} Request Line Up
-Twr: {EK584} Line Up Runway 14, Report Ready For Departure
-Pilot: Line Up Runway 14, Call You Ready For Departure {EK584}
-C
-Departure
-Pilot: {Dhk Twr} {EK584} Ready For Departure
-Twr: {EK584} Initially 4000, Surface Wind 260/60kts, Cleared For Takeoff Runway 14 
+{DHK TWR} {call-signBG367}, over VOR proceeding outbound of letdown
+TWR:
+{call-signBG367}, clear for the approach, {descend 3000ft}, report turning inbound
 Pilot:
-S/W Copied, Runway 14, Cleared For Takeoff {EK584}
+Roger, cleared for the approach, descending 3000ft, call you turning inbound {call-signBG367}
+CH
+outbound to localizer
+Pilot:
+{DHK TWR} {call-signBG367}, turning inbound
+TWR: {call-signBG367}, report established localizer runway 14
+Pilot: call you established localizer, rwy-14 {call-signBG367}
+CH
+localizer to 6dme vor
+Pilot:
+{DHK TWR} {call-signBG367}, on localizer runway 14
+TWR:
+{call-signBG367}, report 6 ILS DME
+Pilot:
+call you 6 ILS DME {call-signBG367}
+CH
+                                      ARC CALL
+12 dme arc to r300
+Pilot:
+{DHK TWR} {call-signBG367}, established 12DME arc runway-14
+TWR:
+{call-signBG367}, report crossing R300
+Pilot:
+call you crossing R300 {call-signBG367}
+C
+12 dme arc to r355
+Pilot:
+{DHK TWR} {call-signBG367}, established 12DME arc runway-14
+TWR:
+{call-signBG367}, report crossing R355
+Pilot:
+call you crossing R355 {call-signBG367}
+C
+r300 to localizer
+Pilot:
+{DHK TWR} {call-signBG367}, crossing R300
+TWR:
+{call-signBG367}, clear for the approach, {descend 3000ft} report established localizer runway 14
+Pilot:
+call you established localizer, rwy-14 {call-signBG367}
+C
+r355 to localizer
+Pilot:
+{DHK TWR} {call-signBG367}, crossing R355
+TWR:
+{call-signBG367}, clear for the approach, {descend 3000ft} report established localizer runway 14
+Pilot: call you established localizer, rwy-14 {call-signBG367}
+C
+localizer to 6dme arc
+Pilot: {DHK TWR} {call-signBG367}, on localizer rwy-14
+TWR: {call-signBG367}, report 6 ILS DME
+Pilot: call you 6 ILS DME {call-signBG367}
+C
+                                   DELTA CALL
+delta to outbound
+Pilot: {DHK TWR} {call-signBG367}, over Delta Alpha, proceeding outbound of letdown rwy-14
+ TWR: {call-signBG367}, clear for the approach, {descend 3000ft}, Report established localizer rwy-14
+Pilot: Roger, cleared for the approach, descending 3000ft, call you  established localizer rwy-14 {call-signBG367}
+CMTMJ
+outbound to inbound
+
+ Pilot: {DHK TWR} {call-signBG367},  established localizer rwy-14
+TWR: {call-signBG367},Report 6 ILS DME
+Pilot: call you 6 ILS DME{call-signBG367}
+CMTMJ
+
+} Steady inbound
+Pilot: {DHK TWR} { BG367}, steady inbound
+TWR: {EK584}, report 6 ILS DME
+Pilot: Call you 6 ILS DME { BG367}
+
+CMTMJ
+                                       LANDING CALL
+6dme to land
+Pilot: {DHK TWR} {call-signBG367}, 6 ILS DME
+TWR: {call-signBG367}, check gears down and locked, surface wind 230/05 knots, cleared to land runway-14
+Pilot: Gears are green, s/w copied, Cleared to land rwy-14 {call-signBG367}
+CMTMJ
+landed and taxi
+TWR:
+{call-signBG367}, landed 1200, {taxi via S1}, after vacating contact ground 121.8
+Pilot:
+{Taxi via S1}, after vacating change to ground 121.8, call you runway vacated {call-signBG367}
+CMTMJ
+vacated to tarmac
+Pilot:
+{DHK GND} {call-signBG367}, {runway vacated via S1}
+GRD:
+{call-signBG367}, Taxi via S1-S-C to Stand no {5}
+Pilot:
+roger, {taxi via S1-S-C} to Stand no {5} {call-signBG367}
+C
+
+
+
+
+
+   2.                                Arrival Cx667
+Entry Call Arc
+Pilot: {Dhk Twr} {Cx667}, Descending FL60, 20dme Inbound Dac
+Twr: {Cx667}, {Descend 4000ft}, {Qnh 1013} Report Established 12dme Arc For Dia-14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Established 12dme Arc {Cx667}
+C
+Entry Call Vor
+Pilot: {Dhk Twr} {Cx667}, Descending FL60 , 15dme Inbound Dac
+
+Twr:{Cx667}, {Descend 4000ft}, {Qnh 1013} Report Over Vor Proceeding Outbound Of Letdown For Vdi-14
+
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Established Outbound Of Letdown For Vdi-14 {Cx667}
+Ch
+Entry Call Delta
+Pilot: {Dhk Twr} {Cx667}, Descending FL60, 15dme Inbound Dac
+
+Twr: {Cx667}, {Descend 4000ft}, {Qnh 1013} Report Over Delta Alpha, Proceeding Outbound Of Letdown For Runway 1
+
+
+
+Pilot:{Qnh 1013}, {Descending 4000ft}, Call You Over Delta Alpha, Proceeding Outbound Of Letdown Rwy 14, {Cx667}
 Cmtmj
-Airborne
-Twr: {EK584} Airborne {Time}, Report Passing 4000ft
-Pilot: Airborne Copied, Call You Passing 4000ft {EK584}C
-Transfer To Control
-Pilot: {Dhk Twr} {EK584}Passing 4000ft
-Twr: {EK584} Contact Dhaka Control 126.7
-Pilot: Over To Control, Good Day {EK584}
+                                   Vor Call
+Vor To Outbound
+Pilot: {Dhk Twr} {Cx667}, Over Vor Proceeding Outbound Of Letdown
+
+Twr: {Cx667}, Clear For The Approach, {Descend 3000ft}, Report Turning Inbound at 12 miles
+
+Pilot:Roger, Cleared For The Approach, Descending 3000ft, Call You Turning Inbound {Cx667}
+Ch
+Outbound To Localizer
+Pilot: {Dhk Twr} {Cx667}, Turning Inbound
+
+Twr: {Cx667}, Report Established Localizer Runway 14
+
+Pilot: Call You Established Localizer, Rwy-14 {Cx667}
+Ch
+Localizer To 6 DME Vor
+Pilot: {Dhk Twr} {Cx667}, On Localizer Runway 14
+Twr: {Cx667}, Report 6 Ils Dme
+Pilot: Call You 6 Ils Dme {Cx667}
+Ch
+Arc Call
+12 Dme Arc To R300
+Pilot:	{Dhk Twr} {Cx667}, Established 12dme Arc Runway-14
+Twr: {Cx667}, Report Crossing R300
+Pilot: Call You Crossing R300 {Cx667}
+C
+12 Dme Arc To R355
+Pilot: {Dhk Twr} {Cx667}, Established 12dme Arc Runway-14
+Twr: {Cx667}, Report Crossing R355
+Pilot: Call You Crossing R355 {Cx667}
+C
+R300 To Localizer
+Pilot: {Dhk Twr} {Cx667}, Crossing R300
+Twr: {Cx667}, Clear For The Approach, {Descend 3000ft} Report Established Localizer Runway 14
+Pilot: Call You Established Localizer, Rwy-14 {Cx667}
+C
+R355 To Localizer
+Pilot: {Dhk Twr} {Cx667}, Crossing R355
+Twr: {Cx667}, Clear For The Approach, {Descend 3000ft} Report Established Localizer Runway 14
+Pilot:Call You Established Localizer, Rwy-14 {Cx667}
+C
+
+
+ Localizer To 6dme Arc
+Pilot: {Dhk Twr} {Cx667}, On Localizer Rwy-14
+Twr: {Cx667}, Report 6 Ils Dme
+Pilot: Call You 6 Ils Dme {Cx667}
+C
+                                       DELTA CALL
+delta to outbound
+Pilot: {DHK TWR} {call-sign Cx667}, over Delta Alpha, proceeding outbound of letdown rwy-14
+ TWR: {call-sign Cx667}, clear for the approach, {descend 3000ft}, Report established localizer rwy-14
+Pilot: Roger, cleared for the approach, descending 3000ft, call you  established localizer rwy-14 {call-sign Cx667}
+CMTMJ
+outbound to inbound
+
+ Pilot: {DHK TWR} {call-sign Cx667},  established localizer rwy-14
+TWR: { Cx667,Report 6 ILS DME
+Pilot: call you 6 ILS DME{call-signBG367}
+Cmtmj
+Cmtmj Steady inbound
+Pilot: {DHK TWR} { Cx667}, steady inbound
+TWR: {EK584}, report 6 ILS DME
+Pilot: Call you 6 ILS DME { Cx667}
+
+                              
+                                    Landing Call
+6DME To Land
+Pilot: {Dhk Twr} {Cx667}, 6 Ils Dme
+Twr: {Cx667}, Check Gears Down And Locked, Surface Wind 230/05 Knots, Cleared To Land Runway-14
+Pilot: Gears Are Green, S/W Copied, Cleared To Land Rwy-14 {Cx667}
+Cmtmj
+Landed And Taxi
+Twr: {Cx667}, Landed 1200, {Taxi Via S1}, After Vacating Contact Ground 121.8
+Pilot: {Taxi Via S1}, After Vacating Change To Ground 121.8, Call You Runway Vacated {Cx667}
+Cmtmj
+Vacated To Tarmac
+Pilot: {Dhk Gnd} {Cx667}, {Runway Vacated Via S1}
+Grd: {Cx667}, Taxi Via S1-S-C To Stand No {5}
+Pilot: Roger, {Taxi Via S1-S-C} To Stand No {5} {Cx667}
+
+
+
+
+
+
+3.     Arrival - RT CALL   IGO1113
+
+Entry Call ARC
+
+Pilot: {DHK TWR} {Ig01113}, Descending FL60 , 20DME Inbound DAC
+TWR: {Ig01113}, {Descend 4000ft}, {QNH 1013} Report Established 12DME Arc For DIA-14
+Pilot: {QNH 1013}, {Descending 4000ft}, Call You Established 12dme Arc {Ig01113}
+C
+
+Entry Call VOR
+
+Pilot: {DHK TWR} {Ig01113}, Descending FL60 15DME Inbound DAC
+TWR: {Ig01113}, {Descend 4000ft}, {QNH 1013} Report Over VOR Proceeding Outbound Of Letdown For VDI-14
+Pilot: {QNH 1013}, {Descending 3000ft}, Call You Established Outbound Of Letdown For VDI-14 {Ig01113}
+CH
+Entry Call Delta
+Pilot: {DHK TWR} {Ig01113}, Descending FL60, 15DME Inbound DAC
+TWR: {Ig01113}, {Descend 4000ft}, {QNH 1013} Report Over Delta Alpha, Proceeding Outbound Of Letdown For Runway 14
+Pilot:{QNH 1013}, {Descending 4000ft}, Call You Over Delta Alpha, Proceeding Outbound Of Letdown Rwy 14, {Ig01113}
+CMTMJ
+
+
+
+VOR CALL
+Vor To Outbound
+Pilot: {DHK TWR} {Ig01113}, Over VOR Proceeding Outbound Of Letdown
+TWR: {Ig01113}, Clear For The Approach, {Descend 3000ft}, Report Turning Inbound At 12 Miles
+Pilot: Roger, Cleared For The Approach, Descending 3000ft, Call You Turning Inbound {Ig01113}
+CH
+Outbound To Localizer
+Pilot: {DHK TWR} {Ig01113}, Turning Inbound
+TWR: {Ig01113}, Report Established Localizer Runway 14
+Pilot: Call You Established Localizer, Rwy-14 {Ig01113}
+CH
+Localizer To 6 DME VOR
+Pilot: {DHK TWR} {Ig01113}, On Localizer Runway 14
+TWR: {Ig01113}, Report 6 ILS DME
+Pilot: Call You 6 ILS DME {Ig01113}
+CH
+ARC CALL
+12 DME Arc To R300
+Pilot: {DHK TWR} {Ig01113}, Established 12DME Arc Runway-14
+TWR: {Ig01113}, Report Crossing R300
+Pilot: Call You Crossing R300 {Ig01113}
+C
+12 DME Arc To R355
+Pilot: {DHK TWR} {Ig01113}, Established 12DME Arc Runway-14
+TWR:{Ig01113}, Report Crossing R355
+Pilot:Call You Crossing R355 {Ig01113}
+
+
+R300 To Localizer
+Pilot:  {DHK TWR} {Ig01113}, Crossing R300
+TWR: {Ig01113}, Clear For The Approach, {Descend 3000ft} Report Established Localizer Runway 14
+Pilot: Call You Established Localizer, Rwy-14 {Ig01113}
+C
+R355 To Localizer
+Pilot: {DHK TWR} {Ig01113}, Crossing R355
+TWR: {Ig01113}, Clear For The Approach, {Descend 3000ft} Report Established Localizer Runway 14
+Pilot:Call You Established Localizer, Rwy-14 {Ig01113}
+C
+Localizer To 6dme Arc
+Pilot: {DHK TWR} {Ig01113}, On Localizer Rwy-14
+TWR: {Ig01113}, Report 6 ILS DME
+Pilot: Call You 6 ILS DME {Ig01113}
+
+                                          DELTA CALL
+delta to outbound
+Pilot: {DHK TWR} {call-sign Ig01113}, over Delta Alpha, proceeding outbound of letdown rwy-14
+ TWR: {call-sign Ig01113}, clear for the approach, {descend 3000ft}, Report established localizer rwy-14
+Pilot: Roger, cleared for the approach, descending 3000ft, call you  established localizer rwy-14 {call-sign Ig01113}
+CMTMJ
+outbound to inbound
+
+ Pilot: {DHK TWR} {call-sign Ig01113},  established localizer rwy-14
+TWR: {call-signBG367},Report 6 ILS DME
+Pilot: call you 6 ILS DME{call-sign Ig01113}
  
 
+Outbound To Inbound
+Pilot: {Dhk Twr} {IGO1113}, Establish Localizer.
+Twr: {IGO1113}, Report 6 ILS DME.
+Pilot: Call You 6 ILS DME {IGO1113}
+
+Steady Inbound
+Pilot: {DHK TWR} {Ig01113}, Steady Inbound
+TWR: {Ig01113}, Report 6 ILS DME
+Pilot: Call You 6 ILS DME {Ig01113}
+CMTMJ
+LANDING CALL
+6dme To Land
+Pilot: {DHK TWR} {Ig01113}, 6 ILS DME
+TWR: {Ig01113}, Check Gears Down And Locked, Surface Wind 230/05 Knots, Cleared To Land Runway-14
+Pilot: Gears Are Green, S/W Copied, Cleared To Land Rwy-14 {Ig01113}
+CMTMJ
+Landed And Taxi
+TWR: {Ig01113}, Landed 1200, {Taxi Via S1}, After Vacating Contact Ground 121.8
+Pilot: {Taxi Via S1}, After Vacating Change To Ground 121.8, Call You Runway Vacated {Ig01113}
+
+Vacated To Tarmac
+Pilot: {DHK GND} {Ig01113}, {Runway Vacated Via S1}
+GRD: {Ig01113}, Taxi Via S1-S-C To Stand No {5}
+Pilot: Roger, {Taxi Via S1-S-C} To Stand No {5} {Ig01113}
 
 
 
@@ -158,548 +343,994 @@ Pilot: Over To Control, Good Day {EK584}
 
 
 
-4.       Departure - Rt Call (THAI321)
-Airport:Vghs
-                                     Civil Ground
-Pushback
-Pilot: {Dhk Gnd} {THAI321}, Request Startup And Pushback
-Grd{THAI321}, Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North}/South.
-Pilot: Startup And Pushback Approved, {Temp 32}, , {Time 40}, Push To Face {North}/South {THAI321},
-C
-Taxi
-Pilot: {Dhk Gnd} {THAI321}, Request Taxi
-Grd: {THAI321}, Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14, {Qnh 1013}, {Squawk 4771{EK584}
-Pilot: {Qnh 1013}, Squawk 4771,Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14 {THAI321},
-Pilot: Request ATC Clearance.
-Grd: Confirm ready to copy ATC Clearance.
-Pilot: Affirm.
-Grd: Cleared to BKK SID ADMIL-1 Climb and Cruse FL 290
-Pilot: Cleared to BKK SID ADMIL-1 Climb and Cruse FL 290  
-Grd: Red back correct
-Pilot: {Dhk Gnd} {THAI321}, Holding Point Runway 14, Like To Change To Tower
-Grd: {THAI321}, Over To Tower  
-Pilot: Over To Tower {THAI321},
-C
-                                      
 
-                                         Civil Tower
-Line Up Civil
-Pilot: {Dhk Twr} {THAI321}, Request Line Up
-Twr: {THAI321}, Line Up Runway 14, Report Ready For Departure
-Pilot: Line Up Runway 14, Call You Ready For Departure {THAI321},
-C
-Departure
-Pilot: {Dhk Twr} {THAI321}, Ready For Departure
-Twr: {THAI321}, Initially 4000, Surface Wind 260/60kts, Cleared For Takeoff Runway 14 
+
+
+
+4 .               Vghs             Arrival - Rt Call   Qr638
+
+                                        Civil Entry
+Entry Call Arc
+Pilot: {Dhk Twr} {Qr638}, Descending FL60 , 20dme Inbound Dac
+Twr: {Qr638},, {Descend 4000ft}, {Qnh 1013} Report Established 12dme Arc For Dia-14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Established 12dme Arc {Qr638}, C
+		Entry Call Vor
+Pilot: {Dhk Twr} {Qr638}, Descending FL60, 15dme Inbound Dac
+Twr: {Qr638}, {Descend 4000ft}, {Qnh 1013} Report Over Vor Proceeding Outbound Of Letdown For Vdi-14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Established Outbound Of Letdown For Vdi-14 {Qr638}, Ch
+Entry Call Delta
+Pilot: {Dhk Twr} {Qr638}, Descending FL60, 15dme Inbound Dac
+Twr: {Qr638}, {Descend 4000ft}, {Qnh 1013} Report Over Delta Alpha, Proceeding Outbound Of Letdown For Runway 14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Over Delta Alpha, Proceeding Outbound Of Letdown Rwy 14, {Qr638}, Cmtmj
+                                     Vor Call
+Vor To Outbound
+Pilot: {Dhk Twr} {Qr638}, Over Vor Proceeding Outbound Of Letdown
+Twr: {Qr638}, Clear For The Approach, {Descend 3000ft}, Report Turning Inbound
+Pilot: Roger, Cleared For The Approach, Descending 3000ft, Call You Turning Inbound {Qr638}
+Ch
+Outbound To Localizer
+Pilot: {Dhk Twr} {Qr638}, Turning Inbound
+Twr: {Qr638}, Report Established Localizer Runway 14
+Pilot: Call You Established Localizer, Rwy-14 {Qr638}
+Ch
+Localizer To 6dme Vor
+Pilot: {Dhk Twr} {Qr638}, On Localizer Runway 14
+Twr: {Qr638}, Report 6 Ils Dme
+Pilot: BCall You 6 Ils Dme {Qr638}
+Ch
+                           Arc Call
+12 Dme Arc To R300
 Pilot:
-S/W Copied, Runway 14, Cleared For Takeoff {THAI321},
-Cmtmj
-Airborne
-Twr: {THAI321}, Airborne {Time}, Report Passing 4000ft
-Pilot: Airborne Copied, Call You Passing 4000ft {THAI321}, C
-Transfer To Control
-Pilot: {Dhk Twr} {THAI321}, Passing 4000ft
-Twr: {THAI321}, Contact Dhaka Control 126.7
-Pilot: Over To Control, Good Day {THAI321},
-
-
-
-
-
-
-
-
-5. Departure - Rt Call (IGO1113)
-Airport:Vghs
-                                     Civil Ground
-Pushback
-Pilot: {Dhk Gnd} {IGO1113}, Request Startup And Pushback
-Grd {IGO1113}, Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North}/South.
-Pilot: Startup And Pushback Approved, {Temp 32}, , {Time 40}, Push To Face {North}/South {IGO1113},
- C
-Taxi
-Pilot: {Dhk Gnd} {IGO1113}, Request Taxi
-Grd: {IGO1113}, Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14, {Qnh 1013}, {Squawk 4771{IGO1113},
- Pilot: {Qnh 1013}, Squawk 4771,Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14 {IGO1113}, 
-Pilot: Request ATC Clearance.
-Grd: Confirm ready to copy ATC Clearance.
-Pilot: Affirm.
-Grd: Cleared to CHENNAI SID IDLOX-1A Climb and Cruse FL 260
-Pilot: Cleared to CHENNAI SID IDLOX-1A Climb and Cruse FL 260
-Grd: Redback currect
-Pilot: {Dhk Gnd} {IGO1113}, Holding Point Runway 14, Like To Change To Tower
-Grd: {IGO1113}, Over To Tower  
-Pilot: Over To Tower {IGO1113},
-C
-                                      
-
-                                         Civil Tower
-Line Up Civil
-Pilot: {Dhk Twr} {IGO1113}, Request Line Up
-Twr: {IGO1113},, Line Up Runway 14, Report Ready For Departure
-Pilot: Line Up Runway 14, Call You Ready For Departure {IGO1113},
-C
-Departure
-Pilot: {Dhk Twr} {IGO1113}, Ready For Departure
-Twr: {IGO1113}, Initially 4000, Surface Wind 260/60kts, Cleared For Takeoff Runway 14 
+{Dhk Twr} {Qr638}, Established 12dme Arc Runway-14
+Twr:
+{Qr638}, Report Crossing R300
 Pilot:
-S/W Copied, Runway 14, Cleared For Takeoff {IGO1113},
-Cmtmj
-Airborne
-Twr: {IGO1113}, Airborne {Time}, Report Passing 4000ft
-Pilot: Airborne Copied, Call You Passing 4000ft {IGO1113}, C
-Transfer To Control
-Pilot: {Dhk Twr} {IGO1113}, Passing 4000ft
-Twr: {IGO1113}, Contact Dhaka Control 126.7
-Pilot: Over To Control, Good Day {IGO1113},
-
-
-
-
-
-
-
-
-
-
-6.  Departure - Rt Call (QRT638)
-Airport:Vghs
-                                     Civil Ground
-Pushback
-Pilot: {Dhk Gnd} {QTR638}, Request Startup And Pushback
-Grd {QTR638} Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North/South}.
-Pilot: Startup And Pushback Approved, {Temp 32}, , {Time 40}, Push To Face {North/South} {QTR638}
- C
-Taxi
-Pilot: {Dhk Gnd} {QTR638}Request Taxi
-Grd: {QTR638}Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14, {Qnh 1013}, {Squawk 4771{QTR638}Pilot: {Qnh 1013}, Squawk 4771,Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14 {QTR638}
-Pilot: Request ATC Clearance.
-Grd: Confirm ready to copy ATC Clearance.
-Pilot:Afirm.
-Grd: Cleared to DOHA SID IKAGO-1A Climb and Cruse FL 280
-Pilot: Cleared to DOHA SID IKAGO-1A Climb and Cruse FL 280
-Grd: Red back correct
-Pilot: {Dhk Gnd} {QTR638}Holding Point Runway 14, Like To Change To Tower
-Grd: {QTR638}, Over To Tower  
-Pilot: Over To Tower {QTR638}.
+Call You Crossing R300 {Qr638}
 C
-                                      
-
-                                         Civil Tower
-Line Up Civil
-Pilot: {Dhk Twr} {QTR638}, Request Line Up
-Twr: {QTR638}, Line Up Runway 14, Report Ready For Departure
-Pilot: Line Up Runway 14, Call You Ready For Departure {QTR638}
-C
-Departure
-Pilot: {Dhk Twr} {QTR638}, Ready For Departure
-Twr: {QTR638}, Initially 4000, Surface Wind 260/60kts, Cleared For Takeoff Runway 14 
+12 Dme Arc To R355
 Pilot:
-S/W Copied, Runway 14, Cleared For Takeoff {QTR638}
-Cmtmj
-Airborne
-Twr: {QTR638}, Airborne {Time}, Report Passing 4000ft
-Pilot: Airborne Copied, Call You Passing 4000ft {QTR638}
+{Dhk Twr} {Qr638}, Established 12dme Arc Runway-14
+Twr:
+{Qr638}, Report Crossing R355
+Pilot:
+Call You Crossing R355 {Qr638}
 C
-Transfer To Control
-Pilot: {Dhk Twr} {QTR638}, Passing 4000ft
-Twr: {QTR638}, Contact Dhaka Control 126.7
-Pilot: Over To Control, Good Day {QTR638},
-
-
-
-
-
-
-
-
-
-
-7. Departure - Rt Call (SQ446)
-Airport:Vghs
-                                     Civil Ground
-Pushback
-Pilot: {Dhk Gnd} {SQ446}, Request Startup And Pushback
-Grd {SQ446}Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North/South}.
-Pilot: Startup And Pushback Approved, {Temp 32}, , {Time 40}, Push To Face {North/South} {SQ446}
- C
-Taxi
-Pilot: {Dhk Gnd} {SQ446} Request Taxi
-Grd: {SQ446} Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14, {Qnh 1013}, {Squawk 4771, {SQ446}Pilot: {Qnh 1013}, Squawk 4771,Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14 {SQ446} 
-Pilot: Request ATC Clearance.
-Grd: Confirm ready to copy ATC Clearance.
-Pilot:Afirm.
-Grd: Cleared to BKK SID ADMIL-1 Climb and Cruse FL 290
-Pilot: Cleared to BKK SID ADMIL-1 Climb and Cruse FL 290
-Grd: Redback currect
-Pilot: {Dhk Gnd} {SQ446} Holding Point Runway 14, Like To Change To Tower
-Grd: {SQ446}, Over To Tower  
-Pilot: Over To Tower {SQ446}.
-             
-                                         Civil Tower
-Line Up Civil
-Pilot: {Dhk Twr} {SQ446}, Request Line Up
-Twr: {SQ446} ,Line Up Runway 14, Report Ready For Departure
-Pilot: Line Up Runway 14, Call You Ready For Departure {SQ446}
+R300 To Localizer
+Pilot:
+{Dhk Twr} {Qr638}, Crossing R300
+Twr:
+{Qr638}, Clear For The Approach, {Descend 3000ft} Report Established Localizer Runway 14
+Pilot:
+Call You Established Localizer, Rwy-14 {Qr638}
 C
-Departure
-Pilot: {Dhk Twr} {SQ446} Ready For Departure
-Twr: {SQ446}, Initially 4000, Surface Wind 260/60kts, Cleared For Takeoff Runway 14 
-Pilot: S/W Copied, Runway 14, Cleared For Takeoff, {SQ446}
-Cmtmj
-Airborne
-Twr: {SQ446}, Airborne {Time}, Report Passing 4000ft
-Pilot: Airborne Copied, Call You Passing 4000ft {SQ446}.
+R355 To Localizer
+Pilot:
+{Dhk Twr} {Qr638}, Crossing R355
+Twr:
+{Qr638}, Clear For The Approach, {Descend 3000ft} Report Established Localizer Runway 14
+Pilot:
+Call You Established Localizer, Rwy-14 {Qr638}
 C
-Transfer To Control
-Pilot: {Dhk Twr} {SQ446}, Passing 4000ft
-Twr: {SQ446}, Contact Dhaka Control 126.7
-Pilot: Over To Control, Good Day {SQ446}.
-
-
-
-
-
-
-
-
-
-
-
-
-
-DOMESTIC DEPARTURE
-1.
-Departure - Rt Call (AWA446)
-Airport:Vghs
-                                     Civil Ground
-Pushback
-Pilot: {Dhk Gnd} {AWA446}, Request Startup And Pushback
-Grd {AWA446} Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North/South}.
-Pilot: Startup And Pushback Approved, {Temp 32}, , {Time 40}, Push To Face {North/South} {AWA446}
- C
-Taxi
-Pilot: {Dhk Gnd} {AWA446} Request Taxi
-Grd: {AWA446} Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14, {Qnh 1013}, {Squawk 4771, {AWA446} Pilot: {Qnh 1013}, Squawk 4771,Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14 {AWA446} 
-Pilot: Request ATC Clearance.
-Grd: Confirm ready to copy ATC Clearance.
-Pilot: Afirm.
-Grd: Cleared to CTG SID ADMIL-1 Climb and Cruse FL 130
-Pilot: Cleared to CTG SID ADMIL-1 Climb and Cruse FL 130
-Grd: Red back correct
-Pilot: {Dhk Gnd {AWA446} Holding Point Runway 14, Like To Change To Tower
-Grd: {AWA446}, Over To Tower   
-Pilot: Over To Tower {AWA446}.
-             
-                                         Civil Tower
-Line Up Civil
-Pilot: {Dhk Twr} {AWA446} Request Line Up
-Twr: {AWA446}, Line Up Runway 14, Report Ready For Departure
-Pilot: Line Up Runway 14, Call You Ready For Departure {AWA446}
+Localizer To 6dme Arc
+Pilot:
+{Dhk Twr} {Qr638}, On Localizer Rwy-14
+Twr:
+{Qr638}, Report 6 Ils Dme
+Pilot:
+Call You 6 Ils Dme {Qr638}
 C
-Departure
-Pilot: {Dhk Twr} {AWA446} Ready For Departure
-Twr: {AWA446}, Initially 4000, Surface Wind 260/60kts, Cleared For Takeoff Runway 14  
-Pilot: S/W Copied, Runway 14, Cleared For Takeoff, {AWA446}
-Cmtmj
-Airborne
-Twr: {AWA446}, Airborne {Time}, Report Passing 4000ft
-Pilot: Airborne Copied, Call You Passing 4000ft {AWA446}
-C
-Transfer To Control
-Pilot: {Dhk Twr} {AWA446} Passing 4000ft
-Twr: {AWA446}, Contact Dhaka Control 126.7
-Pilot: Over To Control, Good Day {AWA446}.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2.   Departure - Rt Call (BG472)
-Airport:Vghs
-                                     Civil Ground
-Pushback
-Pilot: {Dhk Gnd} {BG472} Request Startup And Pushback
-Grd: {BG472}, Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North/South}.
-Pilot: Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North}/South {BG472},
- C
-Taxi
-Pilot: {Dhk Gnd} {BG472}, Request Taxi 
-Grd: {BG472}, Taxi Via {C-N-N2,F-N-N2,V-N-N2} } To Holding Point Runway-14, {Qnh 1013}, {Squawk 4771, {BG472},
- Pilot: {Qnh 1013}, Squawk 4771,Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14  {BG472}, 
-Pilot: Request ATC Clearance.
-Grd: Confirm ready to copy ATC Clearance.
-Pilot: Afirm.
-Grd: Cleared to BSL SID KAKBO Climb and Cruse FL 140
-Pilot: Cleared to BSL SID KAKBO Climb and Cruse FL 140
-Grd: Red back correct
-Pilot: {Dhk Gnd {BG472}, Holding Point Runway 14, Like To Change To Tower
-Grd: {BG472}, Over To Tower   
-Pilot: Over To Tower {BG472}. 
-             
-                                       
-                                  Civil Tower
-Line Up Civil
-Pilot: {Dhk Twr} {BG472}, Request Line Up
-Twr: {BG472}, Line Up Runway 14, Report Ready For Departure
-Pilot: Line Up Runway 14, Call You Ready For Departure {BG472},
-C
-Departure
-Pilot: {Dhk Twr} {BG472}, Ready For Departure
-Twr: {BG472}, Initially 4000, Surface Wind 260/60kts, Cleared For Takeoff Runway 14  
-Pilot: S/W Copied, Runway 14, Cleared For Takeoff, {BG472}.
-Cmtmj
-Airborne
-Twr: {BG472}, Airborne {Time}, Report Passing 4000ft
-Pilot: Airborne Copied, Call You Passing 4000ft {BG472},
-C
-Transfer To Control
-Pilot: {Dhk Twr} {BG472}, Passing 4000ft.
-Twr: {BG472}, Contact Dhaka Control 126.7
-Pilot: Over To Control, Good Day {BG472}.
-
-
-
-
-
-
-
-
-
-
-
-3.   Departure - Rt Call (BG492)
-Airport:Vghs
-                                     Civil Ground
-Pushback
-Pilot: {Dhk Gnd} {BG492} Request Startup And Pushback
-Grd: {BG492}, Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North/South}.
-Pilot: Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North/South} {BG492} 
- C
-Taxi
-Pilot: {Dhk Gnd} {BG492} Request Taxi 
-Grd: {BG492} Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14, {Qnh 1013}, {Squawk 4773, 
-Pilot: {Qnh 1013}, Squawk 4771,Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14  {BG492} 
- Pilot: Request ATC Clearance.
-Grd: Confirm ready to copy ATC Clearance.
-Pilot:Afirm.
-Grd: Cleared to SAIDPUR SID TEGAK-1 Climb and Cruse FL 120
-Pilot: Cleared to SAIDPUR SID TEGAK-1 Climb and Cruse FL 120
-Grd: Red back correct
-Pilot: {Dhk Gnd {BG492} }, Holding Point Runway 14, Like To Change To Tower
-Grd: {BG492} Over To Tower   
-Pilot: Over To Tower {BG492} . 
-             
                                         
+                                                   DELTA CALL
+delta to outbound
+Pilot: {DHK TWR} {call-sign Qr638}}, over Delta Alpha, proceeding outbound of letdown rwy-14
+ TWR: {call-sign Qr638}}, clear for the approach, {descend 3000ft}, Report established localizer rwy-14
+Pilot: Roger, cleared for the approach, descending 3000ft, call you  established localizer rwy-14 {call-sign Qr638}}
+CMTMJ
+outbound to inbound
 
+ Pilot: {DHK TWR} {call-sign Qr638}},  established localizer rwy-14
+TWR: {call-sign Qr638}},Report 6 ILS DME
+Pilot: call you 6 ILS DME{call-sign Qr638}
+Steady inbound
+Pilot: {DHK TWR} { Qr638}, steady inbound
+TWR: {EK584}, report 6 ILS DME
+Pilot: Call you 6 ILS DME { Qr638}
 
- Civil Tower
-Line Up Civil
-Pilot: {Dhk Twr} {BG492} Request Line Up
-Twr: {BG492} Line Up Runway 14, Report Ready For Departure
-Pilot: Line Up Runway 14, Call You Ready For Departure {BG492} 
-C
-Departure
-Pilot: {Dhk Twr} {BG492} Ready For Departure
-Twr: {BG492} Initially 4000, Surface Wind 260/60kts, Cleared For Takeoff Runway 14  
-Pilot: S/W Copied, Runway 14, Cleared For Takeoff, {BG492} 
 Cmtmj
-Airborne
-Twr: {BG492} Airborne {Time}, Report Passing 4000ft
-Pilot: Airborne Copied, Call You Passing 4000ft {BG492} 
+                        Landing Call
+6dme To Land
+Pilot:
+{Dhk Twr} {Qr638}, 6 Ils Dme
+Twr:
+{Qr638}, Check Gears Down And Locked, Surface Wind 230/05 Knots, Cleared To Land Runway-14
+Pilot:
+Gears Are Green, S/W Copied, Cleared To Land Rwy-14 {Qr638}
+Cmtmj
+Landed And Taxi
+Twr:
+{Qr638}, Landed 1200, {Taxi Via S1}, After Vacating Contact Ground 121.8
+Pilot:
+{Taxi Via S1}, After Vacating Change To Ground 121.8, Call You Runway Vacated {Qr638}
+Cmtmj
+Vacated To Tarmac
+Pilot:
+{Dhk Gnd} {Qr638}, {Runway Vacated Via S1}
+Grd:
+{Qr638}, Taxi Via S1-S-C To Stand No {5}
+Pilot:
+Roger, {Taxi Via S1-S-C} To Stand No {5} {Qr638}
 C
-Transfer To Control
-Pilot: {Dhk Twr} {BG492} Passing 4000ft.
-Twr: {BG492} Contact Dhaka Control 126.7
-Pilot: Over To Control, Good Day {BG492} 
 
 
 
 
 
 
-
-
-
-
-
-4.   Departure - Rt Call (BG602)
-Airport:Vghs
-                                     Civil Ground
-Pushback
-Pilot: {Dhk Gnd} {BG602} Request Startup And Pushback
-Grd: {BG602} Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North/South}.
-Pilot: Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North}/South {BG602}  C
-Taxi
-Pilot: {Dhk Gnd} {BG602} Request Taxi 
-Grd: {BG602} Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14, {Qnh 1013}, {Squawk 4773}, 
-Pilot: {Qnh 1013}, }, {Squawk 4773},,Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14  {BG602} 
- Pilot: Request ATC Clearance.
-Grd: Confirm ready to copy ATC Clearance.
-Pilot: Affirm.
-Grd: Cleared to BSL SID KAKBO Climb and Cruse FL 140
-Pilot: Cleared to BSL SID KAKBO Climb and Cruse FL 140
-Grd: Red back correct
-Pilot: {Dhk Gnd {BG602} Holding Point Runway 14, Like To Change To Tower
-Grd: {BG602} Over To Tower   
-Pilot: Over To Tower {BG602} . 
-             
-
-
-                                         Civil Tower
-Line Up Civil
-Pilot: {Dhk Twr} {BG602} Request Line Up
-Twr: {BG602} Line Up Runway 14, Report Ready For Departure
-Pilot: Line Up Runway 14, Call You Ready For Departure {BG602} C
-Departure
-Pilot: {Dhk Twr} {BG602} Ready For Departure
-Twr: {BG602} Initially 4000, Surface Wind 260/60kts, Cleared For Takeoff Runway 14  
-Pilot: S/W Copied, Runway 14, Cleared For Takeoff, {BG602} Cmtmj
-Airborne
-Twr: {BG602} Airborne {Time}, Report Passing 4000ft
-Pilot: Airborne Copied, Call You Passing 4000ft {BG602} 
+5.                                 Arrival - Rt Call      Ek584
+Entry Call Arc
+Pilot: {Dhk Twr} {Ek584}, Descending FL60 , 20dme Inbound Dac
+Twr: {Ek584}, {Descend 4000ft}, {Qnh 1013} Report Established 12dme Arc For Dia-14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Established 12dme Arc {Ek584}
 C
-Transfer To Control
-Pilot: {Dhk Twr} {BG602} Passing 4000ft.
-Twr: {BG602} Contact Dhaka Control 126.7
-Pilot: Over To Control, Good Day {BG602} 
+		Entry Call Vor
+Pilot: {Dhk Twr} {Ek584}, Descending FL60, 15dme Inbound Dac
+Twr: {Ek584}, {Descend 4000ft}, {Qnh 1013} Report Over Vor Proceeding Outbound Of Letdown For Vdi-14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Established Outbound Of Letdown For Vdi-14 {Ek584}
+Ch
+Entry Call Delta
+Pilot: {Dhk Twr} {Ek584}, Descending FL60, 15dme Inbound Dac
+Twr: {Ek584}, {Descend 4000ft}, {Qnh 1013} Report Over Delta Alpha, Proceeding Outbound Of Letdown For Runway 14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Over Delta Alpha, Proceeding Outbound Of Letdown Rwy 14, {Ek584}
+Cmtmj
+                              
+
+                                 Vor Call
+Vor To Outbound
+Pilot: {Dhk Twr} {Ek584}, Over Vor Proceeding Outbound Of Letdown
+Twr: {Ek584}, Clear For The Approach, {Descend 3000ft}, Report Turning Inbound At 12 Miles
+Pilot: Roger, Cleared For The Approach, Descending 3000ft, Call You Turning Inbound {Ek584}
+Ch
+Outbound To Localizer
+Pilot: {Dhk Twr} {Ek584}, Turning Inbound
+Twr: {Ek584}, Report Established Localizer Runway 14
+Pilot:Call You Established Localizer, Rwy-14 {Ek584}
+Ch
+
+Localizer To 6 Dme Vor
+Pilot: {Dhk Twr} {Ek584}, On Localizer Runway 14
+Twr: {Ek584}, Report 6 Ils Dme
+Pilot: Call You 6 Ils Dme {Ek584}
+Ch
+Arc Call
+12 Dme Arc To R300
+Pilot: {Dhk Twr} {Ek584}, Established 12dme Arc Runway-14
+Twr: {Ek584}, Report Crossing R300
+Pilot: Call You Crossing R300 {Ek584}
+C
+12 Dme Arc To R355
+Pilot: {Dhk Twr} {Ek584}, Established 12dme Arc Runway-14
+Twr: {Ek584}, Report Crossing R355
+Pilot: Call You Crossing R355 {Ek584}
+C
+R300 To Localizer
+Pilot: {Dhk Twr} {Ek584}, Crossing R300
+Twr: {Ek584}, Clear For The Approach, {Descend 3000ft} Report Established Localizer Runway 14
+Pilot: Call You Established Localizer, Rwy-14 {Ek584}
+C
+R355 To Localizer
+Pilot: {Dhk Twr} {Ek584}, Crossing R355
+Twr: {Ek584}, Clear For The Approach, {Descend 3000ft} Report Established Localizer Runway 14
+Pilot: Call You Established Localizer, Rwy-14 {Ek584}
+C
+Localizer To 6dme Arc
+Pilot: {Dhk Twr} {Ek584}, On Localizer Rwy-14
+Twr: {Ek584}, Report 6 Ils Dme
+Pilot: Call You 6 Ils Dme {Ek584}
+C
+
+
+
+DELTA CALL
+delta to outbound
+Pilot: {DHK TWR} {call-sign Ek584}, over Delta Alpha, proceeding outbound of letdown rwy-14
+ TWR: {call-sign Ek584}, clear for the approach, {descend 3000ft}, Report established localizer rwy-14
+Pilot: Roger, cleared for the approach, descending 3000ft, call you  established localizer rwy-14 {call-sign Ek584}
+CMTMJ
+outbound to inbound
+
+ Pilot: {DHK TWR} {call-sign Ek584},  established localizer rwy-14
+TWR: {call-sign Ek584},Report 6 ILS DME
+Pilot: call you 6 ILS DME{call-sign Ek584}
+CMTMJ
+CMTMJ
+Steady inbound
+Pilot: {DHK TWR} {EK584}, steady inbound
+TWR: {EK584}, report 6 ILS DME
+Pilot: Call you 6 ILS DME {EK584}
+CMTMJ
+                       
+
+
+                            LANDING CALL
+6dme to land
+Pilot: {DHK TWR} {EK584}, 6 ILS DME
+TWR: {EK584}, check gears down and locked, surface wind 230/05 knots, cleared to land runway-14
+Pilot: Gears are green, s/w copied, Cleared to land rwy-14 {EK584}
+CMTMJ
+Landed and taxi
+TWR: {EK584}, landed 1200, {taxi via S1}, after vacating contact ground 121.8
+Pilot: {Taxi via S1}, after vacating change to ground 121.8, call you runway vacated {EK584}
+CMTMJ
+
+Vacated to tarmac
+Pilot: {DHK GND} {EK584}, {runway vacated via S1}
+GRD: {EK584}, Taxi via S1-S-C to Stand no {5}
+Pilot: Roger, {taxi via S1-S-C} to Stand no {5} {EK584}
+C
 
 
 
 
 
 
+6,      Vghs - B787    SQ446 - Arrival - Rt Call
+                               Civil Entry
+Entry Call Arc
+Pilot: {Dhk Twr} {Sq446}, Descending FL60 , 20dme Inbound Dac
+Twr: {Sq446}, {Descend 4000ft}, {Qnh 1013} Report Established 12dme Arc For Dia-14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Established 12dme Arc {Sq446}, C
+		Entry Call Vor
+Pilot: {Dhk Twr} {Sq446}, Descending FL60, 15dme Inbound Dac
+Twr: {Sq446}, {Descend 4000ft}, {Qnh 1013} Report Over Vor Proceeding Outbound Of Letdown For Vdi-14
+Pilot: {Sq446},, {Descending 4000ft}, Call You Established Outbound Of Letdown For Vdi-14 {Ek584}
+Ch
+Entry Call Delta
+Pilot: {Dhk Twr} {Sq446}, Descending FL60, 15dme Inbound Dac
+Twr: {Ek584}, {Descend 4000ft}, {Qnh 1013} Report Over Delta Alpha, Proceeding Outbound Of Letdown For Runway 14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Over Delta Alpha, Proceeding Outbound Of Letdown Rwy 14, {Sq446}, Vor Call
+
+Vor To Outbound
+Pilot: {Dhk Twr} {Sq446}, Over Vor Proceeding Outbound Of Letdown
+Twr: {Sq446}, Clear For The Approach, {Descend 3000ft}, Report Turning Inbound
+Pilot: Roger, Cleared For The Approach, Descending 3000ft, Call You Turning Inbound {Sq446}
+Ch
+
+
+Outbound To Localizer
+Pilot: {Dhk Twr} {Sq446}, Turning Inbound
+Twr: {Sq446}, Report Established Localizer Runway 14
+Pilot: Call You Established Localizer, Rwy-14 {Sq446}
+Ch
+Localizer To 6dme Vor
+Pilot: {Dhk Twr} {Sq446}, On Localizer Runway 14
+Twr: {Sq446}, Report 6 Ils Dme
+Pilot: Call You 6 Ils Dme {Sq446}
+Ch
+                                 Arc Call
+12 Dme Arc To R300
+Pilot: {Dhk Twr} {Sq446}, Established 12dme Arc Runway-14
+Twr: {Sq446}, Report Crossing R300
+Pilot: Call You Crossing R300 {Sq446}
+C
+
+
+
+12 Dme Arc To R355
+Pilot: {Dhk Twr} {Sq446}, Established 12dme Arc Runway-14
+Twr: {Sq446}, Report Crossing R355
+Pilot: Call You Crossing R355 {Sq446}
+C
+R300 To Localizer
+Pilot: {Dhk Twr} {Sq446}, Crossing R300
+Twr:
+{Sq446}, Clear For The Approach, {Descend 3000ft} Report Established Localizer Runway 14
+Pilot:
+Call You Established Localizer, Rwy-14 {Sq446}
+C
+R355 To Localizer
+Pilot: {Dhk Twr} {Sq446}, Crossing R355
+Twr:
+{Sq446}, Clear For The Approach, {Descend 3000ft} Report Established Localizer Runway 14
+Pilot:
+Call You Established Localizer, Rwy-14 {Sq446}
+C
+Localizer To 6dme Arc
+Pilot:
+{Dhk Twr} {Sq446}, On Localizer Rwy-14
+Twr:
+{Sq446}, Report 6 Ils Dme
+Pilot:
+Call You 6 Ils Dme {Sq446}
+
+                                           DELTA CALL
+delta to outbound
+Pilot: {DHK TWR} {call-sign Sq446}}, over Delta Alpha, proceeding outbound of letdown rwy-14
+ TWR: {call-sign Sq446}}, clear for the approach, {descend 3000ft}, Report established localizer rwy-14
+Pilot: Roger, cleared for the approach, descending 3000ft, call you  established localizer rwy-14 {call-sign Sq446}}
+CMTMJ
+outbound to inbound
+
+ Pilot: {DHK TWR} {call-sign Sq446}},  established localizer rwy-14
+TWR: {call-sign Sq446}},Report 6 ILS DME
+Pilot: call you 6 ILS DME{call-sign Sq446}}
+CMTMJ
+Cmtmj
+Steady Inbound
+Pilot:
+{Dhk Twr} {Sq446}, Steady Inbound
+Twr:
+{Sq446}, Report 6 Ils Dme
+Pilot:
+Call You 6 Ils Dme {Sq446}
+Cmtmj
+                                    Landing Call
+6dme To Land
+Pilot:
+{Dhk Twr} {Sq446}, 6 Ils Dme
+Twr:
+{Sq446}, Check Gears Down And Locked, Surface Wind 230/05 Knots, Cleared To Land Runway-14
+Pilot:
+Gears Are Green, S/W Copied, Cleared To Land Rwy-14 {Sq446}
+Cmtmj
+Landed And Taxi
+Twr:
+{Sq446}, Landed 1200, {Taxi Via S1}, After Vacating Contact Ground 121.8
+Pilot:
+{Taxi Via S1}, After Vacating Change To Ground 121.8, Call You Runway Vacated {Sq446}
+Cmtmj
+Vacated To Tarmac
+Pilot:
+{Dhk Gnd} {Sq446}, {Runway Vacated Via S1}
+Grd:
+{Sq446}, Taxi Via S1-S-C To Stand No {5}
+Pilot:
+Roger, {Taxi Via S1-S-C} To Stand No {5} {Sq446}
+C
+
+
+7. Vghs - B787 - {Thai321} - Arrival - Rt Call
+
+                                             Civil Entry
+Entry Call Arc
+Pilot: {Dhk Twr} {Thai321}, Descending FL60 , 20dme Inbound Dac
+Twr: {Thai321},, {Descend 4000ft}, {Qnh 1013} Report Established 12dme Arc For Dia-14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Established 12dme Arc {Thai321},
+C
+		Entry Call Vor
+Pilot: {Dhk Twr} {Thai321}, Descending FL60, 15dme Inbound Dac
+Twr: {Thai321}, {Descend 4000ft}, {Qnh 1013} Report Over Vor Proceeding Outbound Of Letdown For Vdi-14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Established Outbound Of Letdown For Vdi-14 {Thai321},
+Ch
+Entry Call Delta
+Pilot: {Dhk Twr} {Thai321}, Descending FL60, 15dme Inbound Dac
+Twr: {Ek584}, {Descend 4000ft}, {Qnh 1013} Report Over Delta Alpha, Proceeding Outbound Of Letdown For Runway 14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Over Delta Alpha, Proceeding Outbound Of Letdown Rwy 14, {Thai321},
+
+
+Vor To Outbound
+Pilot: {Dhk Twr} {Thai321}, Over Vor Proceeding Outbound Of Letdown
+Twr: {Thai321}, Clear For The Approach, {Descend 3000ft}, Report Turning Inbound
+Pilot: Roger, Cleared For The Approach, Descending 3000ft, Call You Turning Inbound {Thai321}
+Ch
+Outbound To Localizer
+Pilot: {Dhk Twr} {Thai321}, Turning Inbound
+Twr: {Thai321}, Report Established Localizer Runway 14
+Pilot: Call You Established Localizer, Rwy-14 {Thai321}
+Ch
+Localizer To 6dme Vor
+Pilot: {Dhk Twr} {Thai321}, On Localizer Runway 14
+Twr: {Thai321}, Report 6 Ils Dme
+Pilot: Call You 6 Ils Dme {Thai321}
+Ch
+                               Arc Call
+12 Dme Arc To R300
+Pilot: {Dhk Twr} {Thai321}, Established 12dme Arc Runway-14
+Twr: {Thai321}, Report Crossing R300
+Pilot: Call You Crossing R300 {Thai321}
+C
+12 Dme Arc To R355
+Pilot: {Dhk Twr} {Thai321}, Established 12dme Arc Runway-14
+Twr: {Thai321}, Report Crossing R355
+Pilot: Call You Crossing R355 {Thai321}
+C
+R300 To Localizer
+Pilot: {Dhk Twr} {Thai321}, Crossing R300
+Twr: {Thai321}, Clear For The Approach, {Descend 3000ft} Report Established Localizer Runway 14
+Pilot: Call You Established Localizer, Rwy-14 {Thai321}
+C
+R355 To Localizer
+Pilot: {Dhk Twr} {Thai321}, Crossing R355
+Twr: {Thai321}, Clear For The Approach, {Descend 3000ft} Report Established Localizer Runway 14
+Pilot: Call You Established Localizer, Rwy-14 {Thai321}
+C
+Localizer To 6dme Arc
+Pilot: {Dhk Twr} {Thai321}, On Localizer Rwy-14
+Twr: {Thai321}, Report 6 Ils Dme
+Pilot: Call You 6 Ils Dme {Thai321}
+C
+                               Delta Call
+Delta To Outbound
+Pilot: {Dhk Twr} {Thai321}, Over Delta Alpha, Proceeding Outbound Of Letdown Rwy-14
+Twr: {Thai321}, Clear For The Approach, {Descend 3000ft}, Report Turning Inbound/Established localizer Rwy-14
+Pilot: Roger, Cleared For The Approach, Descending 3000ft, Call You Turning Inbound/Established localizer Rwy-14 {Thai321}
+Cmtmj
+Outbound To Inbound
+Pilot: {Dhk Twr} {Thai321}, Established localizer Rwy-14 
+Twr: {Thai321}, Report 6 ILS DME
+Pilot: Call You 6 ILS DME {Thai321}
+Cmtmj
+Steady Inbound
+Pilot: {Dhk Twr} {Thai321}, Steady Inbound
+Twr: {Thai321}, Report 6 Ils Dme
+Pilot: Call You 6 Ils Dme {Thai321}
+Cmtmj
+                                Landing Call
+6dme To Land
+Pilot: {Dhk Twr} {Thai321}, 6 Ils Dme
+Twr: {Thai321}, Check Gears Down And Locked, Surface Wind 230/05 Knots, Cleared To Land Runway-14
+Pilot: Gears Are Green, S/W Copied, Cleared To Land Rwy-14 {Thai321}
+Cmtmj
+Landed And Taxi
+Twr: {Thai321}, Landed 1200, {Taxi Via S1}, After Vacating Contact Ground 121.8
+Pilot: {Taxi Via S1}, After Vacating Change To Ground 121.8, Call You Runway Vacated {Thai321}
+Cmtmj
+Vacated To Tarmac
+Pilot: {Dhk Gnd} {Thai321}, {Runway Vacated Via S1}
+Grd: {Thai321}, Taxi Via S1-S-C To Stand No {5}
+Pilot:
+Roger, {Taxi Via S1-S-C} To Stand No {5} {Thai321}
+C
 
 
 
 
 
+Domestic s/no-1
+Vghs - B787 - {Awa446} - Arrival - Rt Call
+                                             Civil Entry
+Entry Call Arc
+Pilot: {Dhk Twr} {Awa446}, Descending FL60 , 20dme Inbound Dac
+Twr: {Awa446}, {Descend 4000ft}, {Qnh 1013} Report Established 12dme Arc For Dia-14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Established 12dme Arc {Awa446},
+C
+		Entry Call Vor
+Pilot: {Dhk Twr} {Awa446}, Descending FL60, 15dme Inbound Dac
+Twr: {Awa446}, }, {Descend 4000ft}, {Qnh 1013} Report Over Vor Proceeding Outbound Of Letdown For Vdi-14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Established Outbound Of Letdown For Vdi-14 {Awa446}, Ch
+Entry Call Delta
+Pilot: {Dhk Twr} {Awa446}, Descending FL60, 15dme Inbound Dac
+Twr: {Awa446}, {Descend 4000ft}, {Qnh 1013} Report Over Delta Alpha, Proceeding Outbound Of Letdown For Runway 14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Over Delta Alpha, Proceeding Outbound Of Letdown Rwy 14, {Awa446}, 
+                                      Vor Call
+Vor To Outbound
+Pilot: {Dhk Twr} {Awa446}, Over Vor Proceeding Outbound Of Letdown
+Twr: {Awa446}, Clear For The Approach, {Descend 3000ft}, Report Turning Inbound
+Pilot: Roger, Cleared For The Approach, Descending 3000ft, Call You Turning Inbound {Awa446}
+Ch
+Outbound To Localizer
+Pilot: {Dhk Twr} {Awa446}, Turning Inbound
+Twr: {Awa446}, Report Established Localizer Runway 14
+Pilot: Call You Established Localizer, Rwy-14 {Awa446}
+Ch
+Localizer To 6dme Vor
+Pilot: {Dhk Twr} {Awa446}, On Localizer Runway 14
+Twr: {Awa446}, Report 6 Ils Dme
+Pilot: Call You 6 Ils Dme {Awa446}
+Ch
+                                Arc Call
+12 Dme Arc To R300
+Pilot: {Dhk Twr} {Awa446}, Established 12dme Arc Runway-14
+Twr: {Awa446}, Report Crossing R300
+Pilot: Call You Crossing R300 {Awa446}
+C
+12 Dme Arc To R355
+Pilot: {Dhk Twr} {Awa446}, Established 12dme Arc Runway-14
+Twr: {Awa446}, Report Crossing R355
+Pilot: Call You Crossing R355 {Awa446}
+C
+R300 To Localizer
+Pilot: {Dhk Twr} {Awa446}, Crossing R300
+Twr: {Awa446}, Clear For The Approach, {Descend 3000ft} Report Established Localizer Runway 14
+Pilot:
+Call You Established Localizer, Rwy-14 {Awa446}
+C
+R355 To Localizer
+Pilot: {Dhk Twr} {Awa446}, Crossing R355
+Twr: {Awa446}, Clear For The Approach, {Descend 3000ft} Report Established Localizer Runway 14
+Pilot: Call You Established Localizer, Rwy-14 {Awa446}
+C
+Localizer To 6dme Arc
+Pilot: {Dhk Twr} {Awa446}, On Localizer Rwy-14
+Twr: {Awa446}, Report 6 Ils Dme
+Pilot: Call You 6 Ils Dme {Awa446}
+C
+                       Delta Call
+Delta To Outbound
+Pilot: {Dhk Twr} {Awa446}, Over Delta Alpha, Proceeding Outbound Of Letdown Rwy-14
+Twr: {Awa446}, Clear For The Approach, {Descend 3000ft}, Report Turning Inbound/Esablishrd localizer Rwy-14
+Pilot: Roger, Cleared For The Approach, Descending 3000ft, Call You Turning Inbound/Esablishrd localizer Rwy-14 {Awa446}
+Cmtmj
+Outbound To Inbound
+Pilot: {Dhk Twr} {Awa446}, Esablishrd localizer Rwy-14 
+Twr: {Awa446},  Report 6 ILS DME
+Pilot: Call You  6 ILS DME{Awa446}
+Cmtmj
+Steady Inbound
+Pilot: {Dhk Twr} {Awa446}, Steady Inbound
+Twr: {Awa446}, Report 6 ILS DME 
+Pilot:   Call You 6 ILS DME {Awa446}
+Cmtmj
+                                   Landing Call
+6dme To Land
+Pilot: {Dhk Twr} {Awa446}, 6 Ils Dme
+Twr: {Awa446}, Check Gears Down And Locked, Surface Wind 230/05 Knots, Cleared To Land Runway-14
+Pilot: Gears Are Green, S/W Copied, Cleared To Land Rwy-14 {Awa446}
+Cmtmj
+Landed And Taxi
+Twr: {Awa446}, Landed 1200, {Taxi Via S1}, After Vacating Contact Ground 121.8
+Pilot: {Taxi Via S1}, After Vacating Change To Ground 121.8, Call You Runway Vacated {Awa446}
+Cmtmj
+Vacated To Tarmac
+Pilot: {Dhk Gnd} {Awa446}, {Runway Vacated Via S1}
+Grd: {Awa446}, Taxi Via S1-S-C To Stand No {5}
+Pilot: Roger, {Taxi Via S1-S-C} To Stand No {5} {Awa446}
+C
 
 
 
+2. Vghs - - {Bg472} - Arrival - Rt Call
+
+Entry Call Arc
+Pilot: {Dhk Twr} {Bg472},, Descending FL60 , 20dme Inbound Dac
+Twr: {Bg472}, {Descend 4000ft}, {Qnh 1013} Report Established 12dme Arc For Dia-14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Established 12dme Arc {Bg472}, C
+		Entry Call Vor
+Pilot: {Dhk Twr} {Bg472}, Descending FL60, 15dme Inbound Dac
+Twr: {Bg472},, {Descend 4000ft}, {Qnh 1013} Report Over Vor Proceeding Outbound Of Letdown For Vdi-14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Established Outbound Of Letdown For Vdi-14 {Bg472}, Ch
+Entry Call Delta
+Pilot: {Dhk Twr} {Bg472}, Descending FL60, 15dme Inbound Dac
+Twr: {Bg472}, {Descend 4000ft}, {Qnh 1013} Report Over Delta Alpha, Proceeding Outbound Of Letdown For Runway 14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Over Delta Alpha, Proceeding Outbound Of Letdown Rwy 14, {Bg472}, Vor Call
+
+
+Vor To Outbound
+Pilot: {Dhk Twr} {Bg472}, Over Vor Proceeding Outbound Of Letdown
+Twr: {Bg472}, Clear For The Approach, {Descend 3000ft}, Report Turning Inbound
+Pilot: Roger, Cleared For The Approach, Descending 3000ft, Call You Turning Inbound {Bg472}
+Ch
+Outbound To Localizer
+Pilot: {Dhk Twr} {Bg472}, Turning Inbound
+Twr: {Bg472}, Report Established Localizer Runway 14
+Pilot: Call You Established Localizer, Rwy-14 {Bg472}
+Ch
+Localizer To 6dme Vor
+Pilot: {Dhk Twr} {Bg472}, On Localizer Runway 14
+Twr: {Bg472}, Report 6 Ils Dme
+Pilot: Call You 6 Ils Dme {Bg472}
+Ch
+Arc Call
+12 Dme Arc To R300
+Pilot: {Dhk Twr} {Bg472}, Established 12dme Arc Runway-14
+Twr: {Bg472}, Report Crossing R300
+Pilot: Call You Crossing R300 {Bg472}
+C
+12 Dme Arc To R355
+Pilot: {Dhk Twr} {Bg472}, Established 12dme Arc Runway-14
+Twr: {Bg472}, Report Crossing R355
+Pilot: Call You Crossing R355 {Bg472}
+C
+R300 To Localizer
+Pilot: {Dhk Twr} {Bg472}, Crossing R300
+Twr: {Bg472}, Clear For The Approach, {Descend 3000ft} Report Established Localizer Runway 14
+Pilot: Call You Established Localizer, Rwy-14 {Bg472}
+C
+R355 To Localizer
+Pilot: {Dhk Twr} {Bg472}, Crossing R355
+Twr: {Bg472}, Clear For The Approach, {Descend 3000ft} Report Established Localizer Runway 14
+Pilot: Call You Established Localizer, Rwy-14 {Bg472}
+C
+Localizer To 6dme Arc
+Pilot: {Dhk Twr} {Bg472}, On Localizer Rwy-14
+Twr: {Bg472}, Report 6 Ils Dme
+Pilot: Call You 6 Ils Dme {Bg472}
+C
+                                Delta Call
+Delta To Outbound
+Pilot: {Dhk Twr} {Bg472}, Over Delta Alpha, Proceeding Outbound Of Letdown Rwy-14
+Twr: {Bg472}, Clear For The Approach, {Descend 3000ft}, Report Turning Inbound/Esablishrd localizer Rwy-14
+Pilot: Roger, Cleared For The Approach, Descending 3000ft, Call You Turning Inbound/Esablishrd localizer Rwy-14 {Bg472}
+Cmtmj
+Outbound To Inbound
+Pilot: {Dhk Twr} {Bg472}, Turning Inbound
+Twr: {Bg472}, Report 6 ILS DME
+Pilot: Call You  6 ILS DME {Bg472}
+Cmtmj
+Steady Inbound
+Pilot: {Dhk Twr} {Bg472}, Steady Inbound
+Twr: {Bg472}, Report 6 Ils Dme
+Pilot: Call You 6 Ils Dme {Bg472}
+Cmtmj
+                         Landing Call
+6dme To Land
+Pilot: {Dhk Twr} {Bg472}, 6 Ils Dme
+Twr: {Bg472}, Check Gears Down And Locked, Surface Wind 230/05 Knots, Cleared To Land Runway-14
+Pilot: Gears Are Green, S/W Copied, Cleared To Land Rwy-14 {Bg472}
+Cmtmj
+Landed And Taxi
+Twr: {Bg472}, Landed 1200, {Taxi Via S1}, After Vacating Contact Ground 121.8
+Pilot: {Taxi Via S1}, After Vacating Change To Ground 121.8, Call You Runway Vacated {Bg472}
+Cmtmj
+Vacated To Tarmac
+Pilot: {Dhk Gnd} {Bg472}, {Runway Vacated Via S1}
+Grd: {Bg472}, Taxi Via S1-S-C To Stand No {5}
+Pilot: Roger, {Taxi Via S1-S-C} To Stand No {5} {Bg472}
+C
+
+3.  Vghs - Dash8q - {Bg492} - Arrival - Rt Call
+                                         Civil Entry
+Entry Call Arc
+Pilot: {Dhk Twr} {Bg492}, Descending FL60 , 20dme Inbound Dac
+Twr: {Bg492}, {Descend 4000ft}, {Qnh 1013} Report Established 12dme Arc For Dia-14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Established 12dme Arc {Bg492}, C
+		Entry Call Vor
+Pilot: {Dhk Twr} {Bg492}, Descending FL60, 15dme Inbound Dac
+Twr: {Bg492}, {Descend 4000ft}, {Qnh 1013} Report Over Vor Proceeding Outbound Of Letdown For Vdi-14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Established Outbound Of Letdown For Vdi-14 {Bg492},
+Ch
+Entry Call Delta
+Pilot: {Dhk Twr} {Bg492}, Descending FL60, 15dme Inbound Dac
+Twr: {Bg492},, {Descend 4000ft}, {Qnh 1013} Report Over Delta Alpha, Proceeding Outbound Of Letdown For Runway 14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Over Delta Alpha, Proceeding Outbound Of Letdown Rwy 14, {Bg492}, Cmtmj
+                                         Vor Call
+Vor To Outbound
+Pilot: {Dhk Twr} {Bg492}, Over Vor Proceeding Outbound Of Letdown
+Twr: {Bg492}, Clear For The Approach, {Descend 3000ft}, Report Turning Inbound
+Pilot: Roger, Cleared For The Approach, Descending 3000ft, Call You Turning Inbound {Bg492}
+Ch
+Outbound To Localizer
+Pilot: {Dhk Twr} {Bg492}, Turning Inbound
+Twr: {Bg492}, Report Established Localizer Runway 14
+Pilot: Call You Established Localizer, Rwy-14 {Bg492}
+Ch
+Localizer To 6dme Vor
+Pilot: {Dhk Twr} {Bg492}, On Localizer Runway 14
+Twr: {Bg492}, Report 6 Ils Dme
+Pilot: Call You 6 Ils Dme {Bg492}
+Ch
+                                    Arc Call
+12 Dme Arc To R300
+Pilot: {Dhk Twr} {Bg492}, Established 12dme Arc Runway-14
+Twr: {Bg492}, Report Crossing R300
+Pilot: Call You Crossing R300 {Bg492}
+C
+12 Dme Arc To R355
+Pilot: {Dhk Twr} {Bg492}, Established 12dme Arc Runway-14
+Twr: {Bg492}, Report Crossing R355
+Pilot: Call You Crossing R355 {Bg492}
+C
+R300 To Localizer
+Pilot: {Dhk Twr} {Bg492}, Crossing R300
+Twr: {Bg492}, Clear For The Approach, {Descend 3000ft} Report Established Localizer Runway 14
+Pilot: Call You Established Localizer, Rwy-14 {Bg492}
+C
+R355 To Localizer
+Pilot: {Dhk Twr} {Bg492}, Crossing R355
+Twr: {Bg492}, Clear For The Approach, {Descend 3000ft} Report Established Localizer Runway 14
+Pilot: Call You Established Localizer, Rwy-14 {Bg492}
+C
+Localizer To 6dme Arc
+Pilot: {Dhk Twr} {Bg492}, On Localizer Rwy-14
+Twr: {Bg492}, Report 6 Ils Dme
+Pilot: Call You 6 Ils Dme {Bg492}
+C
+                                        Delta Call
+Delta To Outbound
+Pilot: {Dhk Twr} {Bg492}, Over Delta Alpha, Proceeding Outbound Of Letdown Rwy-14
+Twr: {Bg492}, Clear For The Approach, {Descend 3000ft}, Report Turning Inbound/Esablishrd localizer Rwy-14
+Pilot: Roger, Cleared For The Approach, Descending 3000ft, Call You Turning Inbound/Esablishrd localizer Rwy-14 {Bg492}
+Cmtmj
+Outbound To Inbound
+Pilot: {Dhk Twr} {Bg492}, Turning Inbound
+Twr: {Bg492}, Report Steady Inbound
+Pilot: Call You Steady Inbound {Bg492}
+Cmtmj
+Steady Inbound
+Pilot: {Dhk Twr} {Bg492}, Steady Inbound
+Twr: {Bg492}, Report 6 Ils Dme
+Pilot: Call You 6 Ils Dme {Bg492}
+Cmtmj
+Landing Call
+6dme To Land
+Pilot: {Dhk Twr} {Bg492}, 6 Ils Dme
+Twr: {Bg492}, Check Gears Down And Locked, Surface Wind 230/05 Knots, Cleared To Land Runway-14
+Pilot: Gears Are Green, S/W Copied, Cleared To Land Rwy-14 {Bg492}
+Cmtmj
+Landed And Taxi
+Twr: {Bg492}, Landed 1200, {Taxi Via S1}, After Vacating Contact Ground 121.8
+Pilot: {Taxi Via S1}, After Vacating Change To Ground 121.8, Call You Runway Vacated {Bg492}
+Cmtmj
+Vacated To Tarmac
+Pilot: {Dhk Gnd} {Bg492}, {Runway Vacated Via S1}
+Grd: {Bg492}, Taxi Via S1-S-C To Stand No {5}
+Pilot: Roger, {Taxi Via S1-S-C} To Stand No {5} {Bg492}
+C
+
+4.    Vghs - Dash8q - {Bg602} - Arrival - Rt Call
+                                                      Civil Entry
+Entry Call Arc
+Pilot: {Dhk Twr} {Bg602},, Descending FL60 , 20dme Inbound Dac
+Twr: {Bg602}, {Descend 4000ft}, {Qnh 1013} Report Established 12dme Arc For Dia-14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Established 12dme Arc {Bg602}, C
+		Entry Call Vor
+Pilot: {Dhk Twr} {Bg602},, Descending FL60, 15dme Inbound Dac
+Twr: {Bg602}, {Descend 4000ft}, {Qnh 1013} Report Over Vor Proceeding Outbound Of Letdown For Vdi-14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Established Outbound Of Letdown For Vdi-14 {Bg602}, Ch
+Entry Call Delta
+Pilot: {Dhk Twr} {Bg602}, Descending FL60, 15dme Inbound Dac
+Twr: {Bg602}, {Descend 4000ft}, {Qnh 1013} Report Over Delta Alpha, Proceeding Outbound Of Letdown For Runway 14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Over Delta Alpha, Proceeding Outbound Of Letdown Rwy 14, {Bg602}, Cmtmj
+                                     Vor Call
+Vor To Outbound
+Pilot: {Dhk Twr} {Bg602}, Over Vor Proceeding Outbound Of Letdown
+Twr: {Bg602}, Clear For The Approach, {Descend 3000ft}, Report Turning Inbound
+Pilot: Roger, Cleared For The Approach, Descending 3000ft, Call You Turning Inbound {Bg602}
+Ch
 
 
 
+Outbound To Localizer
+Pilot: {Dhk Twr} {Bg602}, Turning Inbound
+Twr: {Bg602}, Report Established Localizer Runway 14
+Pilot: Call You Established Localizer, Rwy-14 {Bg602}
+Ch
+Localizer To 6dme Vor
+Pilot: {Dhk Twr} {Bg602}, On Localizer Runway 14
+Twr: {Bg602}, Report 6 Ils Dme
+Pilot: Call You 6 Ils Dme {Bg602}
+Ch
+                                     Arc Call
+12 Dme Arc To R300
+Pilot: {Dhk Twr} {Bg602}, Established 12dme Arc Runway-14
+Twr: {Bg602}, Report Crossing R300
+Pilot: Call You Crossing R300 {Bg602}
+C
+12 Dme Arc To R355
+Pilot: {Dhk Twr} {Bg602}, Established 12dme Arc Runway-14
+Twr: {Bg602}, Report Crossing R355
+Pilot: Call You Crossing R355 {Bg602}
+C
+R300 To Localizer
+Pilot: {Dhk Twr} {Bg602}, Crossing R300
+Twr: {Bg602}, Clear For The Approach, {Descend 3000ft} Report Established Localizer Runway 14
+Pilot: Call You Established Localizer, Rwy-14 {Bg602}
+C
+R355 To Localizer
+Pilot: {Dhk Twr} {Bg602}, Crossing R355
+Twr: {Bg602}, Clear For The Approach, {Descend 3000ft} Report Established Localizer Runway 14
+Pilot: Call You Established Localizer, Rwy-14 {Bg602}
+C
+Localizer To 6dme Arc
+Pilot: {Dhk Twr} {Bg602}, On Localizer Rwy-14
+Twr: {Bg602}, Report 6 Ils Dme
+Pilot: Call You 6 Ils Dme {Bg602}
+C
+ 
 
-5.   Departure - Rt Call (NVQ946)
-Airport:Vghs
-                                     Civil Ground
-Pushback
-Pilot: {Dhk Gnd} {NVQ946} Request Startup And Pushback
-Grd: {NVQ946} Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North/South}.
-Pilot: Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North}/South {NVQ946} C
-Taxi
-Pilot: {Dhk Gnd} {NVQ946} Request Taxi 
-Grd: {NVQ946} Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14, {Qnh 1013}, {Squawk 4773, 
-Pilot: {Qnh 1013}, Squawk 4771,Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14  {NVQ946} 
- Pilot: Request ATC Clearance.
-Grd: Confirm ready to copy ATC Clearance.
-Pilot: Affirm.
-Grd: Cleared to JSR SID IBANU-1 Climb and Cruse FL 120
-Pilot: Cleared to JSR SID IBANU-1 Climb and Cruse FL 120
-Grd: Red back correct
-Pilot: {Dhk Gnd {NVQ946} Holding Point Runway 14, Like To Change To Tower
-Grd: {NVQ946} Over To Tower   
-Pilot: Over To Tower {NVQ946} 
-             
-                        
-                                 Civil Tower
-Line Up Civil
-Pilot: {Dhk Twr} {NVQ946} Request Line Up
-Twr: {NVQ946} Line Up Runway 14, Report Ready For Departure
-Pilot: Line Up Runway 14, Call You Ready For Departure {NVQ946} 
-Departure
-Pilot: {Dhk Twr} {NVQ946} Ready For Departure
-Twr: {NVQ946} Initially 4000, Surface Wind 260/60kts, Cleared For Takeoff Runway 14  
-Pilot: S/W Copied, Runway 14, Cleared For Takeoff, {NVQ946} Cmtmj
-Airborne
-Twr: {NVQ946} Airborne {Time}, Report Passing 4000ft
-Pilot: Airborne Copied, Call You Passing 4000ft {NVQ946} C
-Transfer To Control
-Pilot: {Dhk Twr} {NVQ946}  Passing 4000ft.
-Twr {NVQ946}  Contact Dhaka Control 126.7
-Pilot: Over To Control, Good Day {NVQ946} 
+                                  Delta Call
+Delta To Outbound
+Pilot: {Dhk Twr} {Bg602}, Over Delta Alpha, Proceeding Outbound Of Letdown Rwy-14
+Twr: {Bg602}, Clear For The Approach, {Descend 3000ft}, Report Turning Inbound/Esablishrd localizer Rwy-14
+Pilot: Roger, Cleared For The Approach, Descending 3000ft, Call You Turning Inbound/Esablishrd localizer Rwy-14 {Bg602}
+Cmtmj
+Outbound To Inbound
+Pilot: M{Dhk Twr} {Bg602}, Turning Inbound
+Twr: {Bg602},  Report 6 ILS DME
+Pilot: Call You 6 ILS DME {Bg602}
+Cmtmj
+Steady Inbound
+Pilot: {Dhk Twr} {Bg602}, Steady Inbound
+Twr: {Bg602}, Report 6 ILS DME
 
+Pilot: Call You 6 ILS DME{Bg602}
+Cmtmj
+                                       Landing Call
+6dme To Land
+Pilot: {Dhk Twr} {Bg602}, 6 Ils Dme
+Twr: {Bg602}, Check Gears Down And Locked, Surface Wind 230/05 Knots, Cleared To Land Runway-14
+Pilot: Gears Are Green, S/W Copied, Cleared To Land Rwy-14 {Bg602}
+Cmtmj
+Landed And Taxi
+Twr: {Bg602}, Landed 1200, {Taxi Via S1}, After Vacating Contact Ground 121.8
+Pilot: {Taxi Via S1}, After Vacating Change To Ground 121.8, Call You Runway Vacated {Bg602}
+Cmtmj
+Vacated To Tarmac
+Pilot: {Dhk Gnd} {Bg602}, {Runway Vacated Via S1}
+Grd: {Bg602}, Taxi Via S1-S-C To Stand No {5}
+Pilot: Roger, {Taxi Via S1-S-C} To Stand No {5} {Bg602}
+C
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6.   Departure - Rt Call (UBG108)
-Airport:Vghs
-                                     Civil Ground
-Pushback
-Pilot: {Dhk Gnd} {UBG108} Request Startup And Pushback
-Grd: {UBG108} Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North/South}.
-Pilot: Startup And Pushback Approved, {Temp 32}, {Time 40}, Push To Face {North/South} {UBG108} C
-Taxi
-Pilot: {Dhk Gnd} {UBG108} Request Taxi 
-Grd: {UBG108}  Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14, {Qnh 1013}, {Squawk 4773, 
-Pilot: {Qnh 1013}, Squawk 4771,Taxi Via {C-N-N2,F-N-N2,V-N-N2} To Holding Point Runway-14  {UBG108} 
- Pilot: Request ATC Clearance.
-Grd: Confirm ready to copy ATC Clearance.
-Pilot: Affirm.
-Grd: Cleared to CTG SID ADMIL-1 Climb and Cruse FL 110
-Pilot: Cleared to CTG SID ADMIL-1 Climb and Cruse FL 110
-Grd: Red back correct
-Pilot: {Dhk Gnd {UBG108} Holding Point Runway 14, Like To Change To Tower
-Grd: {UBG108} Over To Tower   
-Pilot: Over To Tower {UBG108}              
-                                       
-
-
-
-                                    Civil Tower
-Line Up Civil
-Pilot: {Dhk Twr} {UBG108} Request Line Up
-Twr: {UBG108} Line Up Runway 14, Report Ready For Departure
-Pilot: Line Up Runway 14, Call You Ready For Departure {UBG108} 
-                          Departure
-Pilot: {Dhk Twr} {UBG108} Ready For Departure
-Twr: {UBG108} Initially 4000, Surface Wind 260/60kts, Cleared For Takeoff Runway 14  
-Pilot: S/W Copied, Runway 14, Cleared For Takeoff, {UBG108} Cmtmj
-Airborne
-Twr: {UBG108} Airborne {Time}, Report Passing 4000ft
-Pilot: Airborne Copied, Call You Passing 4000ft {UBG108} C
-Transfer To Control
-Pilot: {Dhk Twr} {UBG108} Passing 4000ft.
-Twr {UBG108} Contact Dhaka Control 126.7
-Pilot: Over To Control, Good Day {UBG108} 
+5. Vghs - Atr72 - {Nvq946} - Arrival - Rt Call
+                                                    Civil Entry
+Entry Call Arc
+Pilot: {Dhk Twr} {Nvq946}, Descending FL60 , 20dme Inbound Dac
+Twr: {Nvq946}, {Descend 4000ft}, {Qnh 1013} Report Established 12dme Arc For Dia-14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Established 12dme Arc {Nvq946},
+C
+		Entry Call Vor
+Pilot: {Dhk Twr} {Nvq946}, Descending FL60, 15dme Inbound Dac
+Twr: {Nvq946}, {Descend 4000ft}, {Qnh 1013} Report Over Vor Proceeding Outbound Of Letdown For Vdi-14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Established Outbound Of Letdown For Vdi-14 {Nvq946}, Ch
+Entry Call Delta
+Pilot: {Dhk Twr} {Nvq946}, Descending FL60, 15dme Inbound Dac
+Twr: {Nvq946},, {Descend 4000ft}, {Qnh 1013} Report Over Delta Alpha, Proceeding Outbound Of Letdown For Runway 14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Over Delta Alpha, Proceeding Outbound Of Letdown Rwy 14, {Nvq946},
 
 
+                               Vor Call
+Vor To Outbound
+Pilot: {Dhk Twr} {Nvq946}, Over Vor Proceeding Outbound Of Letdown
+Twr: {Nvq946}, Clear For The Approach, {Descend 3000ft}, Report Turning Inbound
+Pilot: Roger, Cleared For The Approach, Descending 3000ft, Call You Turning Inbound {Nvq946}
+Ch
+Outbound To Localizer
+Pilot: {Dhk Twr} {Nvq946}, Turning Inbound
+Twr: {Nvq946}, Report Established Localizer Runway 14
+Pilot: Call You Established Localizer, Rwy-14 {Nvq946}
+Ch
+Localizer To 6dme Vor
+Pilot: {Dhk Twr} {Nvq946}, On Localizer Runway 14
+Twr: {Nvq946}, Report 6 Ils Dme
+Pilot: Call You 6 Ils Dme {Nvq946}
+Ch
+                             Arc Call
+12 Dme Arc To R300
+Pilot: {Dhk Twr} {Nvq946}, Established 12dme Arc Runway-14
+Twr: {Nvq946}, Report Crossing R300
+Pilot: Call You Crossing R300 {Nvq946}
+C
+12 Dme Arc To R355
+Pilot: {Dhk Twr} {Nvq946}, Established 12dme Arc Runway-14
+Twr: {Nvq946}, Report Crossing R355
+Pilot: Call You Crossing R355 {Nvq946}
+C
+R300 To Localizer
+Pilot: {Dhk Twr} {Nvq946}, Crossing R300
+Twr: {Nvq946}, Clear For The Approach, {Descend 3000ft} Report Established Localizer Runway 14
+Pilot: Call You Established Localizer, Rwy-14 {Nvq946}
+C
+R355 To Localizer
+Pilot: {Dhk Twr} {Nvq946}, Crossing R355
+Twr: {Nvq946}, Clear For The Approach, {Descend 3000ft} Report Established Localizer Runway 14
+Pilot: Call You Established Localizer, Rwy-14 {Nvq946}
+C
+Localizer To 6dme Arc
+Pilot: {Dhk Twr} {Nvq946}, On Localizer Rwy-14
+Twr: {Nvq946}, Report 6 Ils Dme
+Pilot: Call You 6 Ils Dme {Nvq946}
+C
+Delta Call
+Delta To Outbound
+Pilot: {Dhk Twr} {Nvq946}, Over Delta Alpha, Proceeding Outbound Of Letdown Rwy-14
+Twr: {Nvq946}, Clear For The Approach, {Descend 3000ft}, Report Turning Inbound/Esablishrd localizer Rwy-14
+Pilot: Roger, Cleared For The Approach, Descending 3000ft, Call You Turning Inbound /Esablishrd localizer Rwy-14{Nvq946}
+Cmtmj
+Outbound To Inbound
+Pilot:  {Dhk Twr} {Nvq946}, Turning Inbound
+Twr: {Nvq946}, 6 ILS DME
+Pilot: Call You 6 ILS DME{Nvq946}
+Cmtmj
+Steady Inbound
+Pilot: {Dhk Twr} {Nvq946}, Steady Inbound
+Twr: {Nvq946}, Report 6 Ils Dme
+Pilot: Call You 6 Ils Dme {Nvq946}
+Cmtmj
+Landing Call
+6dme To Land
+Pilot: {Dhk Twr} {Nvq946}, 6 Ils Dme
+Twr: {Nvq946}, Check Gears Down And Locked, Surface Wind 230/05 Knots, Cleared To Land Runway-14
+Pilot: Gears Are Green, S/W Copied, Cleared To Land Rwy-14 {Nvq946}
+Cmtmj
+Landed And Taxi
+Twr: {Nvq946}, Landed 1200, {Taxi Via S1}, After Vacating Contact Ground 121.8
+Pilot: {Taxi Via S1}, After Vacating Change To Ground 121.8, Call You Runway Vacated {Nvq946}
+Cmtmj
+Vacated To Tarmac
+Pilot: {Dhk Gnd} {Nvq946}, {Runway Vacated Via S1}
+Grd: {Nvq946}, Taxi Via S1-S-C To Stand No {5}
+Pilot: Roger, {Taxi Via S1-S-C} To Stand No {5} {Nvq946}
+C
+6. Vghs - Atr72 - {Ubg1087} - Arrival - Rt Call
+                                            Civil Entry
+Entry Call Arc
+Pilot: {Dhk Twr} {Ubg1087}, Descending FL60 , 20dme Inbound Dac
+Twr: {Ubg1087}, {Descend 4000ft}, {Qnh 1013} Report Established 12dme Arc For Dia-14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Established 12dme {Ubg1087},
+C
+		Entry Call Vor
+Pilot: {Dhk Twr} {Ubg1087}, Descending FL60, 15dme Inbound Dac
+Twr: {Ubg1087}, {Descend 4000ft}, {Qnh 1013} Report Over Vor Proceeding Outbound Of Letdown For Vdi-14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Established Outbound Of Letdown For Vdi-14 {Ubg1087},
+Ch
+Entry Call Delta
+Pilot: {Dhk Twr} {Ubg1087}, }, Descending FL60, 15dme Inbound Dac
+Twr: {Ubg1087}, {Descend 4000ft}, {Qnh 1013} Report Over Delta Alpha, Proceeding Outbound Of Letdown For Runway 14
+Pilot: {Qnh 1013}, {Descending 4000ft}, Call You Over Delta Alpha, Proceeding Outbound Of Letdown Rwy 14, {Ubg1087},
 
 
-
-
-
-
-
-
-
-
-
-
-
+                              Vor Call
+Vor To Outbound
+Pilot: {Dhk Twr} {Ubg1087}, Over Vor Proceeding Outbound Of Letdown
+Twr: {Ubg1087}, Clear For The Approach, {Descend 3000ft}, Report Turning Inbound
+Pilot: Roger, Cleared For The Approach, Descending 3000ft, Call You Turning Inbound {Ubg1087}
+Ch
+Outbound To Localizer
+Pilot: {Dhk Twr} {Ubg1087}, Turning Inbound
+Twr: {Ubg1087}, Report Established Localizer Runway 14
+Pilot: Call You Established Localizer, Rwy-14 {Ubg1087}
+Ch
+Localizer To 6dme Vor
+Pilot: {Dhk Twr} {Ubg1087}, On Localizer Runway 14
+Twr: {Ubg1087}, Report 6 Ils Dme
+Pilot: Call You 6 Ils Dme {Ubg1087}
+Ch
+                             Arc Call
+12 Dme Arc To R300
+Pilot: {Dhk Twr} {Ubg1087}, Established 12dme Arc Runway-14
+Twr: {Ubg1087}, Report Crossing R300
+Pilot: Call You Crossing R300 {Ubg1087}
+C
+12 Dme Arc To R355
+Pilot: {Dhk Twr} {Ubg1087}, Established 12dme Arc Runway-14
+Twr: {Ubg1087}, Report Crossing R355
+Pilot: Call You Crossing R355 {Ubg1087}
+C
+R300 To Localizer
+Pilot: {Dhk Twr} {Ubg1087}, Crossing R300
+Twr: {Ubg1087}, Clear For The Approach, {Descend 3000ft} Report Established Localizer Runway 14
+Pilot: Call You Established Localizer, Rwy-14 {Ubg1087}
+C
+R355 To Localizer
+Pilot: {Dhk Twr} {Ubg1087}, Crossing R355
+Twr: {Ubg1087}, Clear For The Approach, {Descend 3000ft} Report Established Localizer Runway 14
+Pilot:Call You Established Localizer, Rwy-14 {Ubg1087}
+C
+Localizer To 6dme Arc
+Pilot: {Dhk Twr} {Ubg1087}, On Localizer Rwy-14
+Twr: {Ubg1087}, Report 6 Ils Dme
+Pilot: Call You 6 Ils Dme {Ubg1087}
+C
+                             Delta Call
+Delta To Outbound
+Pilot: {Dhk Twr} {Ubg1087}, Over Delta Alpha, Proceeding Outbound Of Letdown Rwy-14
+Twr: {Ubg1087}, Clear For The Approach, {Descend 3000ft}, Report Turning Inbound/Esablishrd localizer Rwy-14
+Pilot: Roger, Cleared For The Approach, Descending 3000ft, Call You Turning Inbound/Esablishrd localizer Rwy-14 {Ubg1087}
+Cmtmj
+Outbound To Inbound
+Pilot: {Dhk Twr} {Ubg1087}, Esablishrd localizer Rwy-14 
+Twr: {Ubg1087}, Report 6 ILS DME
+Pilot: Call You 6 ILS DME{Ubg1087}
+Cmtmj
+Steady Inbound
+Pilot: {Dhk Twr} {Ubg1087}, Steady Inbound
+Twr: {Ubg1087}, Report 6 Ils Dme
+Pilot: Call You 6 Ils Dme {Ubg1087}
+Cmtmj
+Landing Call
+6dme To Land
+Pilot: {Dhk Twr} {Ubg1087}, 6 Ils Dme
+Twr: {Ubg1087}, Check Gears Down And Locked, Surface Wind 230/05 Knots, Cleared To Land Runway-14
+Pilot: Gears Are Green, S/W Copied, Cleared To Land Rwy-14 {Ubg1087}
+Cmtmj
+Landed And Taxi
+Twr: {Ubg1087}, Landed 1200, {Taxi Via S1}, After Vacating Contact Ground 121.8
+Pilot: {Taxi Via S1}, After Vacating Change To Ground 121.8, Call You Runway Vacated {Ubg1087}
+Cmtmj
+Vacated To Tarmac
+Pilot: {Dhk Gnd} {Ubg1087}, {Runway Vacated Via S1}
+Grd: {Ubg1087}, Taxi Via S1-S-C To Stand No {5}
+Pilot: Roger, {Taxi Via S1-S-C} To Stand No {5} {Ubg1087}
+C
 
 
 

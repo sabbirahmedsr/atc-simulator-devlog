@@ -1,69 +1,14 @@
-[
-  {
-    "phase": "entry_call_ARC",
-    "category": "Civil Entry",
-    "description": "This is the very first call a pilot makes to an airport's air traffic controller when entering their airspace to request an approach for landing.",
-    "calls": [
-      { "speaker": "Pilot", "message": "{DHK TWR} {call-sign}, descending 4000 feet, 20DME inbound DAC" },
-      { "speaker": "TWR", "message": "{Call Sign}, {descend 3000ft}, {QNH 1013} report established 12DME arc for DIA-14" },
-      { "speaker": "Pilot", "message": "{QNH 1013}, { Descending 4000ft / Descending 3000ft / Descending 2000ft / Descending 1500ft }, call you established 12dme arc {call-sign}" }
-    ],
-    "callsigns": [ "THAI321", "EK584", "QR638", "SQ446", "CX667" ]
-  },
+[     
   {
     "phase": "entry_call_VOR",
-    "category": "Civil Entry",
+    "category": "VOR Call",
     "description": "A pilot makes this call to the airport controller when they are nearing the airport, to request permission to begin a descent and prepare for landing.",
     "calls": [
-      { "speaker": "Pilot", "message": "{DHK TWR} {call-sign}, descending 4000ft, 15DME inbound DAC" },
-      { "speaker": "TWR", "message": "{Call Sign}, {descend 3000ft}, {QNH 1013} report over VOR proceeding outbound of letdown for VDI-14" },
-      { "speaker": "Pilot", "message": "{QNH 1013}, { Descending 4000ft / Descending 3000ft / Descending 2000ft / Descending 1500ft }, call you established outbound of letdown for VDI-14 {call-sign}" }
+      { "speaker": "Pilot", "message": "{DHK TWR} {call-sign}, { Descending 6000ft / Descending 4000ft / Descending 3000ft / Descending 2000ft / Descending 1500ft }, 15DME inbound DAC" },
+      { "speaker": "TWR", "message": "{Call Sign}, {Descend 4000ft}, {QNH 1013} report over VOR proceeding outbound of letdown for VDI-14" },
+      { "speaker": "Pilot", "message": "{QNH 1013}, { Descending 6000ft / Descending 4000ft / Descending 3000ft / Descending 2000ft / Descending 1500ft }, call you established outbound of letdown for VDI-14 {call-sign}" }
     ],
-    "callsigns": [ "BG367", "IGO1113", "BG602", "BG492", "BG472", "NVQ946", "AWA446" ]
-  },
-  {
-    "phase": "entry_call_Delta",
-    "category": "Civil Entry",
-    "description": "An entry call where the pilot is instructed to report over the Delta Alpha waypoint as part of the arrival procedure.",
-    "calls": [
-      { "speaker": "Pilot", "message": "{DHK TWR} {call-sign}, descending 4000ft, 15DME inbound DAC" },
-      { "speaker": "TWR", "message": "{Call Sign}, {descend 3000ft}, {QNH 1013} report over Delta Alpha, proceeding outbound of letdown for runway 14" },
-      { "speaker": "Pilot", "message": "{QNH 1013}, { Descending 4000ft / Descending 3000ft / Descending 2000ft / Descending 1500ft }, call you over delta alpha, proceeding outbound of letdown rwy 14, {call-sign}" }
-    ],
-    "callsigns": []
-  },
-  {
-    "phase": "entry_call_TRG",
-    "category": "Military Entry",
-    "description": "This call is made by a pilot who has just finished training in a designated area and is requesting to re-enter the airport's main traffic pattern for a landing.",
-    "calls": [
-      { "speaker": "Pilot", "message": "{DHK TWR} {call-sign}, descending 4000 feet, like to leave training area east, request rejoin instruction" },
-      { "speaker": "TWR", "message": "{call-sign}, {descend 3000ft}, {QNH 1013} report over V1" },
-      { "speaker": "Pilot", "message": "{QNH 1013}, { Descending 4000ft / Descending 3000ft / Descending 2000ft / Descending 1500ft }, call you over V1 {call-sign}" }
-    ],
-    "callsigns": []
-  },
-  {
-    "phase": "victor_1_to_field",
-    "category": "Military Entry",
-    "description": "A military pilot reports reaching the 'Victor 1' waypoint and is instructed to report when the airfield is in sight.",
-    "calls": [
-      { "speaker": "Pilot", "message": "{DHK TWR} {call-sign}, victor 1" },
-      { "speaker": "TWR", "message": "{Call Sign}, report field in sight runway 14" },
-      { "speaker": "Pilot", "message": "call you field in sight rwy-14 {call-sign}" }
-    ],
-    "callsigns": []
-  },
-  {
-    "phase": "field_to_downwind",
-    "category": "Military Entry",
-    "description": "The pilot reports that the field is in sight and is instructed to report when on the downwind leg of the traffic pattern.",
-    "calls": [
-      { "speaker": "Pilot", "message": "{DHK TWR} {call-sign}, field in sight" },
-      { "speaker": "TWR", "message": "{Call Sign}, report downwind" },
-      { "speaker": "Pilot", "message": "call you downwind {call-sign}" }
-    ],
-    "callsigns": []
+    "callsigns": [ "THAI321", "BG367", "QR638", "CX667", "SQ446", "BG472", "NVQ946", "AWA446", "UBG108", "S2AGP" ]
   },
   {
     "phase": "vor_to_outbound",
@@ -74,7 +19,7 @@
       { "speaker": "TWR", "message": "{call-sign}, clear for the approach, {descend 3000ft}, report turning inbound" },
       { "speaker": "Pilot", "message": "Roger, cleared for the approach, descending 3000ft, call you turning inbound {call-sign}" }
     ],
-    "callsigns": []
+    "callsigns": [ "THAI321", "BG367", "QR638", "CX667", "SQ446", "BG472", "NVQ946", "AWA446", "UBG108", "S2AGP" ]
   },
   {
     "phase": "outbound_to_localizer",
@@ -85,7 +30,7 @@
       { "speaker": "TWR", "message": "{call-sign}, report established localizer runway 14" },
       { "speaker": "Pilot", "message": "call you established localizer, rwy-14 {call-sign}" }
     ],
-    "callsigns": []
+    "callsigns": [ "THAI321", "BG367", "QR638", "CX667", "SQ446", "BG472", "NVQ946", "AWA446", "UBG108", "S2AGP" ]
   },
   {
     "phase": "localizer_to_6dme_vor",
@@ -96,7 +41,18 @@
       { "speaker": "TWR", "message": "{call-sign}, report 6 ILS DME" },
       { "speaker": "Pilot", "message": "call you 6 ILS DME {call-sign}" }
     ],
-    "callsigns": []
+    "callsigns": [ "THAI321", "BG367", "QR638", "CX667", "SQ446", "BG472", "NVQ946", "AWA446", "UBG108", "S2AGP" ]
+  },
+  {
+    "phase": "entry_call_ARC",
+    "category": "Arc Call",
+    "description": "This is the very first call a pilot makes to an airport's air traffic controller when entering their airspace to request an approach for landing.",
+    "calls": [
+      { "speaker": "Pilot", "message": "{DHK TWR} {call-sign}, { Descending 6000ft / Descending 4000ft / Descending 3000ft / Descending 2000ft / Descending 1500ft }, 20DME inbound DAC" },
+      { "speaker": "TWR", "message": "{Call Sign}, {Descend 4000ft}, {QNH 1013} report established 12DME arc for DIA-14" },
+      { "speaker": "Pilot", "message": "{QNH 1013}, { Descending 6000ft / Descending 4000ft / Descending 3000ft / Descending 2000ft / Descending 1500ft }, call you established 12dme arc {call-sign}" }
+    ],
+    "callsigns": [ "EK584", "IGO1113", "QR638", "BG602", "BG492", "NVQ946" ]
   },
   {
     "phase": "12_dme_arc_to_r300",
@@ -107,7 +63,7 @@
       { "speaker": "TWR", "message": "{call-sign}, report crossing R300" },
       { "speaker": "Pilot", "message": "call you crossing R300 {call-sign}" }
     ],
-    "callsigns": []
+    "callsigns": [ "EK584", "IGO1113", "QR638", "BG602", "BG492", "NVQ946" ]
   },
   {
     "phase": "12_dme_arc_to_r355",
@@ -118,7 +74,7 @@
       { "speaker": "TWR", "message": "{call-sign}, report crossing R355" },
       { "speaker": "Pilot", "message": "call you crossing R355 {call-sign}" }
     ],
-    "callsigns": []
+    "callsigns": [ "EK584", "IGO1113", "QR638", "BG602", "BG492", "NVQ946" ]
   },
   {
     "phase": "r300_to_localizer",
@@ -129,7 +85,7 @@
       { "speaker": "TWR", "message": "{call-sign}, clear for the approach, {descend 3000ft} report established localizer runway 14" },
       { "speaker": "Pilot", "message": "call you established localizer, rwy-14 {call-sign}" }
     ],
-    "callsigns": []
+    "callsigns": [ "EK584", "IGO1113", "QR638", "BG602", "BG492", "NVQ946" ]
   },
   {
     "phase": "r355_to_localizer",
@@ -140,7 +96,7 @@
       { "speaker": "TWR", "message": "{call-sign}, clear for the approach, {descend 3000ft} report established localizer runway 14" },
       { "speaker": "Pilot", "message": "call you established localizer, rwy-14 {call-sign}" }
     ],
-    "callsigns": []
+    "callsigns": [ "EK584", "IGO1113", "QR638", "BG602", "BG492", "NVQ946" ]
   },
   {
     "phase": "localizer_to_6dme_arc",
@@ -151,30 +107,41 @@
       { "speaker": "TWR", "message": "{call-sign}, report 6 ILS DME" },
       { "speaker": "Pilot", "message": "call you 6 ILS DME {call-sign}" }
     ],
-    "callsigns": []
+    "callsigns": [ "EK584", "IGO1113", "QR638", "BG602", "BG492", "NVQ946" ]
   },
   {
-    "phase": "delta_to_outbound",
+    "phase": "entry_call_Delta",
+    "category": "Delta Call",
+    "description": "An entry call where the pilot is instructed to report over the Delta Alpha waypoint as part of the arrival procedure.",
+    "calls": [
+      { "speaker": "Pilot", "message": "{DHK TWR} {call-sign}, { Descending 6000ft / Descending 4000ft / Descending 3000ft / Descending 2000ft / Descending 1500ft }, 15DME inbound DAC" },
+      { "speaker": "TWR", "message": "{Call Sign}, {Descend 4000ft}, {QNH 1013} report over Delta Alpha, proceeding outbound of letdown for runway 14" },
+      { "speaker": "Pilot", "message": "{QNH 1013}, { Descending 6000ft / Descending 4000ft / Descending 3000ft / Descending 2000ft / Descending 1500ft }, call you over delta alpha, proceeding outbound of letdown rwy 14, {call-sign}" }
+    ],
+    "callsigns": [ "EK584", "IGO1113", "QR638", "BG602", "BG492", "NVQ946", "GFN391", "BJR471", "UNC1031", "AJX1483" ]
+  },
+  {
+    "phase": "delta_to_outbound_inb",
     "category": "Delta Call",
     "description": "The pilot reports reaching the Delta Alpha waypoint and is cleared for the next stage of the approach.",
     "calls": [
       { "speaker": "Pilot", "message": "{DHK TWR} {call-sign}, over Delta Alpha, proceeding outbound of letdown rwy-14" },
-      { "speaker": "TWR", "message": "{call-sign}, clear for the approach, {descend 3000ft}, report turning inbound" },
+      { "speaker": "TWR", "message": "{call-sign}, clear for the approach, {descend 3000ft}, Report turning inbound" },
       { "speaker": "Pilot", "message": "Roger, cleared for the approach, descending 3000ft, call you turning inbound {call-sign}" }
     ],
-    "callsigns": []
+    "callsigns": [ "EK584", "IGO1113", "QR638", "BG602", "BG492", "NVQ946", "GFN391", "BJR471", "UNC1031", "AJX1483" ]
   },
   {
-    "phase": "outbound_to_inbound",
+    "phase": "delta_to_outbound_loc",
     "category": "Delta Call",
-    "description": "This call is made when a plane begins a turn to line up with the runway after a Delta approach procedure.",
+    "description": "The pilot reports reaching the Delta Alpha waypoint and is cleared for the next stage of the approach.",
     "calls": [
-      { "speaker": "Pilot", "message": "{DHK TWR} {call-sign}, turning inbound" },
-      { "speaker": "TWR", "message": "{call-sign}, report steady inbound" },
-      { "speaker": "Pilot", "message": "call you steady inbound {call-sign}" }
+      { "speaker": "Pilot", "message": "{DHK TWR} {call-sign}, over Delta Alpha, proceeding outbound of letdown rwy-14" },
+      { "speaker": "TWR", "message": "{call-sign}, clear for the approach, {descend 3000ft}, Report established localizer rwy-14" },
+      { "speaker": "Pilot", "message": "Roger, cleared for the approach, descending 3000ft, call you established localizer rwy-14 {call-sign}" }
     ],
-    "callsigns": []
-  },
+    "callsigns": [ "EK584", "IGO1113", "QR638", "BG602", "BG492", "NVQ946", "GFN391", "BJR471", "UNC1031", "AJX1483" ]
+  },  
   {
     "phase": "steady_inbound",
     "category": "Delta Call",
@@ -184,60 +151,136 @@
       { "speaker": "TWR", "message": "{call-sign}, report 6 ILS DME" },
       { "speaker": "Pilot", "message": "call you 6 ILS DME {call-sign}" }
     ],
-    "callsigns": []
+    "callsigns": [ "EK584", "IGO1113", "QR638", "BG602", "BG492", "NVQ946", "GFN391", "BJR471", "UNC1031", "AJX1483" ]
+  },
+  {
+    "phase": "localizer_to_6dme",
+    "category": "Delta Call",
+    "description": "The pilot confirms they are established on the localizer, and the tower instructs them to report their distance.",
+    "calls": [
+      { "speaker": "Pilot", "message": "{DHK TWR} {call-sign}, established localizer rwy-14" },
+      { "speaker": "TWR", "message": "{call-sign}, Report 6 ILS DME" },
+      { "speaker": "Pilot", "message": "call you 6 ILS DME {call-sign}" }
+    ],
+    "callsigns": [ "EK584", "IGO1113", "QR638", "BG602", "BG492", "NVQ946", "GFN391", "BJR471", "UNC1031", "AJX1483" ]
+  },
+  {
+    "phase": "entry_call_TRG",
+    "category": "Military Entry",
+    "description": "This call is made by a pilot who has just finished training in a designated area and is requesting to re-enter the airport's main traffic pattern for a landing.",
+    "calls": [
+      { "speaker": "Pilot", "message": "{DHK TWR} {call-sign}, {Descending 6000ft / Descending 4000ft / Descending 3000ft / Descending 2000ft / Descending 1500ft }, like to leave { training area east / training area north } , request rejoin instruction" },
+      { "speaker": "TWR", "message": "{call-sign}, {descend 3000ft}, {QNH 1013} report over V1" },
+      { "speaker": "Pilot", "message": "{QNH 1013}, {Descending 6000ft / Descending 4000ft / Descending 3000ft / Descending 2000ft / Descending 1500ft }, call you over V1 {call-sign}" }
+    ],
+    "callsigns": ["GFN391", "BJR471", "UNC1031", "AJX1483" ]
+  },
+  {
+    "phase": "victor_1_to_field",
+    "category": "Military Entry",
+    "description": "A military pilot reports reaching the 'Victor 1' waypoint and is instructed to report when the airfield is in sight.",
+    "calls": [
+      { "speaker": "Pilot", "message": "{DHK TWR} {call-sign}, victor 1" },
+      { "speaker": "TWR", "message": "{Call Sign}, report field in sight runway 14" },
+      { "speaker": "Pilot", "message": "call you field in sight rwy-14 {call-sign}" }
+    ],
+    "callsigns": ["GFN391", "BJR471", "UNC1031", "AJX1483" ]
+  },
+  {
+    "phase": "field_to_downwind",
+    "category": "Military Entry",
+    "description": "The pilot reports that the field is in sight and is instructed to report when on the downwind leg of the traffic pattern.",
+    "calls": [
+      { "speaker": "Pilot", "message": "{DHK TWR} {call-sign}, field in sight" },
+      { "speaker": "TWR", "message": "{Call Sign}, report downwind" },
+      { "speaker": "Pilot", "message": "call you downwind {call-sign}" }
+    ],
+    "callsigns": ["GFN391", "BJR471", "UNC1031", "AJX1483" ]
   },
   {
     "phase": "6dme_to_land",
-    "category": "Landing Call",
+    "category": "Landing Call Civil",
     "description": "This is the final call before landing, made by a pilot who is 6 miles away from the runway, to receive landing clearance and information about the wind.",
     "calls": [
       { "speaker": "Pilot", "message": "{DHK TWR} {call-sign}, 6 ILS DME" },
       { "speaker": "TWR", "message": "{call-sign}, check gears down and locked, surface wind 230/05 knots, cleared to land runway-14" },
       { "speaker": "Pilot", "message": "gears are green, s/w copied, Cleared to land rwy-14 {call-sign}" }
     ],
-    "callsigns": []
+    "callsigns": [ "THAI321", "EK584", "BG367", "IGO1113", "QR638", "CX667", "SQ446", "BG602", "BG492", "BG472", "NVQ946", "AWA446", "UBG108" ]
   },
   {
-    "phase": "landed_and_taxi",
-    "category": "Landing Call",
+    "phase": "runway_vacate_civil",
+    "category": "Landing Call Civil",
     "description": "A pilot makes this call immediately after the plane has touched down on the runway, to let the controller know they have landed and to get instructions on where to taxi next.",
     "calls": [
-      { "speaker": "TWR", "message": "{call-sign}, landed 1200, {taxi via S1}, after vacating contact ground 121.8" },
-      { "speaker": "Pilot", "message": "{Taxi via S1}, after vacating change to ground 121.8, call you runway vacated {call-sign}" }
+      { "speaker": "TWR", "message": "{call-sign}, landed 1200, { Taxi via S1 / Taxi via S2 / Taxi via S3 }, after vacating contact ground 121.8" },
+      { "speaker": "Pilot", "message": "{ Taxi via S1 / Taxi via S2 / Taxi via S3 }, after vacating change to ground 121.8, call you runway vacated {call-sign}" }
     ],
-    "callsigns": []
+    "callsigns": [ "THAI321", "EK584", "BG367", "IGO1113", "QR638", "CX667", "SQ446", "BG602", "BG492", "BG472", "NVQ946", "AWA446", "UBG108" ]
   },
   {
-    "phase": "vacated_to_tarmac",
-    "category": "Landing Call",
+    "phase": "vacated_to_tarmac_civil",
+    "category": "Landing Call Civil",
     "description": "This is a call made after a plane has completely left the main runway and is on a taxiway, to get directions to its final parking spot.",
     "calls": [
-      { "speaker": "Pilot", "message": "{DHK GND} {call-sign}, {runway vacated via S1}" },
+      { "speaker": "Pilot", "message": "{DHK GND} {call-sign}, {runway vacated via S1 / runway vacated via S2 / runway vacated via S3}" },
       { "speaker": "GRD", "message": "{call-sign}, Taxi via S1-S-C to Stand no {5}" },
-      { "speaker": "Pilot", "message": "roger, {taxi via S1-S-C} to Stand no {5} {call-sign}" }
+      { "speaker": "Pilot", "message": "roger, { taxi via S1-S-C / taxi via S1-S-V / taxi via S1-S-F / taxi via S2-S-C / taxi via S2-S-V / taxi via S2-S-F / taxi via S3-S-C / taxi via S3-S-V / taxi via S3-S-F } to Stand no {0,1,2,3,4,5,6,7,8,9} {call-sign}" }
     ],
-    "callsigns": []
+    "callsigns": [ "THAI321", "EK584", "BG367", "IGO1113", "QR638", "CX667", "SQ446", "BG602", "BG492", "BG472", "NVQ946", "AWA446", "UBG108" ]
+  },
+  {
+    "phase": "6dme_to_land",
+    "category": "Landing Call Military",
+    "description": "This is the final call before landing, made by a pilot who is 6 miles away from the runway, to receive landing clearance and information about the wind.",
+    "calls": [
+      { "speaker": "Pilot", "message": "{DHK TWR} {call-sign}, 6 ILS DME" },
+      { "speaker": "TWR", "message": "{call-sign}, check gears down and locked, surface wind 230/05 knots, cleared to land runway-14" },
+      { "speaker": "Pilot", "message": "gears are green, s/w copied, Cleared to land rwy-14 {call-sign}" }
+    ],
+    "callsigns": [ "GFN391", "BJR471", "UNC1031", "AJX1483"  ]
+  },
+  {
+    "phase": "runway_vacate_military",
+    "category": "Landing Call Military",
+    "description": "A pilot makes this call immediately after the plane has touched down on the runway, to let the controller know they have landed and to get instructions on where to taxi next.",
+    "calls": [
+      { "speaker": "TWR", "message": "{call-sign}, landed 1200, {Taxi via HA / Taxi via SA}, after vacating contact ground 121.8" },
+      { "speaker": "Pilot", "message": "{Taxi via HA / Taxi via SA}, after vacating change to ground 121.8, call you runway vacated {call-sign}" }
+    ],
+    "callsigns": [ "GFN391", "BJR471", "UNC1031", "AJX1483" ]
   },
   {
     "phase": "vacated_to_tarmac_mil",
-    "category": "Landing Call",
+    "category": "Landing Call Military",
     "description": "A military-specific call where the Tower provides taxi instructions after the pilot reports the runway is vacated, before handing off to Ground control.",
     "calls": [
-      { "speaker": "Pilot", "message": "{DHK TWR} {call-sign}, {runway vacated via HA}" },
+      { "speaker": "Pilot", "message": "{DHK TWR} {call-sign}, {runway vacated via HA / runway vacated via SA}" },
       { "speaker": "TWR", "message": "{call-sign}, taxi via {Arrival Taxiway}, changing to ground 121.8" },
-      { "speaker": "Pilot", "message": "{taxi via  HA}, changing to ground 121.8 {call-sign}" }
+      { "speaker": "Pilot", "message": "{ Taxi via HA / Taxi via SA },changing to ground 121.8 {call-sign}" }
     ],
-    "callsigns": []
+    "callsigns": ["GFN391", "BJR471", "UNC1031", "AJX1483" ]
+  },
+  {
+    "phase": "6dme_to_3Miles",
+    "category": "Helicopter Call",
+    "description": "This is the final call before landing, made by a pilot who is 6 miles away from the runway, to receive landing clearance and information about the wind.",
+    "calls": [
+      { "speaker": "Pilot", "message": "{DHK TWR} {call-sign}, 6 ILS DME" },
+      { "speaker": "TWR", "message": "{call-sign}, continue approach, report 3 miles" },
+      { "speaker": "Pilot", "message": "copied, call you 3 miles {call-sign}" }
+    ],
+    "callsigns": [ "S2AGP" ]
   },
   {
     "phase": "fly_away",
     "category": "Helicopter Call",
     "description": "This is the final call made to an airport's tower before leaving their airspace after a low pass, informing them of the pilot's intention to change to another controller.",
     "calls": [
-      { "speaker": "Pilot", "message": "{DHK TWR} {call-sign}, we are at 3 miles turning right, changing to tejgaon" },
+      { "speaker": "Pilot", "message": "{DHK TWR} {call-sign}, we are at 3 miles, turning right, changing to tejgaon" },
       { "speaker": "TWR", "message": "{call-sign}, change to tejgaon" },
       { "speaker": "Pilot", "message": "over to tejgaon {call-sign}" }
     ],
-    "callsigns": []
+    "callsigns": ["S2AGP"]
   }
 ]

@@ -44,7 +44,7 @@
         </div>
         <div class="filter-group">
             <label>View:</label>
-            <button id="toggle-callsigns-btn" class="filter-btn" title="Show/Hide Call Signs beside cards">Show Call Signs</button>
+            <button id="toggle-callsigns-btn" class="filter-btn active" title="Show/Hide Call Signs beside cards">Show Call Signs</button>
         </div>
     </div>
 
@@ -94,6 +94,7 @@
             const callsignFilter = document.getElementById('callsign-filter');
             let allRtCallData = []; // To store all fetched data
             let allParameters = {}; // To store parameter data
+            let nonCivilCallsigns = new Set();
 
             async function fetchAllData() {
                 const urlParams = new URLSearchParams(window.location.search);
@@ -154,6 +155,8 @@
                 const activeIcao = document.querySelector('.filter-btn[data-filter-group="icao"].active').dataset.filterValue;
                 const callsignSelect = document.getElementById('callsign-filter');
 
+                nonCivilCallsigns.clear();
+
                 const callsignDataByIcao = {
                     vghs: {
                         "Civil International": ["THAI321", "EK584", "IGO1113", "BG367", "QR638", "CX667", "SQ446"],
@@ -175,6 +178,10 @@
                 for (const groupName in callsignGroups) {
                     const optgroup = document.createElement('optgroup');
                     optgroup.label = groupName;
+
+                    if (!groupName.toLowerCase().includes('civil')) {
+                        callsignGroups[groupName].forEach(cs => nonCivilCallsigns.add(cs));
+                    }
 
                     callsignGroups[groupName].forEach(callsign => {
                         const option = document.createElement('option');
@@ -330,7 +337,10 @@
                     if (showCallsigns && data.callsigns && data.callsigns.length > 0) {
                         const sidePanel = document.createElement('div');
                         sidePanel.className = 'rt-side-panel';
-                        sidePanel.innerHTML = data.callsigns.map(cs => `<div>${cs}</div>`).join('');
+                        sidePanel.innerHTML = data.callsigns.map(cs => {
+                            const className = nonCivilCallsigns.has(cs) ? 'military' : '';
+                            return `<div class="${className}">${cs}</div>`;
+                        }).join('');
                         wrapper.appendChild(sidePanel);
                     }
 
