@@ -16,8 +16,8 @@
     <div class="header-container">
         <h1>ATC Simulator - RT Calls (V2)</h1>
         <div class="header-btn-group">
-            <button id="params-btn" title="View All Parameters"><i class="fa-solid fa-list-ul"></i></button>
-            <button id="help-btn" title="Recording Instructions"><i class="fa-solid fa-comment-dots"></i></button>
+            <button id="params-btn" title="View All Parameters"><i class="fa-solid fa-code"></i></button>
+            <button id="help-btn" title="Recording Instructions"><i class="fa-solid fa-microphone"></i></button>
             <button id="print-btn" title="Print as PDF"><i class="fa-solid fa-print"></i></button>
         </div>
     </div>
@@ -57,10 +57,11 @@
         <div class="popup-content">
             <h3>Voice-Over Recording Instructions</h3>
             <ul class="instruction-list">
-                <li><strong>Recording Discipline:</strong> Before starting a new set of RT calls (i.e., a new card), leave at least <strong>5 seconds of silence</strong>. This creates clean separation between different scenarios.</li>
+                <li><strong>Environment Quality:</strong> Ensure the recording environment is as quiet and echo-free as possible. Eliminate background noise to guarantee clear, high-quality audio.</li>
+                <li class="highlight-instruction"><strong>5-Second Silence Rule:</strong> Before starting a new set of RT calls (i.e., a new card), leave at least <strong>5 seconds of silence</strong>. This creates clean separation between different scenarios.</li>
                 <li><strong>Standalone Delivery:</strong> Treat each line as a completely fresh and separate radio call. Avoid any conversational flow or carrying the tone over from the previous line. Start fresh every time.</li>
-                <li><strong>Pause for Variables:</strong> For any text inside <code>{curly brackets}</code>, you must pause for about <strong>half a second (0.5s)</strong> both before and after reading the variable text. This is critical for editing.</li>
-                <li><strong>Record the Full Line:</strong> When a line contains a variable (e.g., <code>{QNH 1013}</code>), you must record the <strong>entire sentence</strong>, not just the variable part. This applies to both the main RT calls and the parameter lists.</li>
+                <li class="highlight-instruction"><strong>Pause for Variables:</strong> For any text inside <code>{curly brackets}</code>, you must pause for about <strong>half a second (0.5s)</strong> both before and after reading the variable text. This is critical for editing.</li>
+                <li><strong>Record Full Sentence Every Time:</strong> When a line contains a variable (e.g., <code>{QNH 1013}</code>), you must record the <strong>entire sentence</strong> for <strong>every variable call phrase</strong>. Do not record just the variable part. This applies to both the main RT calls and the parameter lists.</li>
                 <li><strong>Clarity and Consistency:</strong> Enunciate every word clearly, especially the first and last words of a phrase. Maintain a consistent volume and a formal, professional tone throughout the entire recording session.</li>
                 <li><strong>Recording Individual Digits:</strong> For parameters like <code>Time</code> or <code>Stand Number</code>, you must record each digit from <strong>0 to 9</strong> as a separate, standalone audio file. Say "Zero," "One," "Two," etc., with a clean start and end, no conversational flow. This allows us to create any number dynamically.</li>
             </ul>

@@ -143,6 +143,17 @@
     "callsigns": [ "EK584", "IGO1113", "QR638", "BG602", "BG492", "NVQ946", "GFN391", "BJR471", "UNC1031", "AJX1483" ]
   },  
   {
+    "phase": "inbound_to_steady_inbound",
+    "category": "Delta Call",
+    "description": "The pilot reports reaching inbound and start turning toward steady inbound.",
+    "calls": [
+      { "speaker": "Pilot", "message": "{DHK TWR} {call-sign}, turning inbound" },
+      { "speaker": "TWR", "message": "{call-sign}, Report steady inbound" },
+      { "speaker": "Pilot", "message": "call you steady inbound {call-sign}" }
+    ],
+    "callsigns": [ "EK584", "IGO1113", "QR638", "BG602", "BG492", "NVQ946", "GFN391", "BJR471", "UNC1031", "AJX1483" ]
+  },
+  {
     "phase": "steady_inbound",
     "category": "Delta Call",
     "description": "The pilot confirms they are established on the inbound course after completing their turn from a Delta approach.",
